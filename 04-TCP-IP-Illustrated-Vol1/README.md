@@ -1,8 +1,8 @@
-# TCP/IP Illustrated Vol.1 — Stevens（外部仓库）
+﻿# TCP/IP Illustrated Vol.1 — Stevens（外部仓库）
 
 **定位：** 协议语义与首部格式 · 回答「线上包长什么样」。
 
-**阅读顺序：** 第 **外A** 册 · 建议在 **Rosen / UNP 之前**
+**文件夹 04 · 外部书目 外A** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
 
 ## 你的笔记仓库
 
@@ -30,6 +30,6 @@
 
 ## 交叉阅读
 
-- API 层 → [UNP-Vol1](../UNP-Vol1/)
-- 内核实现 → [Linux-Kernel-Networking](../Linux-Kernel-Networking/)
-- 调优观测 → [Systems-Performance-2nd](../Systems-Performance-2nd/)、[BPF-Performance-Tools](../BPF-Performance-Tools/)
+- API 层 → [05-UNP-Vol1](../05-UNP-Vol1/)
+- 内核实现 → [06-Linux-Kernel-Networking](../06-Linux-Kernel-Networking/)
+- 调优观测 → [01-Systems-Performance-2nd](../01-Systems-Performance-2nd/)、[09-BPF-Performance-Tools](../09-BPF-Performance-Tools/)

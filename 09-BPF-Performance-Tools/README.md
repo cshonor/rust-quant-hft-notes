@@ -1,6 +1,6 @@
-# BPF Performance Tools — Brendan Gregg
+﻿# BPF Performance Tools — Brendan Gregg
 
-**全书阅读顺序：第 8 册** · [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
+**文件夹 09 · 原书目第 8 册** · [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
 
 ## 本书 HFT 读法
 

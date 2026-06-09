@@ -1,4 +1,6 @@
-# HFT 系统开发 · 完整阅读路线图
+﻿# HFT 系统开发 · 完整阅读路线图
+
+> **文件夹序号即阅读顺序：** `00-` → `11-`，在资源管理器中按名称排序即可跟着读。
 
 面向 **HFT 高频量化交易系统**（行情接入 → 订单簿 → 策略 → 发单 → 风控 → 观测），本文件给出**不漏项**的分阶段阅读顺序，以及每本书**小节级**读/跳指引。
 
@@ -46,8 +48,8 @@
    文档 DPDK / RDMA 官方文档
 
 阶段 7  本仓库实战笔记（与以上穿插）
-        HFT-Low-Latency-Practice（12 章）
-        Rust-Quant-Trading-Guide（11 章，偏全栈量化工程）
+        10-HFT-Low-Latency-Practice（12 章）
+        11-Rust-Quant-Trading-Guide（11 章，偏全栈量化工程）
 ```
 
 **推荐序号：** 0 → ① → ② → ③ → 外A → 外B → ④ → ⑤ → ⑥ → ⑦ → ⑧ → DPDK → 实战笔记
@@ -62,13 +64,13 @@
 
 | 方案 | 说明 |
 |------|------|
-| ✅ **推荐** | 笔记留在原仓库；本仓库用下方 stub 目录 [`UNP-Vol1/`](./UNP-Vol1/)、[`TCP-IP-Illustrated-Vol1/`](./TCP-IP-Illustrated-Vol1/) 做**索引 + HFT 裁剪清单** + 外链 |
+| ✅ **推荐** | 笔记留在原仓库；本仓库用下方 stub 目录 [`05-UNP-Vol1/`](./05-UNP-Vol1/)、[`04-TCP-IP-Illustrated-Vol1/`](./04-TCP-IP-Illustrated-Vol1/) 做**索引 + HFT 裁剪清单** + 外链 |
 | ⚠️ 可选 | 只把「HFT 必读章节」的笔记摘要链过来，不要 duplicate 全书 |
 | ❌ 不推荐 | 整本迁移 — 与 Rosen / CSAPP Ch11 重叠，且双倍维护 |
 
 **为什么不漏：** Rosen 讲**内核怎么收发包**；UNP 讲**用户态怎么调 Socket**；TCP/IP 卷一讲**线上字节长什么样**。HFT 三条都要，但分属不同层，各读裁剪章节即可。
 
-> 请在 [`UNP-Vol1/README.md`](./UNP-Vol1/README.md) 和 [`TCP-IP-Illustrated-Vol1/README.md`](./TCP-IP-Illustrated-Vol1/README.md) 填入你另一个仓库的链接。
+> 请在 [`05-UNP-Vol1/README.md`](./05-UNP-Vol1/README.md) 和 [`04-TCP-IP-Illustrated-Vol1/README.md`](./04-TCP-IP-Illustrated-Vol1/README.md) 填入你另一个仓库的链接。
 
 ---
 
@@ -214,8 +216,8 @@
 
 | 目录 | 何时读 |
 |------|--------|
-| [HFT-Low-Latency-Practice/](./HFT-Low-Latency-Practice/) | 阶段 3–7 穿插，把书上原理落到 HFT 工程 |
-| [Rust-Quant-Trading-Guide/](./Rust-Quant-Trading-Guide/) | 需要 Rust 全栈量化工程时并行 |
-| 各书文件夹 [README](./Systems-Performance-2nd/README.md) | 进入单本书时的速查 |
+| [10-HFT-Low-Latency-Practice/](./10-HFT-Low-Latency-Practice/) | 阶段 3–7 穿插，把书上原理落到 HFT 工程 |
+| [11-Rust-Quant-Trading-Guide/](./11-Rust-Quant-Trading-Guide/) | 需要 Rust 全栈量化工程时并行 |
+| 各书文件夹 [README](./01-Systems-Performance-2nd/README.md) | 进入单本书时的速查 |
 
 完整书目表格 → [READING-LIST.md](./READING-LIST.md)

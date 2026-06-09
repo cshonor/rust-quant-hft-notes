@@ -1,6 +1,6 @@
-# Trading and Exchanges — Larry Harris
+﻿# Trading and Exchanges — Larry Harris
 
-**全书阅读顺序：第 7 册** · [返回总清单](../READING-LIST.md#7-trading-and-exchanges--larry-harris)
+**文件夹 00 · 阶段 0（建议最先读 LOB 章节）** · [返回总清单](../READING-LIST.md#7-trading-and-exchanges--larry-harris)
 
 ## 本书 HFT 读法
 

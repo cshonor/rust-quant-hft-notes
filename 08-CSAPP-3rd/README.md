@@ -1,6 +1,6 @@
 # Computer Systems: A Programmer's Perspective 3rd — Bryant & O'Neill
 
-**全书阅读顺序：第 6 册** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
+**文件夹 08 · 原书目第 6 册** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
 
 ## 本书 HFT 读法
 

@@ -1,13 +1,13 @@
-# UNP Vol.1 — Unix Network Programming（外部仓库）
+﻿# UNP Vol.1 — Unix Network Programming（外部仓库）
 
-**定位：** 用户态 Socket API · 与 [Linux Kernel Networking](../Linux-Kernel-Networking/)（内核）和 [TCP-IP-Illustrated-Vol1](../TCP-IP-Illustrated-Vol1/)（协议）组成网络三层。
+**定位：** 用户态 Socket API · 与 [Linux Kernel Networking](../06-Linux-Kernel-Networking/)（内核）和 [04-TCP-IP-Illustrated-Vol1](../04-TCP-IP-Illustrated-Vol1/)（协议）组成网络三层。
 
-**阅读顺序：** 第 **外B** 册 · 建议在 **TCP/IP 卷一之后、Rosen 之前或并行**
+**文件夹 05 · 外部书目 外B** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
 
 ## 你的笔记仓库
 
 <!-- 填入另一个仓库的链接，例如： -->
-<!-- **笔记地址：** https://github.com/cshonor/your-network-notes/tree/main/UNP-Vol1 -->
+<!-- **笔记地址：** https://github.com/cshonor/your-network-notes/tree/main/05-UNP-Vol1 -->
 
 **笔记地址：** _（待填入）_
 
@@ -31,6 +31,6 @@
 
 ## 交叉阅读
 
-- 协议层 → [TCP-IP-Illustrated-Vol1](../TCP-IP-Illustrated-Vol1/)
-- 内核层 → [Linux-Kernel-Networking](../Linux-Kernel-Networking/)
-- 程序员实践 → [CSAPP-3rd/chapter-08-网络编程.md](../CSAPP-3rd/chapter-08-网络编程.md)
+- 协议层 → [04-TCP-IP-Illustrated-Vol1](../04-TCP-IP-Illustrated-Vol1/)
+- 内核层 → [06-Linux-Kernel-Networking](../06-Linux-Kernel-Networking/)
+- 程序员实践 → [08-CSAPP-3rd/chapter-08-网络编程.md](../08-CSAPP-3rd/chapter-08-网络编程.md)

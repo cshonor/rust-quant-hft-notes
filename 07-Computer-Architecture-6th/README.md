@@ -1,6 +1,6 @@
 # Computer Architecture 6th — Hennessy & Patterson
 
-**全书阅读顺序：第 5 册** · [返回总清单](../READING-LIST.md#5-computer-architecture-a-quantitative-approach-6th--hennessy--patterson)
+**文件夹 07 · 原书目第 5 册** · [返回总清单](../READING-LIST.md#5-computer-architecture-a-quantitative-approach-6th--hennessy--patterson)
 
 ## 本书 HFT 读法
 

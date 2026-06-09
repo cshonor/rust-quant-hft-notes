@@ -1,6 +1,6 @@
-# Linux Kernel Networking — Rami Rosen
+﻿# Linux Kernel Networking — Rami Rosen
 
-**全书阅读顺序：第 4 册** · [返回总清单](../READING-LIST.md#4-linux-kernel-networking--rami-rosen)
+**文件夹 06 · 原书目第 4 册** · [返回总清单](../READING-LIST.md#4-linux-kernel-networking--rami-rosen)
 
 ## 本书 HFT 读法
 

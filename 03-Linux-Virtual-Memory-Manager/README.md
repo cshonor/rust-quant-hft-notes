@@ -1,6 +1,6 @@
-# Understanding the Linux Virtual Memory Manager — Mel Gorman
+﻿# Understanding the Linux Virtual Memory Manager — Mel Gorman
 
-**全书阅读顺序：第 3 册** · [返回总清单](../READING-LIST.md#3-understanding-the-linux-virtual-memory-manager--mel-gorman)
+**文件夹 03 · 原书目第 3 册** · [返回总清单](../READING-LIST.md#3-understanding-the-linux-virtual-memory-manager--mel-gorman)
 
 ## 本书 HFT 读法
 

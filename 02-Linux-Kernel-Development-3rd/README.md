@@ -1,6 +1,6 @@
-# Linux Kernel Development 3rd — Robert Love
+﻿# Linux Kernel Development 3rd — Robert Love
 
-**全书阅读顺序：第 2 册** · [返回总清单](../READING-LIST.md#2-linux-kernel-development-3rd--robert-love)
+**文件夹 02 · 原书目第 2 册** · [返回总清单](../READING-LIST.md#2-linux-kernel-development-3rd--robert-love)
 
 ## 本书 HFT 读法
 

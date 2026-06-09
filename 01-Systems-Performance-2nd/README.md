@@ -1,6 +1,6 @@
 # Systems Performance 2nd — Brendan Gregg
 
-**全书阅读顺序：第 1 册** · [返回总清单](../READING-LIST.md#1-systems-performance-enterprise-and-the-cloud-2nd--brendan-gregg)
+**文件夹 01 · 原书目第 1 册** · [返回总清单](../READING-LIST.md#1-systems-performance-enterprise-and-the-cloud-2nd--brendan-gregg)
 
 ## 本书 HFT 读法
 

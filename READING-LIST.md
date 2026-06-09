@@ -1,4 +1,4 @@
-# HFT 必读书目与章节精读清单
+﻿# HFT 必读书目与章节精读清单
 
 本清单锁定 **8 本**英文原版（含 CSAPP，已剔除 *Programming Rust*），以及 **2 本外部仓库书目**（TCP/IP 卷一、UNP），按 HFT 低延迟学习先后排序。
 
@@ -17,7 +17,7 @@
 
 ## 1. Systems Performance: Enterprise and the Cloud 2nd — Brendan Gregg
 
-> 笔记目录：[Systems-Performance-2nd/](./Systems-Performance-2nd/)
+> 笔记目录：[01-Systems-Performance-2nd/](./01-Systems-Performance-2nd/)
 
 > 性能调优总纲：perf、NUMA、软中断、网卡调优，HFT 排抖动第一本。
 
@@ -37,7 +37,7 @@
 
 ## 2. Linux Kernel Development 3rd — Robert Love
 
-> 笔记目录：[Linux-Kernel-Development-3rd/](./Linux-Kernel-Development-3rd/)
+> 笔记目录：[02-Linux-Kernel-Development-3rd/](./02-Linux-Kernel-Development-3rd/)
 
 > 内核调度、中断、CFS、CPU 隔离、绑核底层原理，承接 TLPI。
 
@@ -59,7 +59,7 @@
 
 ## 3. Understanding the Linux Virtual Memory Manager — Mel Gorman
 
-> 笔记目录：[Linux-Virtual-Memory-Manager/](./Linux-Virtual-Memory-Manager/)
+> 笔记目录：[03-Linux-Virtual-Memory-Manager/](./03-Linux-Virtual-Memory-Manager/)
 
 > Linux 虚拟内存、slab、THP、NUMA 内存、伪共享，内存池/订单簿优化。
 
@@ -79,7 +79,7 @@
 
 ## 4. Linux Kernel Networking — Rami Rosen
 
-> 笔记目录：[Linux-Kernel-Networking/](./Linux-Kernel-Networking/)
+> 笔记目录：[06-Linux-Kernel-Networking/](./06-Linux-Kernel-Networking/)
 
 > 内核 TCP/UDP/IGMP/NAPI/RSS，交易所 UDP 组播内核实现，对接 UNP。
 
@@ -101,7 +101,7 @@
 
 ## 5. Computer Architecture: A Quantitative Approach 6th — Hennessy & Patterson
 
-> 笔记目录：[Computer-Architecture-6th/](./Computer-Architecture-6th/)
+> 笔记目录：[07-Computer-Architecture-6th/](./07-Computer-Architecture-6th/)
 
 > CPU 缓存、MESI、NUMA 访存、流水线，无锁代码硬件优化依据。
 
@@ -120,7 +120,7 @@
 
 ## 6. Computer Systems: A Programmer's Perspective 3rd — Bryant & O'Neill
 
-> 笔记目录：[CSAPP-3rd/](./CSAPP-3rd/)
+> 笔记目录：[08-CSAPP-3rd/](./08-CSAPP-3rd/)
 
 > 程序员视角的系统实践：缓存优化、虚拟内存、网络 I/O、并发，Hennessy 的落地配套。
 
@@ -144,7 +144,7 @@
 
 ## 7. Trading and Exchanges — Larry Harris
 
-> 笔记目录：[Trading-and-Exchanges/](./Trading-and-Exchanges/)
+> 笔记目录：[00-Trading-and-Exchanges/](./00-Trading-and-Exchanges/)
 
 > 市场微观、LOB、交易所撮合、机房托管，HFT 业务基石。
 
@@ -162,7 +162,7 @@
 
 ## 8. BPF Performance Tools — Brendan Gregg
 
-> 笔记目录：[BPF-Performance-Tools/](./BPF-Performance-Tools/)
+> 笔记目录：[09-BPF-Performance-Tools/](./09-BPF-Performance-Tools/)
 
 > eBPF、XDP 小包过滤、内核观测，DPDK 配套调试，放在末尾。
 
@@ -184,8 +184,8 @@
 
 | 外 | 书目 | 索引 | 插入顺序 |
 |----|------|------|----------|
-| 外A | TCP/IP Illustrated Vol.1 — Stevens | [TCP-IP-Illustrated-Vol1/](./TCP-IP-Illustrated-Vol1/) | Rosen / UNP **之前** |
-| 外B | UNIX Network Programming Vol.1 — Stevens | [UNP-Vol1/](./UNP-Vol1/) | TCP/IP 卷一 **之后**，Rosen **并行** |
+| 外A | TCP/IP Illustrated Vol.1 — Stevens | [04-TCP-IP-Illustrated-Vol1/](./04-TCP-IP-Illustrated-Vol1/) | Rosen / UNP **之前** |
+| 外B | UNIX Network Programming Vol.1 — Stevens | [05-UNP-Vol1/](./05-UNP-Vol1/) | TCP/IP 卷一 **之后**，Rosen **并行** |
 
 > **不要整本迁入本仓库。** 三本网络书分工：TCP/IP = 协议；UNP = API；Rosen = 内核实现。详见 [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md#二外部仓库书目unp--tcpip-卷一)。
 
@@ -204,7 +204,7 @@
 
 ---
 
-## 与 `HFT-Low-Latency-Practice` 章节映射
+## 与 `10-HFT-Low-Latency-Practice` 章节映射
 
 | 仓库章节 | 主要参考书 | 补充资料 |
 |----------|------------|----------|
