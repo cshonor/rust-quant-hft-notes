@@ -26,6 +26,8 @@
 
 章节裁剪说明、DPDK/RDMA 官方文档、与 `HFT-Low-Latency-Practice` 映射表 → 见 [READING-LIST.md](./READING-LIST.md)
 
+每本书文件夹内的 **README.md** 标明：必读 / 选读 / 跳过（无笔记 = 默认不读）。
+
 ## 🛠️ 技术栈
 - 主力语言：Rust
 - 核心库：RustQuant、Barter-rs、Tokio、io_uring
