@@ -1,4 +1,4 @@
-# Ch 3 订单类型与 LOB
+# Ch 4 订单类型与 LOB
 
 > **Trading and Exchanges** · Larry Harris · **精读**
 
