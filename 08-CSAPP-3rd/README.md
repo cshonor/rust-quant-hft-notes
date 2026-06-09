@@ -1,41 +1,54 @@
 # Computer Systems: A Programmer's Perspective 3rd — Bryant & O'Neill
 
-**文件夹 08 · 原书目第 6 册** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
+**文件夹 08** · 全书 **12 章 + 附录 A** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
 
-## 本书 HFT 读法
+📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 
-| 标签 | 含义 |
-|------|------|
-| **必读** | 本文件夹有笔记 · 精读，HFT 主线建议认真读 |
-| **选读** | 本文件夹有笔记 · 选读，有余力再读 |
-| **跳过** | 本文件夹无笔记，当前 HFT 目标下默认不读 |
+---
 
-> 有 `.md` 的章节 = 建议做笔记；没建文件的章节 = 默认跳过（有特殊需求再读）。
+## 全书结构
 
-## 必读（精读）
+### 第 1 章
+| 章 | 笔记 |
+|----|------|
+| 1 计算机系统漫游 | [chapter-01-计算机系统漫游.md](./chapter-01-计算机系统漫游.md) |
 
-| 原书章节 | 笔记文件 |
-|----------|----------|
-| Ch 4 Processor Architecture | [chapter-03-处理器体系结构.md](./chapter-03-处理器体系结构.md) |
-| Ch 5 Optimizing Program Performance | [chapter-04-优化程序性能.md](./chapter-04-优化程序性能.md) |
-| Ch 6 The Memory Hierarchy | [chapter-05-存储器层次结构.md](./chapter-05-存储器层次结构.md) |
-| Ch 9 Virtual Memory | [chapter-06-虚拟内存.md](./chapter-06-虚拟内存.md) |
-| Ch 11 Network Programming | [chapter-08-网络编程.md](./chapter-08-网络编程.md) |
-| Ch 12 Concurrent Programming | [chapter-09-并发编程.md](./chapter-09-并发编程.md) |
+### Part I · 程序结构和执行
+| 章 | 笔记 |
+|----|------|
+| 2 信息的表示和处理 | [chapter-02-信息的表示和处理.md](./chapter-02-信息的表示和处理.md) |
+| 3 程序的机器级表示 | [chapter-03-程序的机器级表示.md](./chapter-03-程序的机器级表示.md) |
+| 4 处理器体系结构 | [chapter-04-处理器体系结构.md](./chapter-04-处理器体系结构.md) |
+| 5 优化程序性能 | [chapter-05-优化程序性能.md](./chapter-05-优化程序性能.md) |
+| 6 存储器层次结构 | [chapter-06-存储器层次结构.md](./chapter-06-存储器层次结构.md) |
 
-## 选读
+### Part II · 在系统上运行程序
+| 章 | 笔记 |
+|----|------|
+| 7 链接 | [chapter-07-链接.md](./chapter-07-链接.md) |
+| 8 异常控制流 | [chapter-08-异常控制流.md](./chapter-08-异常控制流.md) |
+| 9 虚拟内存 | [chapter-09-虚拟内存.md](./chapter-09-虚拟内存.md) |
 
-| 原书章节 | 笔记文件 |
-|----------|----------|
-| Ch 1 A Tour of Computer Systems | [chapter-01-计算机系统漫游.md](./chapter-01-计算机系统漫游.md) |
-| Ch 3 Machine-Level Programs | [chapter-02-程序的机器级表示.md](./chapter-02-程序的机器级表示.md) |
-| Ch 10 System-Level I/O | [chapter-07-系统级IO.md](./chapter-07-系统级IO.md) |
+### Part III · 程序间交互和通信
+| 章 | 笔记 |
+|----|------|
+| 10 系统级 I/O | [chapter-10-系统级IO.md](./chapter-10-系统级IO.md) |
+| 11 网络编程 | [chapter-11-网络编程.md](./chapter-11-网络编程.md) |
+| 12 并发编程 | [chapter-12-并发编程.md](./chapter-12-并发编程.md) |
 
-## 跳过（无笔记文件）
+### 附录
+| | 笔记 |
+|---|------|
+| A 错误处理 | [appendix-A-错误处理.md](./appendix-A-错误处理.md) |
 
-- Ch 2 Information Representation — 除非做二进制协议解析
-- Ch 7 Linking / Ch 8 ECF — 链接与信号，非热路径核心
+---
 
-## HFT 产出
+## HFT 精读捷径
 
-从程序员角度落地 Hennessy 的缓存/一致性理论；并发与网络编程直接对接引擎开发。
+```
+Ch 4–6  处理器 / 优化 / Cache
+Ch 9    虚拟内存
+Ch 11–12 网络 / 并发
+```
+
+Hennessy 理论 → CSAPP 程序员落地 → 见 [07-Computer-Architecture-6th](../07-Computer-Architecture-6th/)

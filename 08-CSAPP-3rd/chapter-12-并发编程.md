@@ -3,3 +3,7 @@
 > **CSAPP 3rd** · Bryant & O'Neill · **精读**
 
 <!-- 章节笔记待补充：线程、互斥、信号量、无锁基础、C++ memory order 铺垫 -->
+
+## 相关章节
+
+- 上一章：[chapter-11-网络编程.md](./chapter-11-网络编程.md)
