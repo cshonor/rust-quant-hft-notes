@@ -36,4 +36,10 @@
 
 ## HFT 产出
 
-从网卡 DMA → NAPI → 用户态 socket 的完整内核路径；与 UNP、DPDK 文档对接。
+从网卡 DMA → NAPI → 用户态 socket 的完整内核路径；与 UNP、DPDK 对照。
+
+## 交叉阅读
+
+- 协议层 → [04-TCP-IP-Illustrated-Vol1](../04-TCP-IP-Illustrated-Vol1/)
+- 用户态旁路 → [12-DPDK-Low-Latency-Network](../12-DPDK-Low-Latency-Network/)
+- API 层 → [05-UNP-Vol1](../05-UNP-Vol1/)

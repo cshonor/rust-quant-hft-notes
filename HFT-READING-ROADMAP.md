@@ -1,6 +1,6 @@
 ﻿# HFT 系统开发 · 完整阅读路线图
 
-> **文件夹序号即阅读顺序：** `00-` → `11-`，在资源管理器中按名称排序即可跟着读。
+> **文件夹序号即阅读顺序：** `00-` → `12-`，在资源管理器中按名称排序即可跟着读。
 
 面向 **HFT 高频量化交易系统**（行情接入 → 订单簿 → 策略 → 发单 → 风控 → 观测），本文件给出**不漏项**的分阶段阅读顺序，以及每本书**小节级**读/跳指引。
 
@@ -32,11 +32,12 @@
    ⑤   Computer Architecture 6th（与③⑤交叉）
    ⑥   CSAPP 3rd · Ch6/9（程序员落地）
 
-阶段 4  网络：协议 → API → 内核栈（⚠️ 外部两本书插在这里）
+阶段 4  网络：协议 → API → 内核栈 → 用户态旁路（⚠️ 外部两本书插在这里）
    外A  TCP/IP Illustrated Vol.1（协议语义，另一仓库）
    外B  UNP Vol.1（Socket API，另一仓库）
    ⑥   CSAPP 3rd · Ch10/11
    ④   Linux Kernel Networking
+   ⑫   DPDK Low-Latency Network（用户态旁路 · 网络闭环）
 
 阶段 5  硬件 + 代码级优化 + 并发
    ⑤   Computer Architecture 6th · 剩余精读
@@ -45,14 +46,16 @@
 阶段 6  业务闭环 + 生产观测
    ⑦   Harris 剩余章节
    ⑧   BPF Performance Tools
-   文档 DPDK / RDMA 官方文档
 
-阶段 7  本仓库实战笔记（与以上穿插）
-        10-HFT-Low-Latency-Practice（12 章）
-        11-Rust-Quant-Trading-Guide（11 章，偏全栈量化工程）
+阶段 7  本仓库实战笔记（与以上穿插 · 非网络技术板块）
+        10-HFT-Low-Latency-Practice（12 章 · 交易系统工程）
+        11-Rust-Quant-Trading-Guide（11 章 · Rust 量化工程）
 ```
 
-**推荐序号：** 0 → ① → ② → ③ → 外A → 外B → ④ → ⑤ → ⑥ → ⑦ → ⑧ → DPDK → 实战笔记
+**推荐序号：** 0 → ① → ② → ③ → 外A → 外B → ④ → ⑤ → ⑥ → ⑦ → ⑧ → **⑫** → 实战笔记
+
+> **板块封顶：** `00`–`12` 覆盖全部底层/网络/观测/工程/Rust/业务；不再新增顶层编号文件夹。  
+> 跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
 ---
 
@@ -156,6 +159,19 @@
 | IP 路由 | 🟡 | 托管网络 |
 | Netfilter/iptables | ⚪ | 旁路或最小化 |
 
+### ⑫ DPDK Low-Latency Network
+
+| 主题 | 标签 | HFT 为何读 |
+|------|------|-----------|
+| EAL、大页、NUMA | 🔴 | DPDK 环境与绑核 |
+| mbuf、mempool | 🔴 | 预分配热路径 |
+| PMD、poll mode、burst | 🔴 | vs NAPI 收包模型 |
+| 零拷贝、UIO/VFIO | 🔴 | 旁路内核栈 |
+| UDP 组播行情 | 🔴 | 交易所行情主路径 |
+| OpenOnload / RDMA 对比 | 🟡 | 方案选型 |
+
+> 与 04/05/06 **并行互补**；详见 [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+
 ### ⑤ Computer Architecture 6th
 
 | 原书 | 标签 | HFT 为何读 |
@@ -213,7 +229,7 @@
 - [ ] 读过 UDP/组播协议（TCP/IP 卷一）+ epoll/非阻塞（UNP）
 - [ ] 理解 LOB、限价单/市价单、撮合与 queue priority
 - [ ] 能读无锁结构并知道 memory order 硬件原因（Hennessy + CSAPP）
-- [ ] 会用 eBPF 查生产抖动；知道 DPDK 旁路与内核栈取舍
+- [ ] 会用 eBPF 查生产抖动；知道 DPDK 旁路与内核栈取舍（⑫ + CROSS-MODULE-GUIDE）
 
 ---
 
@@ -221,8 +237,10 @@
 
 | 目录 | 何时读 |
 |------|--------|
-| [10-HFT-Low-Latency-Practice/](./10-HFT-Low-Latency-Practice/) | 阶段 3–7 穿插，把书上原理落到 HFT 工程 |
+| [04/05/06/12](./CROSS-MODULE-GUIDE.md#一仓库板块总览) | 网络技术栈（协议 → Socket → 内核 → DPDK） |
+| [10-HFT-Low-Latency-Practice/](./10-HFT-Low-Latency-Practice/) | 阶段 3–7 穿插 · **交易系统工程**（≠ 网络书） |
 | [11-Rust-Quant-Trading-Guide/](./11-Rust-Quant-Trading-Guide/) | 需要 Rust 全栈量化工程时并行 |
+| [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) | DPDK↔UNP、DPDK↔CSAPP 对照 |
 | 各书文件夹 [README](./01-Systems-Performance-2nd/README.md) | 进入单本书时的速查 |
 
 完整书目表格 → [READING-LIST.md](./READING-LIST.md)

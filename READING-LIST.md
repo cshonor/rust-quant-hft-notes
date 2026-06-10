@@ -4,8 +4,8 @@
 
 **总阅读顺序与小节级读/跳指引** → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md)
 
-**推荐序号：** 0 Harris(LOB) → ① → ② → ③ → 外A → 外B → ④ → ⑤ → ⑥ → ⑦ → ⑧ → DPDK  
-**补充资料：** DPDK、RDMA 仅读官方英文文档，不另加实体书。
+**推荐序号：** 0 Harris(LOB) → ① → ② → ③ → 外A → 外B → ④ → ⑤ → ⑥ → ⑦ → ⑧ → **⑫ DPDK**  
+**补充资料：** OpenOnload / RDMA 对比见 [12-DPDK/note-openonload-rdma对比.md](./12-DPDK-Low-Latency-Network/note-openonload-rdma对比.md)；不另加实体书、不建新文件夹。
 
 | 标签 | 含义 |
 |------|------|
@@ -98,7 +98,29 @@
 | Netfilter / iptables 深读 | **跳过** | 生产 HFT 通常旁路或最小化 |
 | Wireless / Bluetooth | **跳过** | |
 
-**HFT 产出：** 从网卡 DMA → NAPI → 用户态 socket 的完整内核路径；与 UNP、DPDK 文档对接。
+**HFT 产出：** 从网卡 DMA → NAPI → 用户态 socket 的完整内核路径；与 UNP、DPDK 对照。
+
+---
+
+## 12. DPDK — 用户态旁路网络（官方文档 + 本仓库笔记）
+
+> 笔记目录：[12-DPDK-Low-Latency-Network/](./12-DPDK-Low-Latency-Network/)
+
+> **网络栈闭环最后一环：** 内核协议原理（04）→ Socket API（05）→ 内核实现（06）→ **用户态旁路（12）**。与 UNP/TCP/IP **并行互补**，不是重复。
+
+| 主题 | 标签 | HFT 关联 |
+|------|------|----------|
+| EAL、大页、NUMA、lcore 绑定 | **精读** | DPDK 环境基础 |
+| mbuf、mempool、ring | **精读** | 预分配、零 malloc 热路径 |
+| PMD、poll mode、rx/tx burst | **精读** | 轮询收包 vs NAPI |
+| 零拷贝、UIO/VFIO | **精读** | 旁路内核栈原理 |
+| UDP 组播行情接入 | **精读** | 交易所行情主路径 |
+| OpenOnload / RDMA 对比 | **选读** | 方案选型（见 note-openonload-rdma对比.md） |
+| Crypto / Eventdev 等 | **跳过** | 非行情热路径 |
+
+**HFT 产出：** 理解内核栈 vs DPDK 旁路取舍；组播行情最小工程见 `code/mcast-minimal/`。
+
+**交叉阅读：** [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) · 对照 [05-UNP](./05-UNP-Vol1/) · [08-CSAPP Ch6/Ch11](./08-CSAPP-3rd/)
 
 ---
 
@@ -194,16 +216,17 @@
 
 ---
 
-## 补充：官方文档（无实体书）
+## 补充：官方文档（无实体书 · 已纳入 12 号文件夹）
 
-| 资料 | 链接 | 用途 |
-|------|------|------|
-| **DPDK Programmer's Guide** | https://doc.dpdk.org/guides/prog_guide/ | 用户态轮询、PMD、mbuf、零拷贝旁路 |
-| **DPDK Sample Applications** | https://doc.dpdk.org/guides/sample_app_ug/ | l2fwd、testpmd 等基准参考 |
-| **RDMA / InfiniBand 规范** | https://www.infinibandta.org/ | RDMA 语义、RoCE 部署背景 |
-| **Linux RDMA 文档** | https://www.kernel.org/doc/html/latest/infiniband/ | 内核 ibverbs、rdma_cm |
+| 资料 | 本仓库入口 | 用途 |
+|------|-----------|------|
+| **DPDK Programmer's Guide** | [12-DPDK-Low-Latency-Network/](./12-DPDK-Low-Latency-Network/) | 用户态轮询、PMD、mbuf、零拷贝旁路 |
+| **DPDK Sample Applications** | [12-DPDK/code/mcast-minimal/](./12-DPDK-Low-Latency-Network/code/mcast-minimal/) | 组播最小工程参考 |
+| **OpenOnload / RDMA** | [note-openonload-rdma对比.md](./12-DPDK-Low-Latency-Network/note-openonload-rdma对比.md) | 方案对比，不建新文件夹 |
+| **RDMA 规范** | https://www.infinibandta.org/ | RoCE 部署背景 |
+| **Linux RDMA 文档** | https://www.kernel.org/doc/html/latest/infiniband/ | ibverbs、rdma_cm |
 
-**建议阅读顺序：** 先 Rosen（内核栈）→ 再 DPDK（旁路对比）→ 有托管/共置低延迟网络需求时再读 RDMA。
+**建议阅读顺序：** 先 Rosen（06 内核栈）→ 再 12 DPDK（旁路对比）→ OpenOnload/RDMA 对比笔记（选型）。
 
 ---
 
@@ -216,13 +239,13 @@
 | ch03 订单簿深度与行情解析 | Harris | Gorman、CSAPP Ch6 |
 | ch04 硬件选型与服务器配置 | Hennessy Ch2/Ch5 | Gregg SysPerf Ch6、CSAPP Ch4/Ch6 |
 | ch05 操作系统内核极致调优 | Love Ch4/7–10 | Gregg SysPerf Ch6–7 |
-| ch06 低延迟网络与协议优化 | Rosen | CSAPP Ch11、DPDK 官方文档、Gregg BPF Ch9–10 |
+| ch06 低延迟网络与协议优化 | Rosen + **12 DPDK** | CSAPP Ch11、Gregg BPF Ch9–10 |
 | ch07 无锁数据结构与内存布局 | Hennessy Ch2/Ch5 | Gorman、CSAPP Ch6/Ch12 |
-| ch08 超低延迟核心引擎开发 | Love + Gorman + Hennessy | CSAPP Ch5/Ch12、DPDK 官方文档 |
+| ch08 超低延迟核心引擎开发 | Love + Gorman + Hennessy | CSAPP Ch5/Ch12、**12 DPDK** |
 | ch09 高频做市与套利策略 | Harris | — |
-| ch10 延迟测量与基准压测 | Gregg SysPerf + Gregg BPF | DPDK testpmd |
+| ch10 延迟测量与基准压测 | Gregg SysPerf + Gregg BPF | **12 DPDK** testpmd |
 | ch11 风控合规与滑点控制 | Harris（监管/规则） | — |
-| ch12 实盘上线与运维进阶 | Gregg BPF | DPDK / RDMA 部署文档 |
+| ch12 实盘上线与运维进阶 | Gregg BPF | **12 DPDK** / OpenOnload / RDMA 对比笔记 |
 
 ---
 
@@ -251,5 +274,7 @@ Harris 剩余 (监管/清算)
     ↓
 Gregg BPF (eBPF/XDP 观测闭环)
     ↓
-DPDK / RDMA 官方文档 (旁路与共置网络)
+⑫ DPDK (用户态旁路 · 网络栈闭环)
+    ↓
+10/11 实战笔记 (交易系统工程落地)
 ```

@@ -1,6 +1,6 @@
 ﻿# UNP Vol.1 — Unix Network Programming（外部仓库）
 
-**定位：** 用户态 Socket API · 与 [Linux Kernel Networking](../06-Linux-Kernel-Networking/)（内核）和 [04-TCP-IP-Illustrated-Vol1](../04-TCP-IP-Illustrated-Vol1/)（协议）组成网络三层。
+**定位：** 用户态 Socket API · **标准内核网络路径**。与 04（协议）、06（内核实现）、12（DPDK 旁路）组成网络全链路。
 
 **文件夹 05 · 外部书目 外B** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
 
@@ -36,4 +36,6 @@
 
 - 协议层 → [04-TCP-IP-Illustrated-Vol1](../04-TCP-IP-Illustrated-Vol1/)
 - 内核层 → [06-Linux-Kernel-Networking](../06-Linux-Kernel-Networking/)
-- 程序员实践 → [08-CSAPP-3rd/chapter-08-网络编程.md](../08-CSAPP-3rd/chapter-08-网络编程.md)
+- 用户态旁路 → [12-DPDK-Low-Latency-Network](../12-DPDK-Low-Latency-Network/)
+- 程序员实践 → [08-CSAPP-3rd/chapter-11-网络编程.md](../08-CSAPP-3rd/chapter-11-网络编程.md)
+- 跨模块对照 → [CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md#三dpdk--unp-socket-模型)
