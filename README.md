@@ -35,7 +35,7 @@
 |------|--------|------|
 | 00 | [00-Trading-and-Exchanges](./00-Trading-and-Exchanges/) | Harris · 市场/LOB（**29 章**，[目录](./00-Trading-and-Exchanges/OUTLINE.md)） |
 | 01 | [01-Systems-Performance-2nd](./01-Systems-Performance-2nd/) | Gregg · 性能方法论 |
-| 02 | [02-Linux-Kernel-Development-3rd](./02-Linux-Kernel-Development-3rd/) | Love · 内核调度/中断 |
+| 02 | [02-Linux-Kernel-Development-3rd](./02-Linux-Kernel-Development-3rd/) | Love · 20 章 [OUTLINE](./02-Linux-Kernel-Development-3rd/OUTLINE.md) |
 | 03 | [03-Linux-Virtual-Memory-Manager](./03-Linux-Virtual-Memory-Manager/) | Gorman · 虚拟内存 |
 | 04 | [04-TCP-IP-Illustrated-Vol1](./04-TCP-IP-Illustrated-Vol1/) | Stevens · 协议 → [Computer-Networking](https://github.com/cshonor/Computer-Networking/tree/main/TCP-IP-Volume1-Protocols) |
 | 05 | [05-UNP-Vol1](./05-UNP-Vol1/) | Stevens · Socket API → [Computer-Networking](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) |

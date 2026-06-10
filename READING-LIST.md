@@ -46,7 +46,7 @@
 | Ch 4 Process Scheduling | **精读** | CFS、RT 调度、`SCHED_FIFO`、CPU affinity |
 | Ch 7 Interrupts and Bottom Halves | **精读** | 硬中断、软中断、延迟来源 |
 | Ch 8 Deferred Work | **精读** | softirq、tasklet、workqueue 对抖动的影响 |
-| Ch 9 Kernel Synchronization | **精读** | spinlock、preempt、RCU 基础 |
+| Ch 9–10 Kernel Synchronization | **精读** | spinlock、preempt、RCU 基础 |
 | Ch 10 Timers and Time Management | **精读** | hrtimer、时钟源、`CLOCK_MONOTONIC` |
 | Ch 3 Process Management | **选读** | fork/线程模型背景 |
 | Ch 11 Memory Management（概述） | **选读** | 为 Gorman 书铺垫，不深读 |

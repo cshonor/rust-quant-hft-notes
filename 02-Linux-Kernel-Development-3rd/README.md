@@ -1,39 +1,43 @@
 ﻿# Linux Kernel Development 3rd — Robert Love
 
-**文件夹 02 · 原书目第 2 册** · [返回总清单](../READING-LIST.md#2-linux-kernel-development-3rd--robert-love)
+**文件夹 02** · 全书 **20 章** · [返回总清单](../READING-LIST.md#2-linux-kernel-development-3rd--robert-love)
 
-## 本书 HFT 读法
+📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 
-| 标签 | 含义 |
-|------|------|
-| **必读** | 本文件夹有笔记 · 精读，HFT 主线建议认真读 |
-| **选读** | 本文件夹有笔记 · 选读，有余力再读 |
-| **跳过** | 本文件夹无笔记，当前 HFT 目标下默认不读 |
+---
 
-> 有 `.md` 的章节 = 建议做笔记；没建文件的章节 = 默认跳过（有特殊需求再读）。
+## 全书结构（20 章）
 
-## 必读（精读）
+| 章 | 笔记 |
+|----|------|
+| 1 Linux 内核简介 | [chapter-01-Linux内核简介.md](./chapter-01-Linux内核简介.md) |
+| 2 内核入门 | [chapter-02-内核入门.md](./chapter-02-内核入门.md) |
+| 3 进程管理 | [chapter-03-进程管理.md](./chapter-03-进程管理.md) |
+| 4 进程调度 | [chapter-04-进程调度.md](./chapter-04-进程调度.md) |
+| 5 系统调用 | [chapter-05-系统调用.md](./chapter-05-系统调用.md) |
+| 6 内核数据结构 | [chapter-06-内核数据结构.md](./chapter-06-内核数据结构.md) |
+| 7 中断和中断处理程序 | [chapter-07-中断和中断处理程序.md](./chapter-07-中断和中断处理程序.md) |
+| 8 下半部和推后执行的工作 | [chapter-08-下半部和推后执行的工作.md](./chapter-08-下半部和推后执行的工作.md) |
+| 9 内核同步介绍 | [chapter-09-内核同步介绍.md](./chapter-09-内核同步介绍.md) |
+| 10 内核同步方法 | [chapter-10-内核同步方法.md](./chapter-10-内核同步方法.md) |
+| 11 定时器和时间管理 | [chapter-11-定时器和时间管理.md](./chapter-11-定时器和时间管理.md) |
+| 12 内存管理 | [chapter-12-内存管理.md](./chapter-12-内存管理.md) |
+| 13 虚拟文件系统 | [chapter-13-虚拟文件系统.md](./chapter-13-虚拟文件系统.md) |
+| 14 块 I/O 层 | [chapter-14-块IO层.md](./chapter-14-块IO层.md) |
+| 15 进程地址空间 | [chapter-15-进程地址空间.md](./chapter-15-进程地址空间.md) |
+| 16 页高速缓存和页回写 | [chapter-16-页高速缓存和页回写.md](./chapter-16-页高速缓存和页回写.md) |
+| 17 设备与模块 | [chapter-17-设备与模块.md](./chapter-17-设备与模块.md) |
+| 18 调试 | [chapter-18-调试.md](./chapter-18-调试.md) |
+| 19 可移植性 | [chapter-19-可移植性.md](./chapter-19-可移植性.md) |
+| 20 补丁、开发和社区 | [chapter-20-补丁开发和社区.md](./chapter-20-补丁开发和社区.md) |
 
-| 原书章节 | 笔记文件 |
-|----------|----------|
-| Ch 4 Process Scheduling | [chapter-02-进程调度.md](./chapter-02-进程调度.md) |
-| Ch 7 Interrupts and Bottom Halves | [chapter-03-中断与下半部.md](./chapter-03-中断与下半部.md) |
-| Ch 8 Deferred Work | [chapter-04-延迟工作与软中断.md](./chapter-04-延迟工作与软中断.md) |
-| Ch 9 Kernel Synchronization | [chapter-05-内核同步原语.md](./chapter-05-内核同步原语.md) |
-| Ch 10 Timers and Time Management | [chapter-06-定时器与时间.md](./chapter-06-定时器与时间.md) |
+---
 
-## 选读
+## HFT 精读捷径
 
-| 原书章节 | 笔记文件 |
-|----------|----------|
-| Ch 3 Process Management | [chapter-01-进程管理.md](./chapter-01-进程管理.md) |
-| Ch 11 Memory Management（概述） | [chapter-07-内存管理概述.md](./chapter-07-内存管理概述.md) |
+```
+Ch 4 → Ch 7–8 → Ch 9–10 → Ch 11
+（调度 → 中断 → 同步 → 定时器）
+```
 
-## 跳过（无笔记文件）
-
-- Ch 2 Getting Started / Ch 20 Patch
-- Ch 12–18 VFS / Block / Page Cache — 交易热路径不走磁盘
-
-## HFT 产出
-
-理解「绑核、隔离、中断」在内核里怎么实现。
+内存深读 → [03-Linux-Virtual-Memory-Manager](../03-Linux-Virtual-Memory-Manager/)
