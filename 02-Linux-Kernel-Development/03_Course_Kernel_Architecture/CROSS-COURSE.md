@@ -75,3 +75,40 @@ LKD + Gorman + Rosen：精读 + 绑核/排抖动
 | 为什么 DPDK 旁路内核 | 03 宏内核路径 vs [12-DPDK](../../12-DPDK-Low-Latency-Network/) |
 
 → [CROSS-MODULE-GUIDE.md](../../CROSS-MODULE-GUIDE.md)
+
+---
+
+## 简单性 & 模块化 · 与后续学习路径对照
+
+> 对应 [episode-a01 § Simplicity and Modularity](./episode-a01-Unix设计基因.md#simplicity-and-modularity--简单性与模块化精读)
+
+| 设计原则 | LFS | 内核编程 | 网络 / HFT | 书本 |
+|----------|-----|----------|------------|------|
+| **做一件事并做好** | 每个包单独编译安装（p6–p9）；BusyBox 是极简对照（p15） | e2 最小 LKM；e4 单一字符设备 | 收包/解析/策略/发单职责拆分 | LKD Ch 17 |
+| **管道式组合** | 工具链阶段：`binutils→gcc→glibc` 流水线 | Makefile + 内核构建系统 | `epoll` + 非阻塞 fd 组合事件流 | [05-UNP](../../05-UNP-Vol1/) · [08-CSAPP Ch11](../../08-CSAPP-3rd/chapter-11-网络编程.md) |
+| **内核管资源 / 用户态做功能** | p11–p12 内核 vs p6–p9 用户工具分离 | e1 内核编译配置；用户态测试程序 | 标准栈 [06-Rosen](../../06-Linux-Kernel-Networking/) vs 用户态 [12-DPDK](../../12-DPDK-Low-Latency-Network/) | LKD Ch 5 |
+| **模块可插拔** | 可选包、按需安装 | **e2 LKM**、e4 驱动 | 动态加载、`SO`、Rust `dylib`（工程层） | LKD Ch 17 · [10-HFT ch08](../../10-HFT-Low-Latency-Practice/chapter-08-超低延迟核心引擎开发.md) |
+
+### 网络编程中的同一套思想
+
+- **事件驱动 / Reactor**：单线程（或少线程）上组合「监听 → 读 → 解析 → 写回」，类似 `grep | awk` 的数据流，只是发生在 socket 上
+- **组件化服务**：连接管理、协议解析、业务逻辑分层 — 对应「小工具组合」在服务端架构中的版本
+- 精读路径：[05-UNP](../../05-UNP-Vol1/)（API）→ [06-Rosen Ch11/14](../../06-Linux-Kernel-Networking/)（内核栈）→ [10-HFT ch06 网络](../../10-HFT-Low-Latency-Practice/chapter-06-低延迟网络与协议优化.md)
+
+### 读到这里应建立的直觉
+
+Linux 不是零散命令 + API 的堆砌，而是一套连贯设计：
+
+```
+简单接口 + 模块化组件 + 内核/用户态分工
+    ↓
+LFS 亲手拼出 userland
+    ↓
+内核编程 给 monolith 插模块
+    ↓
+架构课 + LKD 解释资源管理细节
+    ↓
+网络/HFT 在 userland 或旁路栈上组热路径
+```
+
+→ [CROSS-MODULE-GUIDE.md](../../CROSS-MODULE-GUIDE.md)

@@ -16,7 +16,7 @@ Unix 从诞生起即追求：
 | **多任务** | 多进程/线程并发 | 调度器、进程描述符 |
 | **多用户** | 隔离与权限 | UID/GID、`chmod`、命名空间（演进） |
 
-### 2. Unix 的设计哲学
+### 2. Unix 的设计哲学（总述）
 
 > *The design philosophy emphasized simplicity, modularity, and reusability.*
 
@@ -24,7 +24,63 @@ Unix 从诞生起即追求：
 - **模块化** — 「一个工具只做好一件事」→ `coreutils`、管道 `|`
 - **可复用性** — 小程序组合完成复杂任务
 
-**HFT 联想：** 热路径也追求小接口、可组合模块（行情解析 → 订单簿 → 发单），与 Unix 哲学同构。
+---
+
+## Simplicity and Modularity · 简单性与模块化（精读）
+
+> 幻灯片主题：**Simplicity and Modularity** — 后续内核、网络、LFS 的底层思想基础。
+
+### ① Do one thing and do it well
+
+> *Unix tools follow the principle of "do one thing and do it well."*
+
+| 工具 | 只做一件事 |
+|------|-----------|
+| `ls` | 列目录 |
+| `grep` | 文本过滤 |
+| `awk` | 结构化文本处理 |
+
+管道组合示例：
+
+```bash
+cat a.txt | grep "key" | sort
+```
+
+多个**小工具**完成复杂任务，而不是写一个「大而全」程序。
+
+### ② 简单工具组合成复杂工作流
+
+> *This simplicity enables composing complex workflows from small utilities.*
+
+- `|` 管道 = Unix 的「组合原语」
+- 系统管理员用几行命令做日志分析、批处理 — 无需为每种场景写新程序
+- **HFT 联想：** 引擎也可拆成「收包 → 解析 → 订单簿 → 策略 → 发单」小模块，用清晰接口串联（与 monolith 策略库并不矛盾，是**职责边界**问题）
+
+### ③ 内核管资源，功能在用户态
+
+> *The kernel focuses strictly on resource management, leaving functionality to user-space tools.*
+
+| 内核（资源管理） | 用户态（具体功能） |
+|------------------|-------------------|
+| 进程 / 调度 | `bash`、应用进程 |
+| 内存 / 虚拟地址空间 | 堆分配器、jemalloc |
+| 硬件抽象、I/O 调度 | 驱动框架 + 用户态服务 |
+| 文件 / socket 语义 | `sshd`、`systemd`、你的交易程序 |
+
+内核保持**精简稳定**；功能在 userland **灵活扩展**。  
+→ 这也是 **DPDK 旁路** 的语境：热路径能否少经过通用内核栈，取决于你把多少「功能」放在用户态（见 [12-DPDK](../../12-DPDK-Low-Latency-Network/)）。
+
+### ④ 模块化 → 可维护、可创新
+
+> *Modularity improves maintainability and encourages innovation in individual components.*
+
+- 内核：**可加载模块**（LKM）、可插拔文件系统、驱动子系统
+- 不必改整个 monolith，即可增加新 FS、新硬件支持
+- 与 [02 内核编程 e2](../02_Course_Kernel_7Lectures/episode-e02-Linux内核模块.md) 直接对应
+
+**HFT 联想：** 网卡多队列、RSS、独立 RX 线程 — 也是「按组件拆分负载」，与 Unix 模块化同构。
+
+---
 
 ### 3. Linux 对 Unix 的继承
 
