@@ -42,7 +42,7 @@
 
 > 笔记目录：[02-Linux-Kernel-Development/](./02-Linux-Kernel-Development/) · 书本 [00_Book_3rd_Notes](./02-Linux-Kernel-Development/00_Book_3rd_Notes/)
 
-> **推荐顺序：** [01 LFS](./02-Linux-Kernel-Development/01_Course_LFS/) → [02 7讲实操](./02-Linux-Kernel-Development/02_Course_Kernel_7Lectures/) → [03 架构理论](./02-Linux-Kernel-Development/03_Course_Kernel_Architecture/) → **书本通读**。详见 [LEARNING-PATH.md](./02-Linux-Kernel-Development/LEARNING-PATH.md)。
+> **推荐顺序：** [01 LFS](./02-Linux-Kernel-Development/01_Course_LFS/) → [02 内核编程 6 集](./02-Linux-Kernel-Development/02_Course_Kernel_7Lectures/) → [03 架构理论](./02-Linux-Kernel-Development/03_Course_Kernel_Architecture/) → **书本通读**。详见 [LEARNING-PATH.md](./02-Linux-Kernel-Development/LEARNING-PATH.md)。
 
 > 内核调度、中断、CFS、CPU 隔离、绑核底层原理。
 

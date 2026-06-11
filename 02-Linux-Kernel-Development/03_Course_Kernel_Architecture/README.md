@@ -6,7 +6,7 @@
 
 ## 学习顺序
 
-建议在 [02 7讲实操](../02_Course_Kernel_7Lectures/) 之后，[00 LKD 第三版](../00_Book_3rd_Notes/) 之前。
+建议在 [02 内核编程 6 集](../02_Course_Kernel_7Lectures/) 之后，[00 LKD 第三版](../00_Book_3rd_Notes/) 之前。
 
 → 与书本对应：[LEARNING-PATH.md § 架构课](../LEARNING-PATH.md#3-内核原理架构课--五大子系统前置)
 
