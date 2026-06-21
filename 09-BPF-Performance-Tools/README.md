@@ -2,7 +2,9 @@
 
 **文件夹 09** · 全书 **18 章 + 附录 A–E**（4 Parts）· [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
 
-> **紧接 [01-SysPerf](../01-Systems-Performance-2nd/) 阅读** — Gregg 性能双书第二本；SysPerf Ch 15 的 bpftrace/BCC 在此全书展开。
+> **学习链路 L3** · 工具落地 — 紧接 L2 [01-SysPerf](../01-Systems-Performance-2nd/) 阅读。  
+> **后续：** L4 内核/网络 · L5 [10-HFT](../10-HFT-Low-Latency-Practice/) / [11-Rust](../11-Rust-Quant-Trading-Guide/)  
+> 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 

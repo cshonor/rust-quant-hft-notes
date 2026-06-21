@@ -2,7 +2,9 @@
 
 **文件夹 01** · 全书 **16 章 + 附录 A–E** · [返回总清单](../READING-LIST.md#1-systems-performance-enterprise-and-the-cloud-2nd--brendan-gregg)
 
-> **建议前置：** [08-CSAPP-3rd](../08-CSAPP-3rd/) 地基篇（Ch4–6/8–9/12）+ [07-Hennessy](../07-Computer-Architecture-6th/) Ch2 — 先懂 cache/进程/锁，再读 USE/perf/BPF 才不背结论。
+> **学习链路 L2** · 知其然 — 性能分析方法论。  
+> **前置：** L1 [08-CSAPP](../08-CSAPP-3rd/) · **下一链路：** L3 [09-BPF](../09-BPF-Performance-Tools/)（紧接本书）  
+> 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 

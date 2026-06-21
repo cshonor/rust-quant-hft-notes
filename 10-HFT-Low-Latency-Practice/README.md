@@ -1,9 +1,10 @@
 # HFT Low-Latency Practice — 交易系统工程实践
 
-**文件夹 10 · 低延迟工程落地** · [返回总清单](../READING-LIST.md#与-10-hft-low-latency-practice-章节映射)
+**文件夹 10 · 低延迟工程落地 · 学习链路 L5** · [返回总清单](../READING-LIST.md#与-10-hft-low-latency-practice-章节映射)
 
-> **定位：** 整机裸机调优、交易所对接规范、交易系统架构、延迟压测、业务侧低延迟工程手段。  
-> **不是网络技术书** — 与 `04/05/06/12` 网络板块完全分割。
+> **定位：** L5 **动手实现**（C++ 工程向）— 整机调优、交易所对接、架构、压测。  
+> **前置链路：** L1 CSAPP → L2 SysPerf → L3 BPF（L4 内核/网络可并行补）→ **本书**  
+> 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 ## 与网络板块的分界
 

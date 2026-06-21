@@ -2,7 +2,9 @@
 
 **文件夹 08** · 全书 **12 章 + 附录 A** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
 
-> **HFT 阅读分两遍：** **① 地基篇（在 [01-SysPerf](../01-Systems-Performance-2nd/) 之前）** — 程序如何在硬件上跑；**② 网络篇（阶段 5）** — Ch10–11 衔接 UNP/Rosen。
+> **学习链路 L1** · 知其所以然 — 程序如何在硬件上跑。  
+> **下一链路：** L2 [01-SysPerf](../01-Systems-Performance-2nd/) → L3 [09-BPF](../09-BPF-Performance-Tools/) → L5 [10-HFT](../10-HFT-Low-Latency-Practice/) / [11-Rust](../11-Rust-Quant-Trading-Guide/)  
+> 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 

@@ -4,29 +4,42 @@
 
 **技术板块已封顶（`00`–`12`）** — 不再新增顶层编号文件夹；剩余工作为各目录内笔记、代码实验与跨模块联动。
 
-→ 板块边界与对照逻辑：[CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+→ 板块边界与对照逻辑：[CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)  
+→ **进阶主叙事（分享/复习用）：[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)** ← 建议收藏
+
+---
+
+## 🔗 学习链路 · L1→L5（一眼版）
+
+> **链路 L1–L5 ≠ 文件夹 `01`–`12`。** 文件夹序号是仓库归类；**学习顺序跟链路走。**
+
+```
+L0  00-Harris           业务锚点
+L1  08-CSAPP (+07)      知其所以然 — 硬件与程序怎么跑
+L2  01-SysPerf          知其然 — 性能分析方法论
+L3  09-BPF              工具落地 — bpftrace/BCC 生产追踪
+L4  02/03 + 网络栈      系统纵深 — 内核 / 内存 / 协议→DPDK
+L5  10-HFT + 11-Rust    动手实现 — C++ / Rust 高性能工程
+```
+
+详解与各步铺垫关系 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
 
 ---
 
 ## 🗺️ HFT 阅读顺序（总纲）
 
-> 详细小节级读/跳指引 → **[HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md)**（建议先读此文件）
+> 小节级读/跳指引 → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md) · 链路叙事 → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 
-> **文件夹编号 ≠ 阅读顺序。** `01` SysPerf 在性能板块最前；**读完紧接 [`09-BPF-Performance-Tools`](./09-BPF-Performance-Tools/)**（Gregg 双书）。阶段 0 后仍建议 CSAPP + Hennessy 地基再进 SysPerf。
-
-| 阶段 | 读什么 | 目的 |
+| 链路 | 读什么 | 目的 |
 |------|--------|------|
-| **0** | [00-Trading-and-Exchanges](./00-Trading-and-Exchanges/) · LOB/市场结构 | 业务锚点，先懂撮合再写引擎 |
-| **1** | [07-Computer-Architecture-6th](./07-Computer-Architecture-6th/) Ch2 + [08-CSAPP-3rd](./08-CSAPP-3rd/) **地基篇**（Ch1/4–6/8–9/12） | 缓存、进程、虚拟内存、锁 — **性能分析的底层逻辑架子** |
-| **2** | [01-Systems-Performance-2nd](./01-Systems-Performance-2nd/) → **[09-BPF-Performance-Tools](./09-BPF-Performance-Tools/)** | Gregg **二连读**：方法论 + eBPF/bpftrace 落地 |
-| **3** | [02-Linux-Kernel-Development](./02-Linux-Kernel-Development/)（课 → 书） | 绑核、中断、调度 |
-| **4** | [03-Linux-Virtual-Memory-Manager](./03-Linux-Virtual-Memory-Manager/) | NUMA / TLB / THP / slab（衔接 CSAPP Ch9） |
-| **5** | [04-TCP-IP](./04-TCP-IP-Illustrated-Vol1/) → [05-UNP](./05-UNP-Vol1/) → [08-CSAPP-3rd](./08-CSAPP-3rd/) 网络章 → [06-Rosen](./06-Linux-Kernel-Networking/) → **[12-DPDK](./12-DPDK-Low-Latency-Network/)** | 协议 → Socket → 内核栈 → **用户态旁路（网络闭环）** |
-| **6** | [08-CSAPP-3rd](./08-CSAPP-3rd/) Ch5 优化 + Hennessy 剩余 | 热路径编译/微结构补强 |
-| **7** | Harris 剩余 | 监管 / 清算等业务补全 |
-| **8** | [10-HFT-Low-Latency-Practice](./10-HFT-Low-Latency-Practice/) + [11-Rust-Quant-Trading-Guide](./11-Rust-Quant-Trading-Guide/) | **交易系统工程落地**（非网络技术） |
+| **L0** | [00-Trading-and-Exchanges](./00-Trading-and-Exchanges/) | 业务锚点 · LOB/市场结构 |
+| **L1** | [08-CSAPP-3rd](./08-CSAPP-3rd/) 地基 + [07-Hennessy](./07-Computer-Architecture-6th/) Ch2 | **知其所以然** — Cache/进程/VM/锁 |
+| **L2** | [01-Systems-Performance-2nd](./01-Systems-Performance-2nd/) | **知其然** — USE、延迟分解、perf |
+| **L3** | [09-BPF-Performance-Tools](./09-BPF-Performance-Tools/) | **工具落地** — 紧接 L2，eBPF 生产观测 |
+| **L4** | [02-LKD](./02-Linux-Kernel-Development/) → [03-Gorman](./03-Linux-Virtual-Memory-Manager/) → [04/05/06/12 网络](./CROSS-MODULE-GUIDE.md) | 系统纵深 · 绑核/NUMA/收包/DPDK |
+| **L5** | [10-HFT-Low-Latency-Practice](./10-HFT-Low-Latency-Practice/) + [11-Rust-Quant-Trading-Guide](./11-Rust-Quant-Trading-Guide/) | **动手实现** — C++/Rust 量化工程 |
 
-**推荐序号：** 0 → **⑤⑥(地基)** → ① → **⑧** → ② → ③ → 外A → 外B → ④ → ⑥(网络) → ⑫ → ⑤⑥(补) → ⑦ → 实战笔记
+**执行序号：** L0 → L1 → L2 → L3 → L4 → L5（L4 中 CSAPP 网络章 Ch10–11 与 UNP/Rosen 合读）
 
 | 标签 | 含义 |
 |------|------|

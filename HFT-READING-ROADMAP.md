@@ -1,20 +1,33 @@
 ﻿# HFT 系统开发 · 完整阅读路线图
 
-> **文件夹序号 ≠ 阅读顺序。** `01` SysPerf 排在性能板块最前符合学习逻辑；**紧接其后读 `09` BPF Performance Tools**（Gregg 性能双书）。阶段 0 后仍建议 **Hennessy + CSAPP 地基** 再进 SysPerf（见下文）。
+> **链路 L1–L5 ≠ 文件夹 `00`–`12`。** 分享/复习用的主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**（CSAPP → SysPerf → BPF → 工程实践）。
 
 面向 **HFT 高频量化交易系统**（行情接入 → 订单簿 → 策略 → 发单 → 风控 → 观测），本文件给出**不漏项**的分阶段阅读顺序，以及每本书**小节级**读/跳指引。
 
-### Gregg 性能双书 · SysPerf → BPF
+### 学习链路 · L1→L5
 
-| ① SysPerf 2nd | ⑧ BPF Performance Tools（文件夹 `09`） |
-|---------------|----------------------------------------|
+| 链路 | 文件夹 | 阶段 | 一句话 |
+|------|--------|------|--------|
+| L0 | `00` | 业务锚点 | LOB / 市场结构 |
+| **L1** | **`08` CSAPP** (+ `07` Ch2) | **知其所以然** | 程序如何在硬件上跑 |
+| **L2** | **`01` SysPerf** | **知其然** | 性能分析方法论与观测选型 |
+| **L3** | **`09` BPF** | **工具落地** | bpftrace/BCC 生产追踪（紧接 L2） |
+| L4 | `02` `03` `04`–`06` `12` | 系统纵深 | 内核 / 内存 / 网络栈 / DPDK |
+| **L5** | **`10` HFT · `11` Rust** | **动手实现** | C++ / Rust 高性能量化工程 |
+
+### Gregg 双书 · L2 → L3
+
+| L2 `01` SysPerf | L3 `09` BPF |
+|---------------|-------------|
 | USE/RED、延迟分解、perf/Ftrace 概念 | bpftrace/BCC 生产落地、按子系统查抖动 |
 | Ch 4 观测工具、Ch 13 perf、Ch 15 BPF 预览 | Part I–II 精读 + XDP note |
 | 建立「怎么量、怎么选工具」 | 建立「现场怎么跑、怎么写单行命令」 |
 
-**读完 ① 立刻读 ⑧** — 不必等内核/网络全书；后续读 LKD/Gorman/Rosen 时可回头用 BPF 验证。
+**L2 读完立刻 L3** — L4 内核/网络与 L5 工程实践可穿插；用 BPF 验证 L4 所学。
 
-| 先读 CSAPP（+ Hennessy Ch2） | 再读 SysPerf |
+### L1 为何在 L2 之前（CSAPP → SysPerf）
+
+| 先 L1 CSAPP（+ Hennessy Ch2） | 再 L2 SysPerf |
 |------------------------------|--------------|
 | 程序如何在 CPU/缓存/内存上跑 | USE / RED / 延迟分解怎么量 |
 | 进程、虚拟内存、锁在代码里长什么样 | perf 火焰图、off-CPU、BPF 跟踪 |
@@ -37,49 +50,37 @@
 ## 一、总阅读顺序（含外部仓库书目）
 
 ```
-阶段 0  业务锚点（可与其他阶段并行）
+L0  业务锚点
         Harris《Trading and Exchanges》LOB + 市场结构
 
-阶段 1  底层逻辑架子（程序如何在硬件上跑）
-   ⑤   Computer Architecture 6th · Ch2（+ 选读 Ch5 内存一致性）
-   ⑥   CSAPP 3rd · 地基篇
-        Ch1 概览 → Ch4–6 CPU/优化/Cache
-        → Ch8 异常控制流（进程/syscall/信号）
-        → Ch9 虚拟内存 → Ch12 并发与锁
+L1  知其所以然（程序如何在硬件上跑）
+   ⑤   Computer Architecture 6th · Ch2（+ 选读 Ch5）
+   ⑥   CSAPP 3rd · 地基篇（文件夹 `08`）
+        Ch1 → Ch4–6 → Ch8 → Ch9 → Ch12
 
-阶段 2  性能观测（Gregg 双书 · 二连读）
-   ①   Systems Performance 2nd
-   ⑧   BPF Performance Tools（文件夹 `09` · 紧接 ①）
-        ↑ 方法论 → bpftrace/BCC 落地；Ch 15 预览在此书展开
+L2  知其然（性能分析方法论）
+   ①   Systems Performance 2nd（文件夹 `01`）
 
-阶段 3  内核时间线与 CPU 隔离
-   ②   Linux Kernel Development（先 01–03 前置课，再 00 书本）
-        01 LFS → 02 内核编程视频 6 集 → 03 架构理论 → 00 LKD 3rd
+L3  工具落地（紧接 L2）
+   ⑧   BPF Performance Tools（文件夹 `09`）
 
-阶段 4  内存深化（内核视角 · 衔接 CSAPP Ch9）
+L4  系统纵深（内核 / 内存 / 网络）
+   ②   Linux Kernel Development（课 → 书）
    ③   Understanding the Linux VM Manager
-        NUMA / TLB / THP / slab / 伪共享（配合 Hennessy Ch2）
-
-阶段 5  网络：协议 → API → 内核栈 → 用户态旁路（⚠️ 外部两本书插在这里）
-   外A  TCP/IP Illustrated Vol.1（协议语义，另一仓库）
-   外B  UNP Vol.1（Socket API，另一仓库）
-   ⑥   CSAPP 3rd · 网络篇 Ch10–11
+   外A / 外B  TCP/IP 卷一 + UNP
+   ⑥   CSAPP 网络篇 Ch10–11
    ④   Linux Kernel Networking
-   ⑫   DPDK Low-Latency Network（用户态旁路 · 网络闭环）
+   ⑫   DPDK
+   ⑤⑥  Hennessy / CSAPP Ch5 优化补强（可并入 L1）
 
-阶段 6  代码级优化补强（可与阶段 1 合并，时间紧则后补）
-   ⑤   Computer Architecture 6th · 剩余精读（Ch1/Ch3 等）
-   ⑥   CSAPP 3rd · Ch5 优化程序性能（若阶段 1 未读）
+L5  动手实现
+        10-HFT-Low-Latency-Practice（C++ 低延迟工程）
+        11-Rust-Quant-Trading-Guide（Rust 量化）
 
-阶段 7  业务闭环
-   ⑦   Harris 剩余章节
-
-阶段 8  本仓库实战笔记（与以上穿插 · 非网络技术板块）
-        10-HFT-Low-Latency-Practice（12 章 · 交易系统工程）
-        11-Rust-Quant-Trading-Guide（11 章 · Rust 量化工程）
+（Harris 剩余章节 · L0 并行或 L5 前补读）
 ```
 
-**推荐序号：** 0 → **⑤⑥(地基)** → ① → **⑧** → ② → ③ → 外A → 外B → ④ → ⑥(网络) → ⑫ → ⑤⑥(补) → ⑦ → 实战笔记
+**执行序号：** L0 → L1 → L2 → L3 → L4 → L5
 
 > **板块封顶：** `00`–`12` 覆盖全部底层/网络/观测/工程/Rust/业务；不再新增顶层编号文件夹。  
 > 跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
@@ -278,15 +279,15 @@
 
 ## 五、与本仓库其他目录的关系
 
-| 目录 | 何时读 |
-|------|--------|
-| [07 Hennessy](./07-Computer-Architecture-6th/) + [08 CSAPP](./08-CSAPP-3rd/) **地基** | **阶段 1** — SysPerf 之前 |
-| [01 SysPerf](./01-Systems-Performance-2nd/) | **阶段 2a** |
-| [09 BPF Tools](./09-BPF-Performance-Tools/) | **阶段 2b** — **紧接 SysPerf** |
-| [02 LKD](./02-Linux-Kernel-Development/) | **阶段 3** 起 |
-| [04/05/06/12](./CROSS-MODULE-GUIDE.md#一仓库板块总览) | 网络技术栈（协议 → Socket → 内核 → DPDK） |
-| [10-HFT-Low-Latency-Practice/](./10-HFT-Low-Latency-Practice/) | 阶段 3–8 穿插 · **交易系统工程**（≠ 网络书） |
-| [11-Rust-Quant-Trading-Guide/](./11-Rust-Quant-Trading-Guide/) | 需要 Rust 全栈量化工程时并行 |
+| 目录 | 链路 |
+|------|------|
+| [08 CSAPP](./08-CSAPP-3rd/) + [07 Hennessy](./07-Computer-Architecture-6th/) | **L1** 知其所以然 |
+| [01 SysPerf](./01-Systems-Performance-2nd/) | **L2** 知其然 |
+| [09 BPF Tools](./09-BPF-Performance-Tools/) | **L3** 工具落地（紧接 L2） |
+| [02 LKD](./02-Linux-Kernel-Development/) · [03 Gorman](./03-Linux-Virtual-Memory-Manager/) · [04/05/06/12](./CROSS-MODULE-GUIDE.md) | **L4** 系统纵深 |
+| [10 HFT](./10-HFT-Low-Latency-Practice/) · [11 Rust](./11-Rust-Quant-Trading-Guide/) | **L5** 动手实现 |
+
+→ 链路叙事 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 | [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) | DPDK↔UNP、DPDK↔CSAPP 对照 |
 | 各书文件夹 [README](./01-Systems-Performance-2nd/README.md) | 进入单本书时的速查 |
 

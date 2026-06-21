@@ -2,12 +2,12 @@
 
 本清单锁定 **8 本**英文原版（含 CSAPP，已剔除 *Programming Rust*），以及 **2 本外部仓库书目**（TCP/IP 卷一、UNP），按 HFT 低延迟学习先后排序。
 
-**总阅读顺序与小节级读/跳指引** → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md)
+**总阅读顺序与小节级读/跳指引** → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md)  
+**进阶主叙事（L1→L5）** → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 
-**推荐序号：** 0 Harris(LOB) → **⑤Hennessy + ⑥CSAPP(地基)** → ①SysPerf → **⑧BPF** → ②LKD → ③Gorman → 外A → 外B → ④Rosen → ⑥CSAPP(网络) → ⑫DPDK → ⑥/⑤(优化补) → ⑦Harris → 实战笔记
+**链路序号：** L0 Harris → **L1 CSAPP** → **L2 SysPerf** → **L3 BPF** → L4 内核/网络 → **L5 10-HFT + 11-Rust**
 
-> **Gregg 双书：** [01 SysPerf](./01-Systems-Performance-2nd/) 紧接 [09 BPF Performance Tools](./09-BPF-Performance-Tools/)（文件夹 `09`，非 `08` CSAPP）。  
-> **地基仍在前：** CSAPP + Hennessy → SysPerf — 详见 [ROADMAP](./HFT-READING-ROADMAP.md)。
+> 链路 L1–L5 ≠ 文件夹 `01`/`08`/`09`。L1=CSAPP（`08`），L2=SysPerf（`01`），L3=BPF（`09`）。
 
 | 标签 | 含义 |
 |------|------|
@@ -260,34 +260,18 @@
 
 ## 阅读节奏总览
 
+> 与 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md) 对齐。
+
 ```
-Harris LOB（阶段 0，可并行）
+L0  Harris LOB（业务锚点）
     ↓
-Hennessy Ch2（+ 选读 Ch5）───┐
-    ↓                        │  底层逻辑架子
-CSAPP 地基（Ch1/4–6/8–9/12）─┘  进程 · Cache · VM · 锁
+L1  Hennessy Ch2 + CSAPP 地基     ← 知其所以然
     ↓
-Gregg SysPerf (方法论/观测)     ← 能解释火焰图、锁、off-CPU
+L2  Gregg SysPerf                 ← 知其然
     ↓
-Gregg BPF Tools (eBPF/bpftrace)  ← 紧接 SysPerf，生产观测落地
+L3  Gregg BPF Tools               ← 工具落地
     ↓
-Love (调度/中断/定时器)
+L4  Love → Gorman → 网络栈 → DPDK  ← 系统纵深
     ↓
-Gorman (虚拟内存/NUMA/THP)      ← 衔接 CSAPP Ch9
-    ↓
-TCP/IP 卷一 (协议：UDP/组播/TCP)     ← 外部仓库
-    ↓
-UNP Vol.1 (Socket API：epoll/非阻塞)  ← 外部仓库
-    ↓
-CSAPP 网络（Ch10–11）
-    ↓
-Rosen (内核网络栈/组播)
-    ↓
-⑫ DPDK (用户态旁路 · 网络栈闭环)
-    ↓
-CSAPP Ch5 + Hennessy 剩余（优化补强，可提前）
-    ↓
-Harris 剩余 (监管/清算)
-    ↓
-10/11 实战笔记 (交易系统工程落地)
+L5  10-HFT + 11-Rust              ← 动手实现（C++ / Rust）
 ```
