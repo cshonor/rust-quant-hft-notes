@@ -1,6 +1,6 @@
 # OpenOnload / RDMA 与 DPDK 对比
 
-> **10-DPDK** · 轻量化配套 · **选读**
+> **02-Advanced-Book** · 《Linux 高性能网络详解》配套 · **选读**
 
 <!-- 笔记待补充：三种低延迟网络路线的取舍，不引入新实体书、不建新文件夹 -->
 
@@ -29,6 +29,7 @@
 
 ## 相关章节
 
-- [note-DPDK实体书递进.md](./note-DPDK实体书递进.md) — ② 本书与 DPDK/RDMA/XDP 全书地图
-- 上一章：[chapter-05-组播行情接入.md](./chapter-05-组播行情接入.md)
-- 跨模块：[CROSS-MODULE-GUIDE §六](../CROSS-MODULE-GUIDE.md#六openonload--rdma轻量化不建新文件夹)
+- [note-DPDK实体书递进](../../01-Intro-Book/notes/note-DPDK实体书递进.md) — ② 本书与 DPDK/RDMA/XDP 全书地图
+- 上一梯度：[01-Intro chapter-05](../../01-Intro-Book/notes/chapter-05-组播行情接入.md)
+- XDP 对照：[note-XDP与DPDK对照](./note-XDP与DPDK对照.md)
+- 跨模块：[CROSS-MODULE-GUIDE §六](../../../CROSS-MODULE-GUIDE.md#六openonload--rdma轻量化不建新文件夹)

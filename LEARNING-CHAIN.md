@@ -45,7 +45,7 @@
 | **04** | Hennessy | 理论配套 | Cache/MESI/一致性（配 01） |
 | **05** | LKD | 系统纵深 | 调度、中断、绑核 |
 | **06** | Gorman | 系统纵深 | 内核视角虚拟内存 |
-| **07–10** | 网络栈 | 系统纵深 | 协议→Socket→内核→DPDK（**10** 见 [实体书递进](./10-DPDK-Low-Latency-Network/note-DPDK实体书递进.md)） |
+| **07–10** | 网络栈 | 系统纵深 | 协议→Socket→内核→DPDK（**10** 见 [实体书递进](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md)） |
 | **11** | HFT Practice | 动手实现 | C++ 整机工程 |
 | **12** | Rust Guide | 动手实现 | Rust 量化工程 |
 
@@ -92,7 +92,7 @@
 | ① | 《深入浅出 DPDK》 | 旁路内核栈、用户态接管网卡 — 对应高频发单抠网络延迟 |
 | ② | 《Linux 高性能网络详解》 | DPDK + RDMA + XDP；微秒级从哪来；何时上 RDMA |
 
-与本仓库 `10` 官方 doc 笔记对照 → [note-DPDK实体书递进](./10-DPDK-Low-Latency-Network/note-DPDK实体书递进.md)
+与本仓库 `10` 官方 doc 笔记对照 → [01-Intro/note-DPDK实体书递进](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md) · [02-Advanced/notes/](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/)
 
 ---
 

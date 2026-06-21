@@ -4,8 +4,8 @@
 
 ## 目标
 
-- 对照 [05 UNP](../08-UNP-Vol1/) socket 组播版本，理解旁路差异
-- 对照 [06 note-组播IGMP](../09-Linux-Kernel-Networking/note-组播IGMP.md) 内核路径
+- 对照 [05 UNP](../../../08-UNP-Vol1/) socket 组播版本，理解旁路差异
+- 对照 [06 note-组播IGMP](../../../09-Linux-Kernel-Networking/note-组播IGMP.md) 内核路径
 
 ## 计划结构
 

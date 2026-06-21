@@ -118,10 +118,10 @@
 | PMD、poll mode、rx/tx burst | **精读** | 轮询收包 vs NAPI |
 | 零拷贝、UIO/VFIO | **精读** | 旁路内核栈原理 |
 | UDP 组播行情接入 | **精读** | 交易所行情主路径 |
-| OpenOnload / RDMA 对比 | **选读** | 方案选型（见 note-openonload-rdma对比.md） |
+| OpenOnload / RDMA 对比 | **选读** | 方案选型（见 [02-Advanced/note-openonload-rdma对比](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)） |
 | Crypto / Eventdev 等 | **跳过** | 非行情热路径 |
 
-**HFT 产出：** 理解内核栈 vs DPDK 旁路取舍；组播行情最小工程见 `code/mcast-minimal/`。
+**HFT 产出：** 理解内核栈 vs DPDK 旁路取舍；组播行情最小工程见 `01-Intro-Book/code/mcast-minimal/`。
 
 **交叉阅读：** [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) · 对照 [08-UNP](./08-UNP-Vol1/) · [01-CSAPP Ch6/Ch11](./01-CSAPP-3rd/)
 
@@ -227,10 +227,10 @@
 | 资料 | 本仓库入口 | 用途 |
 |------|-----------|------|
 | **DPDK Programmer's Guide** | [10-DPDK-Low-Latency-Network/](./10-DPDK-Low-Latency-Network/) | 用户态轮询、PMD、mbuf、零拷贝旁路 |
-| **① 《深入浅出 DPDK》** | [note-DPDK实体书递进.md](./10-DPDK-Low-Latency-Network/note-DPDK实体书递进.md) | **先读** — 建立旁路认知（配 chapter-01–04） |
-| **② 《Linux 高性能网络详解》** | 同上 note | **后读** — DPDK/RDMA/XDP 深度与选型 |
-| **DPDK Sample Applications** | [code/mcast-minimal/](./10-DPDK-Low-Latency-Network/code/mcast-minimal/) | 组播最小工程参考 |
-| **OpenOnload / RDMA** | [note-openonload-rdma对比.md](./10-DPDK-Low-Latency-Network/note-openonload-rdma对比.md) | 方案对比 |
+| **① 《深入浅出 DPDK》** | [01-Intro-Book/notes/](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/) · [note-DPDK实体书递进](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md) | **先读** — 建立旁路认知（配 chapter-01–04） |
+| **② 《Linux 高性能网络详解》** | [02-Advanced-Book/notes/](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/) | **后读** — DPDK/RDMA/XDP 深度与选型 |
+| **DPDK Sample Applications** | [01-Intro/code/mcast-minimal/](./10-DPDK-Low-Latency-Network/01-Intro-Book/code/mcast-minimal/) | 组播最小工程参考 |
+| **OpenOnload / RDMA** | [02-Advanced/note-openonload-rdma对比](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md) | 方案对比 |
 | **RDMA 规范** | https://www.infinibandta.org/ | RoCE 部署背景 |
 | **Linux RDMA 文档** | https://www.kernel.org/doc/html/latest/infiniband/ | ibverbs、rdma_cm |
 

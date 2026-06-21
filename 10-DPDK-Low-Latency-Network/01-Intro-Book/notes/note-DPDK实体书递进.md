@@ -1,7 +1,7 @@
 # DPDK 实体书 · 《深入浅出 DPDK》→《Linux 高性能网络详解》
 
 > **10-DPDK** · 实体书补充 · **场景触发再读**  
-> 本仓库 `10` 文件夹主线仍是 [DPDK 官方文档](./README.md)；两本书帮你**建立认知 → 挖深度**，与仓库 chapter-01–05 对照阅读。
+> 本仓库 `10` 文件夹主线仍是 [DPDK 官方文档](../../README.md)；两本书帮你**建立认知 → 挖深度**，与 [01-Intro-Book](../) chapter-01–05 对照阅读。
 
 ---
 
@@ -44,12 +44,12 @@
 
 - 把 **DPDK、RDMA、XDP** 等路线放在同一张地图里对比
 - 解释 **DPDK 为何能把延迟压到微秒级**（旁路 + 轮询 + 预分配 + 绑核，与 `02` SysPerf 度量对齐）
-- 说明 **什么时候该用 RDMA** 做更极致优化（共置、托管、纳秒级共址 — 见 [note-openonload-rdma对比](./note-openonload-rdma对比.md)）
+- 说明 **什么时候该用 RDMA** 做更极致优化（共置、托管、纳秒级共址 — 见 [note-openonload-rdma对比](../../02-Advanced-Book/notes/note-openonload-rdma对比.md)）
 
 | 技术 | 与 DPDK 关系 | HFT 典型场景 |
 |------|--------------|--------------|
 | **DPDK** | 用户态完全旁路 | UDP 组播行情、极致 tick 处理 |
-| **XDP / tc-BPF** | 内核最早点丢/改包 | 对比 DPDK 的「半旁路」；见 [03-BPF note-XDP](../03-BPF-Performance-Tools/note-XDP与tc-BPF.md) |
+| **XDP / tc-BPF** | 内核最早点丢/改包 | 对比 DPDK 的「半旁路」；见 [02-Advanced note-XDP](../../02-Advanced-Book/notes/note-XDP与DPDK对照.md) · [03-BPF note-XDP](../../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md) |
 | **RDMA / RoCE** | 硬件 offload、远端内存 | 共置机房、极低延迟通道 |
 | **OpenOnload** | 保留 socket API 的内核旁路 | TCP 发单、迁移成本较低 |
 
@@ -73,8 +73,8 @@
 
 **读完 ① ② 之后：**
 
-- 回到 [11-HFT-Low-Latency-Practice](../11-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
-- 用 [03-BPF](../03-BPF-Performance-Tools/) + `02` SysPerf Ch10 在生产上**验证**旁路收益
+- 回到 [11-HFT-Low-Latency-Practice](../../../11-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
+- 用 [03-BPF](../../../03-BPF-Performance-Tools/) + `02` SysPerf Ch10 在生产上**验证**旁路收益
 
 ---
 
@@ -83,11 +83,11 @@
 ```
 09 Rosen（内核栈：搞懂「要绕过谁」）
     ↓
-① 《深入浅出 DPDK》  ∥  10 官方 doc + chapter-01–04
+① 《深入浅出 DPDK》  ∥  01-Intro-Book chapter-01–04 + 官方 doc
     ↓
-10 chapter-05 + code/mcast-minimal（组播落地）
+01-Intro chapter-05 + code/mcast-minimal（组播落地）
     ↓
-② 《Linux 高性能网络详解》  ∥  note-openonload-rdma对比 + 03-BPF XDP note
+② 《Linux 高性能网络详解》  ∥  02-Advanced-Book notes + 03-BPF XDP note
     ↓
 11 HFT Practice · ch06 低延迟网络
 ```
@@ -96,7 +96,7 @@
 
 ## 相关章节
 
-- [README · 网络全链路](./README.md)
-- [OUTLINE.md](./OUTLINE.md)
-- [note-openonload-rdma对比.md](./note-openonload-rdma对比.md)
-- [CROSS-MODULE-GUIDE §二](../CROSS-MODULE-GUIDE.md#二内核网络栈-vs-用户态旁路)
+- [01-Intro-Book](../README.md) · [02-Advanced-Book](../../02-Advanced-Book/)
+- [10 总目录](../../README.md) · [OUTLINE](../../OUTLINE.md)
+- [note-openonload-rdma对比](../../02-Advanced-Book/notes/note-openonload-rdma对比.md)
+- [CROSS-MODULE-GUIDE §二](../../../CROSS-MODULE-GUIDE.md#二内核网络栈-vs-用户态旁路)

@@ -88,7 +88,7 @@
 | Roofline（Hennessy Ch1） | `rte_eth_rx_burst` 批量大小调优 | 平衡 cache 与延迟 |
 
 → CSAPP：[chapter-06](./01-CSAPP-3rd/chapter-06-存储器层次结构.md)、[chapter-09](./01-CSAPP-3rd/chapter-09-虚拟内存.md)  
-→ DPDK：[chapter-02-mbuf与内存池](./10-DPDK-Low-Latency-Network/chapter-02-mbuf与内存池.md)
+→ DPDK：[01-Intro chapter-02-mbuf与内存池](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池.md)
 
 ---
 
@@ -99,13 +99,13 @@
 | CSAPP 五大 Lab | `01-CSAPP-3rd/code/` | Ch3–12 程序员视角 |
 | UNP Socket Demo | `08-UNP-Vol1/code/` 或外部仓库 | epoll / 非阻塞 / UDP |
 | Rust 无锁订单簿 | `12-Rust-Quant-Trading-Guide/code/` | Hennessy Ch5 + CSAPP Ch12 |
-| DPDK 组播最小工程 | `10-DPDK-Low-Latency-Network/code/mcast-minimal/` | Rosen 组播 + DPDK Ch5 |
+| DPDK 组播最小工程 | `10-DPDK-Low-Latency-Network/01-Intro-Book/code/mcast-minimal/` | Rosen 组播 + DPDK Ch5 |
 
 ---
 
 ## 六、OpenOnload / RDMA（轻量化，不建新文件夹）
 
-详见 [10-DPDK/note-openonload-rdma对比.md](./10-DPDK-Low-Latency-Network/note-openonload-rdma对比.md)：
+详见 [02-Advanced/note-openonload-rdma对比](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)：
 
 - **OpenOnload：** 内核旁路但保留 Socket API 语义 — 介于 UNP 与 DPDK 之间
 - **RDMA/RoCE：** 共置/托管超低延迟 — 与 DPDK 场景部分重叠，部署模型不同
