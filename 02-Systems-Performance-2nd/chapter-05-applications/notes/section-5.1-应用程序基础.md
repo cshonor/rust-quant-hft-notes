@@ -61,7 +61,7 @@ UDP/TCP 收包 → 解码 → 更新 order book → 策略计算 → 发单
 | O(n) | 线性变慢 | 全量扫描行情列表 |
 | O(n²) | **灾难** | 嵌套循环配对、暴力撮合模拟 |
 
-→ [01-CSAPP Ch3](../../../01-CSAPP-3rd/chapter-03-程序的机器级表示/) 理解热点在汇编层的形态
+→ [01-CSAPP Ch3](../../../01-CSAPP-3rd/chapter-03-machine-level-programs/) 理解热点在汇编层的形态
 
 ---
 

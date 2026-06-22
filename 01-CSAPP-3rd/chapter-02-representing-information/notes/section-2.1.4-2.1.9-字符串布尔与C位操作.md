@@ -52,7 +52,7 @@ unsigned set_bit(unsigned x, int k) { return x | (1u << k); }
 
 **HFT：** 价格 **tick 整数化** 常用 `price_raw / tick_size` 或定点缩放，优先整数运算避免 2.4 浮点坑。
 
-→ 位运算在机器级：[Ch 3](../../chapter-03-程序的机器级表示.md)
+→ 位运算在机器级：[Ch 3](../../chapter-03-machine-level-programs/)
 
 ---
 

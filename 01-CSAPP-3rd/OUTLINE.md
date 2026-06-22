@@ -21,7 +21,7 @@
 | 章 | 英文 | 笔记 | HFT |
 |----|------|------|-----|
 | 2 | Representing and Manipulating Information | [chapter-02](./chapter-02-representing-information/) | 🟡 |
-| 3 | Machine-Level Representation of Programs | [chapter-03](./chapter-03-程序的机器级表示.md) | 🟡 |
+| 3 | Machine-Level Representation of Programs | [chapter-03](./chapter-03-machine-level-programs/) | 🟡 |
 | 4 | Processor Architecture | [chapter-04](./chapter-04-处理器体系结构.md) | 🔴 |
 | 5 | Optimizing Program Performance | [chapter-05](./chapter-05-优化程序性能.md) | 🔴 |
 | 6 | The Memory Hierarchy | [chapter-06](./chapter-06-存储器层次结构.md) | 🔴 |

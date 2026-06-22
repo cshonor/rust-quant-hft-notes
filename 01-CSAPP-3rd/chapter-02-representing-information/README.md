@@ -65,6 +65,6 @@
 ## 相关章节
 
 - 上一章：[../chapter-01-tour-of-computer-systems/](../chapter-01-tour-of-computer-systems/)
-- 下一章：[../chapter-03-程序的机器级表示.md](../chapter-03-程序的机器级表示.md)
-- 机器级运算：[../chapter-03-程序的机器级表示.md](../chapter-03-程序的机器级表示.md)
+- 下一章：[chapter-03-machine-level-programs/](./chapter-03-machine-level-programs/)
+- 机器级运算：[../chapter-03-machine-level-programs/](../chapter-03-machine-level-programs/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)
