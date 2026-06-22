@@ -18,7 +18,7 @@ hello.c  ──预处理器──►  hello.i（展开 #include/#define）
 | 汇编 | `.s` | `.o` | `as` |
 | 链接 | `.o` + 库 | 可执行 | `ld` / `gcc` |
 
-**静态链接 vs 动态链接：** 可执行文件可嵌入 libc 代码，或运行时加载 `libc.so` — HFT 生产常静态/部分静态以减少依赖与启动不确定性（细节 → [Ch 7 链接](../../chapter-07-链接.md)）。
+**静态链接 vs 动态链接：** 可执行文件可嵌入 libc 代码，或运行时加载 `libc.so` — HFT 生产常静态/部分静态以减少依赖与启动不确定性（细节 → [Ch 7 链接](../../chapter-07-linking/)）。
 
 ### 1.3 了解编译系统如何工作是大有益处的
 
@@ -41,7 +41,7 @@ gcc hello.o -o hello         # 链接
 **HFT：**
 
 - 策略引擎 **Release 构建 flags**（`-march=native`、LTO）要在 CI 与生产一致
-- 链接 **whole-archive** 静态库 vs 动态 `dlopen` 插件 — 影响启动延迟与页 fault（→ [Ch 7](../../chapter-07-链接.md)、[Ch 9](../../chapter-09-虚拟内存.md)）
+- 链接 **whole-archive** 静态库 vs 动态 `dlopen` 插件 — 影响启动延迟与页 fault（→ [Ch 7](../../chapter-07-linking/)、[Ch 9](../../chapter-09-虚拟内存.md)）
 
 ---
 

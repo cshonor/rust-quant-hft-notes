@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-07-链接.md](./chapter-07-链接.md)
+- 上一章：[chapter-07-linking/](./chapter-07-linking/)
 - 下一章：[chapter-09-虚拟内存.md](./chapter-09-虚拟内存.md)

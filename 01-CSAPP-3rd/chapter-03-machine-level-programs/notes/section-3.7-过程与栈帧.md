@@ -52,7 +52,7 @@
 - 热路径 **禁止深递归**；订单簿遍历用循环 + 显式栈/arena
 - `perf` 看 `__stack_chk_fail` — stack canary 触发说明栈破坏
 
-→ 链接与符号：[Ch 7](../../chapter-07-链接.md)
+→ 链接与符号：[Ch 7](../../chapter-07-linking/)
 
 ---
 
