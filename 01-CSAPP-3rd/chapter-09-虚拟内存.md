@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-08-异常控制流.md](./chapter-08-异常控制流.md)
+- 上一章：[chapter-08-exceptional-control-flow/](./chapter-08-exceptional-control-flow/)
 - 下一章：[chapter-10-系统级IO.md](./chapter-10-系统级IO.md)

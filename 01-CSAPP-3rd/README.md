@@ -36,7 +36,7 @@ chapter-XX-english-slug/   ← Ch 1 已采用；其余章仍为单文件，后�
 | 章 | 笔记 |
 |----|------|
 | 7 链接 | [chapter-07-linking/](./chapter-07-linking/) |
-| 8 异常控制流 | [chapter-08-异常控制流.md](./chapter-08-异常控制流.md) |
+| 8 异常控制流 | [chapter-08-exceptional-control-flow/](./chapter-08-exceptional-control-flow/) |
 | 9 虚拟内存 | [chapter-09-虚拟内存.md](./chapter-09-虚拟内存.md) |
 
 ### Part III · 程序间交互和通信
