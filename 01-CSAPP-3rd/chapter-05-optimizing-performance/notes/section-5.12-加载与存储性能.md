@@ -8,7 +8,7 @@
 
 **优化方向：**
 
-- 提高 **局部性** — 顺序扫数组（→ [Ch 6](../../chapter-06-存储器层次结构.md)）
+- 提高 **局部性** — 顺序扫数组（→ [Ch 6](../../chapter-06-memory-hierarchy/)）
 - **预取** — `__builtin_prefetch` 对下一 cache line
 - 减少 **指针追踪** — 链表 vs 数组
 

@@ -34,7 +34,7 @@
 
 **你要带走的不是背图，而是三个 HFT 直觉：**
 
-1. **慢的不在 CPU 算力，在等数据** — cache miss、磁盘、网络、syscall（→ 1.5–1.6，深入 [Ch 6](../chapter-06-存储器层次结构.md)）
+1. **慢的不在 CPU 算力，在等数据** — cache miss、磁盘、网络、syscall（→ 1.5–1.6，深入 [Ch 6](../chapter-06-memory-hierarchy/)）
 2. **程序从不「直接摸硬件」** — OS 用进程/线程/虚拟内存/文件抽象隔开（→ 1.7，深入 Ch 8–9）
 3. **优化要有靶心** — 阿姆达尔：先打最慢的那段（→ 1.9，配合 [Ch 5](../chapter-05-optimizing-performance/)、[02-SysPerf](../../02-Systems-Performance-2nd/chapter-02-methodologies/)）
 
@@ -69,7 +69,7 @@ Ch 1 地图（本章，选读速通）
 ## 相关章节
 
 - 下一章：[../chapter-02-representing-information/](../chapter-02-representing-information/)
-- 缓存深入：[../chapter-06-存储器层次结构.md](../chapter-06-存储器层次结构.md)
+- 缓存深入：[../chapter-06-memory-hierarchy/](../chapter-06-memory-hierarchy/)
 - 虚拟内存：[../chapter-09-虚拟内存.md](../chapter-09-虚拟内存.md)
 - 性能方法论：[02-SysPerf Ch 2](../../02-Systems-Performance-2nd/chapter-02-methodologies/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

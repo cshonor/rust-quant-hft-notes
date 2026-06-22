@@ -31,7 +31,7 @@ int *p = A;
 | **AoS** (Array of Structures) | 对象导向 — 单条记录局部性好 |
 | **Ring buffer** | 定长数组 + 头尾指针 — 行情队列标配 |
 
-→ cache 与局部性：[Ch 6](../../chapter-06-存储器层次结构.md) · [Ch 1.5](../chapter-01-tour-of-computer-systems/notes/section-1.5-高速缓存至关重要.md)
+→ cache 与局部性：[Ch 6](../../chapter-06-memory-hierarchy/) · [Ch 1.5](../chapter-01-tour-of-computer-systems/notes/section-1.5-高速缓存至关重要.md)
 
 ---
 

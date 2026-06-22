@@ -49,7 +49,7 @@ perf annotate -s hot_function
 - **测量驱动** — CPE、profile、annotate
 - 内存与分支常是隐形天花板 — 与 Ch4、Ch6 联动
 
-→ 下一章专攻 **cache 与局部性**：[Ch 6](../../chapter-06-存储器层次结构.md)
+→ 下一章专攻 **cache 与局部性**：[Ch 6](../../chapter-06-memory-hierarchy/)
 
 ---
 

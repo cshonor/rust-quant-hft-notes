@@ -24,7 +24,7 @@
 | 3 | Machine-Level Representation of Programs | [chapter-03](./chapter-03-machine-level-programs/) | 🟡 |
 | 4 | Processor Architecture | [chapter-04](./chapter-04-processor-architecture/) | 🔴 |
 | 5 | Optimizing Program Performance | [chapter-05](./chapter-05-optimizing-performance/) | 🔴 |
-| 6 | The Memory Hierarchy | [chapter-06](./chapter-06-存储器层次结构.md) | 🔴 |
+| 6 | The Memory Hierarchy | [chapter-06](./chapter-06-memory-hierarchy/) | 🔴 |
 
 ## Part II · Running Programs on a System（在系统上运行程序）
 

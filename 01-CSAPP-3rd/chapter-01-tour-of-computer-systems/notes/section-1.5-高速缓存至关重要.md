@@ -24,7 +24,7 @@
 
 - **Order book / ring buffer** 顺序访问 → 空间局部性好
 - **指针 chasing、链表跳来跳去** → miss 多，P99 抖
-- **伪共享 (false sharing)** — 两线程改同一 cache line 不同字段 → 行乒乓（→ [Ch 6](../../chapter-06-存储器层次结构.md)、[Ch 12](../../chapter-12-并发编程.md)）
+- **伪共享 (false sharing)** — 两线程改同一 cache line 不同字段 → 行乒乓（→ [Ch 6](../../chapter-06-memory-hierarchy/)、[Ch 12](../../chapter-12-并发编程.md)）
 - **perf `cache-misses` / `perf c2c`** — 生产验证（→ [02-SysPerf Ch 13](../../../02-Systems-Performance-2nd/chapter-13-perf/)）
 
 ### 缓存按行 (cache line) 管理
@@ -32,7 +32,7 @@
 - 常见 **64 字节一行** — 读 1 字节可能整行载入
 - **预取 (prefetch)** 硬件/软件可隐藏部分延迟
 
-→ 全书深入：[Ch 6 存储器层次结构](../../chapter-06-存储器层次结构.md)
+→ 全书深入：[Ch 6 存储器层次结构](../../chapter-06-memory-hierarchy/)
 
 ---
 

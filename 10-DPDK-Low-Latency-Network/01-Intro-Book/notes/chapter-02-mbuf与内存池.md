@@ -8,4 +8,4 @@
 
 - 上一章：[chapter-01-DPDK架构与EAL.md](./chapter-01-DPDK架构与EAL.md)
 - 下一章：[chapter-03-PMD与轮询模式.md](./chapter-03-PMD与轮询模式.md)
-- 缓存对照：[01-CSAPP Ch6](../../../01-CSAPP-3rd/chapter-06-存储器层次结构.md)
+- 缓存对照：[01-CSAPP Ch6](../../../01-CSAPP-3rd/chapter-06-memory-hierarchy/)

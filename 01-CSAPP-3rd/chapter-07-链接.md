@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-06-存储器层次结构.md](./chapter-06-存储器层次结构.md)
+- 上一章：[chapter-06-memory-hierarchy/](./chapter-06-memory-hierarchy/)
 - 下一章：[chapter-08-异常控制流.md](./chapter-08-异常控制流.md)
