@@ -97,7 +97,15 @@ Latency 三分法（Mean/P999/Max）  →  [Ch1.6](../chapter-01-intro/notes/sec
 
 → 工具详解：[Ch 4 观测工具](../../chapter-04-observability-tools/) · [Ch 13 perf](../../chapter-13-perf/) · [Ch 15 BPF](../../chapter-15-bpf/)
 
-### 时间尺度（Time Scales）
+### 时间尺度（Time Scales）— 先圈「战场」，再用术语精准定位
+
+**两层用法：**
+
+```
+① 时间尺度  →  订单延迟落在哪个数量级？先圈定排查的「战场范围」
+② 专业术语  →  在该量级上用 Throughput / RTT / Saturation 等量化、拆到具体组件
+```
+
 系统各组件时间跨度极大；建立**数量级直觉**比背参数更重要。
 
 Gregg 经典类比：若 **1 CPU 周期 ≈ 1 秒**，则：
@@ -108,7 +116,40 @@ Gregg 经典类比：若 **1 CPU 周期 ≈ 1 秒**，则：
 | 主存访问 | ~100 ns | **~6 分钟** |
 | 网络 RTT | ms 级 | **~数年** |
 
-**HFT 启示：** 少一次 cache miss、少一次跨 NUMA、少一次 syscall/内核路径，收益往往大于「再调一个 JVM 参数」。→ 硬件与布局见 [04-Computer-Architecture-6th](../../../04-Computer-Architecture-6th/) Ch 2/5；NUMA 见 SysPerf Ch 6/7。
+#### HFT · 延迟落在哪一档，就查哪一档的术语
+
+| 你量的端到端延迟 | 战场在哪 | 优先用的术语 / 查什么 | **别死磕** |
+|------------------|----------|----------------------|------------|
+| **μs 级**（tick→信号） | CPU / cache / 用户态热路径 | Utilization、Bottleneck、`perf`、绑核、false sharing | 交换机 ms 抖动（还轮不到） |
+| **百 μs～ms 级**（成交/ACK 变慢） | 内核栈、网卡、队列、对端 | **Throughput**、**RTT**、TCP **Saturation**、`ss -s`、`ethtool -S` | 纳秒级 cache 微调 |
+| **ms+ 级** | 网络路径、交易所、拥塞 | RTT、重传、队列饱和、路径变更 | 单机 CPU 指令级优化 |
+
+**例子（你的场景）：**
+
+```
+订单成交延迟掉在「毫秒级」
+  → 战场 = 网卡 / 交换机 / TCP 队列 / RTT
+  → 用：吞吐量、网络 RTT、TCP 队列饱和、ethtool、ss
+  → 不必先纠结：L1 cache 再 hit 1% 算不算赢
+```
+
+**反例 — 捡芝麻丢西瓜：**
+
+```
+只优化纳秒级 cache 命中率
+  却没解决毫秒级网络抖动 / 队列饱和
+  → 对 HFT 端到端几乎无感 — 时间尺度锚错了
+```
+
+**和前面术语表的关系：**
+
+| 步骤 | 做什么 |
+|------|--------|
+| 1 | 看 P99/Max 落在 **ns / μs / ms** 哪档 → **定战场** |
+| 2 | 在该档选 **Utilization / Saturation / Throughput / Latency** → **定术语** |
+| 3 | 用 [术语→命令](#术语--常用命令hft-速查) 表落地 → **定工具** |
+
+→ 硬件数量级：[04-Hennessy](../../../04-Computer-Architecture-6th/) · NUMA/cache：[Ch 6/7](../../chapter-06-cpus/) · 网络 ms 档：[Ch 10](../../chapter-10-network/)
 
 ### 性能权衡（Trade-Offs）
 
