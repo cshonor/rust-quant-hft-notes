@@ -206,15 +206,55 @@ perf record -g -p <pid> -- sleep 30 && perf report
 - 宏观需 **生产级 workload**：真实报文率、订单形状、与同机其他进程共置
 - 合成压测报文若与实盘分布不同 → P999 可能 **假好或假坏**
 
+#### 微观基准 · 硬件隔离硬核清单（HFT 圈常用）
+
+目标：测出 **纯计算耗时**，尽量不受 IRQ、频率波动、page fault 干扰。
+
+| 步骤 | 操作 | 目的 |
+|------|------|------|
+| **绑核** | `taskset` / `cpuset` / `pthread_setaffinity`；最好 **`isolcpus` 独占核** | 避开其他进程、**网卡 IRQ** |
+| **稳频** | 关 **Turbo Boost**；压测时关或固定 **超线程** 干扰核 | 避免频率波动污染计时 |
+| **内存** | **大页 hugetlb**、`mlock`、**预分配**全部测试 buffer | page fault → 0 |
+| **预热** | 跑几轮 warm-up，把测试数据 **钉在 L1/L2** | 测的是 steady-state，不是 cold cache |
+| **计时** | **`rdtsc` / `rdtscp`** 或 `std::chrono` + 校准；固定 `-O3 -march=native` | 纳秒级、可重复 |
+
+**例：测哈希函数微观基准**
+
+```bash
+# 1. 绑 isolated 核（假设核 2 已从 isolcpus 隔离）
+taskset -c 2 ./hash_microbench
+
+# 2. 程序内：mlock 输入 buffer → warm-up 1e6 次 → rdtsc 测 1e7 次 → 报 ns/op
+# 3. 宏观回放验证：全链路里是否真变快
+```
+
+→ NUMA/绑核：[Ch 6 CPU](../../chapter-06-cpus/) · 大页：[Ch 7 内存](../../chapter-07-memory/) · [HFT ch05 内核调优](../../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+
 → [Ch 12 基准测试](../../chapter-12-benchmarking/) · [HFT ch10 延迟测量](../../../11-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
 
-### 观测 vs 实验
+### 观测 vs 实验 — 「不干预」vs「控变量加压」
 
-| | 观测 | 实验 |
-|---|------|------|
-| 目的 | 理解**正在运行**的系统 | **主动制造**负载做对比 |
-| 风险 | 生产开销需控制 | 合成负载可能不代表真实 |
-| 工具倾向 | `perf`、bpftrace、`sar` | `fio`、自定义压测、testpmd |
+| | **观测 Observability** | **实验 Experimentation** |
+|---|------------------------|----------------------------|
+| **本质** | **不干预**系统自然状态 | **控制变量**、人工造场景 |
+| **HFT 例** | 实盘跑策略，**极低频**采样盯 P99/Max | 关掉其他逻辑，**只跑 malloc 循环** 测分配器 |
+| **原则** | 采样/追踪开销 **不能影响业务** | 主动加压、A/B 对比、可重复 |
+| **工具** | `sar`、低频 histogram、eBPF 按需 | microbench、`fio`、行情回放压测 |
+
+**观测在生产：**
+
+- `perf record` 频率别太高；eBPF 只钩 tail 样本
+- **观察者效应** — 测到的延迟里可能含 **你的探针**；HFT 实盘用 **硬件 timestamp / 异步写指标**
+
+**实验在 lab：**
+
+- 「只想看内存分配影响」→ **隔离**：其他热路径全关，只 loop `malloc/free`
+- 结论只适用于 **该 synthetic 场景** — 必须再用 **宏观回放** 签收
+
+| 风险 | 观测 | 实验 |
+|------|------|------|
+| 典型坑 | 探针太重 → 测到的不是「纯业务」 | 合成场景 ≠ 实盘 → 假乐观 |
+| 对策 | 降采样、生产只 Metrics | micro 隔离 + macro 验证 |
 
 ---
 
