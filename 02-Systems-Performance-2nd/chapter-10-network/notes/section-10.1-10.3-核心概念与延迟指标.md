@@ -10,7 +10,7 @@
 | **MTU** | 最大传输单元（以太网常 1500） | 分片增延迟 — 路径 MTU _discovery |
 | **Jumbo Frames** | MTU ~9000 | 共置 LAN 常用；跨 WAN 慎用 |
 
-→ [07-TCP/IP](../../../10-TCP-IP-Illustrated-Vol1/) · [08-UNP](../../../09-UNP-Vol1/)
+→ [07-TCP/IP](../../../11-TCP-IP-Illustrated-Vol1/) · [08-UNP](../../../10-UNP-Vol1/)
 
 ### 多维度网络延迟
 
@@ -31,7 +31,7 @@ signal_ts → encode → send() → 内核 TCP → NIC → wire RTT → 交易�
            TTFB 本地    Connection/队列      RTT（共置仍非零）
 ```
 
-→ Ch 2 [延迟分解](../../chapter-02-methodologies/) · [12-HFT ch10](../../../13-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
+→ Ch 2 [延迟分解](../../chapter-02-methodologies/) · [12-HFT ch10](../../../14-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
 
 ### 缓冲与积压（Buffering & Backlog）
 

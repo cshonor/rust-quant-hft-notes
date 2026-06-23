@@ -4,7 +4,7 @@
 
 <!-- 章节笔记待补充：LOB、撮合规则、price-time priority、auction -->
 
-> LOB 与撮合引擎是本章核心，与 `13-HFT-Low-Latency-Practice` ch03/ch08 直接对接。
+> LOB 与撮合引擎是本章核心，与 `14-HFT-Low-Latency-Practice` ch03/ch08 直接对接。
 
 ## 相关章节
 

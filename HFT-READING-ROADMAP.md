@@ -1,6 +1,6 @@
 # HFT 系统开发 · 完整阅读路线图
 
-> **文件夹 `00`–`14` = 阅读顺序。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
+> **文件夹 `00`–`15` = 阅读顺序。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
 
 ### 文件夹顺序 · 核心段
 
@@ -10,9 +10,10 @@
 | **02** | SysPerf | 知其然 |
 | **03** | BPF | 工具落地（紧接 02） |
 | **05–06** | LKD / Gorman | 系统纵深 |
-| **07** | 自制 OS / CPU | 底层动手 |
-| **08–12** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
-| **13–14** | HFT Practice / Rust | 动手实现 |
+| **07** | TLPI | Linux 用户态 syscall |
+| **08** | 自制 OS / CPU | 底层动手 |
+| **09–13** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
+| **14–15** | HFT Practice / Rust | 动手实现 |
 
 ### Gregg 双书 · 02 → 03
 
@@ -57,21 +58,22 @@
 05  Linux Kernel Development（课 → 书）
 06  Linux Virtual Memory Manager
 
-07  自制 OS / CPU（07-1 / 07-2）
-08  陈硕 PNP / muduo 实战（外P · 外部仓库）
-09  UNP Vol.1（外B · 外部仓库）
+07  TLPI（The Linux Programming Interface）
+08  自制 OS / CPU（08-1 / 08-2）
+09  陈硕 PNP / muduo 实战（外P）
+10  UNP Vol.1（外B）
 01  CSAPP · 网络篇 Ch10–11
-10  TCP/IP 卷一（外A · 外部仓库）
-11  Linux Kernel Networking
-12  DPDK
+11  TCP/IP 卷一（外A）
+12  Linux Kernel Networking
+13  DPDK
 
-13  HFT Low-Latency Practice（C++）
-14  Rust Quant Trading Guide
+14  HFT Low-Latency Practice（C++）
+15  Rust Quant Trading Guide
 ```
 
-**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 07 → 08 → 09 → 01网络 → 10 → 11 → 12 → 13 → 14`
+**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 07 → 08 → 09 → 10 → 01网络 → 11 → 12 → 13 → 14 → 15`
 
-> **板块封顶：** `00`–`14`；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+> **板块封顶：** `00`–`15`；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
 ---
 
@@ -83,7 +85,7 @@
 
 | 方案 | 说明 |
 |------|------|
-| ✅ **推荐** | 笔记留在 [Computer-Networking](https://github.com/cshonor/Computer-Networking)；本仓库 [`10-TCP-IP-Illustrated-Vol1/`](./10-TCP-IP-Illustrated-Vol1/)、[`09-UNP-Vol1/`](./09-UNP-Vol1/) 做**索引 + HFT 裁剪清单** |
+| ✅ **推荐** | 笔记留在 [Computer-Networking](https://github.com/cshonor/Computer-Networking)；本仓库 [`11-TCP-IP-Illustrated-Vol1/`](./11-TCP-IP-Illustrated-Vol1/)、[`10-UNP-Vol1/`](./10-UNP-Vol1/) 做**索引 + HFT 裁剪清单** |
 | ⚠️ 可选 | 只把「HFT 必读章节」的笔记摘要链过来，不要 duplicate 全书 |
 | ❌ 不推荐 | 整本迁移 — 与 Rosen / CSAPP Ch11 重叠，且双倍维护 |
 
@@ -273,6 +275,6 @@
 | [02 SysPerf](./02-Systems-Performance-2nd/) | 02 |
 | [03 BPF](./03-BPF-Performance-Tools/) | 03 |
 | [05 LKD](./05-Linux-Kernel-Development/) · [06 Gorman](./06-Linux-Virtual-Memory-Manager/) · [08–11 网络](./CROSS-MODULE-GUIDE.md) | 05–11 |
-| [11 HFT](./13-HFT-Low-Latency-Practice/) · [12 Rust](./14-Rust-Quant-Trading-Guide/) | 11 / 12 |
+| [11 HFT](./14-HFT-Low-Latency-Practice/) · [12 Rust](./15-Rust-Quant-Trading-Guide/) | 11 / 12 |
 
 → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md) · [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)

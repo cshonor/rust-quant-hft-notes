@@ -44,7 +44,7 @@
 | 优化顺序 | 平均 → P95 常够 | **Max → P999 → Mean** |
 | 长尾 | 可接受偶发慢 | **一次 Max 撞上峰值 = 盈亏** |
 
-→ 测量：[HFT ch10 延迟测量](../../../13-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) · [Ch 12 基准测试](../../chapter-12-benchmarking/)
+→ 测量：[HFT ch10 延迟测量](../../../14-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) · [Ch 12 基准测试](../../chapter-12-benchmarking/)
 
 #### 观测工具 ↔ 三类指标 — Metrics / Tracking / Profiling
 

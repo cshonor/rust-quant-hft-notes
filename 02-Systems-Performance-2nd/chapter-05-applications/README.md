@@ -100,5 +100,5 @@ Ch 5  应用程序（本章：优化主战场 + 剖应用方法论）
 - BPF：[../chapter-15-bpf/](../chapter-15-bpf/)
 - BPF 专书：[03-BPF-Performance-Tools](../../03-BPF-Performance-Tools/)
 - CSAPP 算法/机器级：[01-CSAPP-3rd](../../01-CSAPP-3rd/)
-- HFT 工程：[13-HFT-Low-Latency-Practice](../../13-HFT-Low-Latency-Practice/)
+- HFT 工程：[14-HFT-Low-Latency-Practice](../../14-HFT-Low-Latency-Practice/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

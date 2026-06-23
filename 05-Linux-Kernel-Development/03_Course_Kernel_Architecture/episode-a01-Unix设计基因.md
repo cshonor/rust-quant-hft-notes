@@ -69,7 +69,7 @@ cat a.txt | grep "key" | sort
 
 内核保持**精简稳定**；功能在 userland **灵活扩展**。  
 → 深入：**内核态 vs 用户态** 见 [a03 架构总览 · Kernel/Userland Separation](./episode-a03-内核架构总览.md)  
-→ **DPDK 旁路** 语境：[10-DPDK](../../12-DPDK-Low-Latency-Network/)
+→ **DPDK 旁路** 语境：[10-DPDK](../../13-DPDK-Low-Latency-Network/)
 
 ### ④ 模块化 → 可维护、可创新
 
@@ -92,7 +92,7 @@ cat a.txt | grep "key" | sort
 - **进程模型** — `fork`/`exec`、文件描述符表
 - **用户态工具生态** — GNU/coreutils、Shell
 
-→ 用户态 API：[08-UNP](../../09-UNP-Vol1/) · 程序员视角：[01-CSAPP Ch8/10/11](../../01-CSAPP-3rd/)
+→ 用户态 API：[08-UNP](../../10-UNP-Vol1/) · 程序员视角：[01-CSAPP Ch8/10/11](../../01-CSAPP-3rd/)
 
 ### 4. 设计选择的深远影响
 

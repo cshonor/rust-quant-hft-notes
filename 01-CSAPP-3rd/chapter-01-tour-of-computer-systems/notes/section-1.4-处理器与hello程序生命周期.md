@@ -208,7 +208,7 @@ hello.c
 |------------|------------|
 | shell 启动 | 固定 pin 的 daemon，无 shell |
 | libc `printf` | 预分配日志、异步写盘或禁 stdout |
-| 通用网络栈 | DPDK/onload 旁路（→ [10-DPDK](../../../12-DPDK-Low-Latency-Network/)） |
+| 通用网络栈 | DPDK/onload 旁路（→ [10-DPDK](../../../13-DPDK-Low-Latency-Network/)） |
 
 → 进程/syscall 细节：[Ch 8 异常控制流](../../chapter-08-exceptional-control-flow/)
 
