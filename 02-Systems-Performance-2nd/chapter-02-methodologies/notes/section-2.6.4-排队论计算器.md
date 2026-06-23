@@ -1,6 +1,6 @@
-## 2.6 · 排队论计算器
+﻿## 2.6.4 · 排队论计算器
 
-← [概览](./section-2.6-排队论概览与Kendall记号.md) · [M/M/1](./section-2.6-M-M-1-拐点与预警线.md) · [M/M/c](./section-2.6-M-D-1-M-M-c-M-G-1.md#mm/c)
+← [概览](./section-2.6.1-排队论概览与Kendall记号.md) · [M/M/1](./section-2.6.2-M-M-1-拐点与预警线.md) · [M/M/c](./section-2.6.3-M-D-1-M-M-c-M-G-1.md#mm/c)
 
 ---
 
@@ -68,4 +68,4 @@ knee ≈ 75~80%  →  告警 ≈ 65~70%  →  Ch12 压测验证
 
 ---
 
-← [M/M/c 模型](./section-2.6-M-D-1-M-M-c-M-G-1.md#mm/c) · [2.7 容量规划](./section-2.7-容量规划三步法.md) · [本章导读](../README.md)
+← [M/M/c 模型](./section-2.6.3-M-D-1-M-M-c-M-G-1.md#mm/c) · [2.7 容量规划](./section-2.7-容量规划三步法.md) · [本章导读](../README.md)

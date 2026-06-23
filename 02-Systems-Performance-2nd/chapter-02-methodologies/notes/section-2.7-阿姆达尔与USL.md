@@ -1,7 +1,7 @@
-## 2.7 · 可扩展性模型 — Amdahl 与 USL
+﻿## 2.7 · 可扩展性模型 — Amdahl 与 USL
 
 > 排队论管 **单资源饱和**；可扩展性模型管 **加核有没有用**。  
-> ← [2.6 排队论](./section-2.6-排队论概览与Kendall记号.md) · → [容量规划三步法](./section-2.7-容量规划三步法.md)
+> ← [2.6.1 排队论](./section-2.6.1-排队论概览与Kendall记号.md) · → [容量规划三步法](./section-2.7-容量规划三步法.md)
 
 ---
 
@@ -60,4 +60,4 @@ X(N) = N / ( 1 + α(N-1) + βN(N-1) )
 
 ---
 
-← [排队论](./section-2.6-排队论概览与Kendall记号.md) · [容量规划](./section-2.7-容量规划三步法.md) · [Ch 6 CPU](../../chapter-06-cpus/) · [本章导读](../README.md)
+← [排队论](./section-2.6.1-排队论概览与Kendall记号.md) · [容量规划](./section-2.7-容量规划三步法.md) · [Ch 6 CPU](../../chapter-06-cpus/) · [本章导读](../README.md)
