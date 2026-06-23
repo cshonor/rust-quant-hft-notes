@@ -1,8 +1,8 @@
 # UNP Vol.1 — Unix Network Programming（外部仓库）
 
-**定位：** 用户态 Socket API · **标准内核网络路径** — 在 [08 PNP](../09-Practical-Network-Programming/) 写过服务骨架之后，系统化 Stevens API。
+**定位：** 用户态 Socket API — 在 [09 PNP](../09-Practical-Network-Programming/) 与 **`07` TLPI** 之后，系统化 Stevens API。
 
-**文件夹 `09`** · 外部书目 **外B** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
+**文件夹 `10`** · 外部书目 **外B**
 
 ## 笔记仓库（外部）
 
@@ -34,6 +34,7 @@
 
 ## 交叉阅读
 
+- **上一步 · TLPI：** [07-The-Linux-Programming-Interface](../07-The-Linux-Programming-Interface/)
 - **上一步 · 实战：** [09-Practical-Network-Programming](../09-Practical-Network-Programming/)
 - 协议层 → [11-TCP-IP-Illustrated-Vol1](../11-TCP-IP-Illustrated-Vol1/)
 - 内核层 → [12-Linux-Kernel-Networking](../12-Linux-Kernel-Networking/)
