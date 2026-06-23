@@ -51,7 +51,7 @@ Ch 11 → Ch 14 → note-组播IGMP
 
 ## 交叉阅读
 
-- 协议层 → [08-TCP-IP-Illustrated-Vol1](../08-TCP-IP-Illustrated-Vol1/)
+- 协议层 → [10-TCP-IP-Illustrated-Vol1](../10-TCP-IP-Illustrated-Vol1/)
 - API 层 → [09-UNP-Vol1](../09-UNP-Vol1/)
-- 用户态旁路 → [11-DPDK-Low-Latency-Network](../11-DPDK-Low-Latency-Network/)
+- 用户态旁路 → [12-DPDK-Low-Latency-Network](../12-DPDK-Low-Latency-Network/)
 - 跨模块对照 → [CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md)

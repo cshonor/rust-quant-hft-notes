@@ -54,6 +54,6 @@
 
 | 架构课讲 | 建议补充到 |
 |----------|-----------|
-| a05/a08 | [10-HFT ch05/ch07](../../12-HFT-Low-Latency-Practice/) |
+| a05/a08 | [10-HFT ch05/ch07](../../13-HFT-Low-Latency-Practice/) |
 | a09/a06 | 绑核、RT 策略 |
-| a10 | [10-HFT ch06 网络](../../12-HFT-Low-Latency-Practice/chapter-06-低延迟网络与协议优化.md) |
+| a10 | [10-HFT ch06 网络](../../13-HFT-Low-Latency-Practice/chapter-06-低延迟网络与协议优化.md) |

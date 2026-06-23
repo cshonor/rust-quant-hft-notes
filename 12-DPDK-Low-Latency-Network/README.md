@@ -19,9 +19,9 @@
 
 | 序号 | 文件夹 | 层级 | 回答的问题 |
 |------|--------|------|-----------|
-| 07 | [TCP/IP Illustrated Vol.1](../08-TCP-IP-Illustrated-Vol1/) | 协议 | 线上包长什么样？ |
+| 07 | [TCP/IP Illustrated Vol.1](../10-TCP-IP-Illustrated-Vol1/) | 协议 | 线上包长什么样？ |
 | 08 | [UNP Vol.1](../09-UNP-Vol1/) | 系统调用 / Socket API | 用户态怎么调内核网络栈？ |
-| 09 | [Linux Kernel Networking](../10-Linux-Kernel-Networking/) | 内核实现 | 内核怎么收发包？ |
+| 09 | [Linux Kernel Networking](../11-Linux-Kernel-Networking/) | 内核实现 | 内核怎么收发包？ |
 | **10** | **本文件夹** | **用户态旁路** | **如何绕过内核栈、轮询收包？** |
 
 两条路线对照 → [CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md#二内核网络栈-vs-用户态旁路)
@@ -42,8 +42,8 @@
 
 ## 交叉阅读
 
-- 内核栈对照 → [10-Linux-Kernel-Networking](../10-Linux-Kernel-Networking/)
+- 内核栈对照 → [11-Linux-Kernel-Networking](../11-Linux-Kernel-Networking/)
 - Socket 模型 → [09-UNP-Vol1](../09-UNP-Vol1/)、[01-CSAPP-3rd Ch11](../01-CSAPP-3rd/chapter-11-network-programming/)
 - 缓存 / 内存 → [01-CSAPP-3rd Ch6](../01-CSAPP-3rd/chapter-06-memory-hierarchy/)、[04-Computer-Architecture-6th](../04-Computer-Architecture-6th/)
 - 生产观测 → [03-BPF-Performance-Tools](../03-BPF-Performance-Tools/)
-- 工程落地 → [12-HFT-Low-Latency-Practice](../12-HFT-Low-Latency-Practice/)
+- 工程落地 → [13-HFT-Low-Latency-Practice](../13-HFT-Low-Latency-Practice/)

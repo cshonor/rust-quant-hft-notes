@@ -53,6 +53,6 @@ Ch 4–5 IPv4 / 路由（托管网络时补读）
 Ch 13  InfiniBand（共置/RDMA 场景）
 ```
 
-→ 协议层 → [04-TCP-IP](../08-TCP-IP-Illustrated-Vol1/) · API → [08-UNP](../09-UNP-Vol1/) · 旁路 → [10-DPDK](../11-DPDK-Low-Latency-Network/)
+→ 协议层 → [04-TCP-IP](../10-TCP-IP-Illustrated-Vol1/) · API → [08-UNP](../09-UNP-Vol1/) · 旁路 → [10-DPDK](../12-DPDK-Low-Latency-Network/)
 
 完整路线 → [HFT-READING-ROADMAP.md](../HFT-READING-ROADMAP.md)

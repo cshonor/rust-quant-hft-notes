@@ -40,7 +40,7 @@
 | 视频建立的能力 | 对应书本章节 | HFT 关联 |
 |----------------|-------------|----------|
 | 虚拟内存、HugePage、NUMA、页表、缺页 | Ch 12、Ch 15 | 衔接 [03-Gorman](../06-Linux-Virtual-Memory-Manager/) |
-| 网络栈分层、UDP 收发包、NAPI/软中断 | 书本网络概述 + [06-Rosen](../10-Linux-Kernel-Networking/) | 行情/订单路径 |
+| 网络栈分层、UDP 收发包、NAPI/软中断 | 书本网络概述 + [06-Rosen](../11-Linux-Kernel-Networking/) | 行情/订单路径 |
 | 调度器、RT 进程、spinlock/mutex/RCU | Ch 4、Ch 9–10 | 绑核、无锁、抖动 |
 
 ---
@@ -73,4 +73,4 @@
 | NUMA / 大页 | LKD Ch 12 + 03 Gorman | 03 架构 · VM |
 | 无锁 / RCU | LKD Ch 9–10 | 03 架构 · 并发 |
 
-→ 工程师落地：[12-HFT-Low-Latency-Practice](../12-HFT-Low-Latency-Practice/)
+→ 工程师落地：[13-HFT-Low-Latency-Practice](../13-HFT-Low-Latency-Practice/)

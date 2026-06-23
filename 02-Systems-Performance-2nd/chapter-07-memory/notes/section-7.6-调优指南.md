@@ -24,7 +24,7 @@
 swapoff -a    # 临时；/etc/fstab 去掉 swap 分区持久化
 ```
 
-→ [12-HFT ch05](../../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+→ [12-HFT ch05](../../../13-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 
 ### 大页（Huge Pages）
 
@@ -33,7 +33,7 @@ swapoff -a    # 临时；/etc/fstab 去掉 swap 分区持久化
 | **Transparent Huge Pages (THP)** | 内核自动合并 4KB→2MB | 方便但 **延迟不可预测** — HFT 常 **禁用或 madvise** |
 | **Explicit Huge Pages** | `hugetlbfs` / `mmap(MAP_HUGETLB)` | DPDK、确定性延迟 |
 
-→ [06-Gorman note-THP](../../../06-Linux-Virtual-Memory-Manager/note-透明大页THP.md) · [10-DPDK EAL](../../../11-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-01-DPDK架构与EAL/)
+→ [06-Gorman note-THP](../../../06-Linux-Virtual-Memory-Manager/note-透明大页THP.md) · [10-DPDK EAL](../../../12-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-01-DPDK架构与EAL/)
 
 ### 分配器与 NUMA
 

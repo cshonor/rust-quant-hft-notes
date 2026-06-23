@@ -73,7 +73,7 @@
 
 **读完 ① ② 之后：**
 
-- 回到 [12-HFT-Low-Latency-Practice](../../../12-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
+- 回到 [13-HFT-Low-Latency-Practice](../../../13-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
 - 用 [03-BPF](../../../03-BPF-Performance-Tools/) + `02` SysPerf Ch10 在生产上**验证**旁路收益
 
 ---

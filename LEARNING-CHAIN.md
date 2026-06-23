@@ -1,13 +1,12 @@
 # HFT 学习链路 · 从知其所以然到动手实现
 
-> **文件夹 `00`–`13`。** 资源管理器按名称排序 ≠ 全部推荐顺序 — **执行序号**见文末。
+> **文件夹 `00`–`14`。** **执行序号**见文末 — 网络段核心：`07` → `08` PNP → `09` UNP → `10`–`12` 纵深。
 
 整条路径的设计意图：
 
 ```
-知其所以然  →  知其然  →  工具落地  →  系统纵深  →  底层动手  →  动手实现
-  01–04         02          03          05–06         07            12–13
-                              网络纵深 08–11 插在 07 之前读
+知其所以然  →  知其然  →  工具落地  →  系统纵深  →  底层+网络实战  →  工程实现
+  01–04         02          03          05–06         07–12                 13–14
 ```
 
 ---
@@ -23,18 +22,19 @@
 05  LKD                   内核 · 绑核 / 中断 / 调度
 06  Gorman                虚拟内存 · NUMA / TLB / THP
 
-08  TCP/IP 卷一           协议（外部笔记仓库）
-09  UNP                   Socket API（外部笔记仓库）
-01  CSAPP Ch10–11         网络篇（与 09/10 合读）
-10  Rosen                 内核网络栈
-11  DPDK                  用户态旁路 · 网络闭环
-
 07  自制 OS / CPU         系统底层动手（07-1 / 07-2）
-12  HFT Practice          动手实现 · C++ 低延迟工程
-13  Rust Quant Guide      动手实现 · Rust 量化
+08  陈硕 PNP / muduo      C++ 网络实战 — 先写服务骨架
+09  UNP                   Socket API 系统化（对照 08 实验）
+01  CSAPP Ch10–11         网络篇（与 08/09 合读）
+10  TCP/IP 卷一           协议语义
+11  Rosen                 内核网络栈
+12  DPDK                  用户态旁路 · 网络闭环
+
+13  HFT Practice          动手实现 · C++ 低延迟工程
+14  Rust Quant Guide      动手实现 · Rust 量化
 ```
 
-**最短四步：** `01` CSAPP → `02` SysPerf → `03` BPF → `12`/`13` 实战
+**最短四步：** `01` CSAPP → `02` SysPerf → `03` BPF → `13`/`14` 实战
 
 ---
 
@@ -49,10 +49,11 @@
 | **04** | Hennessy | 理论配套 | Cache/MESI/一致性（配 01） |
 | **05** | LKD | 系统纵深 | 调度、中断、绑核 |
 | **06** | Gorman | 系统纵深 | 内核视角虚拟内存 |
-| **08–11** | 网络栈 | 系统纵深 | 协议→Socket→内核→DPDK |
-| **07** | [自制 OS/CPU](./07-system-low-level-hands-on/) | 底层动手 | 网络之后、HFT 之前 |
-| **12** | HFT Practice | 动手实现 | C++ 整机工程 |
-| **13** | Rust Guide | 动手实现 | Rust 量化工程 |
+| **07** | [自制 OS/CPU](./07-system-low-level-hands-on/) | 底层动手 | 中断、页表、指令 |
+| **08** | [PNP / muduo](./08-Practical-Network-Programming/) | 网络实战 | epoll、粘包、Reactor 骨架 |
+| **09–12** | UNP / TCP/IP / Rosen / DPDK | 网络纵深 | API → 协议 → 内核 → 旁路 |
+| **13** | HFT Practice | 动手实现 | C++ 整机工程 |
+| **14** | Rust Guide | 动手实现 | Rust 量化工程 |
 
 ---
 
@@ -60,67 +61,40 @@
 
 | 从 | 到 | 关系 |
 |----|-----|------|
-| **01 CSAPP** | **02 SysPerf** | 看懂火焰图、理解 off-CPU，而非背 USE |
-| **02 SysPerf** | **03 BPF** | Ch15 预览 → bpftrace/BCC 全书 |
-| **03 BPF** | **05–11** | 用 eBPF 验证绑核、软中断、网络路径 |
-| **08–11 网络** | **07 自制系统** | 协议栈走通后，动手摸中断/页表/指令 |
-| **07 + 01–11** | **12–13** | 知识落到 C++/Rust 热路径代码 |
+| **07 自制系统** | **08 PNP** | 摸过中断/进程，写网络服务不懵 |
+| **08 PNP** | **09 UNP** | 先写过 epoll 骨架，再啃 Stevens API |
+| **09 UNP** | **10 TCP/IP** | 知道 socket 底下协议字段什么意思 |
+| **10–12** | **13 HFT** | 网络全链路落地到交易系统 |
 
 ---
 
-## 01 CSAPP · 分两遍
+## 08 · 陈硕 PNP / muduo
 
-**第一遍（02 SysPerf 之前）：** Ch1 → Ch4–6 → Ch8 → Ch9 → Ch12  
-**第二遍（09/10 网络阶段）：** Ch10–11  
-**04 Hennessy Ch2** 与 Ch6 交叉读。
+| 外部入口 | 说明 |
+|----------|------|
+| [PNP/](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | 实验大纲、study.md、code/ |
+| [本仓库索引](./08-Practical-Network-Programming/) | HFT 裁剪与交叉阅读 |
 
-→ [01-CSAPP-3rd/](./01-CSAPP-3rd/)
-
----
-
-## 02 → 03 · Gregg 双书
-
-| 02 SysPerf | 03 BPF |
-|------------|--------|
-| 方法论、工具地图、perf | bpftrace/BCC 生产脚本 |
-| Ch13 perf · Ch15 BPF 概念 | Part I–II + XDP note |
-
-→ [02 笔记](./02-Systems-Performance-2nd/) · [03 笔记](./03-BPF-Performance-Tools/)
+→ 下一步：[09-UNP-Vol1](./09-UNP-Vol1/)
 
 ---
 
-## 11 DPDK · 实体书与时机
+## 12 DPDK · 实体书与时机
 
-**不要过早。** 先完成 `01` CSAPP、`02` SysPerf，走通 `08`→`10` 内核网络路径，且 **perf 已定位网络收发是瓶颈** 再读。
+**不要过早。** 先完成 `08`–`11` 标准网络路径，且 **perf 已定位网络收发是瓶颈** 再读。
 
-| 顺序 | 实体书 | 作用 |
-|------|--------|------|
-| ① | 《深入浅出 DPDK》 | 旁路内核栈、用户态接管网卡 |
-| ② | 《Linux 高性能网络详解》 | DPDK + RDMA + XDP；方案选型 |
-
-→ [note-DPDK实体书递进](./11-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md)
+→ [note-DPDK实体书递进](./12-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md)
 
 ---
 
-## 07 · 自制 OS / CPU
+## 13 与 14
 
-| 子模块 | 内容 |
-|--------|------|
-| [07-1-30days-os](./07-system-low-level-hands-on/07-1-30days-os/) | 最小 OS：中断、多任务、页表 |
-| [07-2-30days-cpu](./07-system-low-level-hands-on/07-2-30days-cpu/) | 最小 CPU：指令与数据通路 |
-
-**建议：** `08`–`11` 网络读完后进入 `07`，再开 `12` HFT。
-
----
-
-## 12 与 13
-
-| | 12 HFT Practice | 13 Rust Guide |
+| | 13 HFT Practice | 14 Rust Guide |
 |---|-----------------|---------------|
 | 语言 | C++ 为主 | Rust |
 | 侧重 | 共置、对接、压测、架构 | 订单簿、无锁、工程栈 |
 
-→ [READING-LIST · 与 12 映射](./READING-LIST.md#与-12-hft-low-latency-practice-章节映射)
+→ [READING-LIST · 与 13 映射](./READING-LIST.md#与-13-hft-low-latency-practice-章节映射)
 
 ---
 
@@ -130,4 +104,4 @@
 - [READING-LIST.md](./READING-LIST.md) — 章节裁剪
 - [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) — 技术对照
 
-**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 08 → 09 → 01网络章 → 10 → 11 → 07 → 12 → 13`
+**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 07 → 08 → 09 → 01网络章 → 10 → 11 → 12 → 13 → 14`

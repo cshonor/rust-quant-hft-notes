@@ -3,7 +3,7 @@
 **文件夹 03** · 全书 **18 章 + 附录 A–E**（4 Parts）· [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
 
 > **文件夹 03** · 紧接 [02-SysPerf](../02-Systems-Performance-2nd/) 阅读。  
-> **后续：** `05`–`11` 系统纵深 · [12-HFT](../12-HFT-Low-Latency-Practice/) / [13-Rust](../13-Rust-Quant-Trading-Guide/)
+> **后续：** `05`–`11` 系统纵深 · [12-HFT](../13-HFT-Low-Latency-Practice/) / [13-Rust](../14-Rust-Quant-Trading-Guide/)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 
@@ -72,6 +72,6 @@ Ch 1–2 → Ch 4–5 → Ch 6 → Ch 10 (+ XDP note) → 附录 A/B
 
 - **上一本（必读前置）** → [02-Systems-Performance-2nd](../02-Systems-Performance-2nd/) — 读完立刻读本目录
 - SysPerf bpftrace 附录 → [01 appendix-C](../02-Systems-Performance-2nd/appendix-C-bpftrace单行命令.md)
-- 后续内核/内存/网络 → [02-LKD](../05-Linux-Kernel-Development/) · [03-Gorman](../06-Linux-Virtual-Memory-Manager/) · [06-Rosen](../10-Linux-Kernel-Networking/)（读时可回头用 BPF 验证）
-- DPDK 对照 → [10-DPDK](../11-DPDK-Low-Latency-Network/)
+- 后续内核/内存/网络 → [02-LKD](../05-Linux-Kernel-Development/) · [03-Gorman](../06-Linux-Virtual-Memory-Manager/) · [06-Rosen](../11-Linux-Kernel-Networking/)（读时可回头用 BPF 验证）
+- DPDK 对照 → [10-DPDK](../12-DPDK-Low-Latency-Network/)
 - 跨模块 → [CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md)

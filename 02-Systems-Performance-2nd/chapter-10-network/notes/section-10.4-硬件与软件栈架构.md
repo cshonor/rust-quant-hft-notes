@@ -26,7 +26,7 @@
 
 - 用户态、0-RTT、多路复用 — Web/API；**tick 热路径**量化系统较少用，了解即可。
 
-→ [09-Rosen](../../../10-Linux-Kernel-Networking/) · [03-BPF note-XDP](../../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md)
+→ [09-Rosen](../../../11-Linux-Kernel-Networking/) · [03-BPF note-XDP](../../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md)
 
 ### Linux 网络栈路径（简化）
 
@@ -44,7 +44,7 @@ TX: write() → TCP 分段 → qdisc → driver → NIC
 
 **HFT：** `kernel`/`softirq` % 高 → 查 **RSS、RPS、中断亲和性**、是否该 **DPDK 旁路**。
 
-→ [09 Rosen NAPI/softirq](../../../10-Linux-Kernel-Networking/) · [CROSS-MODULE-GUIDE §二](../../CROSS-MODULE-GUIDE.md#二内核网络栈-vs-用户态旁路)
+→ [09 Rosen NAPI/softirq](../../../11-Linux-Kernel-Networking/) · [CROSS-MODULE-GUIDE §二](../../CROSS-MODULE-GUIDE.md#二内核网络栈-vs-用户态旁路)
 
 ### CPU 扩展与内核绕过
 
@@ -61,7 +61,7 @@ TX: write() → TCP 分段 → qdisc → driver → NIC
 极致延迟：10-DPDK 01-Intro（组播） / 02-Advanced XDP·RDMA
 ```
 
-→ [10-DPDK](../../../11-DPDK-Low-Latency-Network/) · [02-Advanced XDP note](../../../11-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md)
+→ [10-DPDK](../../../12-DPDK-Low-Latency-Network/) · [02-Advanced XDP note](../../../12-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md)
 
 ---
 

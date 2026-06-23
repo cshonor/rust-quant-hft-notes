@@ -69,7 +69,7 @@ cat a.txt | grep "key" | sort
 
 内核保持**精简稳定**；功能在 userland **灵活扩展**。  
 → 深入：**内核态 vs 用户态** 见 [a03 架构总览 · Kernel/Userland Separation](./episode-a03-内核架构总览.md)  
-→ **DPDK 旁路** 语境：[10-DPDK](../../11-DPDK-Low-Latency-Network/)
+→ **DPDK 旁路** 语境：[10-DPDK](../../12-DPDK-Low-Latency-Network/)
 
 ### ④ 模块化 → 可维护、可创新
 

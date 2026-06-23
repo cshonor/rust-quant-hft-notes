@@ -2,7 +2,7 @@
 
 **定位：** 协议语义与首部格式 · 回答「线上包长什么样」。
 
-**文件夹 08 · 外部书目 外A** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
+**文件夹 10 · 外部书目 外A** · [返回总清单](../READING-LIST.md#外部书目笔记在另一仓库--本仓库仅索引)
 
 ## 笔记仓库（外部）
 
@@ -33,7 +33,8 @@
 
 ## 交叉阅读
 
+- 实战前置 → [08-Practical-Network-Programming](../08-Practical-Network-Programming/)
 - API 层 → [09-UNP-Vol1](../09-UNP-Vol1/)
-- 内核实现 → [10-Linux-Kernel-Networking](../10-Linux-Kernel-Networking/)
-- 用户态旁路 → [11-DPDK-Low-Latency-Network](../11-DPDK-Low-Latency-Network/)
+- 内核实现 → [11-Linux-Kernel-Networking](../11-Linux-Kernel-Networking/)
+- 用户态旁路 → [12-DPDK-Low-Latency-Network](../12-DPDK-Low-Latency-Network/)
 - 调优观测 → [02-Systems-Performance-2nd](../02-Systems-Performance-2nd/)、[03-BPF-Performance-Tools](../03-BPF-Performance-Tools/)

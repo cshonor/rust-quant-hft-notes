@@ -53,7 +53,7 @@
 绝不：持锁跨 I/O、嵌套锁顺序不一致
 ```
 
-→ C++ `std::atomic` / `memory_order` · [12-HFT](../../../12-HFT-Low-Latency-Practice/)
+→ C++ `std::atomic` / `memory_order` · [12-HFT](../../../13-HFT-Low-Latency-Practice/)
 
 ### 12.8 小结（原书）
 

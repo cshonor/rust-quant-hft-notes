@@ -64,5 +64,5 @@
 
 ## HFT 关联
 
-- 内核编译/配置直觉 → [10-HFT ch05 内核调优](../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md)
+- 内核编译/配置直觉 → [10-HFT ch05 内核调优](../../13-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md)
 - 启动链理解 → 裸机部署、init 最小化

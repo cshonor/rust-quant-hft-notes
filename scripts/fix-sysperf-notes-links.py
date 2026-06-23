@@ -7,7 +7,7 @@ SYSPERF = Path(__file__).resolve().parents[1] / "02-Systems-Performance-2nd"
 
 # Repo-root modules (not under 02-Systems-Performance-2nd/)
 REPO_PREFIXES = (
-    "00-", "01-", "03-", "04-", "05-", "06-", "07-system", "08-", "09-", "10-", "11-DPDK", "12-", "13-",
+    "00-", "01-", "03-", "04-", "05-", "06-", "07-system", "08-Practical", "09-", "10-", "11-", "12-DPDK", "13-", "14-",
 )
 
 BROKEN_NOTE = re.compile(
