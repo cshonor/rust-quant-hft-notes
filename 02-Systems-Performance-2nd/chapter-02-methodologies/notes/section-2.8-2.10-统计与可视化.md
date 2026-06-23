@@ -125,20 +125,171 @@ Gregg 2.8–2.10 的核心警告：延迟分布 **很少是正态** — 用 **me
 
 ---
 
-### 可视化 · 让 tail 无处躲
+### 五种图 · 场景怎么用 + C++/Rust 怎么出图
 
-| 工具 | 看什么 | HFT 用法 |
-|------|--------|----------|
-| **延迟 histogram** | 单峰还是双峰 | 快/慢路径是否该拆 |
-| **热力图（Heat Map）** | 延迟随 **时间** 分布 | GC 尖刺、开盘 burst、周期 IRQ |
-| **折线：P99 + Mean** | tail 与均值分离 | mean 稳、P99 升 = 排队/GC 前兆 |
-| **火焰图** | CPU 热点 | 解释 **为什么** tail 变长（线下 perf） |
-| **FlameScope** | 热力 + 火焰 | 大样本里圈 **异常时间窗** |
+> **路径一致：** 先 **埋点 / 采样**（[2.5](./section-2.5-性能分析方法论.md)）→ **线上 Grafana 盯趋势** → **线下 perf 火焰图 / FlameScope 抓 tail 根因**。  
+> C++ 与 Rust **工具链大体相同**；差别主要在 **计时 API** 与 Rust 的 **`cargo flamegraph`** 一键链路。
 
-→ 实操 [Ch 13 perf](../../chapter-13-perf/) · [Ch 15 BPF](../../chapter-15-bpf/) · [Ch1.6 P99 读法](../chapter-01-intro/notes/section-1.6-延迟指标与读法.md)
+| 图 | 一眼回答什么 | 典型场景 |
+|----|--------------|----------|
+| **折线图** | 指标 **随时间** 怎么变？有没有尖峰？ | 盯盘、压测、告警 |
+| **散点图** | **负载 vs 延迟** 啥关系？拐点在哪？ | 定限流、找 knee |
+| **热力图** | 延迟在 **什么时间 / 什么区间** 聚集？ | 周期抖动、长尾规律 |
+| **火焰图** | **CPU 时间** 烧在哪个函数？ | 热点优化 |
+| **FlameScope** | **哪段时间** 异常？正常 vs 异常栈差在哪？ | 偶发 tail、难复现 |
 
-**线上：** **延迟热力图 + P99/P999 告警**  
-**线下：** **perf 火焰图** 对热点段
+---
+
+#### ① 折线图（Line Chart）
+
+**平时怎么用：**
+
+- 盘前 / 开盘 **前 30 分钟**：报单 **P99、mean**、**CPU 使用率** 随时间曲线 — **一眼看尖峰**（排队、burst、GC 前兆）
+- 压测 **阶梯加压**：每个档位的延迟是否稳定
+- 与 [2.6 预警线](./section-2.6.2-M-M-1-拐点与预警线.md) 对齐：ρ 曲线是否逼近 **60% 告警**
+
+**HFT 场景：** 日常盯盘、On-call、容量复盘 — **时间序列是第一面板**。
+
+**工具链（C++ / Rust 相同套路）：**
+
+```
+代码埋点 → Prometheus exporter → Grafana 折线面板
+```
+
+| 步骤 | C++ | Rust |
+|------|-----|------|
+| 计时 | `std::chrono::steady_clock` / `high_resolution_clock` | `std::time::Instant` |
+| 导出 | prometheus-cpp / 自建 counter+histogram HTTP | `metrics` / `prometheus` crate |
+| 展示 | **Grafana** — Query：`histogram_quantile(0.99, ...)`、`rate(...)` | 同左 |
+
+---
+
+#### ② 散点图（Scatter Plot）
+
+**平时怎么用：**
+
+- 横轴 **每秒报单量 λ**，纵轴 **对应 P99 / mean 延迟** — 每个点是一档压测或一分钟聚合
+- **直观看到拐点**：流量到多少时延迟 **陡增** → 直接定 [限流阈值 / ρ 预警](./section-2.6.2-M-M-1-拐点与预警线.md)
+- 验证排队论：是否在 **70% / 80%** 利用率附近 knee
+
+**HFT 场景：** [2.7.2 压测验证](./section-2.7.2-容量规划三步法.md)、Ch12 阶梯加压报告 — **比单看折线更贴「容量」**。
+
+**工具链：**
+
+| 方式 | 做法 |
+|------|------|
+| **Grafana** | XY Chart / scatter：X=`orders_per_sec`，Y=`p99_latency_us`（Prometheus 或 CSV 数据源） |
+| **Python** | 压测日志 → `matplotlib.pyplot.scatter` / **Seaborn** `scatterplot` |
+| 埋点 | 同折线 — 每窗口聚合 **(λ, P99)** 一对写入 TSDB 或 CSV |
+
+C++/Rust 侧 **无专用「散点命令」** — 关键是 **按窗口输出 (rate, latency)**，可视化在 Grafana / Python。
+
+---
+
+#### ③ 热力图（Heat Map）
+
+**平时怎么用：**
+
+- 横轴 **时间**（分钟 / 秒 offset），纵轴 **延迟分桶** 或 **请求序号**，颜色 = **密度 / 计数**
+- 抓 **长尾规律**：是否 **每分钟固定一条竖带**（定时任务）、**开盘 9:30 一块红区**（burst）
+- 怀疑 **网卡中断、内核调度、NUMA 迁移** 导致 **周期性掉延迟** — 热力图比折线更容易 **看聚集**
+
+**HFT 场景：** 排查「**每天固定时段 P99 飙**」、GC/IRQ 周期、双峰里的 **慢峰何时出现**。
+
+**工具链：**
+
+| 方式 | C++ / Rust 通用命令 / 库 |
+|------|--------------------------|
+| **perf 热力** | `perf record -a -F 99 sleep 60` → **`perf heatmap`**（需 Brendan Gregg 系工具链 / 新版本 perf 插件，环境支持时） |
+| **埋点 → Python** | 导出 `(timestamp, latency_us)` CSV → **Seaborn** `heatmap` / `hist2d` / `kdeplot` |
+| **Grafana** | **Heatmap** 面板 — bucket 延迟 histogram over time（Prometheus `*_bucket`） |
+
+```python
+# 示意：一天延迟 (time_of_day_min, latency_bucket) → 颜色=count
+import seaborn as sns
+import pandas as pd
+# df: columns [minute, latency_us]
+sns.histplot(data=df, x="minute", y="latency_us", bins=50, cbar=True)
+```
+
+---
+
+#### ④ 火焰图（Flame Graph）
+
+**平时怎么用：**
+
+- **谁吃 CPU** — 宽条 = 热点函数；报单引擎里 **订单簿排序、序列化、锁** 是否过宽
+- **线下压测 / 短窗口 perf** — 解释「P99 高的时候 CPU 在干嘛」
+- 与折线/热力图 **联动**：先知道 **何时** 慢，火焰图答 **哪个函数**
+
+**HFT 场景：** 策略热点、锁争用、意外 `malloc` — [Ch 13 perf](../../chapter-13-perf/)。
+
+**工具链：**
+
+**C++（Linux perf + FlameGraph）：**
+
+```bash
+perf record -F 99 -p $(pidof gateway) -g -- sleep 30
+perf script | stackcollapse-perf.pl | flamegraph.pl > flame.svg
+# 浏览器打开 flame.svg
+```
+
+**Rust：**
+
+```bash
+cargo install flamegraph
+cargo flamegraph --bin your_gateway -- -your args
+# 生成 flamegraph.svg；底层仍是 perf + 栈折叠
+```
+
+| 注意 | 说明 |
+|------|------|
+| 编译 | `-g` 或 `-fno-omit-frame-pointer`；Rust `--release` 带 debuginfo |
+| 实盘 | **短窗口、低频率** 采样 — 别长期 `-F 999` 压生产 |
+
+---
+
+#### ⑤ FlameScope
+
+**平时怎么用：**
+
+- 在 **火焰图之上加时间轴**：**长周期** 采样（分钟～小时）叠成 **可拖拽** 的「子火焰图」
+- **偶发 tail、压测难复现**：在 FlameScope 里 **框选 P99 飙高的那 30 秒** → 看该窗 **调用栈 vs 正常窗** 差在哪
+- 对付 [2.8 陷阱③](./section-2.8-2.10-统计与可视化.md#陷阱-③--误读异常值把-p999-当偶发噪声)：**outlier 不是噪声** — 要 **时间定位 + 栈对比**
+
+**HFT 场景：** 「一天只坏几次的 2 ms」— Grafana 看到尖刺 → FlameScope 精确定位 **那几秒在跑什么**。
+
+**工具链（C++/Rust 共用 perf 数据）：**
+
+```bash
+# 1. 采长窗口（注意磁盘，perf.data 会变大）
+perf record -F 49 -p $(pidof gateway) -g -- sleep 300
+
+# 2. 克隆 FlameScope（一次性）
+git clone https://github.com/Netflix/flamescope.git
+
+# 3. 生成 perf folded / 按 FlameScope 文档导入 perf.data
+#    浏览器打开 FlameScope UI → 拖拽时间条 → 对比 sub-flamegraph
+```
+
+→ [FlameScope 项目](https://github.com/Netflix/flamescope) · Gregg 系 **HeatMap + 火焰图** 组合
+
+---
+
+### 五种图 · 选型速查
+
+| 你想问… | 用哪张图 | 线上 / 线下 |
+|---------|----------|-------------|
+| 刚才 P99 是不是尖了一下？ | **折线** | Grafana |
+| 报单加到多少该限流？ | **散点** | 压测 + Grafana / Python |
+| 是不是每分钟/GC/IRQ 规律抖？ | **热力** | Grafana heatmap / Seaborn / perf heatmap |
+| 哪个函数最吃 CPU？ | **火焰** | `perf` + FlameGraph / `cargo flamegraph` |
+| 偶发 2 ms 那几秒栈里是谁？ | **FlameScope** | 长 `perf record` + 网页框选 |
+
+**线上组合：** Grafana **折线（P99+mean）+ Heatmap**  
+**线下组合：** **perf 火焰图** 定热点 → **FlameScope** 抓偶发 tail
+
+→ [Ch 13 perf](../../chapter-13-perf/) · [Ch 15 BPF](../../chapter-15-bpf/) · [Ch1.7 观测四层](../chapter-01-intro/notes/section-1.7-观测工具四层递进.md)
 
 ---
 
