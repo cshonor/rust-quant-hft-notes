@@ -23,7 +23,8 @@
 | 2.6.4 排队论计算器 | [notes/section-2.6.4-排队论计算器.md](./notes/section-2.6.4-排队论计算器.md) |
 | 2.7.1 阿姆达尔与 USL | [notes/section-2.7.1-阿姆达尔与USL.md](./notes/section-2.7.1-阿姆达尔与USL.md) |
 | 2.7.2 容量规划三步法 | [notes/section-2.7.2-容量规划三步法.md](./notes/section-2.7.2-容量规划三步法.md) |
-| 2.8–2.10 统计与可视化 | [notes/section-2.8-2.10-统计与可视化.md](./notes/section-2.8-2.10-统计与可视化.md) |
+| 2.8.1 统计陷阱 | [notes/section-2.8.1-统计陷阱.md](./notes/section-2.8.1-统计陷阱.md) |
+| 2.8.2 五种图与监控栈 | [notes/section-2.8.2-五种图与监控栈.md](./notes/section-2.8.2-五种图与监控栈.md) |
 
 ---
 
@@ -54,7 +55,7 @@ HFT：**先 Workload**（Grafana 确认 tick 掉速、P99 10→100 μs、reject 
 
 **④ 数字别只看平均值；资源别跑太满。**
 
-- 统计陷阱：**mean 骗人** — P99/P999、双峰（GC/cache）、tail 不是噪声；见 [2.8–2.10](./notes/section-2.8-2.10-统计与可视化.md)。
+- 统计陷阱 / 可视化：**mean 骗人**、五种图、**Prometheus+Grafana** — [2.8.1](./notes/section-2.8.1-统计陷阱.md) · [2.8.2](./notes/section-2.8.2-五种图与监控栈.md)
 - 排队论：**M/M/1 ~70%**、**M/D/1 ~80%** — 见 [2.6.1 概览](./notes/section-2.6.1-排队论概览与Kendall记号.md)、[2.6.2 M/M/1](./notes/section-2.6.2-M-M-1-拐点与预警线.md)。
 - 容量规划：**事前体检** — **定 SLO → 模型算资源 → 压测验证** — [2.7.1](./notes/section-2.7.1-阿姆达尔与USL.md) · [2.7.2](./notes/section-2.7.2-容量规划三步法.md)
 
