@@ -80,22 +80,61 @@ Profiling →  同期 perf 火焰图 / 锁分析，找根因
 | 只用 Metrics 平均值告警 | 必须 **histogram + Max 捕获** |
 | Max 出现后才凭感觉改代码 | **Tracking 抓样本 → Profiling 定根因** |
 
-### 观测 Observability（被动理解系统）
+### 观测 Observability — 四层递进：扫盲 → 趋势 → 热路径 → 拆单笔
+
+Gregg 四类工具 = **从粗粒度统计到全链路追踪** 的排障阶梯；HFT 一般 **按顺序走，别跳层**。
+
+```
+计数器 Counters  →  指标 Metrics  →  剖析 Profiling  →  追踪 Tracing
+   「有没有异常」     「什么时候开始高」   「哪段代码宽」      「这一笔逐步花在哪」
+```
+
+| 层 | 是什么 | 典型例子 | 回答什么 |
+|----|--------|----------|----------|
+| **① 计数器** | 最基础 **次数/累计** 统计 | 网卡收包数、`cache-misses`、softirq 次数、`ethtool -S` drop | 系统 **有没有异常波动**？resource 路况正常吗？ |
+| **② 指标 Metrics** | **带时间维度** 的计数器/聚合 | 每秒收包延迟 histogram、P99 曲线、Prometheus 时序 | **什么时候开始高**？趋势还是尖刺？SLO 告警 |
+| **③ 剖析 Profiling** | 一段时间内 **函数调用占比** 采样 | `perf record -g`、**火焰图** | **热路径哪段最宽**？平均/采样意义上的瓶颈 |
+| **④ 追踪 Tracing** | **单个请求** 全链路耗时拆解 | eBPF、ftrace、分段 timestamp | **这一笔** P999/Max：RX→栈→策略→TX 各多少 μs？ |
+
+**HFT 排障顺序（固定套路）：**
+
+```
+1. 计数器 + 指标   →  确认「延迟确实高了 / P999 曲线抬升 / Max 告警」
+2. 剖析           →  火焰图定位热路径、嫌疑函数
+3. 追踪           →  把 **那一次** 长尾逐步拆透 → 可落地优化点
+```
+
+**和三类延迟指标的对应：**
+
+| 延迟指标 | 主要靠哪几层 |
+|----------|--------------|
+| Mean / 压测基线 | 计数器 + Metrics |
+| P99 / P999 | Metrics（histogram）+ Profiling（嫌疑） |
+| **Max** | Metrics 捕获 + **Tracing 必做** |
 
 | 类型 | 作用 | 后续章节 |
 |------|------|----------|
 | **计数器 Counters** | 累计事件（中断次数、包数） | Ch 4、Ch 6–10 |
-| **指标 Metrics** | 时间序列、聚合 | 生产监控 |
-| **剖析 Profiling** | 谁在耗 CPU — **火焰图 Flame Graphs** | Ch 13 perf、Ch 4 |
-| **追踪 Tracing** | 时间线、因果关系；静态/动态插桩 | Ch 14 Ftrace、Ch 15 BPF |
+| **指标 Metrics** | 时间序列、分位聚合 | 生产监控 |
+| **剖析 Profiling** | 谁在耗 CPU — **火焰图** | Ch 13 perf、Ch 4 |
+| **追踪 Tracing** | 单次时间线、因果 | Ch 14 Ftrace、Ch 15 BPF |
 
-**HFT：**
+**HFT 命令速查：**
 
-- **计数器** — 排 resource（与 [1.4 自下而上](./section-1.4-1.5-分析视角与性能挑战.md) 衔接）
-- **火焰图** — 找热路径、P99 **嫌疑函数**
-- **追踪** — 把模糊的「延迟高」拆成 **可优化的具体环节**（syscall、调度、锁）
+```bash
+# ① 计数器 — 扫盲
+mpstat -P ALL 1          ethtool -S eth0          perf stat -e cache-misses
 
-→ [03-BPF Performance Tools](../../../03-BPF-Performance-Tools/) · [Ch 13 perf](../../chapter-13-perf/) · [Ch 14 ftrace](../../chapter-14-ftrace/)
+# ② 指标 — 应用内 histogram / P99 曲线（或 Prometheus）
+
+# ③ 剖析 — 热路径
+perf record -g -p <pid> -- sleep 30 && perf report
+
+# ④ 追踪 — 单笔 tail（示例方向，具体脚本见 Ch15）
+# bpftrace / ftrace：订单 ID 关联 RX→decode→send 各段 Δt
+```
+
+→ [03-BPF Performance Tools](../../../03-BPF-Performance-Tools/) · [Ch 4 工具选型](../../chapter-04-observability-tools/) · [Ch 13 perf](../../chapter-13-perf/) · [Ch 14 ftrace](../../chapter-14-ftrace/) · 双视角排障 [1.4](./section-1.4-1.5-分析视角与性能挑战.md)
 
 ### 实验 Experimentation（主动施加负载）
 
