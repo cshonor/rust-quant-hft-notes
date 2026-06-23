@@ -1,7 +1,7 @@
 # DPDK 实体书 · 《深入浅出 DPDK》→《Linux 高性能网络详解》
 
 > **10-DPDK** · 实体书补充 · **场景触发再读**  
-> 本仓库 `10` 文件夹主线仍是 [DPDK 官方文档](../../README.md)；两本书帮你**建立认知 → 挖深度**，与 [01-Intro-Book](../) chapter-01–05 对照阅读。
+> 本仓库 `11` 文件夹主线仍是 [DPDK 官方文档](../../README.md)；两本书帮你**建立认知 → 挖深度**，与 [01-Intro-Book](../) chapter-01–05 对照阅读。
 
 ---
 
@@ -62,7 +62,7 @@
 ```
 ✅ 01 CSAPP 地基（尤其 Ch6 缓存、Ch10–11 网络）
 ✅ 02 SysPerf 方法论 — 会用 perf/BPF 做延迟分解
-✅ 07 → 08 → 09 走完 — 知道内核栈收发包路径（对照「绕过了什么」）
+✅ 08 → 09 → 10 走完 — 知道内核栈收发包路径（对照「绕过了什么」）
 ✅ perf 已能定位：网络收发是瓶颈（或 softirq / 网卡队列饱和）
 ```
 
@@ -73,7 +73,7 @@
 
 **读完 ① ② 之后：**
 
-- 回到 [11-HFT-Low-Latency-Practice](../../../11-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
+- 回到 [12-HFT-Low-Latency-Practice](../../../12-HFT-Low-Latency-Practice/) ch06/ch08 — 把技术落到量化系统
 - 用 [03-BPF](../../../03-BPF-Performance-Tools/) + `02` SysPerf Ch10 在生产上**验证**旁路收益
 
 ---

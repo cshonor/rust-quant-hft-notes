@@ -29,7 +29,7 @@
 
 - **上线前** 就要有延迟/抖动 SLO（目标），不是上线后才量
 - **生产调优** 与 **事故回顾** 对应 tail latency、P99 尖刺排查
-- 与 [10-HFT ch10 延迟测量](../../../11-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) 衔接
+- 与 [10-HFT ch10 延迟测量](../../../12-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) 衔接
 
 ---
 
@@ -64,11 +64,11 @@
 | 段 | 看啥 | 工具 / 章节 |
 |----|------|-------------|
 | **网卡 → 内核** | softirq、丢包、`rx_missed_errors` | `ethtool -S` · [Ch 10 网络](../chapter-10-network/) |
-| **内核栈** | 协议栈延迟、锁、cross-NUMA | `perf`、`ftrace` · [10-DPDK bypass](../../../10-DPDK-Low-Latency-Network/) |
+| **内核栈** | 协议栈延迟、锁、cross-NUMA | `perf`、`ftrace` · [10-DPDK bypass](../../../11-DPDK-Low-Latency-Network/) |
 | **CPU** | IPC、frontend/backend stall、绑核是否生效 | `perf stat` · [Ch 6 CPU](../chapter-06-cpus/) |
 | **内存** | cache miss、page fault、false sharing | `perf mem` · [Ch 7 内存](../chapter-07-memory/) · [CSAPP Ch6](../../../01-CSAPP-3rd/chapter-06-memory-hierarchy/) |
 | **磁盘** | 热路径是否误触日志/sync | 热路径 **不应** 有 disk I/O；NVMe 仅冷路径 |
-| **端到端** | P50/P99/P999、抖动 tail | 硬件 timestamp / [HFT ch10 延迟测量](../../../11-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) |
+| **端到端** | P50/P99/P999、抖动 tail | 硬件 timestamp / [HFT ch10 延迟测量](../../../12-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/) |
 
 #### C. 自检清单（上线 / 排障时逐项过）
 

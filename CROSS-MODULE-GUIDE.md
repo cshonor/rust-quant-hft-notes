@@ -1,7 +1,7 @@
 # 跨模块联动指南
 
-> 本仓库 **技术板块已封顶**（`00`–`12`），不再新增顶层编号文件夹。  
-> **文件夹 `00`–`12` = 阅读顺序** → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
+> 本仓库 **技术板块已封顶**（`00`–`13`），不再新增顶层编号文件夹。  
+> **文件夹 `00`–`13` = 阅读顺序** → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 
 ---
 
@@ -13,13 +13,14 @@
 | **程序与硬件** | **`01` CSAPP · `04` Hennessy** | 知其所以然 |
 | **性能** | **`02` SysPerf · `03` BPF** | 方法论 + eBPF 落地 |
 | Linux 内核 / 内存 | `05` LKD · `06` Gorman | 调度 / VM / NUMA |
-| **网络完整栈** | `07`–`10` | 协议 → Socket → 内核 → DPDK |
-| **低延迟工程** | `11` HFT Practice | C++ 整机实践 |
-| **Rust 量化** | `12` Rust Guide | Rust 工程 |
+| **网络完整栈** | `08`–`11` | 协议 → Socket →内核 → DPDK |
+| **系统底层动手** | `07` | 30 天 OS / CPU（建议网络之后读） |
+| **低延迟工程** | `12` HFT Practice | C++ 整机实践 |
+| **Rust 量化** | `13` Rust Guide | Rust 工程 |
 
-### `11` 与网络板块（`07`–`10`）的分界
+### `12` 与网络板块（`08`–`11`）的分界
 
-| | `07`–`10` 网络技术栈 | `11` HFT 工程实践 |
+| | `08`–`11` 网络技术栈 | `12` HFT 工程实践 |
 |---|--------------------------|-------------------|
 | **关注点** | 报文收发、协议、网卡、内存收发模型 | 裸机调优、对接规范、系统架构、延迟压测 |
 | **产出** | 理解/实现网络路径 | 把技术栈落到交易系统工程 |
@@ -35,20 +36,20 @@
 
 ```
                     ┌─────────────────────────────────────┐
-  07 TCP/IP         │  协议语义：UDP/TCP/IGMP/组播        │
+  08 TCP/IP         │  协议语义：UDP/TCP/IGMP/组播        │
        ↓            └─────────────────────────────────────┘
                     ┌─────────────────────────────────────┐
-  08 UNP + CSAPP11  │  标准内核路径：socket → epoll       │
+  09 UNP + CSAPP11  │  标准内核路径：socket → epoll       │
        ↓            │  系统调用、内核协议栈、NAPI/softirq   │
-  09 Rosen          └─────────────────────────────────────┘
+  10 Rosen          └─────────────────────────────────────┘
                            ‖ 对照
                     ┌─────────────────────────────────────┐
-  10 DPDK           │  用户态旁路：PMD 轮询、mbuf、mempool │
+  11 DPDK           │  用户态旁路：PMD 轮询、mbuf、mempool │
                     │  绕过 sk_buff / socket 层           │
                     └─────────────────────────────────────┘
 ```
 
-| 对比项 | 内核栈（08 UNP / 09 Rosen） | 用户态旁路（10 DPDK） |
+| 对比项 | 内核栈（09 UNP / 10 Rosen） | 用户态旁路（11 DPDK） |
 |--------|----------------------------|----------------------|
 | 收包触发 | 中断 + NAPI 软中断 | 用户态 busy-poll |
 | 缓冲结构 | `sk_buff` | `rte_mbuf` |
@@ -57,7 +58,7 @@
 | 适用场景 | 通用、开发快、TCP 友好 | 极致延迟、UDP 组播行情 |
 | 观测工具 | **03 BPF Ch10** + XDP note、SysPerf Ch10 | testpmd、BPF（对比用） |
 
-**阅读顺序：** 先走通 07 → 08 → 09，再读 10 理解「绕过了什么」。
+**阅读顺序：** 先走通 08 → 09 → 10，再读 11 理解「绕过了什么」；然后可选 `07` 自制系统，最后 `12` HFT。
 
 ---
 
@@ -72,8 +73,8 @@
 | `setsockopt(SO_RCVBUF)` | mempool 大小、`RX_RING_SIZE` | 预分配、无动态扩缩 |
 | `sendto()` | `rte_eth_tx_burst()` | 同理批量发包 |
 
-→ UNP 细节：[08-UNP-Vol1](./08-UNP-Vol1/) · CSAPP：[chapter-11](./01-CSAPP-3rd/chapter-11-network-programming/)  
-→ DPDK 细节：[10-DPDK-Low-Latency-Network](./10-DPDK-Low-Latency-Network/)
+→ UNP 细节：[09-UNP-Vol1](./09-UNP-Vol1/) · CSAPP：[chapter-11](./01-CSAPP-3rd/chapter-11-network-programming/)  
+→ DPDK 细节：[11-DPDK-Low-Latency-Network](./11-DPDK-Low-Latency-Network/)
 
 ---
 
@@ -88,7 +89,7 @@
 | Roofline（Hennessy Ch1） | `rte_eth_rx_burst` 批量大小调优 | 平衡 cache 与延迟 |
 
 → CSAPP：[chapter-06](./01-CSAPP-3rd/chapter-06-memory-hierarchy/)、[chapter-09](./01-CSAPP-3rd/chapter-09-virtual-memory/)  
-→ DPDK：[01-Intro chapter-02-mbuf与内存池](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池.md)
+→ DPDK：[01-Intro chapter-02-mbuf与内存池](./11-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池.md)
 
 ---
 
@@ -97,15 +98,16 @@
 | 实验 | 目录 | 关联模块 |
 |------|------|----------|
 | CSAPP 五大 Lab | `01-CSAPP-3rd/code/` | Ch3–12 程序员视角 |
-| UNP Socket Demo | `08-UNP-Vol1/code/` 或外部仓库 | epoll / 非阻塞 / UDP |
-| Rust 无锁订单簿 | `12-Rust-Quant-Trading-Guide/code/` | Hennessy Ch5 + CSAPP Ch12 |
-| DPDK 组播最小工程 | `10-DPDK-Low-Latency-Network/01-Intro-Book/code/mcast-minimal/` | Rosen 组播 + DPDK Ch5 |
+| 自制 OS / CPU 实验 | `07-system-low-level-hands-on/code/` | 中断、页表、指令执行 |
+| UNP Socket Demo | `09-UNP-Vol1/code/` 或外部仓库 | epoll / 非阻塞 / UDP |
+| Rust 无锁订单簿 | `13-Rust-Quant-Trading-Guide/code/` | Hennessy Ch5 + CSAPP Ch12 |
+| DPDK 组播最小工程 | `11-DPDK-Low-Latency-Network/01-Intro-Book/code/mcast-minimal/` | Rosen 组播 + DPDK Ch5 |
 
 ---
 
 ## 六、OpenOnload / RDMA（轻量化，不建新文件夹）
 
-详见 [02-Advanced/note-openonload-rdma对比](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)：
+详见 [02-Advanced/note-openonload-rdma对比](./11-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)：
 
 - **OpenOnload：** 内核旁路但保留 Socket API 语义 — 介于 UNP 与 DPDK 之间
 - **RDMA/RoCE：** 共置/托管超低延迟 — 与 DPDK 场景部分重叠，部署模型不同

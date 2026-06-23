@@ -74,7 +74,7 @@ Ch 6  CPU（本章：硬件 + 调度 + PMC + 工具）
   → Ch 13 perf 深入
   → Ch 15 BPF runqlat/profile
   → 04-Hennessy cache/MESI
-  → 11-HFT ch05 内核调优落地
+  → 12-HFT ch05 内核调优落地
 ```
 
 **本章最小行动集：**
@@ -101,5 +101,5 @@ Ch 6  CPU（本章：硬件 + 调度 + PMC + 工具）
 - BPF：[../chapter-15-bpf/](../chapter-15-bpf/)
 - OS 调度：[../chapter-03-operating-systems/](../chapter-03-operating-systems/)
 - 架构：[04-Computer-Architecture-6th](../../04-Computer-Architecture-6th/)
-- HFT 绑核调优：[11-HFT ch05](../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+- HFT 绑核调优：[12-HFT ch05](../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

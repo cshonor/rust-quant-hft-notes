@@ -1,17 +1,18 @@
 # HFT 学习链路 · 从知其所以然到动手实现
 
-> **文件夹 `00`–`12` 序号 = 推荐阅读顺序。** 在资源管理器中按名称排序即可跟着学。
+> **文件夹 `00`–`13`。** 资源管理器按名称排序 ≠ 全部推荐顺序 — **执行序号**见文末。
 
 整条路径的设计意图：
 
 ```
-知其所以然  →  知其然  →  工具落地  →  系统纵深  →  动手实现
-  01–04         02          03          05–10         11–12
+知其所以然  →  知其然  →  工具落地  →  系统纵深  →  底层动手  →  动手实现
+  01–04         02          03          05–06         07            12–13
+                              网络纵深 08–11 插在 07 之前读
 ```
 
 ---
 
-## 一眼版 · 按文件夹顺序读
+## 一眼版 · 推荐执行顺序
 
 ```
 00  Harris              业务锚点（LOB / 市场结构）
@@ -21,16 +22,19 @@
 03  BPF                   工具落地 — bpftrace/BCC（紧接 02）
 05  LKD                   内核 · 绑核 / 中断 / 调度
 06  Gorman                虚拟内存 · NUMA / TLB / THP
-07  TCP/IP 卷一           协议（外部笔记仓库）
-08  UNP                   Socket API（外部笔记仓库）
-01  CSAPP Ch10–11         网络篇（与 08/09 合读）
-09  Rosen                 内核网络栈
-10  DPDK                  用户态旁路 · 网络闭环
-11  HFT Practice          动手实现 · C++ 低延迟工程
-12  Rust Quant Guide      动手实现 · Rust 量化
+
+08  TCP/IP 卷一           协议（外部笔记仓库）
+09  UNP                   Socket API（外部笔记仓库）
+01  CSAPP Ch10–11         网络篇（与 09/10 合读）
+10  Rosen                 内核网络栈
+11  DPDK                  用户态旁路 · 网络闭环
+
+07  自制 OS / CPU         系统底层动手（07-1 / 07-2）
+12  HFT Practice          动手实现 · C++ 低延迟工程
+13  Rust Quant Guide      动手实现 · Rust 量化
 ```
 
-**最短四步：** `01` CSAPP → `02` SysPerf → `03` BPF → `11`/`12` 实战
+**最短四步：** `01` CSAPP → `02` SysPerf → `03` BPF → `12`/`13` 实战
 
 ---
 
@@ -45,9 +49,10 @@
 | **04** | Hennessy | 理论配套 | Cache/MESI/一致性（配 01） |
 | **05** | LKD | 系统纵深 | 调度、中断、绑核 |
 | **06** | Gorman | 系统纵深 | 内核视角虚拟内存 |
-| **07–10** | 网络栈 | 系统纵深 | 协议→Socket→内核→DPDK（**10** 见 [实体书递进](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md)） |
-| **11** | HFT Practice | 动手实现 | C++ 整机工程 |
-| **12** | Rust Guide | 动手实现 | Rust 量化工程 |
+| **08–11** | 网络栈 | 系统纵深 | 协议→Socket→内核→DPDK |
+| **07** | [自制 OS/CPU](./07-system-low-level-hands-on/) | 底层动手 | 网络之后、HFT 之前 |
+| **12** | HFT Practice | 动手实现 | C++ 整机工程 |
+| **13** | Rust Guide | 动手实现 | Rust 量化工程 |
 
 ---
 
@@ -57,15 +62,16 @@
 |----|-----|------|
 | **01 CSAPP** | **02 SysPerf** | 看懂火焰图、理解 off-CPU，而非背 USE |
 | **02 SysPerf** | **03 BPF** | Ch15 预览 → bpftrace/BCC 全书 |
-| **03 BPF** | **05–10** | 用 eBPF 验证绑核、软中断、网络路径 |
-| **01–10** | **11–12** | 知识落到 C++/Rust 热路径代码 |
+| **03 BPF** | **05–11** | 用 eBPF 验证绑核、软中断、网络路径 |
+| **08–11 网络** | **07 自制系统** | 协议栈走通后，动手摸中断/页表/指令 |
+| **07 + 01–11** | **12–13** | 知识落到 C++/Rust 热路径代码 |
 
 ---
 
 ## 01 CSAPP · 分两遍
 
 **第一遍（02 SysPerf 之前）：** Ch1 → Ch4–6 → Ch8 → Ch9 → Ch12  
-**第二遍（08/09 网络阶段）：** Ch10–11  
+**第二遍（09/10 网络阶段）：** Ch10–11  
 **04 Hennessy Ch2** 与 Ch6 交叉读。
 
 → [01-CSAPP-3rd/](./01-CSAPP-3rd/)
@@ -83,27 +89,38 @@
 
 ---
 
-## 10 DPDK · 实体书与时机
+## 11 DPDK · 实体书与时机
 
-**不要过早。** 先完成 `01` CSAPP、`02` SysPerf，走通 `07`→`09` 内核网络路径，且 **perf 已定位网络收发是瓶颈** 再读。
+**不要过早。** 先完成 `01` CSAPP、`02` SysPerf，走通 `08`→`10` 内核网络路径，且 **perf 已定位网络收发是瓶颈** 再读。
 
 | 顺序 | 实体书 | 作用 |
 |------|--------|------|
-| ① | 《深入浅出 DPDK》 | 旁路内核栈、用户态接管网卡 — 对应高频发单抠网络延迟 |
-| ② | 《Linux 高性能网络详解》 | DPDK + RDMA + XDP；微秒级从哪来；何时上 RDMA |
+| ① | 《深入浅出 DPDK》 | 旁路内核栈、用户态接管网卡 |
+| ② | 《Linux 高性能网络详解》 | DPDK + RDMA + XDP；方案选型 |
 
-与本仓库 `10` 官方 doc 笔记对照 → [01-Intro/note-DPDK实体书递进](./10-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md) · [02-Advanced/notes/](./10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/)
+→ [note-DPDK实体书递进](./11-DPDK-Low-Latency-Network/01-Intro-Book/notes/note-DPDK实体书递进.md)
 
 ---
 
-## 11 与 12
+## 07 · 自制 OS / CPU
 
-| | 11 HFT Practice | 12 Rust Guide |
+| 子模块 | 内容 |
+|--------|------|
+| [07-1-30days-os](./07-system-low-level-hands-on/07-1-30days-os/) | 最小 OS：中断、多任务、页表 |
+| [07-2-30days-cpu](./07-system-low-level-hands-on/07-2-30days-cpu/) | 最小 CPU：指令与数据通路 |
+
+**建议：** `08`–`11` 网络读完后进入 `07`，再开 `12` HFT。
+
+---
+
+## 12 与 13
+
+| | 12 HFT Practice | 13 Rust Guide |
 |---|-----------------|---------------|
 | 语言 | C++ 为主 | Rust |
 | 侧重 | 共置、对接、压测、架构 | 订单簿、无锁、工程栈 |
 
-见 [READING-LIST · 与 11 映射](./READING-LIST.md#与-11-hft-low-latency-practice-章节映射)
+→ [READING-LIST · 与 12 映射](./READING-LIST.md#与-12-hft-low-latency-practice-章节映射)
 
 ---
 
@@ -113,4 +130,4 @@
 - [READING-LIST.md](./READING-LIST.md) — 章节裁剪
 - [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md) — 技术对照
 
-**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 07 → 08 → 01网络章 → 09 → 10 → 11 → 12`
+**执行序号：** `00 → 01(+04) → 02 → 03 → 05 → 06 → 08 → 09 → 01网络章 → 10 → 11 → 07 → 12 → 13`

@@ -40,7 +40,7 @@ UDP/TCP 收包 → 解码 → 更新 order book → 策略计算 → 发单
     往往 Net I/O + Kernel          往往 User + Lock
 ```
 
-→ [11-HFT Practice ch06](../../../11-HFT-Low-Latency-Practice/chapter-06-低延迟网络/) 端到端延迟分解
+→ [12-HFT Practice ch06](../../../12-HFT-Low-Latency-Practice/chapter-06-低延迟网络/) 端到端延迟分解
 
 ### 观测性与大 O 符号
 

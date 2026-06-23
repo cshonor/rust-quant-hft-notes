@@ -42,8 +42,8 @@ tcp_recvmsg() {
 
 **HFT 用途：**
 
-- 内核栈 **收包路径** 慢 — 从 `tcp_v4_rcv` / `udp_rcv` 往下追（对照 [09 Rosen](../../../09-Linux-Kernel-Networking/)）。
-- 对比 **DPDK 旁路** 绕过了哪些函数（→ [10-DPDK](../../../10-DPDK-Low-Latency-Network/)）。
+- 内核栈 **收包路径** 慢 — 从 `tcp_v4_rcv` / `udp_rcv` 往下追（对照 [09 Rosen](../../../10-Linux-Kernel-Networking/)）。
+- 对比 **DPDK 旁路** 绕过了哪些函数（→ [10-DPDK](../../../11-DPDK-Low-Latency-Network/)）。
 
 → Ch 13 [perf 与 tracepoint 关系](../../chapter-13-perf/)
 

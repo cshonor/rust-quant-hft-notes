@@ -10,7 +10,7 @@
 
 **HFT：**
 
-- 行情：**预分配 mbuf / ring buffer**，热路径零 malloc（→ [10-DPDK 01-Intro ch02](../../../10-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池/)）。
+- 行情：**预分配 mbuf / ring buffer**，热路径零 malloc（→ [10-DPDK 01-Intro ch02](../../../11-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池/)）。
 - 日志 / 落盘：**异步写、批量写**，绝不在 tick 路径上 `fprintf`。
 
 ### 轮询 vs 事件驱动
@@ -25,7 +25,7 @@
 **HFT 选型：**
 
 - 组播行情极致延迟 → **DPDK 轮询** 或 **busy-poll**（内核栈）
-- 多交易所 TCP 订单通道 → **epoll + 非阻塞**（→ [08-UNP](../../../08-UNP-Vol1/)）
+- 多交易所 TCP 订单通道 → **epoll + 非阻塞**（→ [08-UNP](../../../09-UNP-Vol1/)）
 
 ### 并发与锁
 
@@ -53,7 +53,7 @@
 | **CPU 亲和性（affinity）** | 线程 / IRQ / 网卡队列同 NUMA、同核，提升 cache 命中 |
 | **Huge pages** | 减 TLB miss（DPDK、大堆 Java 都相关） |
 
-→ [05-LKD](../../../05-Linux-Kernel-Development/) 调度与绑核 · [11-HFT ch05](../../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+→ [05-LKD](../../../05-Linux-Kernel-Development/) 调度与绑核 · [12-HFT ch05](../../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 
 ---
 

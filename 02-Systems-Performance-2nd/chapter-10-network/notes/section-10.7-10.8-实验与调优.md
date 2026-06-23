@@ -30,9 +30,9 @@ tc qdisc add dev eth0 root netem delay 2ms loss 0.1%
 **HFT 注意：**
 
 - 共置 **低延迟** 与云 **高吞吐** 参数集 **不同** — 勿盲抄 Netflix 全表。
-- 与 **11-HFT ch05/ch06** 合并成 **单一 sysctl runbook**，变更可回滚。
+- 与 **12-HFT ch05/ch06** 合并成 **单一 sysctl runbook**，变更可回滚。
 
-→ [11-HFT ch06](../../../11-HFT-Low-Latency-Practice/chapter-06-低延迟网络/)
+→ [12-HFT ch06](../../../12-HFT-Low-Latency-Practice/chapter-06-低延迟网络/)
 
 ### 套接字选项（应用层）
 
@@ -44,7 +44,7 @@ tc qdisc add dev eth0 root netem delay 2ms loss 0.1%
 | **`SO_BUSY_POLL`** |  socket  busy poll | 降 latency、增 CPU |
 | **非阻塞 + epoll** | 事件驱动 | Ch 5 · UNP |
 
-→ [08-UNP](../../../08-UNP-Vol1/) · [01-CSAPP Ch11](../../../01-CSAPP-3rd/chapter-11-network-programming/)
+→ [08-UNP](../../../09-UNP-Vol1/) · [01-CSAPP Ch11](../../../01-CSAPP-3rd/chapter-11-network-programming/)
 
 ---
 

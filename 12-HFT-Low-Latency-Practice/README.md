@@ -1,20 +1,20 @@
 # HFT Low-Latency Practice — 交易系统工程实践
 
-**文件夹 11** · 低延迟工程落地 · [返回总清单](../READING-LIST.md#与-11-hft-low-latency-practice-章节映射)
+**文件夹 12** · 低延迟工程落地 · [返回总清单](../READING-LIST.md#与-12-hft-low-latency-practice-章节映射)
 
 > **定位：** **动手实现**（C++ 工程）— 整机调优、交易所对接、架构、压测。  
-> **前置：** `01` CSAPP → `02` SysPerf → `03` BPF（`05`–`10` 可并行补）  
+> **前置：** `01` CSAPP → `02` SysPerf → `03` BPF → `08`–`11` 网络 → `07` 自制系统（可并行）  
 > 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 ## 与网络板块的分界
 
-| | `07`–`10` 网络技术栈 | 本文件夹（`11`） |
+| | `08`–`11` 网络技术栈 | 本文件夹（`12`） |
 |---|--------------------------|-----------------|
 | 维度 | 报文、协议、网卡、收发模型 | 交易系统整机工程 |
 | 内容 | TCP/IP、Socket、内核栈、DPDK | 对接规范、架构、压测、运维 |
 | C++ HFT 书 | — | 仅作**工程案例参考** |
 
-网络能力从 `07→08→09→10` 获取；本文件夹负责**整合落地**。
+网络能力从 `08→09→10→11` 获取；本文件夹负责**整合落地**。
 
 ## 章节（12 章）
 
@@ -35,10 +35,10 @@
 
 ## 参考书映射
 
-详见 [READING-LIST.md §与 10 映射](../READING-LIST.md#与-11-hft-low-latency-practice-章节映射)
+详见 [READING-LIST.md §与 12 映射](../READING-LIST.md#与-11-hft-low-latency-practice-章节映射)
 
 ## 交叉阅读
 
-- 网络技术栈 → [04](../07-TCP-IP-Illustrated-Vol1/) · [05](../08-UNP-Vol1/) · [06](../09-Linux-Kernel-Networking/) · [12](../10-DPDK-Low-Latency-Network/)
+- 网络技术栈 → [04](../08-TCP-IP-Illustrated-Vol1/) · [05](../09-UNP-Vol1/) · [06](../10-Linux-Kernel-Networking/) · [12](../11-DPDK-Low-Latency-Network/)
 - 跨模块总览 → [CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md)
-- Rust 工程 → [12-Rust-Quant-Trading-Guide](../12-Rust-Quant-Trading-Guide/)
+- Rust 工程 → [13-Rust-Quant-Trading-Guide](../13-Rust-Quant-Trading-Guide/)

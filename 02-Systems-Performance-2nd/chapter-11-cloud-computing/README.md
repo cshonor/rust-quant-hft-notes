@@ -64,7 +64,7 @@
 
 ```
 共置/托管裸机 HFT 主路径：
-  Ch 1–10 → Ch 13/15 → 07–10 网络栈 → 11-HFT
+  Ch 1–10 → Ch 13/15 → 08–11 网络栈 → 12-HFT
   Ch 11 云计算 → ⚪ 整章可跳过
 
 若涉及云/K8s/混合部署：
@@ -95,5 +95,5 @@
 - 磁盘 cgroup：[../chapter-09-disks/](../chapter-09-disks/)
 - OS 模型：[../chapter-03-operating-systems/](../chapter-03-operating-systems/)
 - BPF 观测：[../chapter-15-bpf/](../chapter-15-bpf/)
-- HFT 裸机调优：[11-HFT ch05](../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+- HFT 裸机调优：[12-HFT ch05](../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

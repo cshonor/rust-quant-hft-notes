@@ -58,7 +58,7 @@
 - [ ] 会用 **`ip -s link`**、**`nstat`** 看重传与 drop
 - [ ] 跑过 **`tcplife`** 或 **`tcpretrans`** 至少一次
 - [ ] 理解 **RSS/RPS/IRQ affinity** 与 softirq 的关系
-- [ ] 知道何时查 **标准栈** vs **DPDK/XDP**（handbook 07–10 闭环）
+- [ ] 知道何时查 **标准栈** vs **DPDK/XDP**（handbook 08–11 闭环）
 - [ ] 生产抓包 **仅作最后手段**
 
 ---
@@ -75,7 +75,7 @@ Ch 10 网络（本章：栈、TCP、工具、sysctl）
   → 09 Rosen   内核实现
   → 10-DPDK    旁路落地
   → 03-BPF     XDP/tc 工具
-  → 11-HFT     ch06/ch10 工程
+  → 12-HFT     ch06/ch10 工程
 ```
 
 **本章最小行动集：**
@@ -96,12 +96,12 @@ Ch 10 网络（本章：栈、TCP、工具、sysctl）
 
 - 上一章：[../chapter-09-disks/](../chapter-09-disks/)
 - 下一章：[../chapter-11-cloud-computing/](../chapter-11-cloud-computing/)
-- 协议：[07-TCP-IP-Illustrated-Vol1](../../07-TCP-IP-Illustrated-Vol1/)
-- Socket API：[08-UNP-Vol1](../../08-UNP-Vol1/)
-- 内核网络：[09-Linux-Kernel-Networking](../../09-Linux-Kernel-Networking/)
-- DPDK 旁路：[10-DPDK-Low-Latency-Network](../../10-DPDK-Low-Latency-Network/)
+- 协议：[08-TCP-IP-Illustrated-Vol1](../../08-TCP-IP-Illustrated-Vol1/)
+- Socket API：[09-UNP-Vol1](../../09-UNP-Vol1/)
+- 内核网络：[10-Linux-Kernel-Networking](../../10-Linux-Kernel-Networking/)
+- DPDK 旁路：[11-DPDK-Low-Latency-Network](../../11-DPDK-Low-Latency-Network/)
 - XDP：[03-BPF note-XDP](../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md)
 - BPF：[../chapter-15-bpf/](../chapter-15-bpf/)
 - 跨模块对照：[CROSS-MODULE-GUIDE.md](../CROSS-MODULE-GUIDE.md)
-- HFT 工程：[11-HFT ch06/ch10](../../11-HFT-Low-Latency-Practice/)
+- HFT 工程：[12-HFT ch06/ch10](../../12-HFT-Low-Latency-Practice/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

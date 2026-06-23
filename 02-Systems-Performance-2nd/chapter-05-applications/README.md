@@ -74,7 +74,7 @@ Ch 5  应用程序（本章：优化主战场 + 剖应用方法论）
   → Ch 6 CPU / Ch 7 内存 / Ch 10 网络（资源层验证假设）
   → Ch 13 perf 实操
   → Ch 15 BPF + 03-BPF 专书
-  → 11-HFT Practice 工程落地
+  → 12-HFT Practice 工程落地
 ```
 
 **本章最小行动集：**
@@ -100,5 +100,5 @@ Ch 5  应用程序（本章：优化主战场 + 剖应用方法论）
 - BPF：[../chapter-15-bpf/](../chapter-15-bpf/)
 - BPF 专书：[03-BPF-Performance-Tools](../../03-BPF-Performance-Tools/)
 - CSAPP 算法/机器级：[01-CSAPP-3rd](../../01-CSAPP-3rd/)
-- HFT 工程：[11-HFT-Low-Latency-Practice](../../11-HFT-Low-Latency-Practice/)
+- HFT 工程：[12-HFT-Low-Latency-Practice](../../12-HFT-Low-Latency-Practice/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

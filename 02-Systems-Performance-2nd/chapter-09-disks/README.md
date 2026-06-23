@@ -103,5 +103,5 @@ Ch 9  磁盘（本章：块层、HDD/SSD、RAID、biolatency）
 - 基准测试：[../chapter-12-benchmarking/](../chapter-12-benchmarking/)
 - BPF：[../chapter-15-bpf/](../chapter-15-bpf/)
 - LKD 页回写：[05-LKD ch16](../../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-16-页高速缓存和页回写/)
-- HFT 调优：[11-HFT ch05](../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+- HFT 调优：[12-HFT ch05](../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

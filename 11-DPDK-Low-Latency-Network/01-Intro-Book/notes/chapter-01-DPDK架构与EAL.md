@@ -7,4 +7,4 @@
 ## 相关章节
 
 - 下一章：[chapter-02-mbuf与内存池.md](./chapter-02-mbuf与内存池.md)
-- 内核栈对照：[09-Linux-Kernel-Networking](../../../09-Linux-Kernel-Networking/)
+- 内核栈对照：[10-Linux-Kernel-Networking](../../../10-Linux-Kernel-Networking/)

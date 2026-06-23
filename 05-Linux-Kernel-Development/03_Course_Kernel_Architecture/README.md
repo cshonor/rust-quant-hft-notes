@@ -44,9 +44,9 @@
 | a08 VM | LKD Ch 12/15 · [03-Gorman](../../06-Linux-Virtual-Memory-Manager/) | NUMA/大页 |
 | a09 调度 | LKD Ch 4 | 绑核/RT |
 | a07 同步 | LKD Ch 9–10 | RCU/无锁 |
-| a10 网络 | [06-Rosen](../../09-Linux-Kernel-Networking/) | NAPI/softirq |
+| a10 网络 | [06-Rosen](../../10-Linux-Kernel-Networking/) | NAPI/softirq |
 
-→ [10-HFT ch05–08](../../11-HFT-Low-Latency-Practice/)
+→ [10-HFT ch05–08](../../12-HFT-Low-Latency-Practice/)
 
 ---
 

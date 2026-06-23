@@ -49,7 +49,7 @@
 | SMP/NUMA（a05） | Ch 4 调度、Ch 12 内存 |
 | 抢占/同步（a06–a07） | Ch 4、Ch 9–10 |
 | VM（a08） | Ch 12、Ch 15 |
-| 网络栈（a10） | 概述 + [06-Rosen](../../09-Linux-Kernel-Networking/) |
+| 网络栈（a10） | 概述 + [06-Rosen](../../10-Linux-Kernel-Networking/) |
 
 ---
 
@@ -72,7 +72,7 @@ LKD + Gorman + Rosen：精读 + 绑核/排抖动
 | 为什么要 isolcpus / RT | 03 调度 + 抢占 |
 | 为什么 softirq 抖 | 03 网络栈 + 02 中断上下文 |
 | 为什么 NUMA 绑内存 | 03 VM + 01 LFS 装系统时见过 numactl |
-| 为什么 DPDK 旁路内核 | 03 宏内核路径 vs [10-DPDK](../../10-DPDK-Low-Latency-Network/) |
+| 为什么 DPDK 旁路内核 | 03 宏内核路径 vs [10-DPDK](../../11-DPDK-Low-Latency-Network/) |
 
 → [CROSS-MODULE-GUIDE.md](../../CROSS-MODULE-GUIDE.md)
 
@@ -85,15 +85,15 @@ LKD + Gorman + Rosen：精读 + 绑核/排抖动
 | 设计原则 | LFS | 内核编程 | 网络 / HFT | 书本 |
 |----------|-----|----------|------------|------|
 | **做一件事并做好** | 每个包单独编译安装（p6–p9）；BusyBox 是极简对照（p15） | e2 最小 LKM；e4 单一字符设备 | 收包/解析/策略/发单职责拆分 | LKD Ch 17 |
-| **管道式组合** | 工具链阶段：`binutils→gcc→glibc` 流水线 | Makefile + 内核构建系统 | `epoll` + 非阻塞 fd 组合事件流 | [08-UNP](../../08-UNP-Vol1/) · [01-CSAPP Ch11](../../01-CSAPP-3rd/chapter-11-network-programming/) |
-| **内核管资源 / 用户态做功能** | p11–p12 内核 vs p6–p9 用户工具分离 | e1 内核 vs 用户态测试程序 | 标准栈 [06-Rosen](../../09-Linux-Kernel-Networking/) vs [10-DPDK](../../10-DPDK-Low-Latency-Network/) | LKD Ch 5 · [a03 分离](./episode-a03-内核架构总览.md) |
-| **模块可插拔** | 可选包、按需安装 | **e2 LKM**、e4 驱动 | 动态加载、`SO`、Rust `dylib`（工程层） | LKD Ch 17 · [10-HFT ch08](../../11-HFT-Low-Latency-Practice/chapter-08-超低延迟核心引擎开发.md) |
+| **管道式组合** | 工具链阶段：`binutils→gcc→glibc` 流水线 | Makefile + 内核构建系统 | `epoll` + 非阻塞 fd 组合事件流 | [08-UNP](../../09-UNP-Vol1/) · [01-CSAPP Ch11](../../01-CSAPP-3rd/chapter-11-network-programming/) |
+| **内核管资源 / 用户态做功能** | p11–p12 内核 vs p6–p9 用户工具分离 | e1 内核 vs 用户态测试程序 | 标准栈 [06-Rosen](../../10-Linux-Kernel-Networking/) vs [10-DPDK](../../11-DPDK-Low-Latency-Network/) | LKD Ch 5 · [a03 分离](./episode-a03-内核架构总览.md) |
+| **模块可插拔** | 可选包、按需安装 | **e2 LKM**、e4 驱动 | 动态加载、`SO`、Rust `dylib`（工程层） | LKD Ch 17 · [10-HFT ch08](../../12-HFT-Low-Latency-Practice/chapter-08-超低延迟核心引擎开发.md) |
 
 ### 网络编程中的同一套思想
 
 - **事件驱动 / Reactor**：单线程（或少线程）上组合「监听 → 读 → 解析 → 写回」，类似 `grep | awk` 的数据流，只是发生在 socket 上
 - **组件化服务**：连接管理、协议解析、业务逻辑分层 — 对应「小工具组合」在服务端架构中的版本
-- 精读路径：[08-UNP](../../08-UNP-Vol1/)（API）→ [06-Rosen Ch11/14](../../09-Linux-Kernel-Networking/)（内核栈）→ [10-HFT ch06 网络](../../11-HFT-Low-Latency-Practice/chapter-06-低延迟网络与协议优化.md)
+- 精读路径：[08-UNP](../../09-UNP-Vol1/)（API）→ [06-Rosen Ch11/14](../../10-Linux-Kernel-Networking/)（内核栈）→ [10-HFT ch06 网络](../../12-HFT-Low-Latency-Practice/chapter-06-低延迟网络与协议优化.md)
 
 ### 读到这里应建立的直觉
 

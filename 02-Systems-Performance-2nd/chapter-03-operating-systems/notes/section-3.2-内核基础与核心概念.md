@@ -24,7 +24,7 @@
 2. 若当前线程让出 CPU → **上下文切换**
 3. 若触发缺页 → 额外内存管理路径
 
-**调优直觉：** 热路径 **少 syscall、少拷贝、少阻塞**；内核旁路见 [10-DPDK](../../../10-DPDK-Low-Latency-Network/)、用户态栈。
+**调优直觉：** 热路径 **少 syscall、少拷贝、少阻塞**；内核旁路见 [10-DPDK](../../../11-DPDK-Low-Latency-Network/)、用户态栈。
 
 ---
 
@@ -42,7 +42,7 @@ Linux 为降低延迟影响，常把处理拆成：
 下半部（Bottom half）— softirq、tasklet、ksoftirqd 稍后处理
 ```
 
-**HFT：** 高频收包 → **硬中断 + NAPI + softirq** 占 CPU；`mpstat`/`perf` 里看到 `%soft` 高要往网络栈查。→ [06 内核网络 Ch 14 NAPI/RSS](../../../09-Linux-Kernel-Networking/)
+**HFT：** 高频收包 → **硬中断 + NAPI + softirq** 占 CPU；`mpstat`/`perf` 里看到 `%soft` 高要往网络栈查。→ [06 内核网络 Ch 14 NAPI/RSS](../../../10-Linux-Kernel-Networking/)
 
 ---
 
@@ -66,7 +66,7 @@ Linux 为降低延迟影响，常把处理拆成：
 **HFT 实践：**
 
 - **绑核（pinning）**：行情解析、策略、发单分池，避免与 OS/中断线程抢核
-- **isolcpus / 专用核**： housekeeping 与 hot path 分离 → [10-HFT ch05](../../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+- **isolcpus / 专用核**： housekeeping 与 hot path 分离 → [10-HFT ch05](../../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - Linux 里程碑：**O(1) 调度器** → **CFS**（完全公平调度，默认策略）
 
 → 深入进程/调度：[LKD 3rd Ch 3](../../../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-03-进程管理/)、Ch 4 调度

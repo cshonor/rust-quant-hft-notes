@@ -71,7 +71,7 @@ Ch 12  压测时必须 profile
 Ch 13  perf（本章：官方剖析器实操）
   → Ch 15 BPF（可编程、off-CPU、runqlat）
   → 03-BPF 专书
-  → 11-HFT ch10 延迟与回归
+  → 12-HFT ch10 延迟与回归
 ```
 
 **本章最小行动集：**

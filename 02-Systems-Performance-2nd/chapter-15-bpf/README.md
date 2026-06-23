@@ -86,7 +86,7 @@ Ch 15  BPF（本章）
 SysPerf Ch 1–14  →  Ch 15 BPF 总入口
   → 03-BPF-Performance-Tools 全书（紧接 02 SysPerf）
   → 10-DPDK 02-Advanced XDP
-  → 11-HFT 生产 runbook
+  → 12-HFT 生产 runbook
 ```
 
 **本章最小行动集：**
@@ -112,5 +112,5 @@ SysPerf Ch 1–14  →  Ch 15 BPF 总入口
 - 应用 Off-CPU：[../chapter-05-applications/](../chapter-05-applications/)
 - 附录 C：[appendix-C-bpftrace单行命令.md](../appendix-C-bpftrace单行命令.md)
 - BPF 专书：[03-BPF-Performance-Tools](../../03-BPF-Performance-Tools/)
-- XDP：[03-BPF note-XDP](../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md) · [10-DPDK 02-Advanced](../../10-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md)
+- XDP：[03-BPF note-XDP](../../03-BPF-Performance-Tools/note-XDP与tc-BPF.md) · [10-DPDK 02-Advanced](../../11-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

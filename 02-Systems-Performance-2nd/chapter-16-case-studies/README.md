@@ -72,7 +72,7 @@
 |------|------|
 | **新手** | **先 Ch 16 预览** → Ch 1–2 → Ch 4 → 资源章 → Ch 13–15 → **再读 Ch 16** |
 | **HFT 已有基础** | Ch 1–15 按 OUTLINE → **Ch 16 作总复盘** → 附录 A/C |
-| **之后** | [03-BPF 专书](../../03-BPF-Performance-Tools/) · [11-HFT 工程](../../11-HFT-Low-Latency-Practice/) |
+| **之后** | [03-BPF 专书](../../03-BPF-Performance-Tools/) · [12-HFT 工程](../../12-HFT-Low-Latency-Practice/) |
 
 ---
 
@@ -102,5 +102,5 @@
 - 资源专章：Ch [6](../chapter-06-cpus/)–[11](../chapter-11-cloud-computing/)
 - 工具专章：Ch [13](../chapter-13-perf/)–[15](../chapter-15-bpf/)
 - BPF 专书：[03-BPF-Performance-Tools](../../03-BPF-Performance-Tools/)
-- HFT 压测：[11-HFT ch10](../../11-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
+- HFT 压测：[12-HFT ch10](../../12-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

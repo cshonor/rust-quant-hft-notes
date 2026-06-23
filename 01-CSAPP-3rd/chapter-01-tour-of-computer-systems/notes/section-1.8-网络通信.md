@@ -32,7 +32,7 @@ Ch 1.8 概念（本节）
   → UNP Vol.1
   → 内核网络 Rosen
   → DPDK 旁路
-  → 11-HFT ch06/ch10
+  → 12-HFT ch06/ch10
 ```
 
 → [Ch 11 网络编程](../../chapter-11-network-programming/) · [02-SysPerf Ch 10 网络](../../../02-Systems-Performance-2nd/chapter-10-network/)

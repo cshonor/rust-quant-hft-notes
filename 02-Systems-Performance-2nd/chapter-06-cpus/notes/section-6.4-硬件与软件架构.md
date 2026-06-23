@@ -15,7 +15,7 @@ cpufreq governor = performance
 turbo 按需：要稳定延迟 vs 要峰值算力 — 与团队策略一致
 ```
 
-→ [11-HFT ch05](../../../11-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+→ [12-HFT ch05](../../../12-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 
 ### Cache、MMU、TLB、互连
 
@@ -26,7 +26,7 @@ turbo 按需：要稳定延迟 vs 要峰值算力 — 与团队策略一致
 | **TLB** | 页表缓存；miss 贵 — **大页（Huge pages）** 减 TLB 压力 |
 | **QPI / UPI** | 多 socket 间互连 — **跨 socket 访存慢**，绑 NUMA 节点 |
 
-→ [06-Gorman](../../../06-Linux-Virtual-Memory-Manager/) 页表 · [10-DPDK EAL](../../../10-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-01-DPDK架构与EAL/) 大页
+→ [06-Gorman](../../../06-Linux-Virtual-Memory-Manager/) 页表 · [10-DPDK EAL](../../../11-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-01-DPDK架构与EAL/) 大页
 
 ### 性能监控计数器（PMCs）
 

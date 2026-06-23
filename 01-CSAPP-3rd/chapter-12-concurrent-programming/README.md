@@ -2,7 +2,7 @@
 
 > **CSAPP 3rd** · Bryant & O'Neill · **精读 🔴**（Part III · 全书终章）
 
-> 本章定位：**三种并发服务器模型**（进程 / I/O 多路复用 / 线程）+ **信号量同步** + **线程安全与死锁**。HFT 里 **行情解析、订单路由、风控** 几乎都在多线程或 reactor 上跑；本章是理解 **锁、竞争、伪共享** 的 POSIX 地基，无锁与 memory order 见 [11-HFT](../../11-HFT-Low-Latency-Practice/)。
+> 本章定位：**三种并发服务器模型**（进程 / I/O 多路复用 / 线程）+ **信号量同步** + **线程安全与死锁**。HFT 里 **行情解析、订单路由、风控** 几乎都在多线程或 reactor 上跑；本章是理解 **锁、竞争、伪共享** 的 POSIX 地基，无锁与 memory order 见 [12-HFT](../../12-HFT-Low-Latency-Practice/)。
 
 ---
 
@@ -32,7 +32,7 @@ accept 新连接
 
 **HFT 三件事：**
 
-1. **I/O 密集** — reactor（`epoll`）+ 非阻塞 fd；少 `fork`（→ [08-UNP](../../08-UNP-Vol1/)）
+1. **I/O 密集** — reactor（`epoll`）+ 非阻塞 fd；少 `fork`（→ [08-UNP](../../09-UNP-Vol1/)）
 2. **共享状态** — 订单簿、持仓：锁粒度、无锁队列、**false sharing**（→ [Ch 6](../chapter-06-memory-hierarchy/)）
 3. **正确性 > 吞吐** — 死锁、可重入、`errno` 线程局部；热路径用 **SPSC 无共享** 设计
 
@@ -58,7 +58,7 @@ accept 新连接
 12.7 线程安全/race/死锁 — 必读
 12.6 CPU 并行 — 绑核、少超订；与 Ch5 Amdahl 呼应
 12.1 fork 服务器 — 知道即可，生产少用
-延伸：11-HFT 无锁 · 02-SysPerf Ch6 CPU · C++11 memory_order
+延伸：12-HFT 无锁 · 02-SysPerf Ch6 CPU · C++11 memory_order
 ```
 
 ---
