@@ -1,4 +1,4 @@
-# Ch 2 方法论 · Methodologies
+﻿# Ch 2 方法论 · Methodologies
 
 > **Systems Performance 2nd** · Brendan Gregg · **精读**
 
@@ -21,8 +21,8 @@
 | 2.6.2 M/M/1 拐点与预警线 | [notes/section-2.6.2-M-M-1-拐点与预警线.md](./notes/section-2.6.2-M-M-1-拐点与预警线.md) |
 | 2.6.3 M/D/1 · M/M/c · M/G/1 | [notes/section-2.6.3-M-D-1-M-M-c-M-G-1.md](./notes/section-2.6.3-M-D-1-M-M-c-M-G-1.md) |
 | 2.6.4 排队论计算器 | [notes/section-2.6.4-排队论计算器.md](./notes/section-2.6.4-排队论计算器.md) |
-| 2.7 阿姆达尔与 USL | [notes/section-2.7-阿姆达尔与USL.md](./notes/section-2.7-阿姆达尔与USL.md) |
-| 2.7 容量规划三步法 | [notes/section-2.7-容量规划三步法.md](./notes/section-2.7-容量规划三步法.md) |
+| 2.7.1 阿姆达尔与 USL | [notes/section-2.7.1-阿姆达尔与USL.md](./notes/section-2.7.1-阿姆达尔与USL.md) |
+| 2.7.2 容量规划三步法 | [notes/section-2.7.2-容量规划三步法.md](./notes/section-2.7.2-容量规划三步法.md) |
 | 2.8–2.10 统计与可视化 | [notes/section-2.8-2.10-统计与可视化.md](./notes/section-2.8-2.10-统计与可视化.md) |
 
 ---
@@ -56,7 +56,7 @@ HFT：**先 Workload**（Grafana 确认 tick 掉速、P99 10→100 μs、reject 
 
 - 缓存命中极快、未命中极慢 → **平均值骗人**，看 **P99、热力图、火焰图**。
 - 排队论：**M/M/1 ~70%**、**M/D/1 ~80%** — 见 [2.6.1 概览](./notes/section-2.6.1-排队论概览与Kendall记号.md)、[2.6.2 M/M/1](./notes/section-2.6.2-M-M-1-拐点与预警线.md)。
-- 容量规划：**事前体检** — **定 SLO → 模型算资源 → 压测验证**；硬件与线程/队列设计都是模型 **输出**，见 [2.7](./notes/section-2.7-容量规划三步法.md)。
+- 容量规划：**事前体检** — **定 SLO → 模型算资源 → 压测验证** — [2.7.1](./notes/section-2.7.1-阿姆达尔与USL.md) · [2.7.2](./notes/section-2.7.2-容量规划三步法.md)
 
 下面按原书 2.1–2.10 展开。
 

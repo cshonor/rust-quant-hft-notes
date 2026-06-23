@@ -68,4 +68,4 @@ knee ≈ 75~80%  →  告警 ≈ 65~70%  →  Ch12 压测验证
 
 ---
 
-← [M/M/c 模型](./section-2.6.3-M-D-1-M-M-c-M-G-1.md#mm/c) · [2.7 容量规划](./section-2.7-容量规划三步法.md) · [本章导读](../README.md)
+← [M/M/c 模型](./section-2.6.3-M-D-1-M-M-c-M-G-1.md#mm/c) · [2.7.2 容量规划](./section-2.7.2-容量规划三步法.md) · [本章导读](../README.md)
