@@ -1,15 +1,38 @@
 ## 2.1–2.3 核心概念与术语
 
-### 关键术语
+> **本章定位：** 建立性能分析的 **统一语言** — 后面 USE、RED、延迟分解都靠这套词。  
+> HFT 里别说「慢」，要说 **平均延迟 / P999 长尾 / 抖动**；别说「忙」，要说 **利用率 / 饱和度**。
 
+### HFT · 口语 → 标准术语（团队对齐用）
+
+| 口语 / 模糊说法 | 标准术语 | HFT 里具体指什么 |
+|-----------------|----------|------------------|
+| 「策略慢了」 | **Latency / Response time** | 须拆：**Mean**（压测基线）、**P99/P999**（tail）、**Max**（单次灾难）、**Jitter**（抖动 = 相邻 tick 延迟差或 P99 波动） |
+| 「行情多、单多」 | **Workload 工作负载** | 订单流量 + 撤单 + 行情 tick 的 **组合**：包率、订单形状、burst 时段 — 不是单一 QPS 数字 |
+| 「CPU/网卡很忙」 | **Utilization 利用率** | 资源 **忙碌时间占比**：`mpstat` %usr、网卡带宽占用率 — **忙不忙** |
+| 「排队、堵了」 | **Saturation 饱和度** | **超出即时处理能力后的排队**：run queue、NIC TX queue、锁等待、softirq 积压 — **等多久** |
+| 「卡在哪」 | **Bottleneck 瓶颈** | 限制端到端的最慢环节 — 用 **延迟分解** 找最长段（→ [2.5](./section-2.5-性能分析方法论.md)） |
+| 「每秒处理多少」 | **Throughput 吞吐量** | ticks/s、orders/s、packets/s |
+| 「丢包、错了」 | **Errors 错误** | USE/RED 里的 **E** — `ethtool` drop、拒单、checksum 错 |
+
+**和 Ch1 的衔接：**
+
+```
+Workload（订单流组合）  →  自上而下：程序在干什么？
+Utilization / Saturation  →  自下而上：资源够吗、排队多长？
+Latency 三分法（Mean/P999/Max）  →  [Ch1.6](../chapter-01-intro/notes/section-1.6-延迟指标与读法.md)
+```
+
+**为什么要统一：** 和团队 / 券商 / 运维调优时，同一词指同一指标 — 避免「慢」到底是 Mean 还是 P999、「忙」是利用率 80% 还是 TX 队列已满。
+
+### 关键术语（原书 + HFT）
 | 术语 | 含义 | HFT 举例 |
 |------|------|----------|
 | **IOPS** | 每秒 I/O 操作数 | 日志盘、持久化（热路径通常不是瓶颈） |
 | **Throughput** | 单位时间完成的工作量 | ticks/s、orders/s |
-| **Response time / Latency** | 一次操作从发起到完成的时间 | tick→signal、signal→exchange ACK |
-| **Utilization** | 资源忙碌时间占比 | CPU %、网卡带宽占用 |
-| **Saturation** | 超出即时处理能力后的排队程度 | run queue、NIC TX queue、锁等待 |
-| **Bottleneck** | 限制整体性能的最慢环节 | 单核打满、跨 NUMA、TCP 栈 |
+| **Response time / Latency** | 一次操作从发起到完成的时间 | tick→signal、signal→exchange ACK；**须报 P99/Max，不单报 Mean** |
+| **Utilization** | 资源忙碌时间占比 | CPU %、网卡带宽占用 — **处理交易时的饱和程度** |
+| **Saturation** | 超出即时处理能力后的排队程度 | run queue、NIC TX queue、锁等待 — **利用率高的下一层** || **Bottleneck** | 限制整体性能的最慢环节 | 单核打满、跨 NUMA、TCP 栈 |
 
 ### 时间尺度（Time Scales）
 
@@ -50,8 +73,15 @@ Gregg 经典类比：若 **1 CPU 周期 ≈ 1 秒**，则：
 
 与 Ch 1 **观测 vs 实验** 一致：先观测定位，再可控实验验证。
 
----
+### 术语 → 后续方法论（预告）
 
+| 术语组 | 后面用在哪 |
+|--------|------------|
+| Utilization / Saturation / Errors | **USE** — 每个资源问 U/S/E（→ [附录 A](../../appendix-A-USE方法Linux.md)） |
+| Rate / Errors / Duration | **RED** — 每个服务问请求率、错误、耗时 |
+| Latency 分解 | **延迟分解** — tick→decode→signal→send 各段 Duration |
+
+→ [2.4 两种视角](./section-2.4-两种分析视角.md) · [2.5 方法论](./section-2.5-性能分析方法论.md)
 
 ---
 
