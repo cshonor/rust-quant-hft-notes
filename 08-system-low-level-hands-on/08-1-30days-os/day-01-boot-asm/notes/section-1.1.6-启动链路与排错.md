@@ -46,7 +46,7 @@ BIOS 已认盘（`0x1FE` 有 `55 AA`），但 **引导代码未正确执行**：
 ```powershell
 New-Item -ItemType Directory -Force D:\haribote | Out-Null
 Copy-Item -Force "<本仓库>\08-system-low-level-hands-on\08-1-30days-os\day-01-boot-asm\code\helloos.img" "D:\haribote\boot.img"
-D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img
+D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img -boot a
 ```
 
 **勿**把 `boot.img` 放在 `D:\qemu\` 安装目录。

@@ -79,7 +79,7 @@ C:\dev\haribote\          ← 推荐：纯英文、无空格
 
 ```cmd
 cd <boot.img 所在目录>
-qemu-system-i386 -fda boot.img
+qemu-system-i386 -fda boot.img -boot a
 ```
 
 ### 3.3 配置 PATH（二选一）
@@ -118,7 +118,7 @@ make
 ### 4.1 用 QEMU 启动（软盘 A:）
 
 ```cmd
-qemu-system-i386 -fda helloos.img
+qemu-system-i386 -fda helloos.img -boot a
 ```
 
 或若 Makefile 已定义 `run` 目标：

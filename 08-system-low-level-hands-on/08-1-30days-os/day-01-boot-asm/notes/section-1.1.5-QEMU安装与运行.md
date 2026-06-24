@@ -27,27 +27,27 @@
 ### 运行 boot.img
 
 1. HxD **`Ctrl+S`**；确认 **1440 KB**（`1474560` B）
-2. PowerShell：
+2. PowerShell（在 `D:\qemu` 目录，或写完整路径）：
 
 ```cmd
-D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img
+D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img -boot a
 ```
 
-**`-fda`** = 虚拟 **A: 软驱**（软盘），**不是**硬盘。
+| 参数 | 含义 |
+|------|------|
+| **`-fda`** | 把映像挂到虚拟 **A: 软驱**（软盘），**不是**硬盘 |
+| **`-boot a`** | BIOS **先从软盘 A 启动**（推荐 Day 1 加上，避免先报硬盘失败） |
 
-预期屏幕顺序：
+**成功标志：** 出现 **`Booting from Floppy...`** 后打印 **`hello, world`**。
 
 ```
-Booting from Hard Disk...
-Boot failed: could not read the boot disk    ← 正常，见下
 Booting from Floppy...
 hello, world
 ```
 
-![QEMU 启动过程：硬盘失败、软盘成功](../../assets/qemu-hello-world-success.png)
+![QEMU 启动过程：软盘引导成功](../../assets/qemu-hello-world-success.png)
 
-> **`Boot failed: could not read the boot disk` 不是 Day 1 失败。** BIOS 默认 **先试硬盘 (C:)**；本命令只挂了 **软盘 A:**，没挂可启动硬盘，所以硬盘那一步 **必然** 报这句，然后才会 **`Booting from Floppy...`**。  
-> **成功标志** 是软盘那行之后出现 **`hello, world`** —— 说明 `boot.img` 引导扇区被读入 **`0x7C00`** 并执行了。
+> **不加 `-boot a` 时：** BIOS 默认 **先试硬盘 (C:)**，会先出现 `Boot failed: could not read the boot disk`，再试软盘 —— **不是失败**，只是多两行提示。加 **`-boot a`** 可跳过硬盘那一步。
 
 `WARNING: image format was not specified` 可忽略。关窗口用 **`Ctrl+Alt+G`** 释放鼠标。
 
