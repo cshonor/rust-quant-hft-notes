@@ -72,8 +72,9 @@
 | **27** | LDT 与库 | [notes/day-27-LDT与库.md](./notes/day-27-LDT与库.md) |
 | **28** | 文件操作与文字显示 | [notes/day-28-文件操作与文字显示.md](./notes/day-28-文件操作与文字显示.md) |
 | **29** | 压缩与简单的应用程序 | [notes/day-29-压缩与简单应用程序.md](./notes/day-29-压缩与简单应用程序.md) |
+| **30** | 高级的应用程序 | [notes/day-30-高级的应用程序.md](./notes/day-30-高级的应用程序.md) |
 
-完整 Day 列表见 [OUTLINE.md](./OUTLINE.md)。
+完整 Day 列表见 [OUTLINE.md](./OUTLINE.md)。**全书 Day 1–30 笔记已齐。**
 
 ---
 
@@ -108,8 +109,8 @@
 
 ## 产出清单
 
-- [x] `OUTLINE.md` — 按原书 Day 裁剪 🔴/🟡/⚪（Day 1 起）
-- [ ] `notes/` — 每日要点 + 与 Linux 对照（**Day 1–29 ✓**）
+- [x] `OUTLINE.md` — 按原书 Day 裁剪 🔴/🟡/⚪（**Day 1–30**）
+- [x] `notes/` — 每日要点 + 与 Linux 对照（**Day 1–30 ✓**）
 - [ ] `../code/` — 可启动镜像与实验 diff
 - [ ] 与 [05-LKD](../../05-Linux-Kernel-Development/) Ch4/7/8 对照表
 
