@@ -64,6 +64,7 @@
 | **19** | 应用程序 | [notes/day-19-应用程序.md](./notes/day-19-应用程序.md) |
 | **20** | API | [notes/day-20-API.md](./notes/day-20-API.md) |
 | **21** | 保护操作系统 | [notes/day-21-保护操作系统.md](./notes/day-21-保护操作系统.md) |
+| **22** | 用 C 语言编写应用程序 | [notes/day-22-用C语言编写应用程序.md](./notes/day-22-用C语言编写应用程序.md) |
 
 完整 Day 列表见 [OUTLINE.md](./OUTLINE.md)。
 
@@ -101,7 +102,7 @@
 ## 产出清单
 
 - [x] `OUTLINE.md` — 按原书 Day 裁剪 🔴/🟡/⚪（Day 1 起）
-- [ ] `notes/` — 每日要点 + 与 Linux 对照（**Day 1–20 ✓**）
+- [ ] `notes/` — 每日要点 + 与 Linux 对照（**Day 1–21 ✓**）
 - [ ] `../code/` — 可启动镜像与实验 diff
 - [ ] 与 [05-LKD](../../05-Linux-Kernel-Development/) Ch4/7/8 对照表
 
