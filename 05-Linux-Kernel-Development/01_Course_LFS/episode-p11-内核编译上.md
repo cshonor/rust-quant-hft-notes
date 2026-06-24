@@ -4,7 +4,7 @@
 
 <!-- menuconfig、内核编译（上） · 笔记待补充 -->
 
-> 衔接 LKD：[Ch 2 内核入门](../00_Book_3rd_Notes/chapter-02-内核入门.md)
+> 衔接 LKD：[Ch 2 内核入门](../00_Book_3rd_Notes/chapter-02-getting-started/)
 
 ## 相关
 

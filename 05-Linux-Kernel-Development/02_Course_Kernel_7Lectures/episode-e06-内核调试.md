@@ -3,7 +3,7 @@
 > **B站 · 内核编程视频教程** · Linux Kernel Programming · **精读**
 
 <!-- GDB、QEMU、Oops · 笔记待补充 -->
-> 衔接 LKD：[Ch 18 调试](../00_Book_3rd_Notes/chapter-18-调试.md)
+> 衔接 LKD：[Ch 18 调试](../00_Book_3rd_Notes/chapter-18-debugging/)
 
 
 ## 相关

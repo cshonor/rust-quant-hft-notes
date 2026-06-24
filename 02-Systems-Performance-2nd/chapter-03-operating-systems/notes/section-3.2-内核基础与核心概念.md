@@ -69,7 +69,7 @@ Linux 为降低延迟影响，常把处理拆成：
 - **isolcpus / 专用核**： housekeeping 与 hot path 分离 → [10-HFT ch05](../../../14-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - Linux 里程碑：**O(1) 调度器** → **CFS**（完全公平调度，默认策略）
 
-→ 深入进程/调度：[LKD 3rd Ch 3](../../../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-03-进程管理/)、Ch 4 调度
+→ 深入进程/调度：[LKD 3rd Ch 3](../../../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-03-process-management/) · [Ch 4 调度](../../../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-04-process-scheduling/)
 
 ---
 

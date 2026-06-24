@@ -38,7 +38,7 @@
 | 模块版本 magic 不匹配 | 模块必须用**同一**内核树编译 |
 | 启动 panic | 检查 rootfs、initramfs、QEMU 内核/磁盘参数 |
 
-→ 衔接 LKD [Ch 2 内核入门](../00_Book_3rd_Notes/chapter-02-内核入门.md)
+→ 衔接 LKD [Ch 2 内核入门](../00_Book_3rd_Notes/chapter-02-getting-started/)
 
 ### e2 Linux 内核模块 🔴
 
@@ -48,7 +48,7 @@
 
 **避坑：** 在非匹配内核上 insmod → **Invalid module format**；Secure Boot 下模块签名。
 
-→ LKD [Ch 17 设备与模块](../00_Book_3rd_Notes/chapter-17-设备与模块.md)
+→ LKD [Ch 17 设备与模块](../00_Book_3rd_Notes/chapter-17-devices-modules/)
 
 ### e3 前期准备 🟡
 
@@ -73,7 +73,7 @@
 
 **避坑：** 调试符号需 `CONFIG_DEBUG_INFO=y`；QEMU 端口 1234 冲突时换端口。
 
-→ LKD [Ch 18 调试](../00_Book_3rd_Notes/chapter-18-调试.md)
+→ LKD [Ch 18 调试](../00_Book_3rd_Notes/chapter-18-debugging/)
 
 ---
 

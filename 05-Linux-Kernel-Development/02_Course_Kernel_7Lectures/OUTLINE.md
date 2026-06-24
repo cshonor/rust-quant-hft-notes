@@ -45,4 +45,4 @@ e6  GDB / QEMU 内核调试
 | **操作清单** | [CHECKLIST.md](./CHECKLIST.md) |
 | **延伸书目** | LKD 第三版 [00_Book](../00_Book_3rd_Notes/) · LDD · LKMPG |
 
-→ 完成后 [03 架构理论](../03_Course_Kernel_Architecture/) · 书本 [LKD Ch17 模块](../00_Book_3rd_Notes/chapter-17-设备与模块.md)
+→ 完成后 [03 架构理论](../03_Course_Kernel_Architecture/) · 书本 [LKD Ch17 模块](../00_Book_3rd_Notes/chapter-17-devices-modules/)
