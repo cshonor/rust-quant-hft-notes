@@ -46,8 +46,8 @@
 
 | 轨道 | 外部仓库 | 本仓库索引 |
 |------|----------|------------|
-| **PNP 实战** | [Computer-Networking/PNP](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | [09-Practical-Network-Programming](./09-Practical-Network-Programming/) |
-| **UNP** | [UNP_Vol1](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) | [10-UNP-Vol1](./10-UNP-Vol1/) |
+| **PNP 实战** | [Computer-Networking/PNP](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | [10-Practical-Network-Programming](./10-Practical-Network-Programming/) |
+| **UNP** | [UNP_Vol1](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) | [11-UNP-Vol1](./11-UNP-Vol1/) |
 
 ---
 
@@ -79,8 +79,8 @@
 | `epoll_wait()` | `while(1) { rx_burst; process; }` | 事件驱动 → 忙等 |
 | `recvfrom()` | `rte_eth_rx_burst()` | 批量收包；无 syscall |
 
-→ UNP：[10-UNP-Vol1](./10-UNP-Vol1/) · PNP：[09-Practical-Network-Programming](./09-Practical-Network-Programming/)  
-→ DPDK：[13-DPDK-Low-Latency-Network](./13-DPDK-Low-Latency-Network/)
+→ UNP：[11-UNP-Vol1](./11-UNP-Vol1/) · PNP：[10-Practical-Network-Programming](./10-Practical-Network-Programming/)  
+→ DPDK：[14-DPDK-Low-Latency-Network](./14-DPDK-Low-Latency-Network/)
 
 ---
 
@@ -91,7 +91,7 @@
 | 局部性、Cache line | mbuf 连续布局、mempool 同 NUMA | 避免跨 NUMA 取 mbuf |
 | TLB / 大页 | EAL `-huge` | DPDK 强制依赖大页 |
 
-→ [12-DPDK chapter-02-mbuf](./13-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池.md)
+→ [12-DPDK chapter-02-mbuf](./14-DPDK-Low-Latency-Network/01-Intro-Book/notes/chapter-02-mbuf与内存池.md)
 
 ---
 
@@ -101,11 +101,11 @@
 |------|------|----------|
 | CSAPP Lab | `01-CSAPP-3rd/code/` | Ch3–12 |
 | PNP 网络实验 | [外部 PNP/code](https://github.com/cshonor/Computer-Networking/tree/main/PNP/code) | 对照 09 UNP |
-| 自制 OS/CPU | `08-system-low-level-hands-on/code/` | 中断、页表 |
+| 自制 OS/CPU | `09-system-low-level-hands-on/code/` | 中断、页表 |
 | DPDK 组播最小工程 | `12-DPDK/.../mcast-minimal/` | Rosen 组播 |
 
 ---
 
 ## 七、OpenOnload / RDMA
 
-详见 [note-openonload-rdma对比](./13-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)
+详见 [note-openonload-rdma对比](./14-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-openonload-rdma对比.md)

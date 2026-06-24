@@ -47,8 +47,8 @@
 | 章 | 英文 | 笔记 | HFT |
 |----|------|------|-----|
 | 13 | Dealers | [chapter-13](./chapter-13-做市商.md) | 🔴 |
-| 14 | Bid/Ask Spreads | [chapter-14](./chapter-14-买卖价差.md) | 🔴 |
-| 15 | Block Traders | [chapter-15](./chapter-15-大宗交易者.md) | 🟡 |
+| 16 | Bid/Ask Spreads | [chapter-14](./chapter-14-买卖价差.md) | 🔴 |
+| 16 | Block Traders | [chapter-15](./chapter-15-大宗交易者.md) | 🟡 |
 | 16 | Value Traders | [chapter-16](./chapter-16-价值交易者.md) | 🟡 |
 | 17 | Arbitrageurs | [chapter-17](./chapter-17-套利者.md) | 🔴 |
 | 18 | Buy-Side Traders | [chapter-18](./chapter-18-买方交易者.md) | 🟡 |

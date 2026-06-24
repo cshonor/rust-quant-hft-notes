@@ -3,7 +3,7 @@
 **文件夹 01** · 全书 **12 章 + 附录 A** · [返回总清单](../READING-LIST.md#6-computer-systems-a-programmers-perspective-3rd--bryant--oneill)
 
 > **文件夹 01** · 知其所以然 — 程序如何在硬件上跑。  
-> **下一本：** [02-SysPerf](../02-Systems-Performance-2nd/) → [03-BPF](../03-BPF-Performance-Tools/) → [12-HFT](../14-HFT-Low-Latency-Practice/) / [13-Rust](../15-Rust-Quant-Trading-Guide/)  
+> **下一本：** [02-SysPerf](../02-Systems-Performance-2nd/) → [03-BPF](../03-BPF-Performance-Tools/) → [12-HFT](../15-HFT-Low-Latency-Practice/) / [13-Rust](../16-Rust-Quant-Trading-Guide/)  
 > 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)

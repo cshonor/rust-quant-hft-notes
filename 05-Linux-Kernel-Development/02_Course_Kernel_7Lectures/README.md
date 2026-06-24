@@ -62,9 +62,9 @@
 
 ## HFT 关联
 
-- e1 内核编译 → [10-HFT ch05 内核调优](../../14-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md)
+- e1 内核编译 → [10-HFT ch05 内核调优](../../15-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md)
 - e6 调试 → 生产 Oops/panic 分析
-- e2+ → 理解模块/中断上下文 → LKD Ch 7–8、[06-Rosen Ch14](../../12-Linux-Kernel-Networking/chapter-14-高级主题.md)
+- e2+ → 理解模块/中断上下文 → LKD Ch 7–8、[06-Rosen Ch14](../../13-Linux-Kernel-Networking/chapter-14-高级主题.md)
 
 ## 动手代码
 

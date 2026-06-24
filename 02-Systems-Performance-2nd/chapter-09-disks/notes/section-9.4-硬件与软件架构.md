@@ -54,7 +54,7 @@ cat /sys/block/nvme0n1/queue/scheduler
 # 常见 [none] mq-deadline kyber bfq
 ```
 
-→ Ch 8 [FS 上层](../../chapter-08-file-systems/) · [09 Rosen 块层](../../../12-Linux-Kernel-Networking/)（网络栈不同，块层见 LKD）
+→ Ch 8 [FS 上层](../../chapter-08-file-systems/) · [09 Rosen 块层](../../../13-Linux-Kernel-Networking/)（网络栈不同，块层见 LKD）
 
 ---
 

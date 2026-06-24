@@ -4,7 +4,7 @@
 
 <!-- 章节笔记待补充：小包过滤、DPDK 前置对比 -->
 
-> 与 Ch 10 网络章配套；vs DPDK 见 [02-Advanced note-XDP](../13-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md) · [10-DPDK](../13-DPDK-Low-Latency-Network/)
+> 与 Ch 10 网络章配套；vs DPDK 见 [02-Advanced note-XDP](../14-DPDK-Low-Latency-Network/02-Advanced-Book/notes/note-XDP与DPDK对照.md) · [10-DPDK](../14-DPDK-Low-Latency-Network/)
 
 ## 相关
 

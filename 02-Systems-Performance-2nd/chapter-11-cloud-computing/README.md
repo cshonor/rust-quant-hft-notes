@@ -95,5 +95,5 @@
 - 磁盘 cgroup：[../chapter-09-disks/](../chapter-09-disks/)
 - OS 模型：[../chapter-03-operating-systems/](../chapter-03-operating-systems/)
 - BPF 观测：[../chapter-15-bpf/](../chapter-15-bpf/)
-- HFT 裸机调优：[12-HFT ch05](../../14-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
+- HFT 裸机调优：[12-HFT ch05](../../15-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

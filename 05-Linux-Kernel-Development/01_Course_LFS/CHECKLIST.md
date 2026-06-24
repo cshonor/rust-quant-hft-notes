@@ -83,4 +83,4 @@
 ## HFT 延伸（可选）
 
 - [ ] 内核配置：关闭不需要的子系统、模块变内置（减少启动与 lookup 开销）
-- [ ] 记录当前 `.config` 与 HFT 裸机常用选项差异，供 [10-HFT ch05](../../14-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md) 对照
+- [ ] 记录当前 `.config` 与 HFT 裸机常用选项差异，供 [10-HFT ch05](../../15-HFT-Low-Latency-Practice/chapter-05-操作系统内核极致调优.md) 对照

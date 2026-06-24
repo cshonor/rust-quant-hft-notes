@@ -30,8 +30,8 @@
 | 11 | Security | [chapter-11](./chapter-11-安全.md) | ⚪ |
 | 12 | Languages | [chapter-12](./chapter-12-语言.md) | ⚪ |
 | 13 | Applications | [chapter-13](./chapter-13-应用程序.md) | 🟡 |
-| 14 | Kernel | [chapter-14](./chapter-14-内核.md) | 🟡 |
-| 15 | Containers | [chapter-15](./chapter-15-容器.md) | ⚪ |
+| 16 | Kernel | [chapter-14](./chapter-14-内核.md) | 🟡 |
+| 16 | Containers | [chapter-15](./chapter-15-容器.md) | ⚪ |
 | 16 | Hypervisors | [chapter-16](./chapter-16-虚拟机管理程序.md) | ⚪ |
 
 ### HFT 延伸
@@ -70,6 +70,6 @@ Part II  Ch 6 CPU → Ch 10 网络 (+ note-XDP)
 附录 A/B bpftrace 速查
 ```
 
-→ **紧接** [02-SysPerf](../02-Systems-Performance-2nd/)（Gregg 双书第二本）· vs DPDK → [10-DPDK](../13-DPDK-Low-Latency-Network/)
+→ **紧接** [02-SysPerf](../02-Systems-Performance-2nd/)（Gregg 双书第二本）· vs DPDK → [10-DPDK](../14-DPDK-Low-Latency-Network/)
 
 完整路线 → [HFT-READING-ROADMAP.md](../HFT-READING-ROADMAP.md)

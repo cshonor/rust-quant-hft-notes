@@ -35,7 +35,7 @@
 
 **HFT 最佳实践：** Micro 工具 baseline + **自定义 replay harness** 报 **端到端 span**。
 
-→ [12-HFT ch10](../../../14-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
+→ [12-HFT ch10](../../../15-HFT-Low-Latency-Practice/chapter-10-延迟测量与基准压测/)
 
 ### 阶梯式施加负载（Ramping Load）
 

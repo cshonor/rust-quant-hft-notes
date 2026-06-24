@@ -23,8 +23,8 @@
 | 11 | Timers and Time Management | [chapter-11-timers](./chapter-11-timers/) | 🔴 |
 | 12 | Memory Management | [chapter-12-memory-management](./chapter-12-memory-management/) | 🟡 |
 | 13 | The Virtual Filesystem | [chapter-13-vfs](./chapter-13-vfs/) | ⚪ |
-| 14 | The Block I/O Layer | [chapter-14-block-io](./chapter-14-block-io/) | ⚪ |
-| 15 | The Process Address Space | [chapter-15-process-address-space](./chapter-15-process-address-space/) | 🟡 |
+| 16 | The Block I/O Layer | [chapter-14-block-io](./chapter-14-block-io/) | ⚪ |
+| 16 | The Process Address Space | [chapter-15-process-address-space](./chapter-15-process-address-space/) | 🟡 |
 | 16 | The Page Cache and Page Writeback | [chapter-16-page-cache](./chapter-16-page-cache/) | ⚪ |
 | 17 | Devices and Modules | [chapter-17-devices-modules](./chapter-17-devices-modules/) | ⚪ |
 | 18 | Debugging | [chapter-18-debugging](./chapter-18-debugging/) | 🟡 |
