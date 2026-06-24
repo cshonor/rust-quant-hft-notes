@@ -13,6 +13,10 @@
 | **十六进制编辑器** | 新建/编辑软盘映像、写入机器码 | [HxD](https://mh-nexus.de/en/hxd/)（免费）· WinHex |
 | **QEMU** | 把 `.img` 当 A: 软盘启动 | `qemu-system-i386`（见 [SETUP.md](../../SETUP.md)） |
 
+![HxD 十六进制编辑器界面](../../assets/hxd-hex-editor.png)
+
+*HxD：偏移 + 十六进制 + ASCII 三栏；支持软盘映像 raw 读写、校验和。官网 [mh-nexus.de/hxd](https://mh-nexus.de/en/hxd/) · 便携版 / 安装版均可。*
+
 全程 **不需要 tolset / nask** —— 本节故意与编译器绝缘。
 
 ---
