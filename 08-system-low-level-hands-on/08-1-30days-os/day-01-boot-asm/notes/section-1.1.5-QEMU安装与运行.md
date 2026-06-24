@@ -35,6 +35,8 @@ D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img
 
 **`-fda`** = 虚拟 **A: 软驱**。预期：BIOS 自检后出现 **`hello, world`**。
 
+![QEMU 成功启动 hello, world](../../assets/qemu-hello-world-success.png)
+
 > **这一刻：** 模拟老 PC 把引导扇区载入 **`0x7C00`** 并按字节执行 —— **亲手给一台老电脑装了自己写的系统。**
 
 `WARNING: image format was not specified` 可忽略。关窗口用 **`Ctrl+Alt+G`** 释放鼠标。
