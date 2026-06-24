@@ -51,13 +51,24 @@ C:\dev\haribote\          ← 推荐：纯英文、无空格
 
 ### 3.2 安装 / 确认 QEMU
 
-- 若 tolset 已含 QEMU：在 `tolset` 或 `z_tools` 下找到 `qemu-system-i386.exe`。
-- 否则从 [QEMU 官网](https://www.qemu.org/download/#windows) 安装，记下安装路径。
+**Day 1 手工 `boot.img`：** 只需 QEMU，**不必** VMware / VirtualBox。便携版解压即用（见 [day-01 section 1.1](./day-01-boot-asm/notes/section-1.1-先动手操作.md) §4）。
+
+| 来源 | 说明 |
+|------|------|
+| **便携版 / 安装版** | [QEMU 官网 Windows](https://www.qemu.org/download/#windows) 或社区 **「QEMU 便携版」** → 解压到 `D:\DevTools\qemu\` |
+| **tolset 自带** | `tolset` / `z_tools` 下的 `qemu-system-i386.exe` |
 
 **验证：**
 
 ```cmd
 qemu-system-i386 --version
+```
+
+**Day 1 一行启动（软盘映像）：**
+
+```cmd
+cd <boot.img 所在目录>
+qemu-system-i386 -fda boot.img
 ```
 
 ### 3.3 配置 PATH（二选一）
