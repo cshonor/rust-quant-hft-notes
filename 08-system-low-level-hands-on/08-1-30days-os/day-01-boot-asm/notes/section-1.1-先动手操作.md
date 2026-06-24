@@ -15,7 +15,11 @@
 
 ![HxD 十六进制编辑器界面](../../assets/hxd-hex-editor.png)
 
-*HxD：偏移 + 十六进制 + ASCII 三栏；支持软盘映像 raw 读写、校验和。官网 [mh-nexus.de/hxd](https://mh-nexus.de/en/hxd/) · 便携版 / 安装版均可。*
+*HxD：偏移 + 十六进制 + ASCII 三栏；支持软盘映像 raw 读写、校验和。*
+
+**下载：** [mh-nexus.de/en/hxd](https://mh-nexus.de/en/hxd/) → **Downloads** → 选 **Chinese (Simplified)** 或 **Portable Edition**（2.3+ 便携版无需管理员权限，可放 U 盘）。当前页列出版本 **2.5.0.0**（约 3.2 MiB），HTTPS 下载；可用页内 SHA-1 / SHA-512 校验。
+
+![HxD 下载页](../../assets/hxd-downloads.png)
 
 全程 **不需要 tolset / nask** —— 本节故意与编译器绝缘。
 

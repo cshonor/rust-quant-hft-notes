@@ -8,6 +8,7 @@
 
 | 组件 | 作用 | 典型文件名 |
 |------|------|------------|
+| **HxD** | Day 1 手工写软盘映像（可先于 tolset） | `HxD.exe` — 见 [day-01 section 1.1](./day-01-boot-asm/notes/section-1.1-先动手操作.md) |
 | **nask** | 书专用汇编器（非 NASM） | `nask.exe` |
 | **bcc** | 书配套 C 编译器 | `bcc32.exe` 等 |
 | **映像工具** | 把 `ipl.bin` 写入软盘映像 | `edimg` / `imgtool` / 书内脚本 |
