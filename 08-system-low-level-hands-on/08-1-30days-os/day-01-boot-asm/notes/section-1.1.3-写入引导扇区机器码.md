@@ -1,8 +1,10 @@
 ## 写入引导扇区机器码
 
-**对照资料：** [HELLOOS_HEX_REFERENCE.md](../../HELLOOS_HEX_REFERENCE.md) · [helloos-boot-sector.hex](../code/helloos-boot-sector.hex) · [helloos.img](../code/helloos.img)
+**对照资料：** [HELLOOS_HEX_REFERENCE.md](../../HELLOOS_HEX_REFERENCE.md) · [helloos-boot-sector-paste.txt](../code/helloos-boot-sector-paste.txt)（**HxD 粘贴用**）· [helloos-boot-sector.hex](../code/helloos-boot-sector.hex)（逐行手输对照）· [helloos.img](../code/helloos.img)
 
-从 **中间 hex 区偏移 0 的第一个格子** 起，对照附表输入或粘贴；也可一键复制参考 `helloos.img`（见 [1.1.6 做法 A](./section-1.1.6-启动链路与排错.md)）。
+> **勿从 `.hex` 整段复制：** 每行左侧 `0000`、`0100`… 是地址标尺（同 HxD 左列），粘进映像会导致错位。整段粘贴请用 **[helloos-boot-sector-paste.txt](../code/helloos-boot-sector-paste.txt)**。
+
+从 **中间 hex 区偏移 0 的第一个格子** 起粘贴或对照输入；也可一键复制参考 `helloos.img`（见 [1.1.6 做法 A](./section-1.1.6-启动链路与排错.md)）。
 
 ### 极简改法（建立直觉）
 

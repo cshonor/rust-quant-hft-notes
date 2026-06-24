@@ -33,11 +33,21 @@
 D:\qemu\qemu-system-i386.exe -fda D:\haribote\boot.img
 ```
 
-**`-fda`** = 虚拟 **A: 软驱**。预期：BIOS 自检后出现 **`hello, world`**。
+**`-fda`** = 虚拟 **A: 软驱**（软盘），**不是**硬盘。
 
-![QEMU 成功启动 hello, world](../../assets/qemu-hello-world-success.png)
+预期屏幕顺序：
 
-> **这一刻：** 模拟老 PC 把引导扇区载入 **`0x7C00`** 并按字节执行 —— **亲手给一台老电脑装了自己写的系统。**
+```
+Booting from Hard Disk...
+Boot failed: could not read the boot disk    ← 正常，见下
+Booting from Floppy...
+hello, world
+```
+
+![QEMU 启动过程：硬盘失败、软盘成功](../../assets/qemu-hello-world-success.png)
+
+> **`Boot failed: could not read the boot disk` 不是 Day 1 失败。** BIOS 默认 **先试硬盘 (C:)**；本命令只挂了 **软盘 A:**，没挂可启动硬盘，所以硬盘那一步 **必然** 报这句，然后才会 **`Booting from Floppy...`**。  
+> **成功标志** 是软盘那行之后出现 **`hello, world`** —— 说明 `boot.img` 引导扇区被读入 **`0x7C00`** 并执行了。
 
 `WARNING: image format was not specified` 可忽略。关窗口用 **`Ctrl+Alt+G`** 释放鼠标。
 
