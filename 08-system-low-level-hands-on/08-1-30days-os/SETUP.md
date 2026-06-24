@@ -56,9 +56,12 @@ C:\dev\haribote\          ← 推荐：纯英文、无空格
 ![QEMU 官网 Windows 下载页](./assets/qemu-org-download-windows.png)
 
 1. [qemu.org/download#windows](https://www.qemu.org/download/#windows) → **Windows** 标签
-2. **Stefan Weil provides binaries…** → 点 **`64-bit`**
-3. 下载 **`qemu-w64-setup-….exe`**（最新版）
-4. 安装到 **`D:\DevTools\QEMU`**，勾选 **PATH**（若有）
+2. **Stefan Weil provides binaries…** → 点 **`64-bit`** → [qemu.weilnetz.de/w64/](https://qemu.weilnetz.de/w64/)
+
+![QEMU 64-bit 镜像站](./assets/qemu-weilnetz-w64.png)
+
+3. 下载列表底部最新 **`qemu-w64-setup-YYYYMMDD.exe`**（例：`qemu-w64-setup-20230501.exe`）
+4. 双击安装包 → **`D:\DevTools\QEMU`** → 勾选 **PATH**（若有）
 5. 新开 cmd：`qemu-system-i386 --version`
 
 > **跳过 MSYS2 / pacman** 段落 — 仅开发编译用；学习用书用 **setup 安装包** 即可。
