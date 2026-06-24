@@ -228,8 +228,33 @@ D:\qemu\qemu-system-i386.exe -fda C:\Users\12392\Desktop\boot.img
 | 现象 | 原因 |
 |------|------|
 | 非系统盘 / 不启动 | 缺 **`55 AA`**，或引导区未写在 **偏移 0** |
-| 乱码或崩溃 | 十六进制 **错位**（粘贴时漏字节、奇数位） |
-| 黑屏无输出 | 映像太小；或未用 **`-fda`** 挂软盘 |
+| **`Booting from Floppy...` 卡住、无字** | 见下方 **QEMU 卡住排查** |
+| 乱码或崩溃 | 十六进制 **错位**（粘贴时漏字节、开头多 `00`） |
+| 黑屏无输出 | 映像太小/太大；或未用 **`-fda`** 挂软盘 |
 | 路径含中文 | 个别工具读写失败 — 工程放纯英文路径 |
+
+#### QEMU 卡在 `Booting from Floppy...`
+
+![QEMU 已认软盘但无输出](../../assets/qemu-booting-floppy-stuck.png)
+
+说明 **BIOS 已认盘**（`55 AA` 在 **第一个 512 B 扇区** 的 `0x1FE`），但 **引导代码未正确执行**。用 HxD / Python 对照本机 `boot.img`：
+
+| 检查项 | 正确值 | 常见错误 |
+|--------|--------|----------|
+| **文件总大小** | **1,474,560 B**（1.44 MB） | 误填 **`21448608`** 等错误数字 |
+| **偏移 `0x000`** | **`EB 4E 90`** | 开头多了 **`00 00`**，整段右移 2 字节 |
+| **含字符串** | 文件内能搜到 **`hello, world`** | 错位后字符串损坏或消失 |
+| **`0x1FE`** | **`55 AA`** | 仅有签名但代码区错 |
+
+**最快修复：**
+
+```cmd
+copy /Y C:\Users\12392\Desktop\hft\08-system-low-level-hands-on\code\day-01\helloos.img C:\Users\12392\Desktop\boot.img
+D:\qemu\qemu-system-i386.exe -fda C:\Users\12392\Desktop\boot.img
+```
+
+若参考映像能出字 → QEMU 正常，再按 [helloos-boot-sector.hex](../../../code/day-01/helloos-boot-sector.hex) **从偏移 0 重填** 512 字节引导扇区，并 **`Ctrl+E` → `1474560`** 修正文件大小。
+
+PowerShell 里 `WARNING: image format was not specified` 可忽略；也可写 `-drive format=raw,file=boot.img,index=0,if=floppy`。
 
 ---
