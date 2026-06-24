@@ -128,7 +128,7 @@ day-XX-slug/
 - [x] `SETUP.md` — Windows + QEMU Day 0 部署
 - [x] `OUTLINE.md` — 按原书 Day 裁剪 🔴/🟡/⚪（**Day 1–30**）
 - [x] `day-XX-slug/` — 每日导读 + `notes/section-*.md`（**Day 1–30 ✓**）
-- [ ] `../code/` — 可启动镜像与实验 diff
+- [ ] `../code/day-01/` — helloos 映像与十六进制对照（**Day 1 ✓**）
 - [ ] 与 [05-LKD](../../05-Linux-Kernel-Development/) Ch4/7/8 对照表
 
 ---

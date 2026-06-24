@@ -88,7 +88,9 @@
 
 #### 2. 从偏移 0 写入原书机器码
 
-打开原书 **Day 1 附表**（或 tolset 里 `helloos` 工程对照用的那张 **完整十六进制表**），从 **第一个字节（偏移 0x00000000）** 起，把整表 **粘贴进映像**。
+**本仓库可复制对照：** [HELLOOS_HEX_REFERENCE.md](../../HELLOOS_HEX_REFERENCE.md) · 完整 512 字节表 · [helloos.img](../../../code/day-01/helloos.img)（可直接 QEMU 启动）
+
+打开原书 **Day 1 附表**（或 tolset `helloos` 工程附表），从 **偏移 `0x00000000`** 起粘贴；也可打开 `helloos-boot-sector.hex` 逐行对照输入。
 
 不必手敲每一个字节；关键是 **位置对、长度对**。若手敲练手，至少认清这几处：
 
