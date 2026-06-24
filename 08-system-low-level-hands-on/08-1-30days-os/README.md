@@ -55,6 +55,7 @@
 | **10** | 叠加处理 | [notes/day-10-叠加处理.md](./notes/day-10-叠加处理.md) |
 | **11** | 制作窗口 | [notes/day-11-制作窗口.md](./notes/day-11-制作窗口.md) |
 | **12** | 定时器（1） | [notes/day-12-定时器1.md](./notes/day-12-定时器1.md) |
+| **13** | 定时器（2） | [notes/day-13-定时器2.md](./notes/day-13-定时器2.md) |
 
 完整 Day 列表见 [OUTLINE.md](./OUTLINE.md)。
 
