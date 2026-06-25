@@ -13,7 +13,33 @@
 | 构建 | 书内 Makefile + 批处理 | **GNU Make** |
 | 运行 | QEMU / 软驱 | **QEMU** |
 
-**nask 可以这么理解：** 川合秀实为了方便读者，在 NASM 语法风格上做了定制汇编器；功能上仍是「把 `.nas`/`.asm` 编成机器码」。**我们不必纠结作者的魔改工具** — 直接用业界标准的 **NASM** 即可。
+**nask 可以这么理解：** 川合秀实为了方便读者，在 NASM 语法风格上做了定制汇编器。**我们直接用原版 NASM** — 默认就认 **`.nasm`** 和 **`.asm`** 后缀，不必改扩展名骗工具。
+
+---
+
+## 第一次编译（Day 1）
+
+保存为 **`helloos.nasm`**，一行命令出机器码：
+
+```bash
+nasm -f bin helloos.nasm -o helloos.img
+```
+
+| 部分 | 含义 |
+|------|------|
+| **`helloos.nasm`** | 源码；NASM 自动识别 Intel 语法 |
+| **`-f bin`** | 输出 **纯二进制**（引导扇区用，不是 `.obj`/ELF） |
+| **`-o helloos.img`** | 写入映像/二进制文件 |
+
+**NASM 替你做的事（不用再像 HxD 手算 hex）：**
+
+- 把 **`mov`、`jmp`、`int`** 等助记符 **编码成机器码**（如 `MOV AX,0` → `B8 00 00`）
+- 按 **`ORG`** 处理 **加载地址**；标签、`$` / `$$` 处理 **段内偏移**
+- 源码里 **`TIMES 510-($-$$) DB 0`** 自动 **填零到 510 字节**，再 **`DB 0x55, 0xAA`** — 不必手数「还要补多少个 `00` 才到 512 字节」
+
+> **与昨天 HxD 的关系：** 昨天是 **亲手填每一格 hex** 建立直觉；从今天起 **逻辑写进 `.nasm`，字节交给 NASM**。用 `nasm -l helloos.lst` 仍可逐字节对照 [HELLOOS_HEX_REFERENCE](./HELLOOS_HEX_REFERENCE.md)。
+
+**完整 1.44 MB 软盘：** `-f bin` 直接产出的大小 = 源码定义的长度（通常先 **512 B 引导扇区**）；嵌入 1.44 MB 模板可交给 Makefile（见 [day-02 section 2.4](./day-02-asm-makefile/notes/section-2.4-Makefile-入门.md)）。
 
 ---
 
@@ -43,9 +69,9 @@
 ### 汇编引导扇区 / IPL
 
 ```bash
-# -f bin：纯二进制（无 ELF），适合 512 B 引导扇区
-# -l：生成列表文件（偏移 + 机器码 + 源码），对照 HxD
-nasm -f bin helloos.asm -o ipl.bin -l helloos.lst
+# -f bin：纯二进制（引导扇区必加）
+# -l：列表文件，对照 HxD 昨天敲的 hex
+nasm -f bin helloos.nasm -o helloos.img -l helloos.lst
 ```
 
 ### 与 C 协作（Day 3 起）
@@ -59,7 +85,7 @@ gcc -c bootpack.c -o bootpack.o
 ### Makefile 目标链
 
 ```makefile
-ipl.bin: helloos.asm
+ipl.bin: helloos.nasm
 	nasm -f bin $< -o $@ -l helloos.lst
 
 helloos.img: ipl.bin
@@ -75,11 +101,11 @@ run: helloos.img
 
 ## 文件命名约定（本仓库）
 
-| 原书 | 本仓库建议 |
-|------|------------|
-| `helloos.nas` | `helloos.asm`（或保留 `.nas` 但用 NASM 编译） |
-| `naskfunc.nas` | `asmfunc.asm` / `naskfunc.asm` |
-| `helloos.lst` | `nasm -l` 生成的列表，格式与 section 1.3 描述一致 |
+| 原书 | 本仓库 |
+|------|--------|
+| `helloos.nas` | **`helloos.nasm`**（或 `.asm`，NASM 默认识别） |
+| `naskfunc.nas` | `asmfunc.nasm` 等 |
+| `helloos.lst` | `nasm -l` 生成，偏移 + 机器码 + 源码 |
 
 ---
 

@@ -6,7 +6,7 @@
 
 ```makefile
 # 示意（非原书完整文件）
-ipl.bin: helloos.asm
+ipl.bin: helloos.nasm
 	nasm -f bin $< -o $@ -l helloos.lst
 
 helloos.img: ipl.bin

@@ -3,19 +3,19 @@
 手敲 **数十万** 个 0/1 或 hex：**慢、易错、不可维护** → 引入 **汇编语言**。
 
 ```
-helloos.asm  ──nasm──►  helloos.img   （与手工版一致）
-   源码           汇编器          软盘映像
+helloos.nasm  ──nasm -f bin──►  helloos.img   （与手工版一致）
+   源码              汇编器            映像
 ```
 
 | 步骤 | 工具 | 产出 |
 |------|------|------|
-| 写源码 | 文本编辑器 | `helloos.asm`（原书文件名 `helloos.nas`） |
-| 汇编 | **`nasm`**（本仓库全程使用；原书为魔改 **nask**） | 机器码写入映像 |
-| 运行 | QEMU / 软驱 | 同样 `hello, world` |
+| 写源码 | 文本编辑器 | **`helloos.nasm`**（NASM 默认识别 `.nasm` / `.asm`） |
+| 汇编 | **`nasm -f bin helloos.nasm -o helloos.img`** | 机器码写入映像 |
+| 运行 | QEMU | 同样 `hello, world` |
 
-> **nask 是什么？** 作者基于 **NASM 风格** 定制的汇编器。功能相同：把汇编译成机器码。**直接用原版 NASM 即可** — 与后面 **GCC、Makefile** 配合，从引导扇区写到完整 C 内核，比 tolset 更通用。详见 [TOOLCHAIN.md](../../TOOLCHAIN.md)。
+> **nask 是什么？** 作者基于 NASM 风格定制的汇编器。**直接用原版 NASM 即可** — 自动把 `mov`/`jmp` 等译成机器码，并处理 **ORG、标签、偏移**；源码里 `TIMES` 填零 + `DB 0x55,0xAA`，**不必再像 HxD 那样手算 512 字节引导扇区**。详见 [TOOLCHAIN.md](../../TOOLCHAIN.md)。
 
-**要点：** 汇编是 **机器码的可读别名** — 一条 `MOV` 对应固定字节序列；汇编器负责 **编码**，人负责 **逻辑**。
+**要点：** 汇编是 **机器码的可读别名** — 一条 `MOV` 对应固定字节序列；**NASM 负责编码和布局**，你负责 **逻辑**。
 
 ---
 
@@ -29,7 +29,7 @@ Day 1 在 HxD 里手敲的 **`B8 00 00`、`CD 10`、`55 AA`** 不是随机数，
 |------|------|
 | **一条指令 = 若干字节** | 第 1 字节多为 **操作码 (opcode)**；后面可能跟 **操作数** |
 | **立即数小端序** | 多字节数 **低字节在前**：`0x0123` 存成 `23 01` |
-| **汇编器只做翻译** | **NASM** 读 `.asm`，输出与手工输入 **相同的 `.img` 字节** |
+| **汇编器只做翻译** | **NASM** 读 `.nasm`/`.asm`，编码助记符并处理偏移，输出与手工 **相同字节** |
 
 #### 入门例子：`MOV AX, 立即数`
 
@@ -72,7 +72,7 @@ Day 1 在 HxD 里手敲的 **`B8 00 00`、`CD 10`、`55 AA`** 不是随机数，
 #### 用 NASM 列表文件核对（推荐）
 
 ```bash
-nasm -f bin helloos.asm -o ipl.bin -l helloos.lst
+nasm -f bin helloos.nasm -o helloos.img -l helloos.lst
 ```
 
 **`helloos.lst`**：左边是 **偏移 + 机器码**，右边是 **源码行**。例如：
@@ -97,20 +97,20 @@ nasm -f bin helloos.asm -o ipl.bin -l helloos.lst
 
 ---
 
-### 最小 `.nas` 骨架（示意）
+### 最小 `helloos.nasm` 骨架（示意）
 
 ```nasm
-        ORG     0x7C00          ; BIOS 把引导扇区加载到物理地址 0x7C00
+        ORG     0x7C00          ; BIOS 加载地址 — NASM 据此算标签/偏移
 
         MOV     AX, 0
         MOV     SS, AX
         MOV     SP, 0x7C00
-        ; … 打印循环 …
-        TIMES   510-($-$$) DB 0 ; 填 0 到偏移 0x1FE 之前
-        DB      0x55, 0xAA      ; 引导签名（= HxD 里 0x1FE 的 55 AA）
+        ; … 打印循环（jmp / mov / int 由 NASM 编码，不用手写 EB/CD…）…
+        TIMES   510-($-$$) DB 0 ; 自动填 0 到第 510 字节（$=当前位置，$$=段起点）
+        DB      0x55, 0xAA      ; 引导签名 — 对应 HxD 偏移 0x1FE
 ```
 
-`ORG 0x7C00` 告诉汇编器：**这些标签和偏移按「被加载到 0x7C00 后」的地址算** — 否则 `MOV SI, msg` 会指错位置，屏幕空白。
+`ORG 0x7C00` + `TIMES`：**段地址、填零、512 字节布局** 都写在源码里，编译一行搞定 — 这是和昨天 HxD 最大的区别。
 
 ---
 

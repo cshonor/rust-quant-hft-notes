@@ -113,7 +113,7 @@ make --version
 
 ## 4. Day 1 首次构建与运行
 
-进入 Day 1 工程目录（含 `Makefile` 与 `helloos.asm`）：
+进入 Day 1 工程目录（含 `Makefile` 与 `helloos.nasm`）：
 
 ```cmd
 cd C:\dev\haribote\proj\day-01
