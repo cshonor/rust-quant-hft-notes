@@ -1,9 +1,45 @@
-# 02 · MikanOS · ゼロからの OS 自作入門
+# 02 · MikanOS · 从零自制操作系统
 
 **09-system-low-level-hands-on** 子模块 · [返回 09 总览](../README.md)
 
-> **来源：** 内田公太（uchan）· [ゼロからの OS 自作入門](https://book.mynavi.jp/ec/products/detail/id=121220) · 官方 [zero.osdev.jp](http://zero.osdev.jp/) · 源码 [uchan-nos/os-from-zero](https://github.com/uchan-nos/os-from-zero)  
+> **父模块：** [09-system-low-level-hands-on](../README.md)  
+> **原著：** 内田公太（uchan）· **《从零自制操作系统》**（日版 *ゼロからの OS 自作入門*）  
+> **本仓库：** HFT 学习链裁剪笔记 + 实验记录（非全书翻译）  
+> **官方：** [zero.osdev.jp](http://zero.osdev.jp/) · 源码 [uchan-nos/os-from-zero](https://github.com/uchan-nos/os-from-zero)
+
+---
+
+## 这本书是什么
+
+**《从零自制操作系统》** 是一本指导读者从头构建 **MikanOS** 的 **实战教程**，以 **「做中学」** 为核心理念。
+
+| 维度 | 说明 |
+|------|------|
+| **技术路线** | 从 **UEFI BIOS 启动** 到 **64 位多任务** 系统的完整流程 |
+| **核心模块** | **内存管理** · **窗口系统** · **文件系统** · **USB 驱动** 等底层技术 |
+| **章节结构** | 约 **三十章** 循序渐进，把对程序员而言如同「黑箱」的 **计算机内部结构** 透明化 |
+| **目标读者** | 具备 **基础编程经验** 的开发者 — 鼓励 **亲手写代码** 理解 OS **运行原理** |
+| **语言栈** | **C++** + **EDK II**（与 [01 30 天](../01-30days-os/) 的 32 位 BIOS/C 路线互补） |
+
+**读完能带走什么：** 现代 PC 上的 **UEFI 启动链、长模式、页表、APIC、系统调用** — 与 [01-CSAPP](../../01-CSAPP-3rd/chapter-09-virtual-memory/) · [05-LKD](../../05-Linux-Kernel-Development/) · [07-TLPI](../../07-The-Linux-Programming-Interface/) 对照时，不再只是「读源码」，而是知道 **这些机制从零怎么搭**。
+
+---
+
+## 在本学习链中的定位
+
 > **定位：** **现代 64 位 UEFI OS** — 与 [01 30 天 OS](../01-30days-os/)（实模式 BIOS 软盘）**互补**，不替代 Linux 主线。
+
+```
+07 TLPI（Linux 上怎么用 syscall / mmap）
+    ↓
+01 30 天 OS（BIOS 软盘 · 实模式体感）
+    ↓
+02 MikanOS（UEFI · 64 位 · 分页 · syscall）← 本书
+    ↓
+05 LKD / 06 Gorman（对照真实 Linux 内核）
+```
+
+**标签：** 🟡 选读 · 建议 **01 通读或 Day 1–15 后** 再开。
 
 ---
 
