@@ -59,38 +59,111 @@
 
 ---
 
-## 文档
+## 目录结构
 
-| 文件 | 说明 |
-|------|------|
-| [OUTLINE.md](./OUTLINE.md) | 第 **0–31 章** + **附录 A–F** 完整目录 |
-| [LEARNING_PLAN.md](./LEARNING_PLAN.md) | 阶段划分 · 与 01 衔接 · 避坑 |
-| [SETUP.md](./SETUP.md) | WSL2 / EDK II / QEMU(OVMF) 环境 |
+与 [01 30 天 OS](../01-30days-os/) · [02-SysPerf](../../02-Systems-Performance-2nd/) 一致：每章独立目录，导读 + 分段笔记。
+
+```
+chapter-XX-slug/
+├── README.md              ← 本章结构、小结、检查单、上下章导航
+├── notes/
+│   └── section-*.md
+└── code/                  ← 对照官方 osbook_dayXX 快照（可选）
+```
+
+**动手前必读：** [LEARNING_PLAN.md](./LEARNING_PLAN.md) · 环境 [SETUP.md](./SETUP.md)（附录 A）
 
 ---
 
-## 目录约定（与 01 对齐）
+## 章节笔记
 
-```
-02-mikan-os/
-├── README.md · OUTLINE.md · LEARNING_PLAN.md · SETUP.md
-├── assets/                    # 截图
-├── chapter-XX-slug/           # 按书章（例 chapter-19-paging）
-│   ├── README.md              # 章导读 + 官方 osbook_dayXX 标签
-│   ├── notes/                 # section 笔记
-│   └── code/                  # 本书快照 / diff（非完整上游 clone）
-└── code/                      # 可选：链到 os-from-zero  tag
-```
+| 章 | 主题 | 笔记 |
+|----|------|------|
+| **0** | 个人可以制作操作系统吗 | [chapter-00-intro](./chapter-00-intro/) |
+| **1** | 计算机工作原理和 Hello World | [chapter-01-hello-world](./chapter-01-hello-world/) |
+| **2** | EDK II 和内存映射 | [chapter-02-edk2-memmap](./chapter-02-edk2-memmap/) |
+| **3** | 屏幕显示实践和引导加载器 | [chapter-03-bootloader-display](./chapter-03-bootloader-display/) |
+| **4** | 像素绘图和 make 入门 | [chapter-04-pixel-make](./chapter-04-pixel-make/) |
+| **5** | 文本显示和控制台类 | [chapter-05-console-text](./chapter-05-console-text/) |
+| **6** | 鼠标输入和 PCI | [chapter-06-mouse-pci](./chapter-06-mouse-pci/) |
+| **7** | 中断和 FIFO | [chapter-07-interrupt-fifo](./chapter-07-interrupt-fifo/) |
+| **8** | 内存管理 | [chapter-08-memory](./chapter-08-memory/) |
+| **9** | 叠加过程 | [chapter-09-layers](./chapter-09-layers/) |
+| **10** | 窗口 | [chapter-10-window](./chapter-10-window/) |
+| **11** | 定时器和 ACPI | [chapter-11-timer-acpi](./chapter-11-timer-acpi/) |
+| **12** | 键盘输入 | [chapter-12-keyboard](./chapter-12-keyboard/) |
+| **13** | 多任务处理（1） | [chapter-13-multitask1](./chapter-13-multitask1/) |
+| **14** | 多任务处理（2） | [chapter-14-multitask2](./chapter-14-multitask2/) |
+| **15** | 终端 | [chapter-15-terminal](./chapter-15-terminal/) |
+| **16** | 命令 | [chapter-16-commands](./chapter-16-commands/) |
+| **17** | 文件系统 | [chapter-17-filesystem](./chapter-17-filesystem/) |
+| **18** | 应用 | [chapter-18-apps](./chapter-18-apps/) |
+| **19** | 分页 | [chapter-19-paging](./chapter-19-paging/) |
+| **20** | 系统调用 | [chapter-20-syscall](./chapter-20-syscall/) |
+| **21** | 窗口应用 | [chapter-21-window-apps](./chapter-21-window-apps/) |
+| **22** | 图形和事件（1） | [chapter-22-graphics-events1](./chapter-22-graphics-events1/) |
+| **23** | 图形和事件（2） | [chapter-23-graphics-events2](./chapter-23-graphics-events2/) |
+| **24** | 多终端 | [chapter-24-multi-terminal](./chapter-24-multi-terminal/) |
+| **25** | 使用应用读取文件 | [chapter-25-app-read-file](./chapter-25-app-read-file/) |
+| **26** | 使用应用写入文件 | [chapter-26-app-write-file](./chapter-26-app-write-file/) |
+| **27** | 应用的内存管理 | [chapter-27-app-memory](./chapter-27-app-memory/) |
+| **28** | 日文显示和重定向 | [chapter-28-japanese-redirect](./chapter-28-japanese-redirect/) |
+| **29** | 应用间通信 | [chapter-29-ipc](./chapter-29-ipc/) |
+| **30** | 额外应用 | [chapter-30-extra-apps](./chapter-30-extra-apps/) |
+| **31** | 前方的路 | [chapter-31-road-ahead](./chapter-31-road-ahead/) |
 
-> **代码：** 完整工程以官方 GitHub 为准；本仓库 `chapter-XX/code/` 只存 **对照用快照** 与笔记链接，不 fork 全书 744 页全部二进制。
+### 附录
+
+| | 主题 | 笔记 |
+|---|------|------|
+| A | 配置开发环境 | [appendix-A-dev-env](./appendix-A-dev-env/) |
+| B | 获取 MikanOS | [appendix-B-get-mikanos](./appendix-B-get-mikanos/) |
+| C | EDK II 文件说明 | [appendix-C-edk2-files](./appendix-C-edk2-files/) |
+| D | C++ 中的模板 | [appendix-D-cpp-templates](./appendix-D-cpp-templates/) |
+| E | iPXE | [appendix-E-ipxe](./appendix-E-ipxe/) |
+| F | ASCII 码表 | [appendix-F-ascii-table](./appendix-F-ascii-table/) |
+
+完整章表与要点速览 → [OUTLINE.md](./OUTLINE.md)。**目录骨架 Ch 0–31 + 附录 A–F 已建。**
 
 ---
 
-## 进度
+## 建议阶段（与 LEARNING_PLAN 一致）
 
-- [ ] 环境 [SETUP.md](./SETUP.md)
-- [ ] Ch 0–2 UEFI + 内存 map
-- [ ] Ch 7–8 中断 + 内存管理
-- [ ] Ch 13–14 多任务
-- [ ] Ch 19–20 **分页 + 系统调用**（与 CSAPP / LKD 强相关）
-- [ ] Ch 29 应用间通信（→ 远期 IPC 模块对照）
+| 阶段 | 章 | 主题 | HFT 关联 |
+|------|-----|------|----------|
+| **启动链** | 0–2 | UEFI · EDK II · 内存 map | 现代 PC 启动 |
+| **内核骨架** | 7–8, 11, 13–14 | 中断 · 内存 · 定时器 · 多任务 | 上下文切换直觉 |
+| **分页 syscall** | 19–20 | 页表 · 系统调用 | CSAPP / LKD / TLPI |
+| **生态** | 17, 25–29 | FS · 文件 I/O · IPC | 用户态边界 |
+
+---
+
+## 产出清单
+
+- [x] `OUTLINE.md` — 第 0–31 章 + 附录 A–F
+- [x] `LEARNING_PLAN.md` · `SETUP.md`
+- [x] `chapter-XX-slug/` — Ch 0–31 导读骨架
+- [x] `appendix-A` … `appendix-F` 导读骨架
+- [ ] 各章 `notes/` 正文（随学习增量填写）
+
+---
+
+## 进度（学习自检）
+
+- [ ] 环境 [SETUP.md](./SETUP.md) / [appendix-A-dev-env](./appendix-A-dev-env/)
+- [ ] [Ch 0–2](./chapter-00-intro/) UEFI + 内存 map
+- [ ] [Ch 7–8](./chapter-07-interrupt-fifo/) 中断 + 内存管理
+- [ ] [Ch 13–14](./chapter-13-multitask1/) 多任务
+- [ ] [Ch 19–20](./chapter-19-paging/) 分页 + 系统调用
+- [ ] [Ch 29](./chapter-29-ipc/) 应用间通信
+
+---
+
+## 交叉阅读
+
+| 仓库 | 对照点 |
+|------|--------|
+| [01 30 天 OS](../01-30days-os/) | BIOS 实模式 → 保护模式（建议先读 Day 1–15） |
+| [01-CSAPP Ch9](../../01-CSAPP-3rd/chapter-09-virtual-memory/) | 虚拟内存 |
+| [05-LKD](../../05-Linux-Kernel-Development/) | 中断、调度、syscall 真实实现 |
+| [07-TLPI](../../07-The-Linux-Programming-Interface/) | 用户态 API 边界 |

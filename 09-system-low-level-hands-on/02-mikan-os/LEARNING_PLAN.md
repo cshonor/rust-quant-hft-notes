@@ -4,6 +4,8 @@
 
 ### 阶段 A · 现代启动链（Ch 0–2）🔴
 
+**笔记：** [chapter-00-intro](./chapter-00-intro/) · [chapter-01-hello-world](./chapter-01-hello-world/) · [chapter-02-edk2-memmap](./chapter-02-edk2-memmap/)
+
 **目标：** UEFI → EDK II → **内存 map** → 第一个 C++ 内核输出。
 
 **前置：** [01 Day 1](../01-30days-os/day-01-boot-asm/) 完成（理解 boot sector / `hello, world` 体感）。
@@ -12,6 +14,8 @@
 
 ### 阶段 B · 内核骨架（Ch 7–14）🔴
 
+**笔记：** [chapter-07-interrupt-fifo](./chapter-07-interrupt-fifo/) · [chapter-08-memory](./chapter-08-memory/) · [chapter-11-timer-acpi](./chapter-11-timer-acpi/) · [chapter-13-multitask1](./chapter-13-multitask1/) · [chapter-14-multitask2](./chapter-14-multitask2/)
+
 **目标：** 中断 · FIFO · **物理/线性内存** · 定时器 · **协作/抢占多任务**。
 
 **对照 01：** Day 5–16（IDT/PIC/多任务）— 同一概念，不同架构（APIC、64 bit）。
@@ -19,6 +23,8 @@
 **产出：** 能画 MikanOS 任务切换与 01 `switch_task` 对照表。
 
 ### 阶段 C · 分页与 syscall（Ch 19–20）🔴
+
+**笔记：** [chapter-19-paging](./chapter-19-paging/) · [chapter-20-syscall](./chapter-20-syscall/)
 
 **目标：** **页表** · 用户/内核地址空间 · **系统调用门**。
 
