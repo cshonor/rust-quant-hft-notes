@@ -130,7 +130,7 @@ DB "HELLOIPL"           ; 48 45 4C 4C 4F 49 50 4C
 DB 0x55, 0xaa           ; 偏移 0x1FE
 ```
 
-见 [section 1.3](./day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md)。
+**汇编 ↔ 机器码详解**（含 `MOV AX,0x0123` → `B8 23 01` 与 `0x050` 起逐条对照）→ [section 1.3](./day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md#汇编--机器码昨天那些-hex-从哪来)。
 
 ### 易错点
 
