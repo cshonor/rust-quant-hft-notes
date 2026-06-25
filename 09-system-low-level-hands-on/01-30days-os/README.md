@@ -37,7 +37,7 @@
 
 **标签：** 🟡 选读 · 时间紧可后补，与 `05`/`06` 概念课 **并行** 也行。
 
-**动手前必读：** [LEARNING_PLAN.md](./LEARNING_PLAN.md)（三阶段方案）· [SETUP.md](./SETUP.md)（Day 0 环境）
+**动手前必读：** [TOOLCHAIN.md](./TOOLCHAIN.md)（NASM 全程工具链）· [LEARNING_PLAN.md](./LEARNING_PLAN.md) · [SETUP.md](./SETUP.md)（Day 0 环境）
 
 ---
 
@@ -107,7 +107,7 @@ day-XX-slug/
 
 | 周期 | Day | 主题 | HFT 关联 |
 |------|-----|------|----------|
-| **地基** | 0–7 | tolset、引导扇区、保护模式、GDT/IDT、键鼠 FIFO | 启动链、中断 vs 轮询 |
+| **地基** | 0–7 | NASM、引导扇区、保护模式、GDT/IDT、键鼠 FIFO | 启动链、中断 vs 轮询 |
 | **完善** | 8–14 | 内存管理、图层/窗口、PIT、键盘输入 | 定时、ISR 延迟 |
 | **生态** | 15–30 | 多任务、FAT/Shell、API、用户态程序 | syscall 边界、上下文切换 |
 
@@ -115,7 +115,8 @@ day-XX-slug/
 
 ## 工具与环境
 
-- **无需光驱：** 原书 tolset 资源包解压 + **QEMU** 加载 `.img` 即可（见 [SETUP.md](./SETUP.md)）
+- **汇编：** **NASM**（全程核心；原书 nask 为作者魔改，本仓库用原版 NASM）— [TOOLCHAIN.md](./TOOLCHAIN.md)
+- **C / 构建：** **GCC** + **GNU Make**；运行 **QEMU** 加载 `.img`（见 [SETUP.md](./SETUP.md)）
 - **路径规范：** 工程目录 **禁止中文与空格**
 - **本仓库：** 实验代码与映像放各 Day 目录下 `code/`（如 [day-01-boot-asm/code/](./day-01-boot-asm/code/)），笔记在 `day-XX-slug/notes/`
 - **不必先备：** 完整 OS 理论课；**需要：** 基本 C + 简易汇编（与 [01-CSAPP Ch3](../../01-CSAPP-3rd/chapter-03-machine-level-programs/) 互补）
@@ -125,7 +126,8 @@ day-XX-slug/
 ## 产出清单
 
 - [x] `LEARNING_PLAN.md` — 三阶段标准学习方案 + 避坑
-- [x] `SETUP.md` — Windows + QEMU Day 0 部署
+- [x] `SETUP.md` — Windows + NASM/GCC/QEMU Day 0 部署
+- [x] `TOOLCHAIN.md` — NASM + GCC + Make 选型（替代 nask/bcc）
 - [x] `OUTLINE.md` — 按原书 Day 裁剪 🔴/🟡/⚪（**Day 1–30**）
 - [x] `day-XX-slug/` — 每日导读 + `notes/section-*.md`（**Day 1–30 ✓**）
 - [x] `day-01-boot-asm/code/` — helloos 映像与十六进制对照（**Day 1 ✓**）

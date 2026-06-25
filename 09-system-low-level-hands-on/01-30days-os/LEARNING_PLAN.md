@@ -19,11 +19,13 @@
 
 | 技能 | 用途 | 对应笔记 |
 |------|------|----------|
-| **x86 16 位实模式汇编（NASK 语法）** | Day 1–2 引导扇区、Day 3 前 IPL | [day-01-boot-asm/](./day-01-boot-asm/) · [day-02-asm-makefile/](./day-02-asm-makefile/) |
+| **x86 16 位实模式汇编（NASM 语法）** | Day 1–2 引导扇区、Day 3 前 IPL | [day-01-boot-asm/](./day-01-boot-asm/) · [day-02-asm-makefile/](./day-02-asm-makefile/) |
 | **标准 C 语言** | Day 3 起内核主体；汇编只管引导与底层 | [day-03-32bit-c/](./day-03-32bit-c/) 起 |
 | **基础 Makefile** | 多文件编译、链接、镜像打包 | [day-02-asm-makefile/](./day-02-asm-makefile/) |
 
-**若你已有 C++/体系结构背景：** C 与内存布局通常不是门槛，主要补齐 **16 位汇编 + NASK + make** 即可。可与 [01-CSAPP Ch3](../../01-CSAPP-3rd/chapter-03-machine-level-programs/) 并行。
+**若你已有 C++/体系结构背景：** C 与内存布局通常不是门槛，主要补齐 **16 位汇编 + NASM + make** 即可。可与 [01-CSAPP Ch3](../../01-CSAPP-3rd/chapter-03-machine-level-programs/) 并行。
+
+**工具链：** 全程 **NASM + GCC + Make**（不用原书魔改 **nask/bcc**）— 见 [TOOLCHAIN.md](./TOOLCHAIN.md)。
 
 ---
 
@@ -33,8 +35,8 @@
 
 | 阶段 | 内容 | 笔记 |
 |------|------|------|
-| **Day 0** | tolset 部署、路径规范、QEMU 能 boot 空镜像 | [SETUP.md](./SETUP.md) |
-| **Day 1–2** | 512 B 引导扇区、`0x7C00`、软盘结构、`nask` + Makefile → `.img` | [day-01](./day-01-boot-asm/) · [day-02](./day-02-asm-makefile/) |
+| **Day 0** | NASM/GCC/Make/QEMU 部署、路径规范、能 boot 映像 | [SETUP.md](./SETUP.md) · [TOOLCHAIN.md](./TOOLCHAIN.md) |
+| **Day 1–2** | 512 B 引导扇区、`0x7C00`、软盘结构、**NASM** + Makefile → `.img` | [day-01](./day-01-boot-asm/) · [day-02](./day-02-asm-makefile/) |
 | **Day 3** | **分水岭**：实模式 → **32 位保护模式**，正式引入 C | [day-03](./day-03-32bit-c/) |
 | **Day 4–7** | 显存绘图、GDT/IDT、键鼠中断、FIFO 环形缓冲 | [day-04](./day-04-c-graphics/) … [day-07](./day-07-fifo-mouse/) |
 
@@ -72,8 +74,8 @@
 3. **全程 QEMU，不要 U 盘真机引导**  
    原书软盘/U 盘启动在现代学习环境非必要；QEMU 加载 `.img` 重启快、可脚本化。
 
-4. **工具链优先原版 tolset**  
-   不要擅自换成 NASM + GCC 通用链；`nask` 语法、`bcc` 链接规则与书内 Makefile **强绑定**。
+4. **工具链用 NASM + GCC 通用链**  
+   原书 **nask** 是作者基于 NASM 风格的魔改汇编器；**直接用 NASM** 即可，既能生成与 Day 1 手工 hex 一致的机器码，又能与 **GCC、Makefile** 配合，从引导扇区一直写到带 C 的内核，后续学 Linux 底层也能复用。tolset 仅作对照可选。
 
 5. **路径禁中文与空格**  
    tolset 与部分批处理对非 ASCII 路径敏感；工程根目录用纯英文，例如 `C:\dev\haribote\`。
@@ -105,9 +107,9 @@
 ## 五、现阶段第一步行动
 
 - [ ] **零工具链体感（推荐）：** 按 [day-01 section 1.1](./day-01-boot-asm/notes/section-1.1-先动手操作.md) 用 HxD + QEMU 手工做第一个 `helloos.img`
-- [ ] 按 [SETUP.md](./SETUP.md) 完成 **Day 0** tolset 环境（为 Day 1 汇编版做准备）
+- [ ] 按 [SETUP.md](./SETUP.md) 完成 **Day 0**（NASM + GCC + QEMU）
 - [ ] 阅读 [day-01-boot-asm/](./day-01-boot-asm/) 笔记并对照源码
-- [ ] 在 [day-01-boot-asm/code/](./day-01-boot-asm/code/) 对照映像；tolset 到位后 `make run`
+- [ ] 在 [day-01-boot-asm/code/](./day-01-boot-asm/code/) 对照映像；`make run` 验证与 HxD 版一致
 
 ---
 
@@ -117,4 +119,5 @@
 |------|------|
 | [README.md](./README.md) | 模块导读与 Day 索引 |
 | [OUTLINE.md](./OUTLINE.md) | 每日要点速览 + 🔴/🟡/⚪ |
-| [SETUP.md](./SETUP.md) | Windows + QEMU Day 0 部署 |
+| [SETUP.md](./SETUP.md) | Windows + NASM/GCC/QEMU Day 0 部署 |
+| [TOOLCHAIN.md](./TOOLCHAIN.md) | NASM vs nask · GCC · Make |

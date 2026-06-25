@@ -121,7 +121,7 @@ tolset 是原书配套工具包；`helloos` 是第一个软盘镜像工程。书
 | 右侧 ASCII | **对应文本** |
 | 输入到指定地址 | `Ctrl+G` 跳转偏移 |
 
-### nask 源码 ↔ 十六进制
+### NASM 源码 ↔ 十六进制
 
 ```nasm
 DB 0xeb, 0x4e, 0x90     ; EB 4E 90

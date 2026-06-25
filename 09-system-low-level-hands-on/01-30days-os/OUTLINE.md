@@ -41,7 +41,7 @@
 ## Day 1 要点速览
 
 - 二进制编辑器 → **1,474,560 B** `helloos.img` → **hello, world**
-- CPU 只认 **0/1**；汇编 + **`nask.exe`** 生成同一映像
+- CPU 只认 **0/1**；**NASM** 把汇编译成与 HxD 手工版 **同一映像**
 - 引导扇区 **512 B**，末尾 **`55 AA`**；汇编 **`$`** 自动 padding
 - **IPL** · **Boot（bootstrap）**
 
@@ -65,7 +65,7 @@
 - 真正 **IPL**：**`INT 0x13`** 读盘，**10 柱面 / 180KB**，**重试 5 次**
 - **haribote-os** · **`INT 0x10` → 320×200×8** 全黑 = OS 运行
 - **32 位前** 做完 BIOS；**`bootpack.c` / `HariMain`**
-- **`naskfunc.nas`** · **`io_hlt`** — 汇编 + C 链接
+- **`asmfunc.asm`**（原书 `naskfunc.nas`）· **`io_hlt`** — 汇编 + C 链接
 
 → 详读 [day-03-32bit-c/](./day-03-32bit-c/)
 

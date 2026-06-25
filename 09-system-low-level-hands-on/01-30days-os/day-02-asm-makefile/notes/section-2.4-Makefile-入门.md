@@ -6,8 +6,8 @@
 
 ```makefile
 # 示意（非原书完整文件）
-ipl.bin: helloos.nas
-	nask helloos.nas helloos.lst ipl.bin
+ipl.bin: helloos.asm
+	nasm -f bin $< -o $@ -l helloos.lst
 
 helloos.img: ipl.bin
 	# 映像工具把 ipl.bin 写入引导扇区 …
@@ -15,6 +15,8 @@ helloos.img: ipl.bin
 run: helloos.img
 	# 启动 QEMU …
 ```
+
+> 原书 Makefile 写 `nask helloos.nas …`；本仓库统一 **`nasm -f bin`** — 见 [TOOLCHAIN.md](../../TOOLCHAIN.md)。
 
 命令行只打：
 

@@ -1,6 +1,6 @@
 # Day 0 · Windows + QEMU 环境部署
 
-> **目标：** 在不使用光驱/U 盘的前提下，用原书 **tolset** 工具链 + **QEMU** 跑通 Day 1 的 `helloos.img`。
+> **目标：** 用 **NASM + GCC + Make + QEMU** 跑通 Day 1 的 `helloos.img`（不必安装原书 tolset；见 [TOOLCHAIN.md](./TOOLCHAIN.md)）。
 
 ---
 
@@ -9,14 +9,16 @@
 | 组件 | 作用 | 典型文件名 |
 |------|------|------------|
 | **HxD** | Day 1 手工写软盘映像（可先于 tolset） | `HxD.exe` — 见 [day-01 section 1.1](./day-01-boot-asm/notes/section-1.1-先动手操作.md) |
-| **nask** | 书专用汇编器（非 NASM） | `nask.exe` |
-| **bcc** | 书配套 C 编译器 | `bcc32.exe` 等 |
+| **NASM** | **全程核心汇编器**（替代原书魔改 **nask**） | `nasm.exe` — 见 [TOOLCHAIN.md](./TOOLCHAIN.md) |
+| **GCC** | C 内核与应用程序（替代 tolset **bcc**） | MinGW-w64 / MSYS2 的 `gcc.exe` |
 | **映像工具** | 把 `ipl.bin` 写入软盘映像 | `edimg` / `imgtool` / 书内脚本 |
 | **QEMU** | 加载 `.img` 模拟 x86 PC 启动 | `qemu-system-i386.exe` |
 | **Make** | 驱动 Makefile | `make.exe`（tolset 常自带或需单独装） |
-| **每日源码** | Day 1–30 工程 | `z_tools/`、`z_proj/` 等目录 |
+| **每日源码** | Day 1–30 工程 | 各 `day-XX-slug/code/` 或本机 `proj/` |
 
-**获取方式：** 原书随书光盘或出版社/社区提供的 **tolset 完整资源包**（解压即用）。本仓库 **不托管** 版权资源，请将 tolset 放在本机独立目录，勿提交进 git。
+**获取方式：** NASM / GCC / QEMU / Make 均为开源工具，按下方步骤安装即可。原书 **tolset** 仅作对照可选，**本仓库不托管** 版权资源。
+
+**工具链说明：** [TOOLCHAIN.md](./TOOLCHAIN.md) — 为何用 NASM 而非 nask。
 
 ---
 
@@ -24,19 +26,15 @@
 
 ```
 C:\dev\haribote\          ← 推荐：纯英文、无空格
-├── tolset\               ← 解压的整套工具（PATH 或脚本引用）
-│   ├── nask.exe
-│   ├── bcc32.exe
-│   └── ...
-├── qemu\                 ← 若 tolset 未带 QEMU，可单独安装
-│   └── qemu-system-i386.exe
+├── tools\                ← 可选：统一放 nasm / gcc / make（或依赖 MSYS2 PATH）
+├── qemu\                 ← qemu-system-i386.exe
 └── proj\                 ← 每日工程（对应本仓库各 day-XX-slug/code/）
     ├── day-01\
     ├── day-02\
     └── ...
 ```
 
-**禁止：** 路径含 **中文**、**空格**（如 `C:\Users\张三\Desktop\我的 OS`）— tolset 批处理常直接失败。
+**禁止：** 路径含 **中文**、**空格** — 部分批处理与链接脚本对非 ASCII 路径敏感。
 
 **本仓库建议：** 实验代码放在对应 Day 目录下 `code/`（如 [day-01-boot-asm/code/](./day-01-boot-asm/code/)），路径同样遵守上述规则。
 
@@ -44,10 +42,19 @@ C:\dev\haribote\          ← 推荐：纯英文、无空格
 
 ## 3. 配置步骤
 
-### 3.1 解压 tolset
+### 3.1 安装 NASM 与 GCC
 
-1. 将资源包解压到 `C:\dev\haribote\tolset\`（路径按你本机调整）。
-2. 确认存在 `nask.exe` 与 Day 1 所需 `helloos.nas` 或等价源码目录。
+1. **NASM：** [nasm.us](https://www.nasm.us/) 或 MSYS2：`pacman -S nasm`
+2. **GCC：** 推荐 [MSYS2](https://www.msys2.org/) → `pacman -S mingw-w64-x86_64-gcc make`
+3. 新开终端验证：
+
+```cmd
+nasm -v
+gcc --version
+make --version
+```
+
+> 原书 **nask** 是作者基于 NASM 风格的魔改汇编器；**直接用 NASM 即可**，见 [TOOLCHAIN.md](./TOOLCHAIN.md)。
 
 ### 3.2 安装 QEMU（官方 `qemu-w64-setup`）
 
@@ -71,7 +78,7 @@ C:\dev\haribote\          ← 推荐：纯英文、无空格
 
 | 备选 | 说明 |
 |------|------|
-| **tolset 自带** | `z_tools` 下的 `qemu-system-i386.exe`，后续 Day 与 make 脚本联用 |
+| **tolset 自带** | 若已装原书包，可用其 QEMU；与本仓库 NASM 链 **独立** |
 
 > 避免使用非官方的「QEMU 便携版」第三方整合包；**`qemu-w64-setup`** 即官网推荐的 Windows 安装方式。
 
@@ -87,7 +94,7 @@ qemu-system-i386 -fda boot.img -boot a
 **A. 临时（当前 cmd 窗口）：**
 
 ```cmd
-set PATH=D:\qemu;C:\dev\haribote\tolset;%PATH%
+set PATH=D:\qemu;C:\msys64\mingw64\bin;%PATH%
 ```
 
 **B. 永久：** 系统环境变量 `Path` 追加上述目录（改完后新开终端）。
@@ -106,7 +113,7 @@ make --version
 
 ## 4. Day 1 首次构建与运行
 
-进入 Day 1 工程目录（含 `Makefile` 与 `helloos.nas`）：
+进入 Day 1 工程目录（含 `Makefile` 与 `helloos.asm`）：
 
 ```cmd
 cd C:\dev\haribote\proj\day-01
@@ -133,10 +140,11 @@ make run
 
 | 现象 | 处理 |
 |------|------|
-| `'nask' 不是内部或外部命令` | PATH 未含 tolset；或应在工程目录用 `..\tolset\nask.exe` |
+| `'nasm' 不是内部或外部命令` | PATH 未含 NASM；MSYS2 用户用 `mingw64.exe` 终端或把 `mingw64\bin` 加入 PATH |
 | 路径乱码 / 找不到文件 | 工程移到纯英文路径 |
 | QEMU 黑屏无字 | 确认 `-fda` 指向的 img 大小为 1440KB；重新 `make` |
-| make 报语法错误 | 勿用 WSL 的 make 编 Windows tolset 工程；用 **cmd** + Windows 版 make |
+| make 报语法错误 | Windows 工程用 **cmd/MSYS2** 下 GNU make，与 WSL 路径混用易错 |
+| nask 与 NASM 语法差异 | 见 [TOOLCHAIN.md](./TOOLCHAIN.md)；以 `nasm -l` 列表对照 hex 为准 |
 
 ---
 
@@ -145,7 +153,7 @@ make run
 | Day | 额外注意 |
 |-----|----------|
 | **2** | Makefile 多目标；只编 `ipl.bin` 再拼盘 — [day-02](./day-02-asm-makefile/) |
-| **3** | 引入 `bootpack.c`、`naskfunc.nas`；IPL 读盘 — [day-03](./day-03-32bit-c/) |
+| **3** | 引入 `bootpack.c`、`asmfunc.asm`；IPL 读盘 — [day-03](./day-03-32bit-c/) |
 | **6+** | 多 `.c` / `.nas` 分割编译；**不要跳天合并工程** |
 
 每日完成后，将 `proj\day-NN\` 复制一份归档，便于回滚对照。
@@ -154,7 +162,7 @@ make run
 
 ## 6. Day 0 自检清单
 
-- [ ] tolset 解压完成，`nask.exe` 可执行
+- [ ] **NASM**、**GCC**、**Make**、**QEMU** 可用（`nasm -v` / `gcc --version` / `make --version` / `qemu-system-i386 --version`）
 - [ ] QEMU 可启动（`--version` 正常）
 - [ ] 工程路径 **无中文、无空格**
 - [ ] `make` 生成 `helloos.img`（1,474,560 B）
@@ -165,6 +173,7 @@ make run
 
 ## 相关
 
+- [TOOLCHAIN.md](./TOOLCHAIN.md) — NASM vs nask 选型
 - [LEARNING_PLAN.md](./LEARNING_PLAN.md) — 三阶段总方案
 - [README.md](./README.md) — 模块导读
 - [day-01-boot-asm/](./day-01-boot-asm/) — Day 1 笔记
