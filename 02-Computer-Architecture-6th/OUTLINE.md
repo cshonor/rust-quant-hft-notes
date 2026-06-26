@@ -16,7 +16,7 @@
 | 2 | Memory Hierarchy Design | [chapter-02](./chapter-02-memory-hierarchy-design/) | 🔴 |
 | 3 | Instruction-Level Parallelism | [chapter-03](./chapter-03-instruction-level-parallelism/) | 🟡 |
 | 4 | Vector, SIMD, and GPU | [chapter-04](./chapter-04-vector-simd-gpu/) | ⚪ |
-| 5 | Thread-Level Parallelism | [chapter-05](./chapter-05-线程级并行.md) | 🔴 |
+| 5 | Thread-Level Parallelism | [chapter-05](./chapter-05-thread-level-parallelism/) | 🔴 |
 | 6 | Warehouse-Scale Computers | [chapter-06](./chapter-06-仓储级计算机.md) | ⚪ |
 | 7 | Domain-Specific Architectures | [chapter-07](./chapter-07-特定领域架构.md) | ⚪ |
 

@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-05-线程级并行.md](./chapter-05-线程级并行.md)
+- 上一章：[chapter-05-thread-level-parallelism](./chapter-05-thread-level-parallelism/)
 - 下一章：[chapter-07-特定领域架构.md](./chapter-07-特定领域架构.md)

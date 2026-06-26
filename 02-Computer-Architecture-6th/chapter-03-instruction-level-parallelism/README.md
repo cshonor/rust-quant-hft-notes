@@ -40,7 +40,7 @@ ILP 见底 → 多线程/SMT（→ 3.11，衔接 Ch5 TLP）
 | 3.11 | **SMT/超线程** — 实盘常 **关 HT、一核一线程** 换确定性 |
 | 3.12 | A53 **顺序双发射** vs i7 **乱序+SMT** — 与 Ch2 实例对照读 |
 
-→ [Ch2 存储器层次](../chapter-02-memory-hierarchy-design/) · [01-CSAPP Ch4](../../01-CSAPP-3rd/chapter-04-processor-architecture/) · [Ch5 TLP](../chapter-05-线程级并行.md)
+→ [Ch2 存储器层次](../chapter-02-memory-hierarchy-design/) · [01-CSAPP Ch4](../../01-CSAPP-3rd/chapter-04-processor-architecture/) · [Ch5 TLP](../chapter-05-thread-level-parallelism/)
 
 ---
 

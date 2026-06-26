@@ -43,5 +43,5 @@ DLP 三变体：向量架构 (RVV) → 多媒体 SIMD (SSE/AVX) → GPU (SIMT/CU
 ## 相关章节
 
 - 上一章：[chapter-03-instruction-level-parallelism](../chapter-03-instruction-level-parallelism/)
-- 下一章：[chapter-05-线程级并行](../chapter-05-线程级并行.md)
+- 下一章：[chapter-05-thread-level-parallelism](../chapter-05-thread-level-parallelism/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)
