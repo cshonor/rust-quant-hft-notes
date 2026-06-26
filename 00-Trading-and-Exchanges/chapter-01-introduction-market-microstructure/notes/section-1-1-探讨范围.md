@@ -1,20 +1,12 @@
 ## 1. 探讨范围 (Scope of the Book)
 
-### 一、学科定位 · Disciplinary Position
-
-**中文**
+### 一、学科定位
 
 本书归属于金融经济学分支中的 **市场微观结构（Market Microstructure）**。该领域研究证券交易全链路的底层运行逻辑：**交易行为、交易者主体、交易场所（市场载体）、约束交易的制度规则**——聚焦「订单如何成交、价格如何形成、流动性如何流转」。它区别于传统金融学中侧重宏观估值与公司融资的研究范畴。
 
-**English**
-
-This book belongs to **market microstructure**, a branch of financial economics. The field examines the end-to-end mechanics of securities trading: **trading behavior, who trades, where trading occurs, and the rules that govern it**—with central questions of how orders match, prices form, and liquidity flows. It is distinct from mainstream finance focused on macro valuation and corporate financing.
-
 ---
 
-### 二、本书核心覆盖内容 · What This Book Covers
-
-**中文**
+### 二、本书核心覆盖内容
 
 本书关注 **交易经济学（trading economics）** 的实务原理，主要包括：
 
@@ -26,44 +18,26 @@ This book belongs to **market microstructure**, a branch of financial economics.
 6. **价格发现、信息不对称、库存风险、逆向选择** 四大核心理论模型
 7. **算法交易、高频交易与市场机制** 的相互作用，以及闪崩等微观市场风险事件
 
-**English**
-
-This book addresses the practical principles of **trading economics**, including:
-
-1. The micro-mechanics of **order → matching → execution**: limit/market/hidden orders, price–time priority, and the limit order book
-2. **Market organization**: order-driven, quote-driven, and hybrid markets; dark pools; fragmented multi-venue ecosystems
-3. **Rule design**: exchange matching rules, maker–taker fees, order routing, regulatory constraints, price limits, and best execution across venues
-4. **Participant behavior**: dealers, institutional block traders, retail investors, HFT firms, and informed vs. uninformed traders
-5. **Liquidity, bid–ask spreads, slippage, market impact, and transaction costs**—how they are built and measured
-6. Core theoretical pillars: **price discovery, information asymmetry, inventory risk, and adverse selection**
-7. **Algorithmic and high-frequency trading** in relation to market design, including microstructure-driven crises such as flash crashes
-
 ---
 
-### 三、本书不涉及内容 · What This Book Does Not Cover
+### 三、本书不涉及内容
 
-| 边界 | 中文 | English |
-|------|------|---------|
-| **证券估值**（投资学） | 不讲解 DCF、PE/PB、红利贴现、CAPM、因子选股或长期基本面价值判断 | No DCF, multiples, dividend discount, CAPM, factor investing, or long-horizon intrinsic valuation |
-| **证券发行**（公司金融） | 不覆盖 IPO、再融资、资本结构、并购、公司治理、分红回购等企业融资决策 | No IPOs, seasoned offerings, capital structure, M&A, governance, or payout policy |
+| 边界 | 说明 |
+|------|------|
+| **证券估值**（投资学） | 不讲解 DCF、PE/PB、红利贴现、CAPM、因子选股或长期基本面价值判断 |
+| **证券发行**（公司金融） | 不覆盖 IPO、再融资、资本结构、并购、公司治理、分红回购等企业融资决策 |
 
 > Harris 在全书开篇即明确：**只讲交易机制，剥离资产估值与公司融资**——这是微观结构学科与相邻分支的标准分界。
 
 ---
 
-### 四、与 HFT 的底层关联 · Link to High-Frequency Trading
-
-**中文**
+### 四、与 HFT 的底层关联
 
 市场微观结构是 HFT 策略的 **业务层操作系统**：低延迟引擎与网络优化只解决「执行有多快」，却无法回答流动性从何而来、成本如何构成、盘口博弈遵循何种规则。做市赚价差、跨市场套利、订单流预测、大单拆分等盈利逻辑，全部建立在微观结构规则之上。若不懂撮合优先级、暗池隐藏订单、手续费返还与市场冲击衰减，再快的引擎也会持续承受逆向选择与亏损，策略难以长期存活。
 
-**English**
-
-Market microstructure is the **operating system** of HFT strategies. Hardware latency and network tuning address *how fast* you can trade—not *where liquidity comes from, how costs are formed, or what rules govern the book*. Market making, cross-venue arbitrage, order-flow prediction, and execution algorithms all rest on microstructure rules. Without understanding matching priority, hidden liquidity, fee rebates, and impact decay, the fastest engine still faces adverse selection and persistent losses.
-
 ---
 
-### 五、延伸阅读 · Related Classics
+### 五、延伸阅读
 
 | 著作 | 与本书框架的对应 |
 |------|------------------|
