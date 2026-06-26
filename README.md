@@ -2,7 +2,7 @@
 
 本仓库收录 **Rust 全栈量化** + **HFT 微秒级低延迟** 学习笔记，配套原理拆解、可运行源码与工程实践。
 
-**技术板块已封顶（`00`–`16`）** — **文件夹编号 = 推荐阅读顺序**（见下与 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)）。
+**技术板块 `00`–`16` + 外部 C++ 索引 `17`** — **文件夹编号 = 推荐阅读顺序**（见下与 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)）。
 
 → 一眼进阶路径：[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)  
 → 板块对照：[CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
@@ -14,7 +14,7 @@
 ```
 00 业务 → 01 CSAPP → 02 Hennessy → 03 SysPerf → 04 BPF
 → 05 LKD → 06 ULK → 07 Gorman → 08 TLPI
-→ 09 自制 OS/CPU → 10 陈硕 PNP/muduo → 11 UNP
+→ 09 自制 OS/CPU → **17 C++（外部仓）** → 10 陈硕 PNP/muduo → 11 UNP
 → 12 TCP/IP → 13 Rosen → 14 DPDK
 → 15 HFT 工程 → 16 Rust 量化
 ```
@@ -31,6 +31,7 @@
 | **07** | [Linux-Virtual-Memory-Manager](./07-Linux-Virtual-Memory-Manager/) — Gorman |
 | **08** | [The-Linux-Programming-Interface](./08-The-Linux-Programming-Interface/) — TLPI |
 | **09** | [system-low-level-hands-on](./09-system-low-level-hands-on/) — 30 天 OS / MikanOS / CPU |
+| **17** | [**cpp-learning-notes**（外部）](./17-cpp-learning-notes/) — C++ · [GitHub 笔记仓](https://github.com/cshonor/cpp-learning-notes) |
 | **10** | [Practical-Network-Programming](./10-Practical-Network-Programming/) — PNP / muduo |
 | **11** | [UNP-Vol1](./11-UNP-Vol1/) |
 | **12** | [TCP-IP-Illustrated-Vol1](./12-TCP-IP-Illustrated-Vol1/) |
@@ -39,7 +40,7 @@
 | **15** | [HFT-Low-Latency-Practice](./15-HFT-Low-Latency-Practice/) |
 | **16** | [Rust-Quant-Trading-Guide](./16-Rust-Quant-Trading-Guide/) |
 
-> **内核段：** `05` LKD → `06` ULK → `07` Gorman → `08` TLPI → `09` 自制 OS → 网络栈 `10`–`14` → 工程 `15`–`16`。
+> **内核段：** `05`–`09` → **`17` C++（开 PNP 前）** → 网络 `10`–`14` → 工程 `15`–`16`。
 
 小节级读/跳 → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md) · 书目裁剪 → [READING-LIST.md](./READING-LIST.md)
 
@@ -59,6 +60,6 @@
 
 ## 📌 维护规范
 
-- 顶层 **`00-` ~ `16-`** 封顶，不再扩展
+- 顶层 **`00-` ~ `17-`**：`00`–`16` 在本仓；**`17`** 为 [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes) **外部索引**
 - 笔记 / 源码 / 配图分区（`code/`、`assets/`）
 - 外部书目只建索引，不 duplicate 全文笔记

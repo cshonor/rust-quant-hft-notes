@@ -1,6 +1,6 @@
 # HFT 系统开发 · 完整阅读路线图
 
-> **文件夹 `00`–`16` 封顶；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
+> **文件夹 `00`–`16` + 外部 C++ 索引 `17`；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
 
 ### 核心段（文件夹编号 = 读序）
 
@@ -11,6 +11,7 @@
 | **05** → **06** | LKD → ULK | 内核地图 → 源码走读 |
 | **07** → **08** | Gorman → TLPI | VM 深度 → 用户态 API |
 | **09** | 自制 OS / CPU | 底层动手 |
+| **17** | [C++ 外部索引](./17-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
 | **10–14** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
 | **15–16** | HFT Practice / Rust | 动手实现 |
 
@@ -60,6 +61,9 @@
 07  TLPI（The Linux Programming Interface）
 
 09  自制 OS / CPU（01 / 02 / 03）
+    ↓
+17  C++ · cpp-learning-notes（外仓 · 09 后 10 前）
+    ↓
 10  陈硕 PNP / muduo 实战（外P）
 11  UNP Vol.1（外B）
 01  CSAPP · 网络篇 Ch10–11
@@ -71,9 +75,11 @@
 16  Rust Quant Trading Guide
 ```
 
-**执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 07 → 09 → 10 → 11 → 01网络 → 12 → 13 → 14 → 15 → 16`
+**执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 17 → 10 → 11 → 01网络 → 12 → 13 → 14 → 15 → 16`
 
-> **板块封顶：** `00`–`15`；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+> **C++ 外部仓：** [17-cpp-learning-notes/](./17-cpp-learning-notes/) — **09 之后、10 PNP 之前** 至少读完 *Effective Modern C++*。
+
+> **板块封顶：** `00`–`16` 在本仓 + **`17`** 外部 C++ 索引；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
 ---
 

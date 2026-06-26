@@ -1,10 +1,10 @@
 # HFT 学习链路 · 从知其所以然到动手实现
 
-> **文件夹 `00`–`16` = 推荐阅读顺序**（2025-06 物理重编号对齐）。
+> **文件夹 `00`–`16` + 外部 C++ 索引 `17` = 推荐阅读顺序**（2025-06 物理重编号对齐）。
 
 ```
 知其所以然  →  知其然  →  工具落地  →  系统纵深  →  网络实战  →  工程实现
-  01–02         03          04          05–08         09–14           15–16
+  01–02         03          04          05–08         09·17·10–14       15–16
 ```
 
 ---
@@ -20,6 +20,7 @@
 05  LKD → 06 ULK → 07 Gorman → 08 TLPI
 
 09  自制 OS / CPU
+17  C++ · [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes)（索引 [17-cpp-learning-notes/](./17-cpp-learning-notes/)）
 10  陈硕 PNP / muduo
 11  UNP
 01  CSAPP Ch10–11（网络篇，可与 10–11 交叉）
@@ -49,6 +50,7 @@
 | **08** | [TLPI](./08-The-Linux-Programming-Interface/) | Linux 用户态 syscall |
 | **06** | [ULK](./06-Understanding-Linux-Kernel/) | Linux 内核实现（紧接 05） |
 | **09** | [自制 OS/CPU](./09-system-low-level-hands-on/) | 底层动手 |
+| **17** | [C++ 外部索引](./17-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
 | **10–14** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
 | **15–16** | HFT / Rust | 工程实现 |
 
@@ -76,6 +78,8 @@
 
 - [READING-LIST.md](./READING-LIST.md) · [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md) · [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
-**执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 10 → 11 → 01网络章 → 12 → 13 → 14 → 15 → 16`
+**执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 17 → 10 → 11 → 01网络章 → 12 → 13 → 14 → 15 → 16`
+
+> **C++ 外部仓：** [17-cpp-learning-notes/](./17-cpp-learning-notes/) — **09 之后、10 PNP 之前** 至少读完 *Effective Modern C++*。
 
 > **重编号脚本：** [scripts/renumber-modules-02-08-align.py](./scripts/renumber-modules-02-08-align.py)

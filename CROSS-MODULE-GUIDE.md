@@ -1,6 +1,6 @@
 # 跨模块联动指南
 
-> 本仓库 **技术板块已封顶**（`00`–`15`）。  
+> 本仓库 **技术板块 `00`–`16` + 外部 C++ 索引 `17`**。  
 > **推荐阅读顺序** → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 
 ---
@@ -15,14 +15,15 @@
 | Linux 内核 | **`05` LKD → `06` ULK → `07` Gorman** | 调度 / 源码 / VM |
 | **Linux 用户态** | `08` TLPI | syscall · epoll · mmap · 线程 |
 | **系统底层动手** | `09` | 30 天 OS / MikanOS / CPU |
+| **C++ 语言** | **`17`** [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes) | Modern C++ · 并发 · 对象模型（**09 后、10 前**） |
 | **C++ 网络实战** | `10` PNP / muduo | Reactor 实验骨架 |
 | **网络完整栈** | `11`–`14` | UNP → TCP/IP → Rosen → DPDK |
 | **低延迟工程** | `15` HFT Practice | C++ 整机实践 |
 | **Rust 量化** | `16` Rust Guide | Rust 工程 |
 
-### `14` 与网络板块（`09`–`13`）的分界
+### `14` 与网络板块（`10`–`13`）的分界
 
-| | `09`–`13` 网络技术栈 | `14` HFT 工程实践 |
+| | `10`–`13` 网络技术栈 | `15` HFT 工程实践 |
 |---|--------------------------|-------------------|
 | **关注点** | 报文收发、协议、网卡、内存收发模型 | 裸机调优、对接规范、系统架构、延迟压测 |
 | **产出** | 理解/实现网络路径 | 把技术栈落到交易系统工程 |
@@ -37,37 +38,40 @@
     ↓
 09 自制 OS/CPU
     ↓
+17 C++（至少 M1 Modern C++）
+    ↓
 10 陈硕 PNP / muduo
     ↓
-10 UNP + CSAPP11
+11 UNP + CSAPP Ch10–11
     ↓
-11 TCP/IP → 12 Rosen → 13 DPDK
+12 TCP/IP → 13 Rosen → 14 DPDK
 ```
 
 | 轨道 | 外部仓库 | 本仓库索引 |
 |------|----------|------------|
-| **PNP 实战** | [Computer-Networking/PNP](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | [10-Practical-Network-Programming](./10-Practical-Network-Programming/) |
-| **UNP** | [UNP_Vol1](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) | [11-UNP-Vol1](./11-UNP-Vol1/) |
+| **C++ 9 书 + 可选** | [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes) | [17-cpp-learning-notes/](./17-cpp-learning-notes/) |
+| **PNP 实战** | [Computer-Networking/PNP](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | [10-Practical-Network-Programming/](./10-Practical-Network-Programming/) |
+| **UNP** | [UNP_Vol1](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) | [11-UNP-Vol1/](./11-UNP-Vol1/) |
 
 ---
 
 ## 三、内核网络栈 vs 用户态旁路
 
 ```
-  09 UNP + CSAPP11  │  socket → epoll（标准内核路径）
+  11 UNP + CSAPP Ch10–11  │  socket → epoll（标准内核路径）
        ↓
-  11 Rosen          │  sk_buff / NAPI / softirq
+  13 Rosen                │  sk_buff / NAPI / softirq
        ‖ 对照
-  12 DPDK           │  PMD 轮询 / mbuf / 绕过 socket
+  14 DPDK                 │  PMD 轮询 / mbuf / 绕过 socket
 ```
 
-| 对比项 | 内核栈（09 UNP / 11 Rosen） | 用户态旁路（12 DPDK） |
+| 对比项 | 内核栈（11 UNP / 13 Rosen） | 用户态旁路（14 DPDK） |
 |--------|----------------------------|----------------------|
 | 收包触发 | 中断 + NAPI 软中断 | 用户态 busy-poll |
 | 缓冲结构 | `sk_buff` | `rte_mbuf` |
 | 系统调用 | `recvfrom` / `epoll_wait` | 无（UIO/VFIO） |
 
-**阅读顺序：** `05` LKD → `06` ULK → `06` Gorman → `08` TLPI → `09` 自制 → `10` PNP → `11` UNP → `12`–`14` 网络纵深 → `15` HFT → `16` Rust。
+**阅读顺序：** `05` LKD → `06` ULK → `07` Gorman → `08` TLPI → `09` 自制 → **`17` C++** → `10` PNP → `11` UNP → `12`–`14` 网络纵深 → `15` HFT → `16` Rust。
 
 ---
 
@@ -100,7 +104,7 @@
 | 实验 | 目录 | 关联模块 |
 |------|------|----------|
 | CSAPP Lab | `01-CSAPP-3rd/code/` | Ch3–12 |
-| PNP 网络实验 | [外部 PNP/code](https://github.com/cshonor/Computer-Networking/tree/main/PNP/code) | 对照 09 UNP |
+| PNP 网络实验 | [外部 PNP/code](https://github.com/cshonor/Computer-Networking/tree/main/PNP/code) | 对照 11 UNP |
 | 自制 OS/CPU | `09-system-low-level-hands-on/code/` | 中断、页表 |
 | DPDK 组播最小工程 | `12-DPDK/.../mcast-minimal/` | Rosen 组播 |
 

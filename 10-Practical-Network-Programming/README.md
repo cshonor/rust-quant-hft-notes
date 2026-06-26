@@ -2,10 +2,10 @@
 
 **定位：** **C++ 网络服务骨架** — 粘包、自连接、Netcat、TTCP、epoll 等 **实验 + 坑点**；先动手写出能跑的服务，再回头啃 UNP 的 API 与协议细节。
 
-**文件夹 `09`** · 外部书目 **PNP** · [返回总清单](../READING-LIST.md#补充陈硕-pnp--muduo-实战09-文件夹)
+**文件夹 `10`** · 外部书目 **PNP** · [返回总清单](../READING-LIST.md#补充陈硕-pnp--muduo-实战10-文件夹)
 
 > **与 UNP 分工：** [PNP](https://github.com/cshonor/Computer-Networking/tree/main/PNP) = 工程向实验；[UNP Vol.1](../11-UNP-Vol1/) = Stevens 系统化 API。  
-> **推荐顺序：** `08` TLPI → `09` 自制系统 → **本模块 `09`** → `10` UNP → `11`–`13` 网络
+> **推荐顺序：** `08` TLPI → `09` 自制系统 → **`17` C++（至少 M1）** → **本模块 `10`** → `11` UNP → `12`–`14` 网络
 
 ## 笔记仓库（外部）
 

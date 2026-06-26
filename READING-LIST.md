@@ -261,7 +261,8 @@
 
 | 外 | 书目 | 索引 | 插入顺序 |
 |----|------|------|----------|
-| 外P | 陈硕 PNP / muduo 实战 | [10-Practical-Network-Programming/](./10-Practical-Network-Programming/) · [PNP 笔记](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | `07` 自制系统 **之后**，UNP **之前** |
+| 外C | C++ 学习链（9 书 + 可选量化） | [17-cpp-learning-notes/](./17-cpp-learning-notes/) · [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes) | **`09` 之后、`10` PNP 之前**（Modern C++）；**`15` HFT 前**（并发 + 对象模型） |
+| 外P | 陈硕 PNP / muduo 实战 | [10-Practical-Network-Programming/](./10-Practical-Network-Programming/) · [PNP 笔记](https://github.com/cshonor/Computer-Networking/tree/main/PNP) | **`17` C++ M1 之后** |
 | 外B | UNIX Network Programming Vol.1 — Stevens | [11-UNP-Vol1/](./11-UNP-Vol1/) · [笔记](https://github.com/cshonor/Computer-Networking/tree/main/UNP_Vol1) | PNP **之后** |
 | 外A | TCP/IP Illustrated Vol.1 — Stevens | [12-TCP-IP-Illustrated-Vol1/](./12-TCP-IP-Illustrated-Vol1/) · [笔记](https://github.com/cshonor/Computer-Networking/tree/main/TCP-IP-Volume1-Protocols) | UNP **之后**，Rosen **之前** |
 
@@ -269,11 +270,30 @@
 
 ---
 
-## 补充：陈硕 PNP / muduo 实战（`09` 文件夹）
+## 补充：C++ 学习链（`17` 文件夹）
+
+> 笔记在外部仓库：[cshonor/cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes)  
+> 本仓库索引：[17-cpp-learning-notes/](./17-cpp-learning-notes/) · 里程碑：[OUTLINE.md](./17-cpp-learning-notes/OUTLINE.md)
+
+> **插入位置：** **`08` TLPI / `09` 自制 OS 之后** → **`17` C++** → **`10` PNP**（C++ 网络）→ … → **`15` HFT**（C++ 引擎）
+
+| 里程碑 | 外部目录 | 标签 | 何时读 |
+|--------|----------|------|--------|
+| M0 语法扫盲 | [01-C++Primer](https://github.com/cshonor/cpp-learning-notes/tree/main/01-C++Primer) | 🟡 选读 | 与 **01 CSAPP** Ch3–5 并行 |
+| M1 Modern C++ | [04-Effective-Modern-C++](https://github.com/cshonor/cpp-learning-notes/tree/main/04-Effective-Modern-C++) | 🔴 必读 | **10 PNP 之前** |
+| M2 并发 + 对象模型 | [08-Cpp-Concurrency](https://github.com/cshonor/cpp-learning-notes/tree/main/08-Cpp-Concurrency) · [07-Cpp-Object-Model](https://github.com/cshonor/cpp-learning-notes/tree/main/07-Cpp-Object-Model) | 🔴 必读 | **15 HFT 之前** |
+| M3 STL / Effective | [02–06](https://github.com/cshonor/cpp-learning-notes) | 🟡 选读 | PNP / HFT 期间穿插 |
+| M4 C++20 | [09-C++20-The-Complete-Guide](https://github.com/cshonor/cpp-learning-notes/tree/main/09-C%2B%2B20-The-Complete-Guide) | 🟡 选读 | **15 之后** |
+
+**HFT 产出：** 能读 muduo / HFT 引擎源码；RAII、移动语义、线程同步不再卡脖子。
+
+---
+
+## 补充：陈硕 PNP / muduo 实战（`10` 文件夹）
 
 > 笔记目录：[10-Practical-Network-Programming/](./10-Practical-Network-Programming/) · 外部 [PNP/](https://github.com/cshonor/Computer-Networking/tree/main/PNP)
 
-> **插入位置：** `08` TLPI 之后、`10` UNP 之前
+> **插入位置：** **`17` C++（至少 M1）之后**、`11` UNP 之前
 
 | 主题 | 标签 | HFT 关联 |
 |------|------|----------|
