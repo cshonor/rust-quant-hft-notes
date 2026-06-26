@@ -8,9 +8,12 @@
 
 ```bash
 make        # 默认跑 test
-make build  # 编译全部包
+make build  # 编译 → bin/exchange
+make run    # build 后运行入口（打印 working）
 make test   # go test -v ./...
 ```
+
+无 `make` 时可直接：`go build -o bin/exchange ./cmd/exchange`，再执行 `bin/exchange`（Windows 为 `bin/exchange.exe`）。
 
 ## 包布局（随里程碑扩展）
 
@@ -23,7 +26,7 @@ code/
 ├── match/          # M2：Matcher, Trade（待建）
 ├── metrics/        # M3：Spread, Depth（待建）
 └── cmd/
-    └── dexd/       # M4：可选 HTTP 入口（待建）
+    └── exchange/   # 程序入口（先跑通，M4 可扩展 HTTP）
 ```
 
 ## 与理论对照

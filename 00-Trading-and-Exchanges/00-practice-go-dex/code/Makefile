@@ -1,12 +1,16 @@
-.PHONY: all build test clean
+.PHONY: all build run test clean
 
 all: test
 
 build:
-	go build ./...
+	go build -o bin/exchange ./cmd/exchange
+
+run: build
+	./bin/exchange
 
 test:
 	go test -v ./...
 
 clean:
 	go clean -testcache
+	rm -rf bin/
