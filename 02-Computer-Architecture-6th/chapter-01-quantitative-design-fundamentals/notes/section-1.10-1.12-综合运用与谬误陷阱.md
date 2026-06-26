@@ -41,6 +41,6 @@
 
 Ch1 建立 **量化语言**：趋势（ILP→TLP/DLP/DSA）、架构三层、技术/成本/功耗、可靠性指标、**执行时间** 与基准方法、**Amdahl + 局部性 + CPU 公式**。
 
-**下一步：** [Ch 2 存储器层次](../../chapter-02-存储器层次结构设计.md) — 把局部性落到 cache、NUMA、false sharing。
+**下一步：** [Ch 2 存储器层次](../../chapter-02-memory-hierarchy-design/) — 把局部性落到 cache、NUMA、false sharing。
 
 ---

@@ -31,11 +31,11 @@
 | 1.9 | **Amdahl + 局部性** — profile 找 p，再动 cache line / 绑核 / 旁路 |
 | 1.10–1.12 | 性能/功耗/价格三角 — colo 机器选型与压测方法论 |
 
-→ 与 [01-CSAPP Ch1 §1.9 Amdahl](../../01-CSAPP-3rd/chapter-01-tour-of-computer-systems/notes/section-1.9-重要主题-Amdahl与并发与抽象.md) 交叉 · 深入内存 → [Ch 2](../chapter-02-存储器层次结构设计.md)
+→ 与 [01-CSAPP Ch1 §1.9 Amdahl](../../01-CSAPP-3rd/chapter-01-tour-of-computer-systems/notes/section-1.9-重要主题-Amdahl与并发与抽象.md) 交叉 · 深入内存 → [Ch 2](../chapter-02-memory-hierarchy-design/)
 
 ---
 
 ## 相关章节
 
-- 下一章：[chapter-02-存储器层次结构设计](../chapter-02-存储器层次结构设计.md)
+- 下一章：[chapter-02-memory-hierarchy-design](../chapter-02-memory-hierarchy-design/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

@@ -20,7 +20,7 @@
 | **时间局部性** | 最近访问的项可能很快被再次访问 | cache 命中 |
 | **空间局部性** | 地址相邻的项往往被一起访问 | cache line、预取 |
 
-→ 深入：[Ch 2 存储器层次](../../chapter-02-存储器层次结构设计.md) · [01-CSAPP Ch6](../../../01-CSAPP-3rd/chapter-06-memory-hierarchy/)
+→ 深入：[Ch 2 存储器层次](../../chapter-02-memory-hierarchy-design/) · [01-CSAPP Ch6](../../../01-CSAPP-3rd/chapter-06-memory-hierarchy/)
 
 | HFT 视角 |
 |----------|

@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-02-存储器层次结构设计.md](./chapter-02-存储器层次结构设计.md)
+- 上一章：[chapter-02-memory-hierarchy-design](./chapter-02-memory-hierarchy-design/)
 - 下一章：[chapter-04-向量SIMD与GPU.md](./chapter-04-向量SIMD与GPU.md)
