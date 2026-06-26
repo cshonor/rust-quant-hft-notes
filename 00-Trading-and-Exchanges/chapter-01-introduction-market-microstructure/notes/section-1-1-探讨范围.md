@@ -1,12 +1,76 @@
 ## 1. 探讨范围 (Scope of the Book)
 
-本书研究 **交易、交易者、交易场所（市场）以及规范交易的规则**，属于金融经济学中的 **市场微观结构（Market Microstructure）**——专门研究交易与市场组织如何运作。
+### 一、学科定位 · Disciplinary Position
 
-| 本书关注 | 本书不涉及 |
-|----------|-----------|
-| 交易经济学原理 | 证券如何估值（投资学） |
-| 市场如何组织、规则如何设计 | 公司如何发行证券（公司金融） |
+**中文**
 
-> **HFT 关联：** 微观结构是 HFT 的「业务层操作系统」——引擎再快，若不懂流动性从哪来、成本如何构成，策略无法存活。
+本书归属于金融经济学分支中的 **市场微观结构（Market Microstructure）**。该领域研究证券交易全链路的底层运行逻辑：**交易行为、交易者主体、交易场所（市场载体）、约束交易的制度规则**——聚焦「订单如何成交、价格如何形成、流动性如何流转」。它区别于传统金融学中侧重宏观估值与公司融资的研究范畴。
+
+**English**
+
+This book belongs to **market microstructure**, a branch of financial economics. The field examines the end-to-end mechanics of securities trading: **trading behavior, who trades, where trading occurs, and the rules that govern it**—with central questions of how orders match, prices form, and liquidity flows. It is distinct from mainstream finance focused on macro valuation and corporate financing.
 
 ---
+
+### 二、本书核心覆盖内容 · What This Book Covers
+
+**中文**
+
+本书关注 **交易经济学（trading economics）** 的实务原理，主要包括：
+
+1. **订单—撮合—成交** 全流程微观机制：限价单/市价单/冰山单、价格—时间优先撮合引擎、盘口订单簿
+2. **市场组织模式**：指令驱动、报价驱动、混合市场、暗池、多场所碎片化生态
+3. **交易规则设计**：交易所撮合制度、Maker–Taker 手续费、订单路由、监管约束、涨跌停、跨市场最优执行
+4. **参与主体行为**：做市商、机构大单、散户、高频（HFT）、知情/不知情交易者之间的博弈
+5. **流动性、买卖价差、滑点、市场冲击、交易成本** 的构成与测算
+6. **价格发现、信息不对称、库存风险、逆向选择** 四大核心理论模型
+7. **算法交易、高频交易与市场机制** 的相互作用，以及闪崩等微观市场风险事件
+
+**English**
+
+This book addresses the practical principles of **trading economics**, including:
+
+1. The micro-mechanics of **order → matching → execution**: limit/market/hidden orders, price–time priority, and the limit order book
+2. **Market organization**: order-driven, quote-driven, and hybrid markets; dark pools; fragmented multi-venue ecosystems
+3. **Rule design**: exchange matching rules, maker–taker fees, order routing, regulatory constraints, price limits, and best execution across venues
+4. **Participant behavior**: dealers, institutional block traders, retail investors, HFT firms, and informed vs. uninformed traders
+5. **Liquidity, bid–ask spreads, slippage, market impact, and transaction costs**—how they are built and measured
+6. Core theoretical pillars: **price discovery, information asymmetry, inventory risk, and adverse selection**
+7. **Algorithmic and high-frequency trading** in relation to market design, including microstructure-driven crises such as flash crashes
+
+---
+
+### 三、本书不涉及内容 · What This Book Does Not Cover
+
+| 边界 | 中文 | English |
+|------|------|---------|
+| **证券估值**（投资学） | 不讲解 DCF、PE/PB、红利贴现、CAPM、因子选股或长期基本面价值判断 | No DCF, multiples, dividend discount, CAPM, factor investing, or long-horizon intrinsic valuation |
+| **证券发行**（公司金融） | 不覆盖 IPO、再融资、资本结构、并购、公司治理、分红回购等企业融资决策 | No IPOs, seasoned offerings, capital structure, M&A, governance, or payout policy |
+
+> Harris 在全书开篇即明确：**只讲交易机制，剥离资产估值与公司融资**——这是微观结构学科与相邻分支的标准分界。
+
+---
+
+### 四、与 HFT 的底层关联 · Link to High-Frequency Trading
+
+**中文**
+
+市场微观结构是 HFT 策略的 **业务层操作系统**：低延迟引擎与网络优化只解决「执行有多快」，却无法回答流动性从何而来、成本如何构成、盘口博弈遵循何种规则。做市赚价差、跨市场套利、订单流预测、大单拆分等盈利逻辑，全部建立在微观结构规则之上。若不懂撮合优先级、暗池隐藏订单、手续费返还与市场冲击衰减，再快的引擎也会持续承受逆向选择与亏损，策略难以长期存活。
+
+**English**
+
+Market microstructure is the **operating system** of HFT strategies. Hardware latency and network tuning address *how fast* you can trade—not *where liquidity comes from, how costs are formed, or what rules govern the book*. Market making, cross-venue arbitrage, order-flow prediction, and execution algorithms all rest on microstructure rules. Without understanding matching priority, hidden liquidity, fee rebates, and impact decay, the fastest engine still faces adverse selection and persistent losses.
+
+---
+
+### 五、延伸阅读 · Related Classics
+
+| 著作 | 与本书框架的对应 |
+|------|------------------|
+| **Harris**, *Trading and Exchanges: Market Microstructure for Practitioners* | 实务派入门；开篇界定边界：只讲交易机制，剥离估值与融资 |
+| **O'Hara**, *Market Microstructure Theory* | 理论经典；系统论证交易者—市场—规则的均衡模型 |
+| **Gomber et al.**, *Market Microstructure in Practice* | 实战向；强调 HFT 与微观结构的依存及流动性/成本对策略生存的根基作用 |
+
+---
+
+← [Ch 1](../README.md) · 下一节 [2. 核心目标：五个市场质量特征](./section-2-2-核心目标-五个市场质量特征.md)
