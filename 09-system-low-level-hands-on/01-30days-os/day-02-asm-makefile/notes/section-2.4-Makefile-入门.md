@@ -24,7 +24,28 @@
 
 ### 第一天极简 Makefile（复制即用）
 
-在 VS Code 里 **新建 → 保存为 `Makefile`**（**M 大写**，无 `.txt`），与引导扇区汇编 **同一目录**，粘贴：
+仓库 **可直接练手的版本** 在 [code/](../code/)：
+
+| 文件 | 作用 |
+|------|------|
+| [helloos.asm](../code/helloos.asm) | 启动区 **512 B** 源码（`ORG 0x7C00`，`TIMES` + `0xAA55`） |
+| [Makefile](../code/Makefile) | **`make ipl`** → `ipl.bin` |
+
+```bash
+cd day-02-asm-makefile/code
+make ipl
+```
+
+核心规则（配方行首 **Tab**）：
+
+```makefile
+ipl: helloos.asm
+	nasm -f bin $< -o $@
+```
+
+---
+
+也可在 VS Code 里 **自建** 同目录工程，保存为 `Makefile`（**M 大写**，无 `.txt`），粘贴：
 
 ```makefile
 # 定义用的编译器和参数

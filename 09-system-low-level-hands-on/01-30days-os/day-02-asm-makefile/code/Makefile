@@ -1,14 +1,16 @@
-# Day 2 · 第一天极简 Makefile（配方行首必须是 Tab）
+# Day 2 · 启动区 IPL + Makefile
 # 说明：notes/section-2.4-Makefile-入门.md
-# 源码：helloos.nas（.nas 后缀不用改，只换 nask → nasm 命令）
+# 用法：make ipl  →  helloos.asm 编译为 ipl.bin（512 B）
 
 NASM = nasm
 NASMFLAGS = -f bin
 
-all: os-image.bin
+.PHONY: all clean ipl
 
-os-image.bin: helloos.nas
-	$(NASM) $(NASMFLAGS) -o $@ $<
+all: ipl
+
+ipl: helloos.asm
+	$(NASM) $(NASMFLAGS) $< -o $@
 
 clean:
-	rm -f os-image.bin
+	rm -f ipl.bin os-image.bin

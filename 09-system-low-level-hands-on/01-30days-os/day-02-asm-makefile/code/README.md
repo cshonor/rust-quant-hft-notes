@@ -2,11 +2,19 @@
 
 | 文件 | 说明 |
 |------|------|
-| [Makefile](./Makefile) | **第一天极简版** — `make` → `os-image.bin`（≈512 B）；`make clean` 清理 |
+| [helloos.asm](./helloos.asm) | 启动区源码（512 B 引导扇区，`ORG 0x7C00` + `55 AA`） |
+| [Makefile](./Makefile) | **`make ipl`** → `ipl.bin`；`make clean` 清理 |
 
 **用法：**
 
-1. 把 Day 1 的引导扇区汇编放在同目录，文件名 **`helloos.nas`**（**不必改 `.nas` 后缀**）
-2. 终端 `cd` 到本目录 → **`make`**（内部等价于 `nasm -f bin helloos.nas -o os-image.bin`）
+```bash
+cd day-02-asm-makefile/code
+make ipl          # 生成 ipl.bin（512 B）
+make clean
+```
 
-完整说明：[section-2.4](../notes/section-2.4-Makefile-入门.md) · nask→NASM 对照：[Day 1 §1.3](../day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md#只换-nask--nasm命令对照后缀照旧)
+等价命令：`nasm -f bin helloos.asm -o ipl.bin`
+
+**自检：** `ipl.bin` 大小 **512**；HxD 偏移 **`0x1FE`** 为 **`55 AA`**。
+
+完整说明：[section-2.4](../notes/section-2.4-Makefile-入门.md) · 机器码对照：[Day 1 §1.3](../../day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md)
