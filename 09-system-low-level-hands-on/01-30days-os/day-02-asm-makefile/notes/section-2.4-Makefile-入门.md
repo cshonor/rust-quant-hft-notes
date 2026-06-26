@@ -4,6 +4,20 @@
 
 **Makefile** 把「目标、依赖、命令」写进 **一个纯文本文件**；终端里只敲 **`make`**，由系统里的 **make 工具** 按规则自动执行（只重做改过的步骤）。
 
+### 大白话 · Makefile 是什么？
+
+**Makefile = 帮你自动化编译、打包项目的脚本文件**（纯文本，不是二进制程序）。
+
+| 它帮你记下什么 | 你不用每次手敲什么 |
+|----------------|-------------------|
+| **源文件** 有哪些 | `nasm -f bin helloos.nas -o ipl.bin` 一整串 |
+| **依赖关系**（谁改了要重编谁） | 自己记「先汇编再拼盘再 QEMU」 |
+| **规则**（每条目标对应一条命令） | 多个 `.bat` 来回切换 |
+
+平时只要在工程目录敲 **`make`**，工具会按规则把代码编成 **可执行文件 / 二进制映像**；还可以定义 **`make clean`** 清旧产物、**`make test`** 跑测试 — **只重建改过的那一步**（增量构建）。
+
+**你在 HFT 仓里已经见过同一套路：** [00-practice-go-dex/code/Makefile](../../../../00-Trading-and-Exchanges/00-practice-go-dex/code/Makefile) — `make build` 代替 `go build`，`make test` 跑撮合相关测试，`make clean` 清 `bin/`。今天学的是 **OS 引导扇区版**（NASM → `ipl.bin` → 软盘映像），思想一样：**频繁迭代撮合引擎或内核时，一条 `make` 比复制粘贴命令靠谱。**
+
 先从 **适配自制 OS 第一天的极简版** 上手；拼 1.44 MB 软盘、QEMU 启动见下文 **进阶**。
 
 ---
@@ -163,7 +177,7 @@ make clean        # 若定义了 clean，删除中间文件
 | 文件 | 多个脚本 | **一个 `Makefile`** |
 | 行业习惯 | Windows 批处理 | **Linux 内核 / HFT** 与 CMake/Ninja 同族思想 |
 
-**HFT：** 策略、网关工程里 **CMake / Make / Ninja** — 同一套路：**声明依赖，工具链执行**。
+**HFT：** 策略、网关工程里 **CMake / Make / Ninja** — 同一套路：**声明依赖，工具链执行**。Go DEX 练手见 [go-dex Makefile](../../../../00-Trading-and-Exchanges/00-practice-go-dex/code/Makefile)（`build` / `test` / `clean`）。
 
 ---
 
