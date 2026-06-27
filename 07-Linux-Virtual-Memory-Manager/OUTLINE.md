@@ -12,26 +12,26 @@
 
 | 章 | 英文 | 笔记 | HFT |
 |----|------|------|-----|
-| 1 | Introduction | [chapter-01](./chapter-01-简介.md) | 🟡 |
-| 2 | Describing Physical Memory | [chapter-02](./chapter-02-描述物理内存.md) | 🔴 |
-| 3 | Page Table Management | [chapter-03](./chapter-03-页表管理.md) | 🔴 |
-| 4 | Process Address Space | [chapter-04](./chapter-04-进程地址空间.md) | 🟡 |
-| 5 | Boot Memory Allocator | [chapter-05](./chapter-05-启动内存分配器.md) | ⚪ |
-| 6 | Physical Page Allocation | [chapter-06](./chapter-06-物理页分配.md) | 🟡 |
-| 7 | Noncontiguous Memory Allocation | [chapter-07](./chapter-07-非连续内存分配.md) | ⚪ |
-| 8 | Slab Allocator | [chapter-08](./chapter-08-Slab分配器.md) | 🔴 |
-| 9 | High Memory Management | [chapter-09](./chapter-09-高端内存管理.md) | ⚪ |
-| 10 | Page Frame Reclamation | [chapter-10](./chapter-10-页框回收.md) | 🟡 |
-| 11 | Swap Management | [chapter-11](./chapter-11-交换管理.md) | ⚪ |
-| 12 | Shared Memory Virtual Filesystem | [chapter-12](./chapter-12-共享内存虚拟文件系统.md) | 🟡 |
-| 13 | Out of Memory Management | [chapter-13](./chapter-13-内存耗尽管理.md) | ⚪ |
-| 16 | The Final Word | [chapter-14](./chapter-14-结束语.md) | ⚪ |
+| 1 | Introduction | [chapter-01](./chapter-01-introduction/) | 🟡 |
+| 2 | Describing Physical Memory | [chapter-02](./chapter-02-describing-physical-memory/) | 🔴 |
+| 3 | Page Table Management | [chapter-03](./chapter-03-page-table-management/) | 🔴 |
+| 4 | Process Address Space | [chapter-04](./chapter-04-process-address-space/) | 🟡 |
+| 5 | Boot Memory Allocator | [chapter-05](./chapter-05-boot-memory-allocator/) | ⚪ |
+| 6 | Physical Page Allocation | [chapter-06](./chapter-06-physical-page-allocation/) | 🟡 |
+| 7 | Noncontiguous Memory Allocation | [chapter-07](./chapter-07-noncontiguous-memory-allocation/) | ⚪ |
+| 8 | Slab Allocator | [chapter-08](./chapter-08-slab-allocator/) | 🔴 |
+| 9 | High Memory Management | [chapter-09](./chapter-09-high-memory-management/) | ⚪ |
+| 10 | Page Frame Reclamation | [chapter-10](./chapter-10-page-frame-reclamation/) | 🟡 |
+| 11 | Swap Management | [chapter-11](./chapter-11-swap-management/) | ⚪ |
+| 12 | Shared Memory Virtual Filesystem | [chapter-12](./chapter-12-shared-memory-virtual-filesystem/) | 🟡 |
+| 13 | Out of Memory Management | [chapter-13](./chapter-13-out-of-memory-management/) | ⚪ |
+| 14 | The Final Word | [chapter-14](./chapter-14-the-final-word/) | ⚪ |
 
 ### HFT 延伸（非原书专章）
 
 | 主题 | 笔记 | HFT |
 |------|------|-----|
-| 透明大页 THP | [note-透明大页THP](./note-透明大页THP.md) | 🔴 |
+| 透明大页 THP | [note-透明大页THP](./chapter-03-page-table-management/notes/note-透明大页THP.md) | 🔴 |
 
 ## 代码注释附录（Code Commentary）
 

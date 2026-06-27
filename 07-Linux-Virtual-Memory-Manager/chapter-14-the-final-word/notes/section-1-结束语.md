@@ -94,25 +94,25 @@ Mel Gorman 写本书是为了 **弥合鸿沟**：
 
 | 章 | 主题 | 笔记 |
 |:--:|------|------|
-| 1 | 读源码 / 补丁 / `mm/` 路线 | [chapter-01](./chapter-01-简介.md) |
-| 2 | Node · Zone · `struct page` | [chapter-02](./chapter-02-描述物理内存.md) |
-| 3 | 页表 · TLB · rmap | [chapter-03](./chapter-03-页表管理.md) |
-| 4 | VMA · fault · mlock | [chapter-04](./chapter-04-进程地址空间.md) |
-| 5 | bootmem → Buddy | [chapter-05](./chapter-05-启动内存分配器.md) |
-| 6 | 伙伴系统 · GFP | [chapter-06](./chapter-06-物理页分配.md) |
-| 7 | vmalloc | [chapter-07](./chapter-07-非连续内存分配.md) |
-| 8 | Slab · kmalloc · mempool | [chapter-08](./chapter-08-Slab分配器.md) |
-| 9 | HIGHMEM · kmap · bounce | [chapter-09](./chapter-09-高端内存管理.md) |
-| 10 | LRU · kswapd · reclaim | [chapter-10](./chapter-10-页框回收.md) |
-| 11 | swap · swp_entry | [chapter-11](./chapter-11-交换管理.md) |
-| 12 | tmpfs/shmem · SysV shm | [chapter-12](./chapter-12-共享内存虚拟文件系统.md) |
-| 13 | OOM | [chapter-13](./chapter-13-内存耗尽管理.md) |
+| 1 | 读源码 / 补丁 / `mm/` 路线 | [chapter-01](../../chapter-01-introduction/notes/section-1-简介.md) |
+| 2 | Node · Zone · `struct page` | [chapter-02](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md) |
+| 3 | 页表 · TLB · rmap | [chapter-03](../../chapter-03-page-table-management/notes/section-1-页表管理.md) |
+| 4 | VMA · fault · mlock | [chapter-04](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md) |
+| 5 | bootmem → Buddy | [chapter-05](../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md) |
+| 6 | 伙伴系统 · GFP | [chapter-06](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md) |
+| 7 | vmalloc | [chapter-07](../../chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md) |
+| 8 | Slab · kmalloc · mempool | [chapter-08](../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md) |
+| 9 | HIGHMEM · kmap · bounce | [chapter-09](../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md) |
+| 10 | LRU · kswapd · reclaim | [chapter-10](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md) |
+| 11 | swap · swp_entry | [chapter-11](../../chapter-11-swap-management/notes/section-1-交换管理.md) |
+| 12 | tmpfs/shmem · SysV shm | [chapter-12](../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md) |
+| 13 | OOM | [chapter-13](../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md) |
 
 ### HFT 精读捷径（相对作者 Ch1 源码路线）
 
 | 路径 | 章节 |
 |------|------|
-| **延迟 / 布局** | Ch 2 → 3 (+ [THP](./note-透明大页THP.md)) → 8 → 4 → 10 |
+| **延迟 / 布局** | Ch 2 → 3 (+ [THP](../../chapter-03-page-table-management/notes/note-透明大页THP.md)) → 8 → 4 → 10 |
 | **读 `mm/` 源码** | Ch 1：`oom_kill.c` → `vmalloc.c` → `page_alloc.c` → `mmap.c` |
 
 ---
@@ -132,8 +132,8 @@ Mel Gorman 写本书是为了 **弥合鸿沟**：
 
 ## 相关章节
 
-- 上一章：[chapter-13-内存耗尽管理.md](./chapter-13-内存耗尽管理.md)
-- 附录入口：[appendix-A-简介.md](./appendix-A-简介.md)
-- 全书目录：[OUTLINE.md](./OUTLINE.md) · [README.md](./README.md)
+- 上一章：[../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md](../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md)
+- 附录入口：[appendix-A-简介.md](../../appendix-A-简介.md)
+- 全书目录：[OUTLINE.md](../../OUTLINE.md) · [README.md](../README.md)
 
 ---

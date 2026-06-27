@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-14-结束语.md](./chapter-14-结束语.md)
+- 上一章：[./chapter-14-the-final-word/notes/section-1-结束语.md](./chapter-14-the-final-word/notes/section-1-结束语.md)
 - 下一章：[appendix-B-描述物理内存.md](./appendix-B-描述物理内存.md)

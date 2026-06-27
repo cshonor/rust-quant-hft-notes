@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-概念总览 → [chapter-07-非连续内存分配.md](./chapter-07-非连续内存分配.md)
+概念总览 → [./chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md](./chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md)
 
 <!-- 走读 vmalloc.c: get_vm_area, map_vm_area, vfree -->
 

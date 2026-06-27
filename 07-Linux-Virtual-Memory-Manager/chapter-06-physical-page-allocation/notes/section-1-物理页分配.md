@@ -4,7 +4,7 @@
 
 本章讲 Linux **运行时** 如何 **分配 / 释放物理页框** — 核心算法是 **二进制伙伴分配器 (Binary Buddy Allocator)**：**2 的幂次连续页块** + **拆分 / 合并**，追求 **极高分配速度**。
 
-> **源码入口：** [`mm/page_alloc.c`](https://elixir.bootlin.com/linux/latest/source/mm/page_alloc.c)（Ch 1 阅读路线第 3 步）· 接 [Ch 5](./chapter-05-启动内存分配器.md) **`mem_init()` 移交** 的空闲页。
+> **源码入口：** [`mm/page_alloc.c`](https://elixir.bootlin.com/linux/latest/source/mm/page_alloc.c)（Ch 1 阅读路线第 3 步）· 接 [Ch 5](../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md) **`mem_init()` 移交** 的空闲页。
 
 ---
 
@@ -22,7 +22,7 @@ Ch 7 vmalloc ──► 需要连续物理页时仍依赖 Buddy（或 CMA 等）
 
 **HFT：** 用户态 **`mmap` fault**、内核 **`kmalloc`**（经 slab）底层都可能走到 **`alloc_pages`**；**`GFP_ATOMIC`**、**direct reclaim**、**跨 node 分配** 都会表现为 **延迟尖刺**。
 
-→ 交叉：[Ch 2 Zone 水位](./chapter-02-描述物理内存.md#区域水位线-zone-watermarks) · [Ch 4 缺页](./chapter-04-进程地址空间.md#4-异常处理与缺页异常-page-faulting)
+→ 交叉：[Ch 2 Zone 水位](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md#区域水位线-zone-watermarks) · [Ch 4 缺页](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md#4-异常处理与缺页异常-page-faulting)
 
 ---
 
@@ -98,7 +98,7 @@ zone->free_area[MAX_ORDER-1]  ──►  最大块
 
 **HFT：** **`numactl --membind`**、**`mbind(MPOL_BIND)`** 是在 **用户态约束** 这一策略；违背后 **remote node** 分配 = **更高延迟**。
 
-→ [Ch 2 Nodes](./chapter-02-描述物理内存.md#1-内存节点-nodes)
+→ [Ch 2 Nodes](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md#1-内存节点-nodes)
 
 ---
 
@@ -145,7 +145,7 @@ free 块 B
 | **`PF_MEMALLOC`** | **`kswapd`** 等回收路径 — 需 **继续拿页完成回收** |
 | **`PF_MEMDIE`** | 正被 **OOM killer** 处理的进程 |
 
-→ [Ch 13 OOM](./chapter-13-内存耗尽管理.md) · Ch 1 路线 **`oom_kill.c`**
+→ [Ch 13 OOM](../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md) · Ch 1 路线 **`oom_kill.c`**
 
 ---
 
@@ -156,7 +156,7 @@ free 块 B
 | **外部碎片** | 总空闲够，但 **没有足够大的连续物理块** | Buddy **拆分/合并** 专门缓解 |
 | **内部碎片** | 只需 **1 小块**，却分到 **整页或多页**，页内浪费 | Buddy **按 2^n 页分配** → **易产生** |
 
-**内部碎片 → Slab：** 内核大量 **小于一页** 的对象（`task_struct`、`inode`…）不直接用 Buddy 裸分，而由 **[Ch 8 Slab](./chapter-08-Slab分配器.md)** 在 **整页内切小对象**。
+**内部碎片 → Slab：** 内核大量 **小于一页** 的对象（`task_struct`、`inode`…）不直接用 Buddy 裸分，而由 **[Ch 8 Slab](../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md)** 在 **整页内切小对象**。
 
 **HFT 用户态镜像：** **DPDK mempool**、**订单簿 arena** — 向 OS 要 **大页/大块**，内部 **自己切对象**，同一逻辑。
 
@@ -173,7 +173,7 @@ free 块 B
 | 多核 **order-0（单页）** 分配极频 **`zone->lock` 争用** | 每 CPU **`pageset`**：**热页 / 冷页** 缓存 |
 | 每次 alloc/free 都抢 zone 锁 | **0 阶** 多数路径 **无锁** 从 **本 CPU pageset** 取/还 |
 
-与 [Ch 2 §2.6 pageset](./chapter-02-描述物理内存.md#每-cpu-页面集合-per-cpu-page-lists--pageset) 同一机制 — **读源码时 zone 结构和 page_alloc 要一起看**。
+与 [Ch 2 §2.6 pageset](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md#每-cpu-页面集合-per-cpu-page-lists--pageset) 同一机制 — **读源码时 zone 结构和 page_alloc 要一起看**。
 
 ### 统一 NUMA API
 
@@ -217,9 +217,9 @@ free 块 B
 
 ## 相关章节
 
-- 上一章：[chapter-05-启动内存分配器.md](./chapter-05-启动内存分配器.md)
-- 下一章：[chapter-07-非连续内存分配.md](./chapter-07-非连续内存分配.md)
-- 下一精读：[chapter-08-Slab分配器.md](./chapter-08-Slab分配器.md)（内部碎片）
-- 附录 F：[appendix-F-物理页分配.md](./appendix-F-物理页分配.md)
+- 上一章：[../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md](../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md)
+- 下一章：[../../chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md](../../chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md)
+- 下一精读：[../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md](../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md)（内部碎片）
+- 附录 F：[appendix-F-物理页分配.md](../../appendix-F-物理页分配.md)
 
 ---

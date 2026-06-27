@@ -6,7 +6,7 @@
 
 > **时代说明：** 原书以 **2.4 / 2.6**、**三级页表 (PGD → PMD → PTE)** 叙述（32 位 x86 / PAE 语境）。**x86_64 现代内核** 通常为 **四级**（PGD → PUD → PMD → PTE，见 `asm/pgtable*.h`）；**架构无关层** 仍用 `pgd_t` / `pmd_t` / `pte_t` 抽象，层数由 `CONFIG_PGTABLE_LEVELS` 决定。读源码以当前树为准。
 
-> **HFT 延伸：** 透明大页 THP → [note-透明大页THP.md](./note-透明大页THP.md)
+> **HFT 延伸：** 透明大页 THP → [./note-透明大页THP.md](./note-透明大页THP.md)
 
 ---
 
@@ -122,7 +122,7 @@ Ch 10 / swap：改 PTE、rmap 解映射、换出
 
 **用户进程页表** 在 **fork / exec / mmap** 时逐步填充；**内核部分** 在 boot 末段 **全局就绪**。
 
-→ 与 [Ch 5 启动内存分配器](./chapter-05-启动内存分配器.md) 衔接（boot 页分配器 vs 正式 page allocator）。
+→ 与 [Ch 5 启动内存分配器](../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md) 衔接（boot 页分配器 vs 正式 page allocator）。
 
 ---
 
@@ -206,7 +206,7 @@ Linux 在 **改映射、切换 mm、换页** 等路径插入 **架构相关 hook
     换出时：沿链表 clear PTE，而非扫全局
 ```
 
-→ [Ch 10 页框回收](./chapter-10-页框回收.md) · [Ch 12 共享内存](./chapter-12-共享内存虚拟文件系统.md)（文件页 rmap 经 **address_space**）。
+→ [Ch 10 页框回收](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md) · [Ch 12 共享内存](../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md)（文件页 rmap 经 **address_space**）。
 
 ### 高端内存中的 PTE (PTEs in High Memory)
 
@@ -244,14 +244,14 @@ Linux 在 **改映射、切换 mm、换页** 等路径插入 **架构相关 hook
 | **PTE present + mlock** | 避免 **缺页** 与 **swap** 路径 |
 | **flush_tlb_*** | 理解 **绑核**、**减少跨核页表改动** |
 | **rmap** | 理解 **共享内存 / mmap 文件** 换出成本 — 多映射页更「重」 |
-| **THP** | 在 **减少 TLB miss** 与 **合并延迟抖动** 之间取舍 → [note-透明大页THP.md](./note-透明大页THP.md) |
+| **THP** | 在 **减少 TLB miss** 与 **合并延迟抖动** 之间取舍 → [./note-透明大页THP.md](./note-透明大页THP.md) |
 
 ---
 
 ## 相关章节
 
-- 上一章：[chapter-02-描述物理内存.md](./chapter-02-描述物理内存.md)
-- 下一章：[chapter-04-进程地址空间.md](./chapter-04-进程地址空间.md)
-- 附录 C：[appendix-C-页表管理.md](./appendix-C-页表管理.md)
+- 上一章：[../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md)
+- 下一章：[../../chapter-04-process-address-space/notes/section-1-进程地址空间.md](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md)
+- 附录 C：[appendix-C-页表管理.md](../../appendix-C-页表管理.md)
 
 ---

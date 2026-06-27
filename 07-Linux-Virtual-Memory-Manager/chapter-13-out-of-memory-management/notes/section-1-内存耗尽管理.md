@@ -12,7 +12,7 @@
 
 > **现代扩展：** **cgroup v1/v2 memory** 的 **memcg OOM**、**`oom_score_adj`**、**pid 1 保护** 等 — 原书 **`badness()`** 思路仍在，细节以当前树为准。
 
-→ 回收失败背景：[Ch 10](./chapter-10-页框回收.md) · **`PF_MEMDIE`**：[Ch 6](./chapter-06-物理页分配.md#4-gfp-标志与进程标志-gfp--process-flags) · **`VM_ACCOUNT`**：[Ch 12](./chapter-12-共享内存虚拟文件系统.md#5-26-内核的新变化)
+→ 回收失败背景：[Ch 10](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md) · **`PF_MEMDIE`**：[Ch 6](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md#4-gfp-标志与进程标志-gfp--process-flags) · **`VM_ACCOUNT`**：[Ch 12](../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md#5-26-内核的新变化)
 
 ---
 
@@ -163,9 +163,9 @@ alloc / brk / mremap 大请求
 
 ## 相关章节
 
-- 上一章：[chapter-12-共享内存虚拟文件系统.md](./chapter-12-共享内存虚拟文件系统.md)
-- 下一章：[chapter-14-结束语.md](./chapter-14-结束语.md)
-- 附录 M：[appendix-M-内存耗尽管理.md](./appendix-M-内存耗尽管理.md)
-- Ch 1 阅读路线：[chapter-01-简介.md](./chapter-01-简介.md#4-阅读代码的策略-reading-the-code)
+- 上一章：[../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md](../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md)
+- 下一章：[../../chapter-14-the-final-word/notes/section-1-结束语.md](../../chapter-14-the-final-word/notes/section-1-结束语.md)
+- 附录 M：[appendix-M-内存耗尽管理.md](../../appendix-M-内存耗尽管理.md)
+- Ch 1 阅读路线：[../../chapter-01-introduction/notes/section-1-简介.md](../../chapter-01-introduction/notes/section-1-简介.md#4-阅读代码的策略-reading-the-code)
 
 ---

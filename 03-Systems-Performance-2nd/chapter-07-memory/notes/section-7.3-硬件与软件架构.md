@@ -41,7 +41,7 @@ numactl --cpunodebind=0 --membind=0 ./strategy
 | **Swap out (so)** | **不可接受** 于 tick 热路径机器 |
 | **OOM** | 进程消失 — 比慢更糟 |
 
-→ [07-Gorman ch13 内存耗尽](../../../07-Linux-Virtual-Memory-Manager/chapter-13-内存耗尽管理/)
+→ [07-Gorman ch13 内存耗尽](../../../07-Linux-Virtual-Memory-Manager/chapter-13-out-of-memory-management/)
 
 ### 内存分配器
 

@@ -2,7 +2,7 @@
 
 > **Understanding the Linux Virtual Memory Manager** · Mel Gorman · **精读**（HFT：**对象池 / per-CPU 本地缓存 / cache line 对齐** 的用户态设计，直接对照本章）
 
-[Ch 6 Buddy](./chapter-06-物理页分配.md) 按 **整页（2^n）** 分配 — 快，但对 **小于一页** 的请求造成 **内部碎片**。**Slab 分配器** 在 **Buddy 之上** 做 **对象级缓存**：把 **物理页切成固定大小对象**，并 **复用已释放实例**。
+[Ch 6 Buddy](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md) 按 **整页（2^n）** 分配 — 快，但对 **小于一页** 的请求造成 **内部碎片**。**Slab 分配器** 在 **Buddy 之上** 做 **对象级缓存**：把 **物理页切成固定大小对象**，并 **复用已释放实例**。
 
 > **时代说明：** 原书描述 **经典 SLAB**（`kmem_cache_t`、`slab_t`、`kmem_bufctl`）。**现代主线** 默认多为 **SLUB**（`mm/slub.c`）— API 仍是 **`kmem_cache_*` / `kmalloc`**，内部实现更简；**思想一致**：cache → slab(full/partial/free) → per-CPU 本地池。读源码以当前树为准（[`mm/slub.c`](https://elixir.bootlin.com/linux/latest/source/mm/slub.c) 或 `CONFIG_SLAB` 时 [`mm/slab.c`](https://elixir.bootlin.com/linux/latest/source/mm/slab.c)）。
 
@@ -132,7 +132,7 @@ kmem_cache_free(cache, obj)
 | 分配 / 释放 | **优先本地 batch**，**无锁** |
 | 本地空 / 满 | **bulk** 与 **全局 slabs_partial / slabs_free** 交换 |
 
-与 [Ch 6 pageset](./chapter-06-物理页分配.md#6-26-内核的新变化)（**页** 的 per-CPU）并列 — **Slab 做 object 级 per-CPU**。
+与 [Ch 6 pageset](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md#6-26-内核的新变化)（**页** 的 per-CPU）并列 — **Slab 做 object 级 per-CPU**。
 
 **HFT 镜像：**
 
@@ -202,9 +202,9 @@ Core 1:  同上
 
 ## 相关章节
 
-- 上一章：[chapter-07-非连续内存分配.md](./chapter-07-非连续内存分配.md)
-- 下一章：[chapter-09-高端内存管理.md](./chapter-09-高端内存管理.md)
-- 内部碎片来源：[chapter-06-物理页分配.md](./chapter-06-物理页分配.md#5-避免碎片化-avoiding-fragmentation)
-- 附录 H：[appendix-H-Slab分配器.md](./appendix-H-Slab分配器.md)
+- 上一章：[../../chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md](../../chapter-07-noncontiguous-memory-allocation/notes/section-1-非连续内存分配.md)
+- 下一章：[../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md](../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md)
+- 内部碎片来源：[../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md#5-避免碎片化-avoiding-fragmentation)
+- 附录 H：[appendix-H-Slab分配器.md](../../appendix-H-Slab分配器.md)
 
 ---

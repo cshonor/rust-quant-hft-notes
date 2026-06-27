@@ -102,7 +102,7 @@ Ch 1–2  目标 + 方法论（USE / 延迟分解）
 
 1. 画一条 **发单路径**：用户态 → 哪些 syscall → 是否经内核网络栈。
 2. 对照 **绑核/isolcpus** 配置，标 housekeeping 核 vs hot 核。
-3. 确认 **swap 关闭 / 关键内存 mlock**；THP 策略与 [note-THP](../../07-Linux-Virtual-Memory-Manager/note-透明大页THP.md) 一致。
+3. 确认 **swap 关闭 / 关键内存 mlock**；THP 策略与 [note-THP](../../07-Linux-Virtual-Memory-Manager/chapter-03-page-table-management/notes/note-透明大页THP.md) 一致。
 4. 装 bpftrace，跑一条 **syscall 计数**（预告 Ch 15）验证热路径 syscall 量。
 
 ---

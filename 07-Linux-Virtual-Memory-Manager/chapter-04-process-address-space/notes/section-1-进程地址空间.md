@@ -217,9 +217,9 @@ task_struct ──► mm_struct ──► pgd
 
 ## 相关章节
 
-- 上一章：[chapter-03-页表管理.md](./chapter-03-页表管理.md)
-- 下一章：[chapter-05-启动内存分配器.md](./chapter-05-启动内存分配器.md)
-- 附录 D：[appendix-D-进程地址空间.md](./appendix-D-进程地址空间.md)
+- 上一章：[../../chapter-03-page-table-management/notes/section-1-页表管理.md](../../chapter-03-page-table-management/notes/section-1-页表管理.md)
+- 下一章：[../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md](../../chapter-05-boot-memory-allocator/notes/section-1-启动内存分配器.md)
+- 附录 D：[appendix-D-进程地址空间.md](../../appendix-D-进程地址空间.md)
 - Ch 1 阅读路线第 4 步 → 本章 VMA / [`mm/mmap.c`](https://elixir.bootlin.com/linux/latest/source/mm/mmap.c)
 
 ---

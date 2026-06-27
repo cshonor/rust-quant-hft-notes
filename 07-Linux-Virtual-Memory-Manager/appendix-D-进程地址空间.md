@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **选读**
 
-概念总览 → [chapter-04-进程地址空间.md](./chapter-04-进程地址空间.md)
+概念总览 → [./chapter-04-process-address-space/notes/section-1-进程地址空间.md](./chapter-04-process-address-space/notes/section-1-进程地址空间.md)
 
 <!-- 走读 mm_struct、vm_area_struct、do_page_fault、copy_*_user -->
 

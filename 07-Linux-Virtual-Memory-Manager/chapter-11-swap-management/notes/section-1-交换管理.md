@@ -13,7 +13,7 @@
 
 **HFT：** 延迟敏感进程 **不应依赖 swap 扩容量** — swap I/O = **不可接受的 tail latency**。
 
-→ 回收触发 swap：[Ch 10 §5](./chapter-10-页框回收.md#5-换出进程页面-swapping-out-process-pages) · swap-in fault：[Ch 4 §4.2](./chapter-04-进程地址空间.md#42-请求调页-demand-paging--从-swap-换回)
+→ 回收触发 swap：[Ch 10 §5](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md#5-换出进程页面-swapping-out-process-pages) · swap-in fault：[Ch 4 §4.2](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md#42-请求调页-demand-paging--从-swap-换回)
 
 > **时代说明：** 原书 **`swap_info_struct`、`rw_swap_page()`** 等属 2.4/2.6 语境；现代主线 [`mm/swap*.c`](https://elixir.bootlin.com/linux/latest/source/mm/swap_state.c) · [`mm/page_io.c`](https://elixir.bootlin.com/linux/latest/source/mm/page_io.c) 等 — **PTE 存 swap entry、swap cache、cluster 分配** 思想不变。
 
@@ -61,7 +61,7 @@ Ch 11 分配 swap slot → 写盘 → PTE 改为 swap entry（not present）
 再访问：fault → read swap slot → 新 physical page → PTE present
 ```
 
-→ [Ch 3 PTE present / young](./chapter-03-页表管理.md#页表项保护位与状态位-示例)
+→ [Ch 3 PTE present / young](../../chapter-03-page-table-management/notes/section-1-页表管理.md#页表项保护位与状态位-示例)
 
 ---
 
@@ -99,7 +99,7 @@ Ch 11 分配 swap slot → 写盘 → PTE 改为 swap entry（not present）
     引用计数归零 → free physical page
 ```
 
-→ [Ch 10 swap cache 类型](./chapter-10-页框回收.md#2-页缓存-page-cache) · [Ch 3 rmap](./chapter-03-页表管理.md#反向映射-reverse-mapping--rmap--重点)
+→ [Ch 10 swap cache 类型](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md#2-页缓存-page-cache) · [Ch 3 rmap](../../chapter-03-page-table-management/notes/section-1-页表管理.md#反向映射-reverse-mapping--rmap--重点)
 
 ---
 
@@ -192,8 +192,8 @@ Ch 11 分配 swap slot → 写盘 → PTE 改为 swap entry（not present）
 
 ## 相关章节
 
-- 上一章：[chapter-10-页框回收.md](./chapter-10-页框回收.md)
-- 下一章：[chapter-12-共享内存虚拟文件系统.md](./chapter-12-共享内存虚拟文件系统.md)
-- 附录 K：[appendix-K-交换管理.md](./appendix-K-交换管理.md)
+- 上一章：[../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md)
+- 下一章：[../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md](../../chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md)
+- 附录 K：[appendix-K-交换管理.md](../../appendix-K-交换管理.md)
 
 ---

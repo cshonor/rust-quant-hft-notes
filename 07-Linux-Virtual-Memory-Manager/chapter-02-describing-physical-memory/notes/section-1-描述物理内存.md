@@ -132,7 +132,7 @@ LRU、dirty、locked 等标志与 **Ch 10 页框回收**、**swap** 直接相连
 
 **64 位** 桌面/服务器上 **HIGHMEM 常不存在或为空** — 但 **「并非所有物理页都能零成本直接 touch」** 的思想仍在（IO 映射、特殊区域等）。
 
-→ 与 [Ch 9 高端内存管理](./chapter-09-高端内存管理.md)（原书专章，现代 x86_64 可读作背景）。
+→ 与 [Ch 9 高端内存管理](../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md)（原书专章，现代 x86_64 可读作背景）。
 
 ---
 
@@ -147,7 +147,7 @@ LRU、dirty、locked 等标志与 **Ch 10 页框回收**、**swap** 直接相连
 | **`active_list` / `inactive_list` 全局** | LRU 链 **移入各 `struct zone` 内部** 维护 |
 | 回收顺序全局竞争 | **按 zone 局部** 决定回收 — 更贴合 NUMA / 多 zone 现实 |
 
-→ 接 [Ch 10 页框回收](./chapter-10-页框回收.md)。
+→ 接 [Ch 10 页框回收](../../chapter-10-page-frame-reclamation/notes/section-1-页框回收.md)。
 
 ### 每 CPU 页面集合 (Per-CPU Page Lists · `pageset`)
 
@@ -204,9 +204,9 @@ LRU、dirty、locked 等标志与 **Ch 10 页框回收**、**swap** 直接相连
 
 ## 相关章节
 
-- 上一章：[chapter-01-简介.md](./chapter-01-简介.md)
-- 下一章：[chapter-03-页表管理.md](./chapter-03-页表管理.md)
-- 附录 B（Code Commentary）：[appendix-B-描述物理内存.md](./appendix-B-描述物理内存.md)
+- 上一章：[../../chapter-01-introduction/notes/section-1-简介.md](../../chapter-01-introduction/notes/section-1-简介.md)
+- 下一章：[../../chapter-03-page-table-management/notes/section-1-页表管理.md](../../chapter-03-page-table-management/notes/section-1-页表管理.md)
+- 附录 B（Code Commentary）：[appendix-B-描述物理内存.md](../../appendix-B-描述物理内存.md)
 - 交叉：[05-LKD Ch12 内存管理](../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-12-memory-management/) · [06-ULK Ch8](../06-Understanding-Linux-Kernel/chapter-08-内存管理.md) · [01-CSAPP Ch9](../01-CSAPP-3rd/chapter-09-virtual-memory/)
 
 ---

@@ -126,7 +126,7 @@ bootmem 位图:  used used free free used …
 
 **之后：** `kmalloc`、`page_alloc`、`mmap` fault 等 **不再走 bootmem** — 用户态进程 **永远不会** 触达此路径。
 
-→ **下一章精读：** [chapter-06-物理页分配.md](./chapter-06-物理页分配.md)
+→ **下一章精读：** [../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md)
 
 ---
 
@@ -171,15 +171,15 @@ bootmem 位图:  used used free free used …
 |------|------|
 | **HFT 工程** | **可跳过正文**；知道 **运行时内存来自 Buddy + slab**，bootmem 仅 **启动 几百毫秒** |
 | **读内核启动 / 调试** | 理解 **memblock Reserve/Allocate** 与 **`/proc/iomem`** 中 **Kernel code / reserved** 从哪来 |
-| **继续精读** | [Ch 6 物理页分配](./chapter-06-物理页分配.md) · Ch 1 路线中的 [`page_alloc.c`](https://elixir.bootlin.com/linux/latest/source/mm/page_alloc.c) |
+| **继续精读** | [Ch 6 物理页分配](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md) · Ch 1 路线中的 [`page_alloc.c`](https://elixir.bootlin.com/linux/latest/source/mm/page_alloc.c) |
 
 ---
 
 ## 相关章节
 
-- 上一章：[chapter-04-进程地址空间.md](./chapter-04-进程地址空间.md)
-- 下一章：[chapter-06-物理页分配.md](./chapter-06-物理页分配.md)
-- 附录 E：[appendix-E-启动内存分配器.md](./appendix-E-启动内存分配器.md)
-- Ch 3 引导页表：[chapter-03-页表管理.md](./chapter-03-页表管理.md#4-内核页表初始化-kernel-page-tables)
+- 上一章：[../../chapter-04-process-address-space/notes/section-1-进程地址空间.md](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md)
+- 下一章：[../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md)
+- 附录 E：[appendix-E-启动内存分配器.md](../../appendix-E-启动内存分配器.md)
+- Ch 3 引导页表：[../../chapter-03-page-table-management/notes/section-1-页表管理.md](../../chapter-03-page-table-management/notes/section-1-页表管理.md#4-内核页表初始化-kernel-page-tables)
 
 ---

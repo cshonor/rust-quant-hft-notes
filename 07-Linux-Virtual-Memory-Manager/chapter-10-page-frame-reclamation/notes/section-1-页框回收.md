@@ -6,7 +6,7 @@
 
 > **时代说明：** 原书函数名 **`shrink_cache()`、`refill_inactive()`、`swap_out()`** 等多属 **2.4/2.6**。现代主线为 **`shrink_page_list()` / `shrink_lruvec()`、`balance_pgdat()`** 等（[`mm/vmscan.c`](https://elixir.bootlin.com/linux/latest/source/mm/vmscan.c)）— **active/inactive LRU、kswapd、zone 局部 LRU** 思想不变。
 
-→ 缺页与 swap-in：[Ch 4](./chapter-04-进程地址空间.md#4-异常处理与缺页异常-page-faulting) · rmap 加速解映射：[Ch 3 §7](./chapter-03-页表管理.md#反向映射-reverse-mapping--rmap--重点)
+→ 缺页与 swap-in：[Ch 4](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md#4-异常处理与缺页异常-page-faulting) · rmap 加速解映射：[Ch 3 §7](../../chapter-03-page-table-management/notes/section-1-页表管理.md#反向映射-reverse-mapping--rmap--重点)
 
 ---
 
@@ -36,7 +36,7 @@ Linux **不用纯 LRU**，而用 **双链表** 近似 **LRU 2Q + clock**：
 
 **目标：** active 容纳 **各进程工作集**；inactive 供 **扫描回收** — 在 **近似 LRU** 与 **实现开销** 之间折中。
 
-→ [Ch 2 §2.6 LRU 本地化](./chapter-02-描述物理内存.md#lru-链表本地化) — **2.6 起 per-zone active/inactive**（非全局一条链）。
+→ [Ch 2 §2.6 LRU 本地化](../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md#lru-链表本地化) — **2.6 起 per-zone active/inactive**（非全局一条链）。
 
 **`PG_active` / `PG_referenced` / accessed 位**（Ch 2 page flags · Ch 3 PTE young）— 驱动 **在 active ↔ inactive 间迁移**。
 
@@ -119,7 +119,7 @@ shrink_caches (概念)
     → 物理页归还 Buddy
 ```
 
-→ 详 [Ch 11 交换管理](./chapter-11-交换管理.md)
+→ 详 [Ch 11 交换管理](../../chapter-11-swap-management/notes/section-1-交换管理.md)
 
 ---
 
@@ -142,7 +142,7 @@ free pages
 
 **HFT：** 监控 **`allocstall`、`pgscan_*`、`kswapd_*`**（`/proc/vmstat`）；latency 尖刺常与 **direct reclaim + 写盘** 同现。
 
-→ [Ch 6 GFP_KERNEL](./chapter-06-物理页分配.md#4-gfp-标志与进程标志-gfp--process-flags) · [Ch 13 OOM](./chapter-13-内存耗尽管理.md)
+→ [Ch 6 GFP_KERNEL](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md#4-gfp-标志与进程标志-gfp--process-flags) · [Ch 13 OOM](../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md)
 
 ---
 
@@ -189,9 +189,9 @@ shrink 扫描 inactive 尾部 page
 
 ## 相关章节
 
-- 上一章：[chapter-09-高端内存管理.md](./chapter-09-高端内存管理.md)
-- 下一章：[chapter-11-交换管理.md](./chapter-11-交换管理.md)
-- 附录 J：[appendix-J-页框回收.md](./appendix-J-页框回收.md)
-- Zone 水位：[chapter-02-描述物理内存.md#区域水位线-zone-watermarks)
+- 上一章：[../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md](../../chapter-09-high-memory-management/notes/section-1-高端内存管理.md)
+- 下一章：[../../chapter-11-swap-management/notes/section-1-交换管理.md](../../chapter-11-swap-management/notes/section-1-交换管理.md)
+- 附录 J：[appendix-J-页框回收.md](../../appendix-J-页框回收.md)
+- Zone 水位：[../../chapter-02-describing-physical-memory/notes/section-1-描述物理内存.md#区域水位线-zone-watermarks)
 
 ---

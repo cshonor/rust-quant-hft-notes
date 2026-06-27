@@ -12,7 +12,7 @@
 
 内核解法：在 **RAM 里造一个虚拟文件系统** — 给匿名共享页 **伪装的 file backing**，让 **缺页、swap、LRU** 等 **按文件映射同一套逻辑** 处理。
 
-→ [Ch 4 mmap](./chapter-04-进程地址空间.md#3-内存区域-memory-regions--vma) · [Ch 11 共享页 swap](./chapter-11-交换管理.md#4-交换缓存-swap-cache--核心)
+→ [Ch 4 mmap](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md#3-内存区域-memory-regions--vma) · [Ch 11 共享页 swap](../../chapter-11-swap-management/notes/section-1-交换管理.md#4-交换缓存-swap-cache--核心)
 
 > **源码：** 现代主线 [`mm/shmem.c`](https://elixir.bootlin.com/linux/latest/source/mm/shmem.c)（tmpfs/shmem 合一）· 挂载点 **`/dev/shm`**、**`/tmp`**（tmpfs）。
 
@@ -78,7 +78,7 @@ fault on shmem VMA
     → 安装 PTE present
 ```
 
-→ [Ch 3 rmap](./chapter-03-页表管理.md#反向映射-reverse-mapping--rmap--重点) — **多进程共享** 时 **换出/换入** 仍依赖 **rmap + swap cache**（Ch 10–11）。
+→ [Ch 3 rmap](../../chapter-03-page-table-management/notes/section-1-页表管理.md#反向映射-reverse-mapping--rmap--重点) — **多进程共享** 时 **换出/换入** 仍依赖 **rmap + swap cache**（Ch 10–11）。
 
 ---
 
@@ -153,9 +153,9 @@ mmap(MAP_SHARED | MAP_ANONYMOUS, …)
 
 ## 相关章节
 
-- 上一章：[chapter-11-交换管理.md](./chapter-11-交换管理.md)
-- 下一章：[chapter-13-内存耗尽管理.md](./chapter-13-内存耗尽管理.md)
-- 附录 L：[appendix-L-共享内存虚拟文件系统.md](./appendix-L-共享内存虚拟文件系统.md)
+- 上一章：[../../chapter-11-swap-management/notes/section-1-交换管理.md](../../chapter-11-swap-management/notes/section-1-交换管理.md)
+- 下一章：[../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md](../../chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md)
+- 附录 L：[appendix-L-共享内存虚拟文件系统.md](../../appendix-L-共享内存虚拟文件系统.md)
 - 用户态 IPC：[08-TLPI](../08-The-Linux-Programming-Interface/) · SysV / POSIX shm
 
 ---

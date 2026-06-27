@@ -90,7 +90,7 @@ Linux 为降低延迟影响，常把处理拆成：
 | **minor fault** | 分配/零页，相对便宜 |
 | **swap 活动** | 热路径灾难性 — HFT 通常 **mlock / 预留 / 禁 swap** |
 
-→ 精读：[07-Linux-Virtual-Memory-Manager](../../../07-Linux-Virtual-Memory-Manager/) Ch 3 页表/TLB/大页；[note-透明大页 THP](../../../07-Linux-Virtual-Memory-Manager/note-透明大页THP.md)
+→ 精读：[07-Linux-Virtual-Memory-Manager](../../../07-Linux-Virtual-Memory-Manager/) Ch 3 页表/TLB/大页；[note-透明大页 THP](../../../07-Linux-Virtual-Memory-Manager/chapter-03-page-table-management/notes/note-透明大页THP.md)
 
 → SysPerf 专章：[Ch 7 内存](../../chapter-07-memory/)
 

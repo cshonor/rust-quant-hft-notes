@@ -4,7 +4,7 @@
 
 ## 为什么需要 vmalloc
 
-[Ch 6 Buddy](./chapter-06-物理页分配.md) 分配 **物理连续** 的 **2^n 页** — 快、缓存友好。但 **外部碎片** 积累后，可能 **凑不出大块连续物理内存**，尽管 **总空闲页足够**。
+[Ch 6 Buddy](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md) 分配 **物理连续** 的 **2^n 页** — 快、缓存友好。但 **外部碎片** 积累后，可能 **凑不出大块连续物理内存**，尽管 **总空闲页足够**。
 
 **`vmalloc()` 的取舍：**
 
@@ -100,7 +100,7 @@ vmalloc(size)
 
 **直觉：** vmalloc 区是 **内核共享资源**；**懒同步** 到各进程（实为内核线程/用户态触达时的 **内核页表视图**）— 与 **用户 mmap demand fault** 类似，但 **走内核专用 fault 分支**。
 
-→ [Ch 4 缺页](./chapter-04-进程地址空间.md#4-异常处理与缺页异常-page-faulting) · [Ch 3 PTE](./chapter-03-页表管理.md)
+→ [Ch 4 缺页](../../chapter-04-process-address-space/notes/section-1-进程地址空间.md#4-异常处理与缺页异常-page-faulting) · [Ch 3 PTE](../../chapter-03-page-table-management/notes/section-1-页表管理.md)
 
 ---
 
@@ -166,9 +166,9 @@ vfree
 
 ## 相关章节
 
-- 上一章：[chapter-06-物理页分配.md](./chapter-06-物理页分配.md)
-- 下一章：[chapter-08-Slab分配器.md](./chapter-08-Slab分配器.md)
-- 附录 G：[appendix-G-非连续内存分配.md](./appendix-G-非连续内存分配.md)
-- Ch 1 路线第 2 步 · [chapter-01-简介.md](./chapter-01-简介.md#4-阅读代码的策略-reading-the-code)
+- 上一章：[../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md](../../chapter-06-physical-page-allocation/notes/section-1-物理页分配.md)
+- 下一章：[../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md](../../chapter-08-slab-allocator/notes/section-1-Slab分配器.md)
+- 附录 G：[appendix-G-非连续内存分配.md](../../appendix-G-非连续内存分配.md)
+- Ch 1 路线第 2 步 · [../../chapter-01-introduction/notes/section-1-简介.md](../../chapter-01-introduction/notes/section-1-简介.md#4-阅读代码的策略-reading-the-code)
 
 ---
