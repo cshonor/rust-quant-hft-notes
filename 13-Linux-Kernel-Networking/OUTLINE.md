@@ -13,7 +13,7 @@
 | 章 | 英文 | 笔记 | HFT |
 |----|------|------|-----|
 | 1 | Introduction | [chapter-01](./chapter-01-introduction/) | 🟡 |
-| 2 | Netlink Sockets | [chapter-02](./chapter-02-Netlink套接字.md) | ⚪ |
+| 2 | Netlink Sockets | [chapter-02](./chapter-02-netlink-sockets/) | ⚪ |
 | 3 | ICMP | [chapter-03](./chapter-03-ICMP.md) | 🟡 |
 | 4 | IPv4 | [chapter-04](./chapter-04-IPv4.md) | 🟡 |
 | 5 | The IPv4 Routing Subsystem | [chapter-05](./chapter-05-IPv4路由子系统.md) | 🟡 |

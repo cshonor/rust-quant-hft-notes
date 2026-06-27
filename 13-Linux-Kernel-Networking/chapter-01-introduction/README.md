@@ -31,7 +31,7 @@
 
 ## 相关章节
 
-- 下一章：[../chapter-02-Netlink套接字.md](../chapter-02-Netlink套接字.md)
+- 下一章：[../chapter-02-netlink-sockets/](../chapter-02-netlink-sockets/)
 - 传输层深读：[../chapter-11-第4层协议.md](../chapter-11-第4层协议.md)
 - 高级主题（NAPI/softirq/RSS）：[../chapter-14-高级主题.md](../chapter-14-高级主题.md)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

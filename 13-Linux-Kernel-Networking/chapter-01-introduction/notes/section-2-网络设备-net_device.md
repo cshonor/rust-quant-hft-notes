@@ -21,7 +21,7 @@
 | 嗅探 | **promiscuity counter** | 混杂模式引用计数；`tcpdump`/BPF 抓包时会递增 |
 | 队列 | `tx_queue_len`、qdisc 绑定 |  egress 排队与 **tc** 整形 |
 
-每个 **`net_device`** 对应 `/sys/class/net/<name>/` 与 **rtnetlink** 配置面（→ [Ch 2 Netlink](../../chapter-02-Netlink套接字.md)）。
+每个 **`net_device`** 对应 `/sys/class/net/<name>/` 与 **rtnetlink** 配置面（→ [Ch 2 Netlink](../../chapter-02-netlink-sockets/)）。
 
 ---
 
