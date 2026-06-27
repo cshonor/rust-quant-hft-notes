@@ -1,8 +1,10 @@
 # 附录 F 物理页分配 · Physical Page Allocation
 
-> **Code Commentary** · Mel Gorman · **跳过**
+> **Code Commentary** · Mel Gorman · **选读**
 
-<!-- 代码走读待补充 -->
+概念总览 → [chapter-06-物理页分配.md](./chapter-06-物理页分配.md)
+
+<!-- 走读 page_alloc.c: __alloc_pages, free_pages, buddy split/merge, gfp -->
 
 ## 相关章节
 
