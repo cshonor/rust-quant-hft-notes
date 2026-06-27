@@ -2,7 +2,9 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-<!-- 代码走读待补充 -->
+概念总览 → [chapter-12-共享内存虚拟文件系统.md](./chapter-12-共享内存虚拟文件系统.md)（**`mm/shmem.c`**）
+
+<!-- 走读 shmem.c: shmem_fault, shmem_mmap, SysV 路径 -->
 
 ## 相关章节
 
