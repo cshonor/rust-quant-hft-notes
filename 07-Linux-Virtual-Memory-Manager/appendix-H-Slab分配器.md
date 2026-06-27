@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **选读**
 
-概念总览 → [./chapter-08-slab-allocator/notes/section-1-Slab分配器.md](./chapter-08-slab-allocator/notes/section-1-Slab分配器.md)（现代默认 **SLUB**）
+概念总览 → [./chapter-08-slab-allocator/](./chapter-08-slab-allocator/)（现代默认 **SLUB**）
 
 <!-- 走读 slub.c/slab.c: kmem_cache_alloc, kmalloc caches, shrinker -->
 

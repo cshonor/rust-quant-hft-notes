@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-概念总览 → [./chapter-10-page-frame-reclamation/notes/section-1-页框回收.md](./chapter-10-page-frame-reclamation/notes/section-1-页框回收.md)（现代 **`mm/vmscan.c`**）
+概念总览 → [./chapter-10-page-frame-reclamation/](./chapter-10-page-frame-reclamation/)（现代 **`mm/vmscan.c`**）
 
 <!-- 走读 vmscan.c: shrink_lruvec, balance_pgdat, kswapd -->
 

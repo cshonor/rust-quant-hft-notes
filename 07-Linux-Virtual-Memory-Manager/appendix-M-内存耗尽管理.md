@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-概念总览 → [./chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md](./chapter-13-out-of-memory-management/notes/section-1-内存耗尽管理.md) · 源码 **`mm/oom_kill.c`**
+概念总览 → [./chapter-13-out-of-memory-management/](./chapter-13-out-of-memory-management/) · 源码 **`mm/oom_kill.c`**
 
 <!-- Ch 1 推荐阅读第一站 -->
 

@@ -8,4 +8,4 @@
 
 ## 相关
 
-- [./section-1-页表管理.md](./section-1-页表管理.md)
+- [./section-1-页目录与页表项.md](./section-1-页目录与页表项.md)

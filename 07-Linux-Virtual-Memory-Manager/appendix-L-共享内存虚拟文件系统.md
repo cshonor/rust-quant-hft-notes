@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-概念总览 → [./chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md](./chapter-12-shared-memory-virtual-filesystem/notes/section-1-共享内存虚拟文件系统.md)（**`mm/shmem.c`**）
+概念总览 → [./chapter-12-shared-memory-virtual-filesystem/](./chapter-12-shared-memory-virtual-filesystem/)（**`mm/shmem.c`**）
 
 <!-- 走读 shmem.c: shmem_fault, shmem_mmap, SysV 路径 -->
 

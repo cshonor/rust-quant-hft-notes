@@ -2,7 +2,7 @@
 
 > **Code Commentary** · Mel Gorman · **选读**
 
-概念总览 → [./chapter-06-physical-page-allocation/notes/section-1-物理页分配.md](./chapter-06-physical-page-allocation/notes/section-1-物理页分配.md)
+概念总览 → [./chapter-06-physical-page-allocation/](./chapter-06-physical-page-allocation/)
 
 <!-- 走读 page_alloc.c: __alloc_pages, free_pages, buddy split/merge, gfp -->
 
