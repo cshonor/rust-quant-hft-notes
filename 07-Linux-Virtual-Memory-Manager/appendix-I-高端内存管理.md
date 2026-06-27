@@ -2,7 +2,9 @@
 
 > **Code Commentary** · Mel Gorman · **跳过**
 
-<!-- 代码走读待补充 -->
+概念总览 → [chapter-09-高端内存管理.md](./chapter-09-高端内存管理.md)（x86_64 多为背景）
+
+<!-- 走读 highmem.c: kmap, bounce, 历史 emergency pools -->
 
 ## 相关章节
 
