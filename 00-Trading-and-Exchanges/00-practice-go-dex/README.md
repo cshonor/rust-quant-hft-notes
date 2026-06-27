@@ -1,7 +1,7 @@
 # 00-practice-go-dex · Harris 配套练手
 
 > **父模块：** [00-Trading-and-Exchanges](../README.md)（Larry Harris · *Trading and Exchanges*）  
-> **定位：** 用 **Go** 写一个最小 **DEX / 指令驱动撮合** 练手项目 — **理论归理论、代码归代码**，复盘时一眼对上 Harris 章节。交易所 = **金融产品大卖场**；go-dex = 先造 **现货区的基础收银台**（通用 LOB 撮合），衍生品区的保证金/行权/爆仓以后 **叠在引擎外层** — 见 [Ch 1 §3 · 大卖场比喻](../chapter-01-introduction-market-microstructure/notes/section-3-3-交易工具与市场.md#三主流交易所--金融产品大卖场)。  
+> **定位：** 用 **Go** 写一个最小 **DEX / 指令驱动撮合** 练手项目 — **理论归理论、代码归代码**，复盘时一眼对上 Harris 章节。交易所 = **金融产品大卖场**；go-dex = 先造 **现货区的基础收银台**（通用 LOB 撮合），衍生品区的保证金/行权/爆仓以后 **叠在引擎外层** — 见 [Ch 1 §3 · 大卖场比喻](../chapter-01-introduction-market-microstructure/notes/section-3-3-交易工具与市场.md#三主流交易所--金融产品大卖场)。**M1–M4 覆盖散户级公开簿**；机构暗池/冰山/FIX/拆单 → [Ch 2 §2](../chapter-02-trading-stories/notes/section-2-2-机构股票交易.md#与-go-dex你现在写的是散户级现货交易所) · [M5](./OUTLINE.md#m5--机构级扩展-backlog)。  
 > **边界：** 本项目是 **市场基础设施**（稳定、公平、全量撮合），不是 HFT 抢跑系统 — 见 [Ch 1 §3](../chapter-01-introduction-market-microstructure/notes/section-3-3-交易工具与市场.md#五同一套订单簿两种完全不同的系统)。  
 > **语言路线：** **Go = 原型**（先把 `Match()` 逻辑跑通）；行业里 **HFT 网关 / 核心热路径用 Rust 或 C++**（无 GC 抖动），Go 更适合回测、风控、监控等外围 — 见 [Ch 1 §4.4 · 技术栈分工](../chapter-01-introduction-market-microstructure/notes/section-4-4-贯穿全书的关键主题.md#hft-里谁用什么语言行业分工)。
 
@@ -42,6 +42,7 @@
 | **M2** | 价格–时间优先撮合、部分成交 | Ch [6](../chapter-06-order-driven-markets/) |
 | **M3** | 价差、流动性、maker/taker 视角 | Ch [13](../chapter-13-dealers/) · [14](../chapter-14-bid-ask-spreads/) · [19](../chapter-19-liquidity/) |
 | **M4+** | 多交易对、HTTP/WS API、简单 DEX 前端（可选） | Ch [25](../chapter-25-internalization-preferencing-crossing/)–[27](../chapter-27-floor-vs-automated-trading/) |
+| **M5** | 机构级：暗池、冰山、多 ingress、风控、算法拆单（backlog） | [Ch 2 §2 机构](../chapter-02-trading-stories/notes/section-2-2-机构股票交易.md) |
 
 完整表 → [OUTLINE.md](./OUTLINE.md)
 

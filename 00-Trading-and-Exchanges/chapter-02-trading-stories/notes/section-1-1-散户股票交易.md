@@ -88,6 +88,8 @@ API 收到订单
 
 > go-dex **现在**：单通道 + `OrderType` + 价格–时间优先先把 **簿内逻辑** 写对；**M4+** 若要模拟做市商 API，再加 **队列优先级 / 多 ingress**（仍须公平、可审计 — §3 信息同步）。
 
+**和机构交易的边界：** 散户故事覆盖 go-dex **M1–M2**；机构才有的暗池、冰山、FIX、算法拆单 → [§2 · 机构 vs 散户](./section-2-2-机构股票交易.md#散户-vs-机构核心差异不在订单类型) · [M5 机构级扩展](../../00-practice-go-dex/OUTLINE.md#m5--机构级扩展-backlog)。
+
 → 继续读 [Ch 4 订单类型](../../chapter-04-orders-and-order-types/) · [Ch 6 指令驱动市场](../../chapter-06-order-driven-markets/) · 动手 [M1 里程碑](../../00-practice-go-dex/notes/milestone-01-订单类型与LOB/)  
 → 被踩单 / 外部性：[Ch 1 §4.2 · 限价单期权](../../chapter-01-introduction-market-microstructure/notes/section-4-4-贯穿全书的关键主题.md#42-期权与外部性-options-and-externalities)
 
