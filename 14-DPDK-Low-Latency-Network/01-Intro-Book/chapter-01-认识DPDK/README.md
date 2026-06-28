@@ -20,6 +20,6 @@
 
 ## 相关
 
-- 下一章：[chapter-02-mbuf与内存池.md](../chapter-02-mbuf与内存池.md) · [chapter-03-PMD与轮询模式.md](../chapter-03-PMD与轮询模式.md)
+- 下一章：[chapter-02-Cache与内存/](../chapter-02-Cache与内存/)
 - 内核栈对照：[13-Linux-Kernel-Networking](../../../13-Linux-Kernel-Networking/)
 - [note-DPDK实体书递进](../note-DPDK实体书递进.md) · [10-DPDK 总目录](../../README.md)

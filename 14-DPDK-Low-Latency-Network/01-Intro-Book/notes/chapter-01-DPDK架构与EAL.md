@@ -15,5 +15,5 @@
 
 ## 相关
 
-- 下一章：[chapter-02-mbuf与内存池.md](./chapter-02-mbuf与内存池.md)
+- 下一章：[chapter-02-Cache与内存.md](./chapter-02-Cache与内存.md)
 - [note-DPDK实体书递进](./notes/note-DPDK实体书递进.md) · [10-DPDK 总目录](../README.md)

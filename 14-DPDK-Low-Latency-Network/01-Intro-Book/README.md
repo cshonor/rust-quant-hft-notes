@@ -21,10 +21,11 @@
 |---|------|------|-----|
 | — | 实体书递进说明 | [note-DPDK实体书递进](./notes/note-DPDK实体书递进.md) | 🟡 |
 | 1 | 认识 DPDK（实体书 Ch1） | [chapter-01-认识DPDK/](./chapter-01-认识DPDK/) · [stub](./notes/chapter-01-DPDK架构与EAL.md) | 🔴 |
-| 2 | mbuf、mempool | [chapter-02](./notes/chapter-02-mbuf与内存池.md) | 🔴 |
-| 3 | PMD、轮询模式 | [chapter-03](./notes/chapter-03-PMD与轮询模式.md) | 🔴 |
-| 4 | 零拷贝、旁路原理 | [chapter-04](./notes/chapter-04-零拷贝与用户态旁路.md) | 🔴 |
-| 5 | UDP 组播行情 | [chapter-05](./notes/chapter-05-组播行情接入.md) | 🔴 |
+| 2 | Cache 与内存（实体书 Ch2） | [chapter-02-Cache与内存/](./chapter-02-Cache与内存/) · [stub](./notes/chapter-02-Cache与内存.md) | 🔴 |
+| 3 | mbuf、mempool | [chapter-02-mbuf](./notes/chapter-02-mbuf与内存池.md) | 🔴 |
+| 4 | PMD、轮询模式 | [chapter-03](./notes/chapter-03-PMD与轮询模式.md) | 🔴 |
+| 5 | 零拷贝、旁路原理 | [chapter-04](./notes/chapter-04-零拷贝与用户态旁路.md) | 🔴 |
+| 6 | UDP 组播行情 | [chapter-05](./notes/chapter-05-组播行情接入.md) | 🔴 |
 
 ---
 

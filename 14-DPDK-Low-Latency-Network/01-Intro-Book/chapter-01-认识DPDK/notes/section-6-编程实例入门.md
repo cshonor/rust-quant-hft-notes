@@ -48,7 +48,8 @@ DPDK **最流行** 示例之一 — **三层转发**：
 
 | Ch1 主题 | 继续读 |
 |----------|--------|
-| mbuf / mempool | [chapter-02](../chapter-02-mbuf与内存池.md) 🔴 |
+| Cache / 大页 / NUMA | [chapter-02-Cache与内存](../chapter-02-Cache与内存/) 🔴 |
+| mbuf / mempool | [chapter-02-mbuf](../chapter-02-mbuf与内存池.md) 🔴 |
 | PMD / 轮询 | [chapter-03](../chapter-03-PMD与轮询模式.md) 🔴 |
 | 零拷贝旁路 | [chapter-04](../chapter-04-零拷贝与用户态旁路.md) 🔴 |
 | 组播行情 | [chapter-05](../chapter-05-组播行情接入.md) 🔴 |
@@ -58,4 +59,4 @@ DPDK **最流行** 示例之一 — **三层转发**：
 
 ---
 
-← [5. 应用潜力](./section-5-应用潜力.md) · 下一章 [chapter-02 mbuf](../chapter-02-mbuf与内存池.md)
+← [5. 应用潜力](./section-5-应用潜力.md) · 下一章 [Ch2 Cache与内存](../chapter-02-Cache与内存/)
