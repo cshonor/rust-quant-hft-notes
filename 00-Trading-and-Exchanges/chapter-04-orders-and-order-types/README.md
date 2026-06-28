@@ -14,7 +14,7 @@
 
 | 节 | 笔记 |
 |----|------|
-| 1. 市价单 (Market Orders) | [notes/section-1-1-市价单.md](./notes/section-1-1-市价单.md) |
+| 1. 市价单 (Market Orders) | [notes/section-1-1-市价单.md](./notes/section-1-1-市价单.md) — **新手：打车类比** · 三成本 · HFT 吃单 · `Match()` |
 | 2. 限价单 (Limit Orders) | [notes/section-2-2-限价单.md](./notes/section-2-2-限价单.md) |
 | 3. 止损单 / 停止单 (Stop Orders) | [notes/section-3-3-止损单-停止单.md](./notes/section-3-3-止损单-停止单.md) |
 | 4. 触及市价单 (Market-if-Touched, MIT) | [notes/section-4-4-触及市价单.md](./notes/section-4-4-触及市价单.md) |
