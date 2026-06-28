@@ -173,6 +173,7 @@ chapter-XX-slug/
 - [x] [Ch 26 应用写文件 / stdio · cp](./chapter-26-app-write-file/) — 6 小节笔记
 - [x] [Ch 27 应用内存 / Demand · CoW](./chapter-27-app-memory/) — 6 小节笔记
 - [x] [Ch 28 日文显示 / 重定向](./chapter-28-japanese-redirect/) — 6 小节笔记
+- [x] [Ch 29 应用间通信 / 管道](./chapter-29-ipc/) — 6 小节笔记
 
 ---
 
@@ -183,7 +184,7 @@ chapter-XX-slug/
 - [ ] [Ch 7–8](./chapter-07-interrupt-fifo/) 中断 + 内存管理
 - [ ] [Ch 13–14](./chapter-13-multitask1/) 多任务
 - [x] [Ch 19–20](./chapter-19-paging/) 分页 + 系统调用
-- [ ] [Ch 29](./chapter-29-ipc/) 应用间通信
+- [x] [Ch 29](./chapter-29-ipc/) 应用间通信
 
 ---
 
