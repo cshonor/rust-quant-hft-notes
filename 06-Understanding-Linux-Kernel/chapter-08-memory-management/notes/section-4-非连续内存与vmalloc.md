@@ -48,7 +48,7 @@
 
 | Ch 8 主题 | 继续读 |
 |-----------|--------|
-| 进程地址空间、缺页 | [Ch 9 进程地址空间](../chapter-09-process-address-space.md) 🔴 |
+| 进程地址空间、缺页 | [Ch 9 进程地址空间](../chapter-09-process-address-space/) 🔴 |
 | 页回收、swap | [Ch 17 页回收](../chapter-17-page-reclaim.md) 🟡 |
 | 页表、高端内存 | [Ch 2 内存寻址](../chapter-02-memory-addressing/) 🔴 |
 | VM 专著 | [07 Gorman](../../../07-Linux-Virtual-Memory-Manager/) |
@@ -57,4 +57,4 @@
 
 ---
 
-← [3. Slab](./section-3-Slab分配器.md) · 下一章 [Ch 9 进程地址空间](../chapter-09-process-address-space.md)
+← [3. Slab](./section-3-Slab分配器.md) · 下一章 [Ch 9 进程地址空间](../chapter-09-process-address-space/)

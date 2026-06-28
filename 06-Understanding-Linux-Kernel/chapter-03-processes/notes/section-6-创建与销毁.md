@@ -31,7 +31,7 @@ fork() / vfork() / clone()
 1. 父子 **共享** 相同物理页（只读映射）
 2. **任一方写入** → 缺页 / 保护异常 → 内核分配新物理页并复制
 
-极大加速进程创建 — 依赖 [Ch 2 分页](../../chapter-02-memory-addressing/) · [Ch 9 VMA](../../chapter-09-process-address-space.md)
+极大加速进程创建 — 依赖 [Ch 2 分页](../../chapter-02-memory-addressing/) · [Ch 9 VMA](../../chapter-09-process-address-space/)
 
 ---
 
@@ -69,7 +69,7 @@ Ch 1 提到的 `init` 收养孤儿进程 — 避免僵尸泄漏。
 | Ch 3 主题 | 继续读 |
 |-----------|--------|
 | 谁下一个运行 | [Ch 7 进程调度](../../chapter-07-process-scheduling.md) 🔴 |
-| COW、VMA、页表 | [Ch 9 进程地址空间](../../chapter-09-process-address-space.md) 🔴 |
+| COW、VMA、页表 | [Ch 9 进程地址空间](../../chapter-09-process-address-space/) 🔴 |
 | 中断打断执行流 | [Ch 4 中断与异常](../../chapter-04-interrupts-and-exceptions.md) 🔴 |
 | 睡眠、锁、唤醒 | [Ch 5 内核同步](../../chapter-05-kernel-synchronization.md) 🔴 |
 | fork/exit/wait 入口 | [Ch 10 系统调用](../../chapter-10-system-calls.md) 🔴 |
