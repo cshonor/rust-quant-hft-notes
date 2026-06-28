@@ -16,9 +16,9 @@
 ```
 Ch3 并行计算 — 多核扩展的代价（同步、Cache）
     ↓
-Ch4 同步互斥（本章）— 原子 / 锁 / 无锁 ring
+Ch4 同步互斥 — 原子 / 锁 / 无锁 ring
     ↓
-mbuf + mempool + ring — 预分配对象池与核间传递
+Ch5 报文转发 — RTC / Pipeline / Hash·LPM·ACL
     ↓
 Ch8 流分类与多队列 — 硬件 RSS + 软件分核
 ```
@@ -29,6 +29,7 @@ Ch8 流分类与多队列 — 硬件 RSS + 软件分核
 
 | Ch4 主题 | 继续读 |
 |----------|--------|
+| 报文转发 / RTC | [chapter-05-报文转发](../chapter-05-报文转发/) 🔴 |
 | rte_ring / mbuf | [chapter-02-mbuf与内存池.md](../chapter-02-mbuf与内存池.md) 🔴 |
 | 多队列 / 核间分发 | [chapter-08-流分类与多队列](../chapter-08-流分类与多队列/) 🔴 |
 | PMD 轮询 | [chapter-03-PMD与轮询模式.md](../chapter-03-PMD与轮询模式.md) 🔴 |
@@ -39,4 +40,4 @@ Ch8 流分类与多队列 — 硬件 RSS + 软件分核
 
 ---
 
-← [5. 无锁机制](./section-5-无锁机制.md) · 下一章 [chapter-02-mbuf](../chapter-02-mbuf与内存池.md) · [Ch3 并行](../chapter-03-并行计算/)
+← [5. 无锁机制](./section-5-无锁机制.md) · 下一章 [chapter-05-报文转发](../chapter-05-报文转发/) · [Ch3 并行](../chapter-03-并行计算/)

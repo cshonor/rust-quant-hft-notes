@@ -21,5 +21,5 @@
 ## 相关
 
 - 上一章：[chapter-03-并行计算/](../chapter-03-并行计算/)
-- 下一章：[chapter-02-mbuf与内存池.md](../chapter-02-mbuf与内存池.md) · [chapter-08-流分类与多队列/](../chapter-08-流分类与多队列/)
+- 下一章：[chapter-05-报文转发/](../chapter-05-报文转发/) · [chapter-02-mbuf](../chapter-02-mbuf与内存池.md)
 - 对照：[ULK Ch5 内核同步](../../../06-Understanding-Linux-Kernel/chapter-05-kernel-synchronization/) · [Ch2 Cache 无锁预告](../chapter-02-Cache与内存/notes/section-4-Cache一致性与无锁设计.md)
