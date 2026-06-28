@@ -148,6 +148,7 @@ chapter-XX-slug/
 - [x] [Ch 1 Hello World](./chapter-01-hello-world/) — 6 小节笔记
 - [x] [Ch 2 EDK II / memmap](./chapter-02-edk2-memmap/) — 6 小节笔记
 - [x] [Ch 3 Loader / GOP / kernel.elf](./chapter-03-bootloader-display/) — 6 小节笔记
+- [x] [Ch 4 像素 / make / ELF](./chapter-04-pixel-make/) — 6 小节笔记
 
 ---
 
