@@ -37,4 +37,4 @@ qemu-system-x86_64 \
 
 ---
 
-环境跑通后，在 [chapter-01-hello-uefi](./OUTLINE.md) 起记笔记。
+环境跑通后，在 [chapter-01-hello-world](./chapter-01-hello-world/) 起记笔记。

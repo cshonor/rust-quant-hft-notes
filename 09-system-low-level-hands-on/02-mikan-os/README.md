@@ -145,6 +145,7 @@ chapter-XX-slug/
 - [x] `chapter-XX-slug/` — Ch 0–31 导读骨架
 - [x] `appendix-A` … `appendix-F` 导读骨架
 - [ ] 各章 `notes/` 正文（随学习增量填写）
+- [x] [Ch 1 Hello World](./chapter-01-hello-world/) — 6 小节笔记
 
 ---
 

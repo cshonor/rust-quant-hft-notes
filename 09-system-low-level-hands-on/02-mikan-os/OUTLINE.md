@@ -54,8 +54,8 @@
 ## Ch 0–2 要点速览
 
 - **UEFI** 启动链 · **EDK II** · **EFI 内存 map**
-- 第一个 **Hello World**（现代 PC，非 BIOS 软盘）
-- 与 [01 Day 1](../01-30days-os/day-01-boot-asm/) 对照：BIOS `0x7C00` vs UEFI 长模式
+- **Ch 1 Hello World：** 二进制 `BOOTX64.EFI` → Secure Boot / QEMU → **EfiMain + PE/COFF**
+- 与 [01 Day 1](../01-30days-os/day-01-boot-asm/) 对照：BIOS `0x7C00` vs UEFI **`/EFI/BOOT/BOOTX64.EFI`**
 
 → 详读 [chapter-00-intro/](./chapter-00-intro/) · [chapter-01-hello-world/](./chapter-01-hello-world/) · [chapter-02-edk2-memmap/](./chapter-02-edk2-memmap/)
 
