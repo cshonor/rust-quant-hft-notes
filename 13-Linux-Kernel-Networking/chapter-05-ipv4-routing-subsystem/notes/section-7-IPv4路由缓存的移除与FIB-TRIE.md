@@ -73,7 +73,7 @@ fib_table
 
 ## 相关章节
 
-- 下一章：[Ch 6 高级路由](../../chapter-06-高级路由.md)
+- 下一章：[Ch 6 高级路由](../../chapter-06-advanced-routing/)
 - IPv4 包路径：[Ch 4](../../chapter-04-ipv4/)
 
 ---

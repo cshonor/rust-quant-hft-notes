@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-06-高级路由.md](./chapter-06-高级路由.md)
+- 上一章：[chapter-06-advanced-routing/](./chapter-06-advanced-routing/)
 - 下一章：[chapter-08-IPv6.md](./chapter-08-IPv6.md)
