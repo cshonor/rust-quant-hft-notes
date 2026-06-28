@@ -79,9 +79,9 @@ OOM Killer
 | 缺页 / swap in | [Ch 9 进程地址空间](../chapter-09-process-address-space/) 🔴 |
 | 页缓存回收 | [Ch 15 页缓存](../chapter-15-page-cache/) ⚪ |
 | 07 Gorman | [页回收 / rmap](../../../07-Linux-Virtual-Memory-Manager/) |
-| Ext2 文件系统 | [Ch 18 Ext2/Ext3](../chapter-18-ext2-ext3.md) ⚪ |
+| Ext2 文件系统 | [Ch 18 Ext2/Ext3](../chapter-18-ext2-ext3/) ⚪ |
 | HFT 内存 | [15 HFT 工程](../../../15-HFT-Low-Latency-Practice/) · [03 SysPerf Ch 7](../../../03-Systems-Performance-2nd/chapter-07-memory/) |
 
 ---
 
-← [5. OOM](./section-5-执行时机与OOM.md) · 下一章 [Ch 18 Ext2/Ext3](../chapter-18-ext2-ext3.md)
+← [5. OOM](./section-5-执行时机与OOM.md) · 下一章 [Ch 18 Ext2/Ext3](../chapter-18-ext2-ext3/)
