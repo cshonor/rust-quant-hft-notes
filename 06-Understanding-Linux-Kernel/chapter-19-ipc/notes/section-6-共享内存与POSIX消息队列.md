@@ -75,7 +75,7 @@ HFT：**POSIX shm / mmap 大页** 常用于 **ring buffer、订单簿快照**；
 
 | Ch 19 主题 | 继续读 |
 |------------|--------|
-| 程序加载执行 | [Ch 20 程序执行](../chapter-20-program-execution.md) 🟡 |
+| 程序加载执行 | [Ch 20 程序执行](../chapter-20-program-execution/) 🟡 |
 | mmap / 缺页 | [Ch 9](../chapter-09-process-address-space/) 🔴 |
 | 用户态 IPC | [08 TLPI IPC](../../../08-The-Linux-Programming-Interface/) |
 | 信号 | [Ch 11](../chapter-11-signals/) 🟡 |
@@ -83,4 +83,4 @@ HFT：**POSIX shm / mmap 大页** 常用于 **ring buffer、订单簿快照**；
 
 ---
 
-← [5. 消息队列](./section-5-IPC消息队列.md) · 下一章 [Ch 20 程序执行](../chapter-20-program-execution.md)
+← [5. 消息队列](./section-5-IPC消息队列.md) · 下一章 [Ch 20 程序执行](../chapter-20-program-execution/)
