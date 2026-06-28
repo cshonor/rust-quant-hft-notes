@@ -16,4 +16,4 @@
 ## 相关
 
 - 上一章：[chapter-08-flow-classification-multiqueue/](./chapter-08-flow-classification-multiqueue/)
-- 下一章：[chapter-04-零拷贝与用户态旁路.md](./chapter-04-零拷贝与用户态旁路.md)
+- 下一章：[chapter-10-x86-io-virtualization/](./chapter-10-x86-io-virtualization/)
