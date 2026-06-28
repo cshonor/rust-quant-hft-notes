@@ -163,6 +163,7 @@ chapter-XX-slug/
 - [x] [Ch 16 命令 / CLI](./chapter-16-commands/) — 6 小节笔记
 - [x] [Ch 17 文件系统 / FAT · ls](./chapter-17-filesystem/) — 6 小节笔记
 - [x] [Ch 18 应用 / ELF · cat](./chapter-18-apps/) — 6 小节笔记
+- [x] [Ch 19 分页 / 应用 VA](./chapter-19-paging/) — 6 小节笔记
 
 ---
 
