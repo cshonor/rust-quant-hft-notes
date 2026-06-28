@@ -21,6 +21,6 @@
 ## 相关
 
 - 上一章：[chapter-15-page-cache/](../chapter-15-page-cache/)
-- 下一章：[chapter-17-page-reclaim.md](../chapter-17-page-reclaim.md)
+- 下一章：[chapter-17-page-reclaim/](../chapter-17-page-reclaim/)
 - 衔接：[Ch 12 VFS](../chapter-12-VFS/) · [Ch 14 块层](../chapter-14-block-devices/) · [Ch 15 页缓存](../chapter-15-page-cache/)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)

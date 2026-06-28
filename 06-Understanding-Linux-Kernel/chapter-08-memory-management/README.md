@@ -20,5 +20,5 @@
 
 - 上一章：[chapter-07-process-scheduling/](../chapter-07-process-scheduling/)
 - 下一章：[chapter-09-process-address-space/](../chapter-09-process-address-space/)
-- 深潜：[07 Gorman](../../07-Linux-Virtual-Memory-Manager/) · [chapter-17-page-reclaim.md](../chapter-17-page-reclaim.md)
+- 深潜：[07 Gorman](../../07-Linux-Virtual-Memory-Manager/) · [chapter-17-page-reclaim/](../chapter-17-page-reclaim/)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)
