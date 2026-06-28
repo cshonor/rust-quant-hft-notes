@@ -19,7 +19,7 @@
 | 7 | Process Scheduling | [chapter-07-process-scheduling.md](./chapter-07-process-scheduling.md) · [notes](./chapter-07-process-scheduling/) | 🔴 | LKD Ch 4 |
 | 8 | Memory Management | [chapter-08-memory-management.md](./chapter-08-memory-management.md) · [notes](./chapter-08-memory-management/) | 🔴 | → Gorman |
 | 9 | Process Address Space | [chapter-09-process-address-space.md](./chapter-09-process-address-space.md) · [notes](./chapter-09-process-address-space/) | 🔴 | Gorman Ch 4 |
-| 10 | System Calls | [chapter-10-system-calls.md](./chapter-10-system-calls.md) | 🔴 | LKD Ch 5 · TLPI Ch 2 |
+| 10 | System Calls | [chapter-10-system-calls.md](./chapter-10-system-calls.md) · [notes](./chapter-10-system-calls/) | 🔴 | LKD Ch 5 · TLPI Ch 2 |
 | 11 | Signals | [chapter-11-signals.md](./chapter-11-signals.md) | 🟡 | TLPI Ch 20–21 |
 | 12 | The Virtual Filesystem | [chapter-12-VFS.md](./chapter-12-VFS.md) | ⚪ | LKD Ch 13 |
 | 13 | I/O Architecture and Device Drivers | [chapter-13-io-architecture.md](./chapter-13-io-architecture.md) | ⚪ | |

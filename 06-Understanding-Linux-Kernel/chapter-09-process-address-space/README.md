@@ -21,6 +21,6 @@
 ## 相关
 
 - 上一章：[chapter-08-memory-management/](../chapter-08-memory-management/)
-- 下一章：[chapter-10-system-calls.md](../chapter-10-system-calls.md)
+- 下一章：[chapter-10-system-calls/](../chapter-10-system-calls/)
 - 深潜：[07 Gorman Ch 4](../../07-Linux-Virtual-Memory-Manager/) · [Ch 3 fork/COW](../chapter-03-processes/notes/section-6-创建与销毁.md)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)

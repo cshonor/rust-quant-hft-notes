@@ -40,7 +40,7 @@ COW 同时服务于 **fork** 与 **零页首次写入** 等路径。
 
 现代 **`malloc`** 多数先用 **`brk` 扩堆**，大分配走 **`mmap`** 独立 VMA。
 
-→ 系统调用层：[Ch 10 System Calls](../../chapter-10-system-calls.md) · TLPI
+→ 系统调用层：[Ch 10 System Calls](../../chapter-10-system-calls/) · TLPI
 
 ---
 
@@ -64,7 +64,7 @@ Ch 8 物理页分配
 
 | Ch 9 主题 | 继续读 |
 |-----------|--------|
-| brk / mmap  syscall | [Ch 10 系统调用](../chapter-10-system-calls.md) 🔴 |
+| brk / mmap  syscall | [Ch 10 系统调用](../chapter-10-system-calls/) 🔴 |
 | fork / COW 创建路径 | [Ch 3 创建与销毁](../chapter-03-processes/notes/section-6-创建与销毁.md) 🔴 |
 | 页表 / TLB | [Ch 2 内存寻址](../chapter-02-memory-addressing/) 🔴 |
 | 物理页分配 | [Ch 8 内存管理](../chapter-08-memory-management/) 🔴 |
@@ -74,4 +74,4 @@ Ch 8 物理页分配
 
 ---
 
-← [5. 请求调页](./section-5-请求调页.md) · 下一章 [Ch 10 系统调用](../chapter-10-system-calls.md)
+← [5. 请求调页](./section-5-请求调页.md) · 下一章 [Ch 10 系统调用](../chapter-10-system-calls/)
