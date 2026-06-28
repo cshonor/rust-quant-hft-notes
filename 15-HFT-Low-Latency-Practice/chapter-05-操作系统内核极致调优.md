@@ -1,65 +1,105 @@
 # 第5章 操作系统内核极致调优
 
-> **Ch4 原理的 Linux 落地** · CPU 隔离 · Kernel Bypass · Huge Pages
+> **原书第 6 章 §1 · 最小化上下文切换** + Linux 落地  
+> **CPU 隔离 · Kernel Bypass · Huge Pages**
 
-← 原理：[chapter-04 硬件到 OS](./chapter-04-硬件选型与服务器配置.md) · 总览：[chapter-01 §2](./chapter-01-高频交易基础与生态.md#2-硬件与操作系统优化)
+← 原理：[chapter-04 硬件到 OS](./chapter-04-硬件选型与服务器配置.md) · 无锁/内存池：[chapter-07](./chapter-07-无锁数据结构与内存布局.md)
 
 ---
 
-## 1. CPU Pinning 与隔离
+## 本章定位
 
-**上下文切换**对 HFT 是致命延迟源。
+原书 **Ch6 HFT Optimization（架构与 OS）** 的第一支柱：**消灭上下文切换** — 本章给出 **代价模型 + Linux 实操**；第二、三支柱（无锁、内存池）→ [chapter-07](./chapter-07-无锁数据结构与内存布局.md)。
+
+---
+
+## 1. 上下文切换的代价
+
+**Context Switch：** OS **保存** 当前线程/进程状态，**恢复** 另一线程运行。
+
+| 开销 | HFT 视角 |
+|------|----------|
+| **保存 PCB** | 寄存器、栈指针等 — CPU 周期 |
+| **Cache Invalidation** | 新线程 **冷缓存** |
+| **TLB 刷新** | 页表映射缓存失效 → **内存 walk** |
+| **恢复后 Cache Miss** | 从 **RAM（~60ns 级）** 重拉代码/数据 — 原 [chapter-04 §1](./chapter-04-硬件选型与服务器配置.md) L1 **~0.5ns** 对比 |
+
+**对 HFT：** 切换不仅是 **μs 级调度** — 更致命的是 **破坏 L1/L2 工作集**，原线程 **恢复延迟暴增**。
+
+**触发源：** 公平调度 · **I/O 阻塞 syscall** · **锁等待** · **IRQ** — 热点路径应 **逐一剔除**。
+
+---
+
+## 2. 优化：CPU 隔离与核心绑定
+
+**违背** OS 默认公平调度与节能 — **为延迟牺牲吞吐**。
 
 | 手段 | 说明 |
 |------|------|
-| **`taskset` / `pthread_setaffinity`** | 线程绑 **物理核** |
-| **`isolcpus=`**（内核参数） | 指定核 **不参与通用调度** |
-| **`IRQ affinity`** | 网卡中断与 **收包线程同 NUMA、异核** 或 **轮询模式** |
+| **`taskset` / `pthread_setaffinity`** | 热点线程绑 **独占物理核** |
+| **`isolcpus=`** | 核心 **不参与 CFS 通用队列** |
+| **`nohz_full`** | 减少 **定时器 tick** 打断 |
+| **IRQ affinity** | 网卡中断 **远离** 热点核 · 或 **用户态 poll** 无 IRQ |
 
-**实践：** Gateway / Book / Strategy **各占独占核**；避免超线程 **兄弟核** 共享执行单元。
+**拓扑：**
+
+```
+Core 0: Gateway IN (poll)
+Core 1: Book Builder
+Core 2: Strategy
+Core 3: Gateway OUT
+(其余核: 日志/监控 — 可共享)
+```
+
+**禁止：** 热点线程与 **HT 兄弟核** 同跑重负载。
 
 → [08-TLPI 调度](../08-The-Linux-Programming-Interface/)
 
 ---
 
-## 2. BIOS / 电源：降低 Jitter
+## 3. 减少阻塞：Kernel Bypass
+
+**阻塞式 `recv()`** → 线程睡眠 → **必然切换**。
+
+| 对策 | 效果 |
+|------|------|
+| **OpenOnload / DPDK** | **轮询 RX ring** — 无阻塞 wait |
+| **Busy-poll socket**（次选） | 仍经内核 · 通常不如真 Bypass |
+
+→ [chapter-06 §5 包路径](./chapter-06-低延迟网络与协议优化.md#5-数据包生命周期kernel-路径) · [14-DPDK](../14-DPDK-Low-Latency-Network/)
+
+---
+
+## 4. BIOS / 电源：降低 Jitter
 
 | 禁用 | 原因 |
 |------|------|
-| **Hyper-Threading** | 两线程争用，延迟波动 |
-| **C-states / P-states** | 唤醒 **μs 级** 惩罚 |
-| **Intel Turbo Boost** | 频率跳变 → **非确定性** |
+| **Hyper-Threading** | 争用执行单元 · 不可控交替 |
+| **C-states / P-states** | 唤醒惩罚 |
+| **Turbo Boost** | 频率跳变 |
 
 ---
 
-## 3. Kernel Bypass
+## 5. Huge Pages（与 TLB）
 
-传统路径：`recv()` → 内核协议栈 → 拷贝 → 用户缓冲。
-
-| 技术 | 效果 |
-|------|------|
-| **OpenOnload**（Solarflare） | 用户态 **直接轮询 NIC ring** |
-| **DPDK** | PMD 轮询 · **零拷贝 mbuf** |
-| **延迟量级** | 约 **1.5–10 μs → 0.5–2 μs**（视配置） |
-
-→ 原理：[chapter-06 动态网络 §5](./chapter-06-低延迟网络与协议优化.md#5-数据包生命周期kernel-路径) · [14-DPDK](../14-DPDK-Low-Latency-Network/) · [chapter-06](./chapter-06-低延迟网络与协议优化.md)
-
----
-
-## 4. 内存：Pool + Huge Pages
-
-### Memory Pool
-
-- 启动时 **预分配** 订单、Book level、消息节点
-- 热点 **allocate/free** 改为 **index stack** 或 **bump pointer**
-
-### Huge Pages
+**切换加剧 TLB 压力** — 大页 **减少 miss 概率**（原理 [chapter-04 §2](./chapter-04-硬件选型与服务器配置.md)）。
 
 ```bash
-# 示例：挂载 hugetlbfs，应用 mmap MAP_HUGETLB
 echo 1024 > /proc/sys/vm/nr_hugepages
+# 应用 mmap(MAP_HUGETLB) 或 libhugetlbfs
 ```
 
-| 收益 | 大页减少 **TLB miss** — 对 **随机访 Book** 显著 |
+**与 Memory Pool 分工：** 大页 **映映射**；对象 **池化** → [chapter-07 §3](./chapter-07-无锁数据结构与内存布局.md#3-内存预分配与缓存友好)
 
-→ [chapter-07 内存布局](./chapter-07-无锁数据结构与内存布局.md) · [09 MikanOS Ch27 Demand/CoW](../09-system-low-level-hands-on/02-mikan-os/chapter-27-app-memory/)
+---
+
+## 本章小结
+
+| 目标 | 手段 |
+|------|------|
+| **少切换** | Pinning · isolcpus · 无阻塞 I/O |
+| **少 Jitter** | 关 HT/Turbo/C-states |
+| **少 syscall 路径** | Kernel Bypass |
+| **少 TLB miss** | Huge Pages |
+
+**下一支柱：** [chapter-07 无锁 + 内存池](./chapter-07-无锁数据结构与内存布局.md)
