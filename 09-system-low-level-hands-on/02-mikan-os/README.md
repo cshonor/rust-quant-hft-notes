@@ -146,6 +146,7 @@ chapter-XX-slug/
 - [x] `appendix-A` … `appendix-F` 导读骨架
 - [ ] 各章 `notes/` 正文（随学习增量填写）
 - [x] [Ch 1 Hello World](./chapter-01-hello-world/) — 6 小节笔记
+- [x] [Ch 2 EDK II / memmap](./chapter-02-edk2-memmap/) — 6 小节笔记
 
 ---
 
