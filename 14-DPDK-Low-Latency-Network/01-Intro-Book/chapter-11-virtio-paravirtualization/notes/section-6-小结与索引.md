@@ -18,7 +18,9 @@ Ch10 透传 (VT-d / SR-IOV)
     ↓
 Ch11 Virtio（本章）— 半虚拟化 · virtqueue · PMD 优化
     ↓
-vhost / NFV 实践 · repo 零拷贝/组播
+Ch12 vhost — 用户态后端 · mem_table · vhost-switch
+    ↓
+repo 零拷贝 · 组播 · 02-Advanced
 ```
 
 ---
@@ -27,6 +29,7 @@ vhost / NFV 实践 · repo 零拷贝/组播
 
 | Ch11 主题 | 继续读 |
 |----------|--------|
+| vhost 后端 | [chapter-12-vhost-optimization](../chapter-12-vhost-optimization/) 🟡 |
 | I/O 透传对照 | [chapter-10-x86-io-virtualization](../chapter-10-x86-io-virtualization/) 🟡 |
 | VF / SR-IOV | [chapter-08 §4](../chapter-08-flow-classification-multiqueue/notes/section-4-DPDK实战结合.md) 🔴 |
 | mbuf / 大页 | [chapter-06-pcie-packet-io](../chapter-06-pcie-packet-io/) · [Ch2 大页](../chapter-02-cache-and-memory/) 🔴 |

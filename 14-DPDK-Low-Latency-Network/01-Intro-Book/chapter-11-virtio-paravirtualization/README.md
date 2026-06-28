@@ -21,4 +21,5 @@
 ## 相关
 
 - 上一章：[chapter-10-x86-io-virtualization/](../chapter-10-x86-io-virtualization/)
-- 对照：[Ch10 透传 vs 半虚拟](../chapter-10-x86-io-virtualization/notes/section-2-X86虚拟化概述.md) · [Ch6 mbuf](../chapter-06-pcie-packet-io/notes/section-6-Mbuf与Mempool.md)
+- 下一章：[chapter-12-vhost-optimization/](../chapter-12-vhost-optimization/)
+- 对照：[Ch10 透传](../chapter-10-x86-io-virtualization/notes/section-2-X86虚拟化概述.md) · [Ch6 mbuf](../chapter-06-pcie-packet-io/notes/section-6-Mbuf与Mempool.md)
