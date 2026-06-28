@@ -6,5 +6,5 @@
 
 ## 相关章节
 
-- 上一章：[chapter-08-IPv6.md](./chapter-08-IPv6.md)
+- 上一章：[chapter-08-ipv6/](./chapter-08-ipv6/)
 - 下一章：[chapter-10-IPsec.md](./chapter-10-IPsec.md)

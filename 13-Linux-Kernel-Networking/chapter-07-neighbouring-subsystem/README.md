@@ -33,6 +33,6 @@
 ## 相关章节
 
 - 上一章：[../chapter-06-advanced-routing/](../chapter-06-advanced-routing/)
-- 下一章：[../chapter-08-IPv6.md](../chapter-08-IPv6.md)
+- 下一章：[../chapter-08-ipv6/](../chapter-08-ipv6/)
 - ICMPv6 背景：[../chapter-03-icmp/](../chapter-03-icmp/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)

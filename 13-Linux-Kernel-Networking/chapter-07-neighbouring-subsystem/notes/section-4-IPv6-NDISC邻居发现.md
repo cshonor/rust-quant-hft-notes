@@ -48,7 +48,7 @@ icmpv6_rcv → type 133–137
 | 请求扩散 | 广播 | **solicited-node 多播** |
 | 额外功能 | 较少 | **RA/RS、Redirect、DAD** |
 
-→ ICMPv6 总览：[Ch 3 §2](../../chapter-03-icmp/notes/section-2-ICMPv6的扩展与变化.md) · IPv6 全章：[Ch 8](../../chapter-08-IPv6.md)
+→ ICMPv6 总览：[Ch 3 §2](../../chapter-03-icmp/notes/section-2-ICMPv6的扩展与变化.md) · IPv6 全章：[Ch 8](../../chapter-08-ipv6/)
 
 ---
 

@@ -75,7 +75,7 @@ L3 地址        接口           MAC                   NUD 状态
 
 ## 相关章节
 
-- 下一章：[Ch 8 IPv6](../../chapter-08-IPv6.md)
+- 下一章：[Ch 8 IPv6](../../chapter-08-ipv6/)
 - 发送路径：[Ch 4 §5](../../chapter-04-ipv4/notes/section-5-发送IPv4数据包.md)
 
 ---
