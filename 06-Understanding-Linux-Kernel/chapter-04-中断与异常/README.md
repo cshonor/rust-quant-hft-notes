@@ -23,6 +23,6 @@
 ## 相关
 
 - 上一章：[chapter-03-进程/](../chapter-03-进程/)
-- 下一章：[chapter-05-内核同步.md](../chapter-05-内核同步.md)
+- 下一章：[chapter-05-内核同步/](../chapter-05-内核同步/)
 - 衔接：[chapter-07-进程调度.md](../chapter-07-进程调度.md) · [chapter-10-系统调用.md](../chapter-10-系统调用.md) · [chapter-13-IO架构.md](../chapter-13-IO架构.md)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)
