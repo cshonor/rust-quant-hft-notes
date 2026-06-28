@@ -21,6 +21,6 @@
 ## 相关
 
 - 上一章：[chapter-06-timing/](../chapter-06-timing/)
-- 下一章：[chapter-08-memory-management.md](../chapter-08-memory-management.md)
+- 下一章：[chapter-08-memory-management/](../chapter-08-memory-management/)
 - 衔接：[chapter-03-processes/](../chapter-03-processes/) · [chapter-05-kernel-synchronization/](../chapter-05-kernel-synchronization/) · [chapter-10-system-calls.md](../chapter-10-system-calls.md)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)

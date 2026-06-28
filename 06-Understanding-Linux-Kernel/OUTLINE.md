@@ -17,7 +17,7 @@
 | 5 | Kernel Synchronization | [chapter-05-kernel-synchronization.md](./chapter-05-kernel-synchronization.md) · [notes](./chapter-05-kernel-synchronization/) | 🔴 | LKD Ch 9–10 |
 | 6 | Timing Measurements | [chapter-06-timing.md](./chapter-06-timing.md) · [notes](./chapter-06-timing/) | 🟡 | LKD Ch 11 |
 | 7 | Process Scheduling | [chapter-07-process-scheduling.md](./chapter-07-process-scheduling.md) · [notes](./chapter-07-process-scheduling/) | 🔴 | LKD Ch 4 |
-| 8 | Memory Management | [chapter-08-memory-management.md](./chapter-08-memory-management.md) | 🔴 | → Gorman |
+| 8 | Memory Management | [chapter-08-memory-management.md](./chapter-08-memory-management.md) · [notes](./chapter-08-memory-management/) | 🔴 | → Gorman |
 | 9 | Process Address Space | [chapter-09-process-address-space.md](./chapter-09-process-address-space.md) | 🔴 | Gorman Ch 4 |
 | 10 | System Calls | [chapter-10-system-calls.md](./chapter-10-system-calls.md) | 🔴 | LKD Ch 5 · TLPI Ch 2 |
 | 11 | Signals | [chapter-11-signals.md](./chapter-11-signals.md) | 🟡 | TLPI Ch 20–21 |
