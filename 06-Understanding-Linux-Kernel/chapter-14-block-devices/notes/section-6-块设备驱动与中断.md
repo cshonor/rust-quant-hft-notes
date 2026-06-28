@@ -64,7 +64,7 @@ request_queue + elevator（合并/排序）
 | Ch 14 主题 | 继续读 |
 |------------|--------|
 | 页高速缓存 | [Ch 15 页缓存](../chapter-15-page-cache/) ⚪ |
-| 文件 read 完整路径 | [Ch 16 文件访问](../chapter-16-file-access.md) ⚪ |
+| 文件 read 完整路径 | [Ch 16 文件访问](../chapter-16-file-access/) ⚪ |
 | VFS | [Ch 12](../chapter-12-VFS/) ⚪ |
 | 字符 / DMA / sysfs | [Ch 13](../chapter-13-io-architecture/) ⚪ |
 | 页回收 / 写回 | [Ch 17 页回收](../chapter-17-page-reclaim.md) 🟡 |

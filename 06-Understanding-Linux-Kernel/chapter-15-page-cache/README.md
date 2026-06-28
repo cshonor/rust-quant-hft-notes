@@ -21,6 +21,6 @@
 ## 相关
 
 - 上一章：[chapter-14-block-devices/](../chapter-14-block-devices/)
-- 下一章：[chapter-16-file-access.md](../chapter-16-file-access.md)
+- 下一章：[chapter-16-file-access/](../chapter-16-file-access/)
 - 衔接：[Ch 8 struct page](../chapter-08-memory-management/) · [Ch 12 inode](../chapter-12-VFS/) · [Ch 14 bio](../chapter-14-block-devices/)
 - [OUTLINE.md](../OUTLINE.md) · [LEARNING_PLAN.md](../LEARNING_PLAN.md)

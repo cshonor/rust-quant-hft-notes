@@ -43,7 +43,7 @@ writepage → bio → Ch 14 块层 → 磁盘
 
 | Ch 15 主题 | 继续读 |
 |------------|--------|
-| read/write 完整路径 | [Ch 16 文件访问](../chapter-16-file-access.md) ⚪ |
+| read/write 完整路径 | [Ch 16 文件访问](../chapter-16-file-access/) ⚪ |
 | 回收缓存页 | [Ch 17 页回收](../chapter-17-page-reclaim.md) 🟡 |
 | bio / 块层 | [Ch 14 块设备](../chapter-14-block-devices/) ⚪ |
 | inode / VFS | [Ch 12 VFS](../chapter-12-VFS/) ⚪ |
@@ -51,4 +51,4 @@ writepage → bio → Ch 14 块层 → 磁盘
 
 ---
 
-← [5. 脏页回写](./section-5-回写脏页与pdflush.md) · 下一章 [Ch 16 文件访问](../chapter-16-file-access.md)
+← [5. 脏页回写](./section-5-回写脏页与pdflush.md) · 下一章 [Ch 16 文件访问](../chapter-16-file-access/)
