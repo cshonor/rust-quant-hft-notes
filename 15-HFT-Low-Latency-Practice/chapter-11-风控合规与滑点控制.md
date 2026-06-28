@@ -1,8 +1,9 @@
 # 第11章 风控合规与滑点控制
 
-> **OMS 内部拒单 · 合规 · 执行质量**
+> **本仓库扩展 · OMS 内部拒单 · 合规 · 执行质量**  
+> （原书 Ch11 = FPGA/Crypto → [chapter-15](./chapter-15-fpga-与加密货币高频.md)）
 
-← [chapter-08 OMS](./chapter-08-超低延迟核心引擎开发.md#4-order-manager-oms) · 总览：[chapter-01 §1](./chapter-01-高频交易基础与生态.md#1-系统核心架构关键路径)
+← [chapter-08 OMS](./chapter-08-超低延迟核心引擎开发.md#7-关键路径组件应用层) · 总览：[chapter-01 §1](./chapter-01-高频交易基础与生态.md#1-系统核心架构关键路径)
 
 <!-- 章节深化待补充：pre-trade risk、fat finger、滑点度量 -->
 

@@ -196,7 +196,7 @@ out = a * b + c
 | **Java** | Disruptor 引擎 · 后台 · 部分 μs 栈 | [Ch9](./chapter-09-java-jvm-低延迟系统.md) |
 | **Python** | 研究 · 回测 · 编排 · **非 μs 控制** | **本章** |
 
-**软件级语言优化收官** → 原书 **Ch11 FPGA + Crypto**（待笔记）· 硬件：[Ch4 §3 FPGA](./chapter-04-硬件选型与服务器配置.md#3-fpga-加速)
+**软件级语言优化收官** → [chapter-15 FPGA 与 Crypto（原书 Ch11）](./chapter-15-fpga-与加密货币高频.md)
 
 ---
 
@@ -221,7 +221,7 @@ out = a * b + c
 | Ch10 §2 慢的原因 | **本章 §2** |
 | Ch10 §3 C++ 集成 | **本章 §3** |
 | Ch10 §4 优化步骤 | **本章 §4–§5** |
-| Ch11 FPGA/Crypto | **Ch4 §3 + 待专章** |
+| Ch11 FPGA/Crypto | **Ch15** |
 | Ch7 测量/日志 | **Ch10** |
 
 ---

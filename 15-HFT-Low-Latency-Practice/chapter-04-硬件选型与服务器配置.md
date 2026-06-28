@@ -152,7 +152,7 @@ g++ -O3 -static -o gateway main.cpp ...
 | MD 解码 / 轻量 trigger | 无 OS 调度 |
 | T2T | 可 **<500 ns** |
 
-→ [chapter-01 §6 FPGA](./chapter-01-高频交易基础与生态.md#6-fpga纳秒级)
+→ 深化：[chapter-15 FPGA 与 Crypto（原书 Ch11）](./chapter-15-fpga-与加密货币高频.md) · [chapter-01 §6](./chapter-01-高频交易基础与生态.md#6-fpga纳秒级)
 
 ---
 
