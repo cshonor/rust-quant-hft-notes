@@ -20,7 +20,7 @@
 | # | 主题 | 笔记 | HFT |
 |---|------|------|-----|
 | — | 实体书递进说明 | [note-DPDK实体书递进](./notes/note-DPDK实体书递进.md) | 🟡 |
-| 1 | EAL、大页、NUMA | [chapter-01](./notes/chapter-01-DPDK架构与EAL.md) | 🔴 |
+| 1 | 认识 DPDK（实体书 Ch1） | [chapter-01-认识DPDK/](./chapter-01-认识DPDK/) · [stub](./notes/chapter-01-DPDK架构与EAL.md) | 🔴 |
 | 2 | mbuf、mempool | [chapter-02](./notes/chapter-02-mbuf与内存池.md) | 🔴 |
 | 3 | PMD、轮询模式 | [chapter-03](./notes/chapter-03-PMD与轮询模式.md) | 🔴 |
 | 4 | 零拷贝、旁路原理 | [chapter-04](./notes/chapter-04-零拷贝与用户态旁路.md) | 🔴 |

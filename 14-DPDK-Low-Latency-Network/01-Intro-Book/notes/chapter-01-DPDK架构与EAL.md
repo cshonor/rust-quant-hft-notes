@@ -1,10 +1,19 @@
-# Ch 1 DPDK 架构与 EAL · Architecture & EAL
+# Ch 1 认识 DPDK · Introduction
 
-> **01-Intro-Book** · 官方 Programmer's Guide · **精读**
+> **01-Intro-Book** · 《深入浅出 DPDK》第一章 · **🔴 HFT 精读**
 
-<!-- 章节笔记待补充：EAL 初始化、大页、NUMA 感知、lcore 绑定 -->
+→ **[chapter-01-认识DPDK/README.md](./chapter-01-认识DPDK/README.md)**（6 个小节 + 后续章节索引）
 
-## 相关章节
+| 节 | 笔记 |
+|----|------|
+| 1 | [本章定位](./chapter-01-认识DPDK/notes/section-1-本章定位.md) |
+| 2 | [硬件平台 · IA 多核](./chapter-01-认识DPDK/notes/section-2-硬件平台与DPDK定位.md) |
+| 3 | [轮询 · 大页 · 绑核](./chapter-01-认识DPDK/notes/section-3-性能最佳实践.md) |
+| 4 | [四条方法论](./chapter-01-认识DPDK/notes/section-4-底层方法论.md) |
+| 5 | [NFV · SPDK](./chapter-01-认识DPDK/notes/section-5-应用潜力.md) |
+| 6 | [HelloWorld · L3fwd](./chapter-01-认识DPDK/notes/section-6-编程实例入门.md) |
+
+## 相关
 
 - 下一章：[chapter-02-mbuf与内存池.md](./chapter-02-mbuf与内存池.md)
-- 内核栈对照：[13-Linux-Kernel-Networking](../../../13-Linux-Kernel-Networking/)
+- [note-DPDK实体书递进](./notes/note-DPDK实体书递进.md) · [10-DPDK 总目录](../README.md)

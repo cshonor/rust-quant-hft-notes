@@ -30,7 +30,7 @@
 
 | 书（概念） | 本仓库 |
 |------------|--------|
-| DPDK 架构、EAL | [chapter-01-DPDK架构与EAL](./chapter-01-DPDK架构与EAL.md) |
+| DPDK 架构、EAL 入门 | [chapter-01-认识DPDK](./chapter-01-认识DPDK/)（实体书 Ch1） |
 | mbuf、mempool | [chapter-02-mbuf与内存池](./chapter-02-mbuf与内存池.md) |
 | PMD、poll mode | [chapter-03-PMD与轮询模式](./chapter-03-PMD与轮询模式.md) |
 | 旁路、零拷贝 | [chapter-04-零拷贝与用户态旁路](./chapter-04-零拷贝与用户态旁路.md) |
