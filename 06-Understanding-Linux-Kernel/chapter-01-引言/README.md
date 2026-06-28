@@ -19,6 +19,6 @@
 
 ## 相关
 
-- 下一章：[chapter-02-内存寻址.md](../chapter-02-内存寻址.md)
+- 下一章：[chapter-02-内存寻址/](../chapter-02-内存寻址/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)
 - 学习路线：[LEARNING_PLAN.md](../LEARNING_PLAN.md)
