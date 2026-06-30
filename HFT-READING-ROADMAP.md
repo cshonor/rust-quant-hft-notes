@@ -1,6 +1,6 @@
 # HFT 系统开发 · 完整阅读路线图
 
-> **文件夹 `00`–`16` + 外部 C++ 索引 `17`；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
+> **文件夹 `00`–`16` + 外部 C++ 索引 `17` + 嵌入式 Linux 支线 `18`–`22`；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
 
 ### 核心段（文件夹编号 = 读序）
 
@@ -14,6 +14,7 @@
 | **17** | [C++ 外部索引](./17-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
 | **10–14** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
 | **15–16** | HFT Practice / Rust | 动手实现 |
+| **18–22** | ARM64 · U-Boot/内核 · 驱动 · DT · 实战 | 嵌入式 Linux 退路（可选支线） |
 
 ### Gregg 双书 · 03 → 04
 
@@ -73,13 +74,22 @@
 
 15  HFT Low-Latency Practice（C++）
 16  Rust Quant Trading Guide
+
+── 可选支线 · 嵌入式 Linux（ARM-A，非 MCU）──
+18  ARM64 架构
+19  U-Boot / 内核 / Buildroot
+20  Linux 设备驱动
+21  设备树
+22  无人机 / 网关实战
 ```
 
-**执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 17 → 10 → 11 → 01网络 → 12 → 13 → 14 → 15 → 16`
+**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 17 → 10 → 11 → 01网络 → 12 → 13 → 14 → 15 → 16`
+
+**嵌入式支线（独立顺序 · 建议 05–08 后再开）：** `18 → 19 → 20 → 21 → 22`
 
 > **C++ 外部仓：** [17-cpp-learning-notes/](./17-cpp-learning-notes/) — **09 之后、10 PNP 之前** 至少读完 *Effective Modern C++*。
 
-> **板块封顶：** `00`–`16` 在本仓 + **`17`** 外部 C++ 索引；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+> **板块封顶：** `00`–`16` 在本仓 + **`17`** 外部 C++ 索引 + **`18`–`22`** 嵌入式 Linux 支线；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
 ---
 
@@ -284,3 +294,56 @@
 | [11 HFT](./15-HFT-Low-Latency-Practice/) · [12 Rust](./16-Rust-Quant-Trading-Guide/) | 15 / 16 |
 
 → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md) · [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+
+---
+
+## 六、嵌入式 Linux 支线（`18`–`22`）
+
+> **定位：** **第二职业退路** — 飞行器 / 网关 / 车载；**主线仍是 HFT**。  
+> **范围：** 仅 **ARM-A + 嵌入式 Linux**；**不学** STM32 / MCU 裸机。
+
+### 何时开这条线
+
+| 条件 | 说明 |
+|------|------|
+| **建议前置** | [05 LKD](./05-Linux-Kernel-Development/) + [08 TLPI](./08-The-Linux-Programming-Interface/) 已有基础 |
+| **与 HFT 关系** | **并行或 HFT 主线阶段性完成后** — 不与 `17→10→15` 抢时间 |
+| **C 语言** | K&R + 《C 和指针》+ 《嵌入式 C 自我修养》+ CSAPP/TLPI 可复用 |
+
+### 严格顺序
+
+```
+18  ARM64 架构
+ ↓
+19  U-Boot · 内核裁剪 · Buildroot
+ ↓
+20  Linux 设备驱动（LDD3 + 现代驱动）
+ ↓
+21  设备树 Device Tree
+ ↓
+22  无人机 / 网关项目实战
+```
+
+### 文件夹 ↔ 必读书（每模块 1–2 本 · 不冗余）
+
+| 文件夹 | 必读书 | 索引 |
+|--------|--------|------|
+| **18** | 《ARMv8-A Programmer's Guide》· 《ARM64 汇编编程实战》 | [18-ARM64-Architecture/](./18-ARM64-Architecture/) |
+| **19** | 《嵌入式 Linux 开发实战：U-Boot、内核、根文件系统》· 《Buildroot 实战指南》 | [19-UBoot-Kernel-Build/](./19-UBoot-Kernel-Build/) |
+| **20** | LDD3 · 《Linux 内核驱动深度开发》 | [20-Linux-Device-Driver/](./20-Linux-Device-Driver/) |
+| **21** | 《Device Tree for Embedded Linux》 | [21-Device-Tree-Study/](./21-Device-Tree-Study/) |
+| **22** | 《嵌入式 Linux 无人机开发实战》 | [22-Embedded-Linux-Practice/](./22-Embedded-Linux-Practice/) |
+
+### 可直接复用（HFT 链 · 不用重学）
+
+| 类别 | 来源模块 |
+|------|----------|
+| C / GNU-C / 指针 / 结构体 | CSAPP · TLPI · 《嵌入式 C 自我修养》 |
+| 进程 / VM / 中断 / 同步 | 05 LKD · 06 ULK · 07 Gorman |
+| 性能 / 绑核 / BPF | 03 SysPerf · 04 BPF |
+| 网络 / 零拷贝思想 | 11 UNP · 13 内核网 · 14 DPDK → 飞控实时链路 |
+| 低延迟工程思维 | 15 HFT — 绑核、无锁、异步日志、T2T 测量 |
+
+### 岗位定位（支线完成后）
+
+嵌入式 Linux · 车载 Linux · 工业网关 · 无人机底层开发

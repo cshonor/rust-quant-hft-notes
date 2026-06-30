@@ -4,7 +4,7 @@
 
 **总阅读顺序** → [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md) · **文件夹顺序** → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)
 
-**按文件夹读：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 10 → 11 → 12 → 13 → 14 → 15 → 16`
+**按文件夹读：** HFT 主线 `00 → … → 16` · C++ 索引 `17` · 嵌入式支线 `18 → … → 22`（[§嵌入式](./READING-LIST.md#补充嵌入式-linux-支线18–22-文件夹)）
 
 | 标签 | 含义 |
 |------|------|
@@ -371,4 +371,26 @@ L3  Gregg BPF Tools               ← 工具落地
 L4  Love → Gorman → 07 自制 → 08 PNP → 09–12 网络栈  ← 系统纵深
     ↓
 L5  13-HFT + 14-Rust              ← 动手实现（C++ / Rust）
+    ↓
+L6  18–22 嵌入式 Linux（可选）    ← ARM-A · 驱动 · DT · 无人机/网关退路
 ```
+
+→ 嵌入式支线详情：[HFT-READING-ROADMAP §六](./HFT-READING-ROADMAP.md#六嵌入式-linux-支线18–22)
+
+---
+
+## 补充：嵌入式 Linux 支线（`18`–`22` 文件夹）
+
+> **定位：** **第二职业退路**（飞行器 / 网关 / 车载）；**主线仍是 HFT**。  
+> **范围：** 仅 **ARM-A + 嵌入式 Linux** — **排除** STM32 / MCU 裸机。  
+> **顺序：** `18 → 19 → 20 → 21 → 22` · 建议 **[05 LKD + 08 TLPI](./HFT-READING-ROADMAP.md#六嵌入式-linux-支线18–22)** 后再开。
+
+| 文件夹 | 必读书（精简） | 索引 |
+|--------|----------------|------|
+| **18** ARM64 | 《ARMv8-A Programmer's Guide》· 《ARM64 汇编编程实战》 | [18-ARM64-Architecture/](./18-ARM64-Architecture/) |
+| **19** 构建 | 《嵌入式 Linux 开发实战：U-Boot、内核、根文件系统》· 《Buildroot 实战指南》 | [19-UBoot-Kernel-Build/](./19-UBoot-Kernel-Build/) |
+| **20** 驱动 | LDD3 · 《Linux 内核驱动深度开发》 | [20-Linux-Device-Driver/](./20-Linux-Device-Driver/) |
+| **21** 设备树 | 《Device Tree for Embedded Linux》 | [21-Device-Tree-Study/](./21-Device-Tree-Study/) |
+| **22** 实战 | 《嵌入式 Linux 无人机开发实战》 | [22-Embedded-Linux-Practice/](./22-Embedded-Linux-Practice/) |
+
+**可复用 HFT 链：** C/GNU-C · 05–07 内核 · 03–04 性能/BPF · 14 DPDK 零拷贝思想 · 15 HFT 低延迟工程思维。
