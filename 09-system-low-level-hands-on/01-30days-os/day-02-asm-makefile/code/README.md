@@ -7,6 +7,7 @@
 | [helloos.img](./helloos.img) | **1,474,560 B** 软盘镜像（`ipl.bin` 嵌在偏移 0，QEMU 用） |
 | [Makefile](./Makefile) | `make ipl` · `make img`（Linux/macOS） |
 | [build-img.ps1](./build-img.ps1) | Windows 拼盘脚本 |
+| [run-qemu.ps1](./run-qemu.ps1) | 用 **`D:\qemu\qemu-system-i386.exe`** 启动（可设 `$env:QEMU`） |
 
 ---
 
@@ -57,9 +58,21 @@ dd if=ipl.bin of=helloos.img conv=notrunc
 
 ### QEMU 启动
 
-```bash
-qemu-system-i386 -fda helloos.img -boot a
+**本机 QEMU 路径：** `D:\qemu\qemu-system-i386.exe`（见 [Day 1 §1.1.5](../../day-01-boot-asm/notes/section-1.1.5-QEMU安装与运行.md)）
+
+**一键（推荐）：**
+
+```powershell
+.\run-qemu.ps1
 ```
+
+**手动：**
+
+```powershell
+D:\qemu\qemu-system-i386.exe -fda helloos.img -boot a
+```
+
+> **勿**把 `helloos.img` 放在 `D:\qemu\` 安装目录内；可在 `code\` 或 `D:\haribote\` 下运行。
 
 ---
 

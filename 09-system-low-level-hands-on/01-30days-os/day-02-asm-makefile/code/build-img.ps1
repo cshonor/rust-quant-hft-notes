@@ -25,4 +25,4 @@ $disk = New-Object byte[] $size
 [System.IO.File]::WriteAllBytes($img, $disk)
 
 Write-Host "OK: helloos.img ($size bytes) — ipl.bin embedded at offset 0"
-Write-Host "Run: qemu-system-i386 -fda helloos.img -boot a"
+Write-Host "Run: .\run-qemu.ps1   (QEMU at D:\qemu\qemu-system-i386.exe)"
