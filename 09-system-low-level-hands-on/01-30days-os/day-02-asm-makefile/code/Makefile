@@ -3,7 +3,8 @@
 #   make ipl   → ipl.bin（512 B）
 #   make img   → helloos.img（1.44 MB，ipl.bin 写入偏移 0）
 #   make run   → QEMU 启动（需安装 qemu-system-i386）
-# Windows 拼盘：.\build-img.ps1
+# Linux / macOS / MSYS2：需 make + dd + qemu 在 PATH 中
+# Windows 无 make 时：见 README.md 中的 nasm / PowerShell / D:\qemu 原生命令
 
 NASM = nasm
 NASMFLAGS = -f bin
