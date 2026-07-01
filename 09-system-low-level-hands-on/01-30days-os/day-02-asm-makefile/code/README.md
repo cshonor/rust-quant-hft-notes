@@ -3,76 +3,81 @@
 | 文件 | 说明 |
 |------|------|
 | [helloos.asm](./helloos.asm) | 启动区 **源码**（文本） |
-| [ipl.bin](./ipl.bin) | **512 B** 引导扇区（NASM 产物，已提交可对照） |
-| [helloos.img](./helloos.img) | **1,474,560 B** 软盘镜像（`ipl.bin` 嵌在偏移 0，QEMU 用） |
-| [Makefile](./Makefile) | `make ipl` · `make img`（Linux/macOS） |
-| [build-img.ps1](./build-img.ps1) | Windows 拼盘脚本 |
-| [run-qemu.ps1](./run-qemu.ps1) | 用 **`D:\qemu\qemu-system-i386.exe`** 启动（可设 `$env:QEMU`） |
+| [ipl.bin](./ipl.bin) | **512 B** 引导扇区（NASM 产物） |
+| [helloos.img](./helloos.img) | **1,474,560 B** 软盘镜像（`ipl.bin` 嵌在偏移 0） |
+| [Makefile](./Makefile) | Linux/macOS：`make ipl` · `make img` · `make run` |
 
 ---
 
-## 三步与命名
+## 命令一览（无封装脚本 · 可直接复用）
 
-| 步 | 命令 | 产出 | 谁用 |
-|----|------|------|------|
-| ① 汇编 | `nasm -f bin helloos.asm -o ipl.bin` | **`ipl.bin`** 512 B | CPU（经 BIOS 加载） |
-| ② 拼盘 | 见下 [ipl.bin 拼成 helloos.img](#iplbin-拼成-helloosimg) | **`helloos.img`** 1.44 MB | **QEMU / 虚拟机** |
-| ③ 启动 | `qemu-system-i386 -fda helloos.img -boot a` | 屏幕 `hello, world` | 你 |
+在 `day-02-asm-makefile/code/` 目录下执行。
 
-**命名对照：**
-
-| 名字 | 含义 |
-|------|------|
-| **`ipl.bin`** | **IPL** = Initial Program Loader；**`.bin`** = 裸二进制，**只有启动区** |
-| **`helloos.img`** | **`.img`** = 整盘磁盘镜像；**不是** 把 `.bin` 改后缀，而是 **512 B 贴进 1.44 MB 空盘开头** |
-| **`boot.img`** | Day 1 常用别名，**与 `helloos.img` 同物**（复制到 `D:\haribote\boot.img` 仅为路径习惯） |
-
-**QEMU 必须 `-fda helloos.img`，不能 `-fda ipl.bin`** — 模拟器要 **2880 扇区** 的软盘，不是 512 B 单文件。
-
----
-
-## 用法
+### ① 汇编 → `ipl.bin`（512 B）
 
 ```bash
-cd day-02-asm-makefile/code
-nasm -f bin helloos.asm -o ipl.bin    # 或: make ipl
+nasm -f bin helloos.asm -o ipl.bin
 ```
 
-### `ipl.bin` 拼成 `helloos.img`
+### ② 拼盘 → `helloos.img`（1,474,560 B）
 
-**Windows（PowerShell）：**
-
-```powershell
-.\build-img.ps1
-```
-
-**Linux / macOS：**
+**Linux / macOS / MSYS2：**
 
 ```bash
 dd if=/dev/zero of=helloos.img bs=512 count=2880
 dd if=ipl.bin of=helloos.img conv=notrunc
-# 或: make img
 ```
 
-**HxD 手工：** 新建 **1,474,560 B** 文件 → 把 **`ipl.bin` 全部复制到偏移 0**（与 [Day 1 §1.4](../../day-01-boot-asm/notes/section-1.4-加工润色.md) 相同）。
-
-### QEMU 启动
-
-**本机 QEMU 路径：** `D:\qemu\qemu-system-i386.exe`（见 [Day 1 §1.1.5](../../day-01-boot-asm/notes/section-1.1.5-QEMU安装与运行.md)）
-
-**一键（推荐）：**
+**Windows PowerShell（等价于上面两条 `dd`）：**
 
 ```powershell
-.\run-qemu.ps1
+$size = 1474560
+$disk = New-Object byte[] $size
+$ipl  = [IO.File]::ReadAllBytes("$PWD\ipl.bin")
+[Array]::Copy($ipl, 0, $disk, 0, 512)
+[IO.File]::WriteAllBytes("$PWD\helloos.img", $disk)
 ```
 
-**手动：**
+**HxD 手工：** 新建 **1,474,560 B** → 把 **`ipl.bin` 整文件粘贴到偏移 0**（[Day 1 §1.4](../../day-01-boot-asm/notes/section-1.4-加工润色.md)）。
+
+### ③ QEMU 启动
+
+**PATH 里已有 `qemu-system-i386` 时：**
+
+```bash
+qemu-system-i386 -fda helloos.img -boot a
+```
+
+**Windows · QEMU 装在 `D:\qemu`（与 [Day 1 §1.1.5](../../day-01-boot-asm/notes/section-1.1.5-QEMU安装与运行.md) 相同）：**
 
 ```powershell
+cd <本仓库>\09-system-low-level-hands-on\01-30days-os\day-02-asm-makefile\code
 D:\qemu\qemu-system-i386.exe -fda helloos.img -boot a
 ```
 
-> **勿**把 `helloos.img` 放在 `D:\qemu\` 安装目录内；可在 `code\` 或 `D:\haribote\` 下运行。
+或先把映像拷到工作目录再启动（Day 1 习惯）：
+
+```powershell
+Copy-Item helloos.img D:\haribote\boot.img
+cd D:\haribote
+D:\qemu\qemu-system-i386.exe -fda boot.img -boot a
+```
+
+> **勿**把 `helloos.img` / `boot.img` 放在 `D:\qemu\` 安装目录内。
+
+---
+
+## 命名：`ipl.bin` 与 `helloos.img`
+
+| 文件 | 大小 | 含义 |
+|------|------|------|
+| **`ipl.bin`** | 512 B | **IPL** 启动区裸二进制；**不是** QEMU 直接 `-fda` 的对象 |
+| **`helloos.img`** | 1,474,560 B | 1.44 MB 软盘镜像；**偏移 0 的 512 B = `ipl.bin` 全文** |
+| **`boot.img`** | 同上 | 与 `helloos.img` **同物**，Day 1 常用文件名 |
+
+**QEMU 用 `helloos.img`，不用 `ipl.bin`** — 模拟器需要 **2880 扇区** 整盘，不能只给 512 B。
+
+→ 详解：[section-2.3 · 命名与拼盘](../notes/section-2.3-先制作启动区.md)
 
 ---
 
@@ -80,9 +85,9 @@ D:\qemu\qemu-system-i386.exe -fda helloos.img -boot a
 
 | 文件 | 检查 |
 |------|------|
-| **`ipl.bin`** | 大小 **512**；HxD **`0x1FE`** = **`55 AA`** |
-| **`helloos.img`** | 大小 **1,474,560**；**`0x1FE`** = **`55 AA`**；含字符串 `hello, world` |
+| **`ipl.bin`** | 512 B；HxD 偏移 **`0x1FE`** = **`55 AA`** |
+| **`helloos.img`** | 1,474,560 B；**`0x1FE`** = **`55 AA`** |
 
 ---
 
-完整说明：[section-2.3 · 启动区与命名](../notes/section-2.3-先制作启动区.md) · [section-2.4 · Makefile](../notes/section-2.4-Makefile-入门.md)
+[section-2.4 · Makefile](../notes/section-2.4-Makefile-入门.md) · [Day 1 §1.3 NASM](../../day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md)
