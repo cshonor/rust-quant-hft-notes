@@ -4,6 +4,46 @@
 
 **Makefile** 把「目标、依赖、命令」写进 **一个纯文本文件**；终端里只敲 **`make`**，由系统里的 **make 工具** 按规则自动执行（只重做改过的步骤）。
 
+### Makefile 在这里的作用（Day 2 小结）
+
+**一句话：Makefile 把「汇编 → 拼盘 → 启动」这几条命令写进规则里，用 `make` 代替你每次手敲，并自动判断要不要重新编译。**
+
+它**不是**另一种文件格式，也**不是**替代 `nasm` / `dd` / QEMU，而是**命令的索引 + 增量构建**。
+
+[code/Makefile](../code/Makefile) 里当前管这四件事：
+
+| 目标 | 实际做的事 | 等价手敲命令 |
+|------|------------|--------------|
+| **`make ipl`** | 汇编 | `nasm -f bin helloos.asm -o ipl.bin` |
+| **`make img`** | 先确保有 `ipl.bin`，再拼 1.44 MB 软盘 | 两条 `dd`（见 [§2.3](./section-2.3-先制作启动区.md) / [code/README.md](../code/README.md)） |
+| **`make run`** | 用 QEMU 启动 | `qemu-system-i386 -fda helloos.img -boot a` |
+| **`make clean`** | 删产物 | `rm -f ipl.bin helloos.img` |
+
+**依赖关系：**
+
+```text
+helloos.asm  →  ipl.bin  →  helloos.img  →  run (QEMU)
+```
+
+只改了注释、没动 `helloos.asm` 时，再 `make` 可能**跳过 nasm**（因为 `ipl.bin` 比 `.asm` 新）——这就是 Makefile 比「复制粘贴命令」多出来的价值。
+
+**和 §2.3 明文命令是什么关系？**
+
+| | 明文命令（[§2.3](./section-2.3-先制作启动区.md) / [code/README.md](../code/README.md)） | Makefile |
+|---|---------------------------|----------|
+| **本质** | 你直接调工具 | 把同样命令写进规则，用 `make` 触发 |
+| **平台** | Windows / Linux 都能照抄 | 主要给 **Linux / macOS / MSYS2**（要 `make` + `dd` + 常是 Unix shell） |
+| **Windows 本机** | `nasm` + PowerShell 拼盘 + `D:\qemu\...\qemu-system-i386.exe` | 通常**不依赖** Makefile（除非 WSL / MSYS2） |
+| **原书 Day 2 意图** | §2.3 讲每一步在干什么 | §2.4 讲 **Makefile 自动化**；和川合 OS 后续每天 `make` 构建的习惯一致 |
+
+所以：**文档里的命令是「真技能」；Makefile 是「省事、少敲错、增量构建」**，尤其在 Linux 环境和后面 Day 步骤越来越多时。
+
+**什么时候用、什么时候不用：**
+
+- **学原理 / 跨平台复用** → 看 [§2.3](./section-2.3-先制作启动区.md)、[code/README.md](../code/README.md) 里的 **nasm / dd / QEMU 原命令**。
+- **Linux 或 MSYS2 里日常改 `helloos.asm`** → `make img` / `make run` 更省事。
+- **Windows + `D:\qemu`** → 继续用手写 PowerShell + 完整 QEMU 路径即可，**不必**为了 Day 2 强上 Makefile。
+
 ### 大白话 · Makefile 是什么？
 
 **Makefile = 帮你自动化编译、打包项目的脚本文件**（纯文本，不是二进制程序）。
@@ -23,7 +63,7 @@
 | 文件 | 作用 |
 |------|------|
 | [helloos.asm](../code/helloos.asm) | 启动区 **512 B** 源码（`ORG 0x7C00`，`TIMES` + `0xAA55`） |
-| [Makefile](../code/Makefile) | **`make ipl`** → `ipl.bin` |
+| [Makefile](../code/Makefile) | **`make ipl` / `make img` / `make run`** — 见上文 **Day 2 小结** |
 
 ```bash
 cd day-02-asm-makefile/code
@@ -215,7 +255,7 @@ clean:
 - [ ] 配方行用 **Tab** 缩进（不是空格）
 - [ ] **`make`** 能从 **`helloos.asm`** 生成 **`os-image.bin` / `ipl.bin`（512 B）**
 - [ ] `make` 能生成 **`helloos.img`（1,474,560 B）**，QEMU 仍出 **`hello, world`**
-- [ ] 说清：**Makefile 是文本**；**make 是读它的程序**
+- [ ] 说清：**Makefile 是文本**；**make 是读它的程序**；**不替代** nasm / dd / QEMU，只是把同样命令自动化
 
 ---
 
