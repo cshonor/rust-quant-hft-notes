@@ -1,78 +1,23 @@
-# Day 3 · 真正 IPL（读盘）
+# Day 3 · Code layout
 
-| 文件 | 说明 |
-|------|------|
-| [ipl.asm](./ipl.asm) | **512 B** 启动扇区源码（`INT 0x13` 读 10 柱面 → `0x8200`） |
-| [ipl.bin](./ipl.bin) | NASM 产物（`make ipl` 或下方命令生成） |
+Examples are grouped by **book section**, with **English folder names** (avoids git push issues with Chinese paths).
 
-笔记：[§3.1 导读](../notes/section-3.1-制作真正的-IPL-与读取磁盘.md) · 代码拆解 [§3.1.3](../notes/section-3.1.3-INT0x13与ipl代码拆解.md)
+| Folder | Section | What it demonstrates |
+|--------|---------|----------------------|
+| [sec-3.1-ipl-int13-disk-load](./sec-3.1-ipl-int13-disk-load/) | §3.1 | **512 B IPL** — `INT 0x13` reads bootpack → `JMP 0x8200` |
+| [sec-3.2-vga-mode-0x13](./sec-3.2-vga-mode-0x13/) | §3.2 | **VGA 320×200×8** — lives inside `nasmhead.asm` (`INT 0x10`, AL=0x13) |
+| [sec-3.4-bootpack-asm-and-c](./sec-3.4-bootpack-asm-and-c/) | §3.4 | **Four-file bootpack** — `nasmhead.asm` + `bootpack.c` + `asmfunc.asm` (+ IPL in §3.1) |
+| [sec-3.4-minimal-16-to-32-call-c](./sec-3.4-minimal-16-to-32-call-c/) | §3.4.3 | **Minimal asm→C** — GDT/CR0 only, `kernel_main` instead of `HariMain` |
 
----
-
-## ① 汇编 → `ipl.bin`（512 B）
-
-```bash
-nasm -f bin ipl.asm -o ipl.bin
-```
-
-PowerShell 同目录：
-
-```powershell
-nasm -f bin ipl.asm -o ipl.bin
-```
-
-自检：文件大小 **512**；末尾两字节 **`55 AA`**（可用 Day 1 的 HxD 或 `Format-Hex` 查看）。
+§3.3 is conceptual (16→32→64, Load vs Run) — see [notes](../notes/section-3.3-32-位模式前期准备与导入-C-语言.md), no separate code folder.
 
 ---
 
-## ② 拼进 1.44 MB 软盘（与 Day 2 相同）
+## End-to-end boot chain (Day 3)
 
-**Linux / macOS / MSYS2：**
-
-```bash
-dd if=/dev/zero of=haribote.img bs=512 count=2880
-dd if=ipl.bin of=haribote.img conv=notrunc
+```text
+ipl.asm (§3.1)          nasmhead.asm (§3.4)       bootpack.c (§3.4)      asmfunc.asm (§3.4)
+16-bit disk load   →    16→32 + VGA + call C  →   HariMain + io_hlt() →  HLT stub
 ```
 
-**Windows PowerShell：**
-
-```powershell
-$size = 1474560
-$disk = New-Object byte[] $size
-$ipl  = [IO.File]::ReadAllBytes("$PWD\ipl.bin")
-[Array]::Copy($ipl, 0, $disk, 0, 512)
-[IO.File]::WriteAllBytes("$PWD\haribote.img", $disk)
-```
-
-> 仅 IPL、尚未写入 **bootpack** 时，QEMU 会显示 **load done** 后 **`JMP 0x8200`** 到空内存 — 正常；完整 haribote-os 需 [§3.2](../notes/section-3.2-纸娃娃操作系统.md) 起的 **nasmhead + bootpack** 一并写入软盘（原书工具链或后续 Day 的 Makefile）。
-
----
-
-## ③ QEMU 启动
-
-```bash
-qemu-system-i386 -fda haribote.img -boot a
-```
-
-**Windows · QEMU 在 `D:\qemu`：**
-
-```powershell
-D:\qemu\qemu-system-i386.exe -fda haribote.img -boot a
-```
-
----
-
-## Makefile（可选 · Linux / MSYS2）
-
-```makefile
-NASM = nasm
-NASMFLAGS = -f bin
-
-ipl.bin: ipl.asm
-	$(NASM) $(NASMFLAGS) $< -o $@
-
-clean:
-	rm -f ipl.bin haribote.img
-```
-
-Windows 本机以 **上方明文命令** 为准（同 [Day 2 README](../../day-02-asm-makefile/code/README.md)）。
+Notes: [§3.4.2 four-file division](../notes/section-3.4.2-io_hlt与工程分层.md)

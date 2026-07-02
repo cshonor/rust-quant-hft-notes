@@ -26,7 +26,7 @@
 |------|-----|
 | 循环、画图、内存管理 | **`.c`** |
 | **`HLT`、CR、切 CPU 模式** | **`.asm`** |
-| 512 B 引导、BIOS 中断 | **`.asm`**（[ipl.asm](../code/ipl.asm)） |
+| 512 B 引导、BIOS 中断 | **`.asm`**（[ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm)） |
 
 **HFT 对照：** C++ 写逻辑；极少数 **内联 asm**（RDTSC、屏障、CAS）— **高级语言 99%，汇编只包几条指令**。
 
@@ -38,7 +38,7 @@
 - [ ] 说清 **asmfunc 包装、bootpack.c 调用、链接器合并**  
 - [ ] 区分 **ipl / nasmhead / asmfunc / bootpack.c**  
 - [ ] 能口述 **16→32 例子里 asm 与 C 的分工**  
-- [ ] 看过 [code/example/](../code/example/)
+- [ ] 看过 [sec-3.4-bootpack-asm-and-c/](../code/sec-3.4-bootpack-asm-and-c/) 与 [sec-3.4-minimal-16-to-32-call-c/](../code/sec-3.4-minimal-16-to-32-call-c/)
 
 ---
 

@@ -6,7 +6,7 @@
 |---|---------------------|----------------|
 | **CPU 模式** | **32 位保护模式** 止步 | 内核 **64 位长模式** |
 | **引导** | **BIOS** + 软盘 **`INT 0x13`** + 512 B IPL | **UEFI** + **MikanLoader.efi** + **kernel.elf** |
-| **第一行你的代码** | 16 位 [ipl.asm](../code/ipl.asm) | **UEFI 环境里 64 位 C/C++** |
+| **第一行你的代码** | 16 位 [ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm) | **UEFI 环境里 64 位 C/C++** |
 | **汇编量** | **多** — IPL、nasmhead、asmfunc | **少很多** — UEFI 代劳；内核仍有少量 asm |
 | **分页** | Day 12+ **32 位二级页表** | Ch8/Ch19 **PML4 四级页表** |
 

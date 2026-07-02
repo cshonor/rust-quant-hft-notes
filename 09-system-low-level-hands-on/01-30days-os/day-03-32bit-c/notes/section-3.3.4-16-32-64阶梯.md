@@ -14,7 +14,7 @@
 
 | 阶梯 | 谁负责切换 | 典型做什么 | 本书 / 你的进度 |
 |------|------------|------------|-----------------|
-| **16 位实模式** | CPU **上电默认** | **IPL `INT 0x13` 读 bootpack** | **IPL 已写** [ipl.asm](../code/ipl.asm) |
+| **16 位实模式** | CPU **上电默认** | **IPL `INT 0x13` 读 bootpack** | **IPL 已写** [ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm) |
 | **→ 32 位保护模式** | **nasmhead** | GDT、A20、**`HariMain` 跑 C** | **正卡在这里** |
 | **→ 64 位长模式** | **操作系统内核** | CPUID、64 位页表、long mode | **原书不要求** |
 

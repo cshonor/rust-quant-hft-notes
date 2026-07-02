@@ -1,6 +1,6 @@
 ## ①.3 INT 0x13 与 ipl 代码拆解
 
-IPL 在 **16 位实模式** 下运行，读 bootpack 全靠 **`INT 0x13`**。本节对照 [ipl.asm](../code/ipl.asm) 看 API 与三大逻辑块。
+IPL 在 **16 位实模式** 下运行，读 bootpack 全靠 **`INT 0x13`**。本节对照 [ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm) 看 API 与三大逻辑块。
 
 ---
 
@@ -35,7 +35,7 @@ IPL 在 **16 位实模式** 下运行，读 bootpack 全靠 **`INT 0x13`**。本
 
 ---
 
-### 三大核心逻辑（[ipl.asm](../code/ipl.asm)）
+### 三大核心逻辑（[ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm)）
 
 #### 1. 失败重试 5 次
 
@@ -110,7 +110,7 @@ entry:
 
 读完后打印 **`load done`**，**`JMP 0x8200`** 交给 bootpack。
 
-完整可编译源码：[code/ipl.asm](../code/ipl.asm) · 构建：[code/README.md](../code/README.md)。
+完整可编译源码：[ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm) · 构建：[README.md](../code/sec-3.1-ipl-int13-disk-load/README.md)。
 
 ---
 

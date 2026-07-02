@@ -1,8 +1,8 @@
-; Day 3 · 真正 IPL（读盘装载 bootpack）
-; 原书 ipl.nas / haribote-ipl
+; Day 3 · IPL — load bootpack from floppy (16-bit real mode)
+; Book: ipl.nas / haribote-ipl
 ; nasm -f bin ipl.asm -o ipl.bin
 
-CYLS    EQU     10              ; 读取柱面数 C0~C9
+CYLS    EQU     10              ; cylinders C0..C9
 
         ORG     0x7C00
 
@@ -37,7 +37,7 @@ entry:
         MOV     ES, AX
         MOV     CH, 0             ; cylinder 0
         MOV     DH, 0             ; head 0
-        MOV     CL, 2             ; sector 2 (S1 = this IPL)
+        MOV     CL, 2             ; sector 2 (sector 1 = this IPL)
 
 readloop:
         MOV     SI, 0

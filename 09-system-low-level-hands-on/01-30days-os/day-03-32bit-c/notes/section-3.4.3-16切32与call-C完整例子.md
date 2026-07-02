@@ -1,6 +1,6 @@
 ## ④.3 16 切 32 与 call C 完整例子
 
-**汇编搭台，C 唱戏。** 教学文件：[code/example/](../code/example/)（原书入口 **`HariMain`**，示例写 **`kernel_main`** 便于对照）。
+**汇编搭台，C 唱戏。** 教学文件：[sec-3.4-minimal-16-to-32-call-c/](../code/sec-3.4-minimal-16-to-32-call-c/)（原书入口 **`HariMain`**，示例写 **`kernel_main`** 便于对照）。
 
 ---
 
@@ -32,7 +32,7 @@ hang:
         jmp     hang
 ```
 
-GDT 完整定义见 [nasmhead-minimal.asm](../code/example/nasmhead-minimal.asm)。
+GDT 完整定义见 [nasmhead-minimal.asm](../code/sec-3.4-minimal-16-to-32-call-c/nasmhead-minimal.asm)。
 
 ---
 
@@ -86,9 +86,10 @@ switch_to_32（16 位 asm）
 | `call kernel_main` | **`HariMain`** |
 | `kernel_main` 写显存 | **bootpack.c** |
 | `io_hlt` | **asmfunc.asm** |
-| IPL 读盘 | **[ipl.asm](../code/ipl.asm)** |
+| IPL 读盘 | **[ipl.asm](../code/sec-3.1-ipl-int13-disk-load/ipl.asm)** |
+| 四文件 bootpack | **[sec-3.4-bootpack-asm-and-c/](../code/sec-3.4-bootpack-asm-and-c/)** |
 
-链接命令：[code/example/README.md](../code/example/README.md)
+链接命令：[sec-3.4-minimal-16-to-32-call-c/README.md](../code/sec-3.4-minimal-16-to-32-call-c/README.md) · 完整 bootpack：[sec-3.4-bootpack-asm-and-c/README.md](../code/sec-3.4-bootpack-asm-and-c/README.md)
 
 ---
 

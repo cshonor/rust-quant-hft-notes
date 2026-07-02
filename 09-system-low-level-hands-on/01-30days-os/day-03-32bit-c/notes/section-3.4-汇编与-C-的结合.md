@@ -8,10 +8,10 @@
 |------|------|
 | [§3.4.1 为何 C 需要汇编包装](./section-3.4.1-为何C需要汇编包装.md) | C 搞不定的指令、链接模型 |
 | [§3.4.2 `io_hlt` 与四文件分工](./section-3.4.2-io_hlt与工程分层.md) | **ipl / nasmhead / bootpack.c / asmfunc** 分工与链接 |
-| [§3.4.3 16 切 32 与 call C 完整例子](./section-3.4.3-16切32与call-C完整例子.md) | **汇编搭台、C 唱戏**、[code/example/](../code/example/) |
+| [§3.4.3 16 切 32 与 call C 完整例子](./section-3.4.3-16切32与call-C完整例子.md) | **汇编搭台、C 唱戏**、[sec-3.4-minimal-16-to-32-call-c/](../code/sec-3.4-minimal-16-to-32-call-c/) |
 | [§3.4.4 嵌入式/HFT 与何时用 asm](./section-3.4.4-嵌入式HFT与何时用汇编.md) | 对比、自检 |
 
-代码示例：[code/example/](../code/example/) · 当前 IPL：[code/ipl.asm](../code/ipl.asm)
+代码：[sec-3.4-bootpack-asm-and-c/](../code/sec-3.4-bootpack-asm-and-c/)（四文件） · 极简示例：[sec-3.4-minimal-16-to-32-call-c/](../code/sec-3.4-minimal-16-to-32-call-c/) · IPL：[sec-3.1-ipl-int13-disk-load/](../code/sec-3.1-ipl-int13-disk-load/)
 
 ---
 
