@@ -20,7 +20,7 @@
 
 | 段 | 笔记 | 代码 |
 |----|------|------|
-| 制作真正的 IPL 与读取磁盘 | [notes/section-3.1-制作真正的-IPL-与读取磁盘.md](./notes/section-3.1-制作真正的-IPL-与读取磁盘.md) | [code/ipl.asm](./code/ipl.asm) |
+| 制作真正的 IPL 与读取磁盘 | [notes/section-3.1-制作真正的-IPL-与读取磁盘.md](./notes/section-3.1-制作真正的-IPL-与读取磁盘.md)（[3.1.1](./notes/section-3.1.1-IPL-bootpack与镜像布局.md) · [3.1.2](./notes/section-3.1.2-软盘CHS结构与读盘范围.md) · [3.1.3](./notes/section-3.1.3-INT0x13与ipl代码拆解.md) · [3.1.4](./notes/section-3.1.4-实模式读盘与保护模式切换.md)） | [code/ipl.asm](./code/ipl.asm) |
 | 纸娃娃操作系统 | [notes/section-3.2-纸娃娃操作系统.md](./notes/section-3.2-纸娃娃操作系统.md) | — |
 | 32 位模式前期准备与导入 C 语言 | [notes/section-3.3-32-位模式前期准备与导入-C-语言.md](./notes/section-3.3-32-位模式前期准备与导入-C-语言.md) | — |
 | 汇编与 C 的结合 | [notes/section-3.4-汇编与-C-的结合.md](./notes/section-3.4-汇编与-C-的结合.md) | — |

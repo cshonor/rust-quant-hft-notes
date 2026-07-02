@@ -5,7 +5,7 @@
 | [ipl.asm](./ipl.asm) | **512 B** 启动扇区源码（`INT 0x13` 读 10 柱面 → `0x8200`） |
 | [ipl.bin](./ipl.bin) | NASM 产物（`make ipl` 或下方命令生成） |
 
-笔记：[§3.1 制作真正的 IPL](../notes/section-3.1-制作真正的-IPL-与读取磁盘.md)
+笔记：[§3.1 导读](../notes/section-3.1-制作真正的-IPL-与读取磁盘.md) · 代码拆解 [§3.1.3](../notes/section-3.1.3-INT0x13与ipl代码拆解.md)
 
 ---
 
