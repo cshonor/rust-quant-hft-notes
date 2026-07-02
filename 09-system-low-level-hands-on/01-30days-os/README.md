@@ -2,7 +2,8 @@
 
 > **父模块：** [09-system-low-level-hands-on](../README.md)  
 > **原著：** 川合秀实（KAWAKAMI Hideaki）· **Osliver** — 《30 天自制操作系统》  
-> **本仓库：** HFT 学习链裁剪笔记 + 实验记录（非全书翻译）
+> **本仓库：** HFT 学习链裁剪笔记 + 实验记录（非全书翻译）  
+> **HFT 路线定位：** ⚪ **后置可选** — 通用零基础启蒙用书；做量化/服务器底层请 **直接 [02 MikanOS](../02-mikan-os/)** → [HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 
@@ -19,26 +20,21 @@
 
 **读完能带走什么：** 不只是「会改别人的内核」，而是理解 **启动、中断、页表、任务切换** 这些在 LKD / CSAPP 里当 **读者** 时容易滑过去的 **构造逻辑** — 对 HFT 里 **绑核、上下文切换、syscall 边界** 的直觉会扎实很多。
 
-> **HFT / 嵌入式主线（先看这篇）：** 现阶段 **主攻 C + CSAPP x86-64**；本书 **16 位实模式汇编浅看带过**，不必死磕 GDT/CR0。详表与 haribote 各天取舍 → **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**
+> **⚠ HFT / 嵌入式主线：** 本书 **不是** 你的必读书 — **16 位 BIOS / 软盘与 x86-64 Linux 割裂**，学完对工作复用低。请 **C 吃透后直接 [02 MikanOS](../02-mikan-os/)**；本书仅当休闲拓展。理由与固定顺序 → **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**
 
 ---
 
 ## 在本学习链中的定位
 
-从 **零启动** 写出一个能跑多任务、有中断和内存管理的最小 OS — 把 LKD / CSAPP 里「进程、中断、页表」从 **读者** 变成 **作者**。
+**通用零基础：** 从零启动写最小 OS — 建立 BIOS 时代的直觉。  
+**HFT 主线：** 本目录 **后置可选**；同等概念在 [02 MikanOS](../02-mikan-os/) 用 **64 位现代架构** 学更高效。
 
 ```
-08 TLPI（Linux 上怎么用 syscall / mmap）
-    ↓
-01 自制 OS（这些机制在裸机上怎么搭出来）
-    ↓
-05 LKD / 07 Gorman（对照真实 Linux 内核实现）
-    ↓
-15 HFT（绑核、热路径、少 syscall）
+【通用】08 TLPI → 01 30天（启蒙）→ 02 MikanOS → 05 LKD → 15 HFT
+【HFT】  C 扎实 → 02 MikanOS → 05 LKD / 14 DPDK → 15 HFT  （01 跳过）
 ```
 
-**标签：** 🟡 选读 · 时间紧可后补，与 `05`/`06` 概念课 **并行** 也行。  
-**节奏：** 不必等 30 天做完再开 TLPI — **C / CSAPP 可与 Day 3–4 并行**；按 [OUTLINE.md](./OUTLINE.md) 🔴/🟡/⚪ 裁剪即可。
+**标签：** ⚪ HFT 可跳过 · 🟡 通用零基础启蒙 · 与 `05`/`06` **并行** 也行（非 HFT 路线时）
 
 **动手前必读：** [HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md) · [LEARNING_PLAN.md](./LEARNING_PLAN.md) · Day 1 汇编时跟 [§1.3 装 NASM](./day-01-boot-asm/notes/section-1.3-初次体验汇编程序.md#安装-nasm) · [SETUP.md](./SETUP.md)（QEMU / GCC / Make）
 
@@ -114,7 +110,8 @@ day-XX-slug/
 | **完善** | 8–14 | 内存管理、图层/窗口、PIT、键盘输入 | 定时、ISR 延迟 | Day 9 内存 **🔴**；GUI 类可压缩 |
 | **生态** | 15–30 | 多任务、FAT/Shell、API、用户态程序 | syscall 边界、上下文切换 | 多任务 **🔴**；窗口美化 **⚪** |
 
-**HFT 最简路径：** Day 1–2 跑通概念 → **Day 3–4 吃透 C** → Day 5–6 中断概念 → Day 9 内存 → Day 15+ 多任务；其余按 [OUTLINE](./OUTLINE.md) 选读。
+**HFT 最简路径（走 02，不走 01）：** C 扎实 → [02 MikanOS](../02-mikan-os/) → LKD / DPDK。  
+**仅当读 01 时：** Day 1–2 跑通概念 → Day 3–4 练 C → 按 [OUTLINE](./OUTLINE.md) 裁剪；GUI 类 **⚪**。
 
 ---
 

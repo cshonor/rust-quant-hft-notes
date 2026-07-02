@@ -25,7 +25,7 @@ C 写不了的 **`HLT`、切模式** 等仍靠 [§3.4 汇编与 C](./section-3.4
 
 **结论：** 底层 **逃不开 asm 概念**；**深入写汇编** 主要是 **OS 引导/内核启动**。嵌入式 **几百行 startup**，HFT **几条指令级优化** 即可。
 
-**学习主次（HFT / 嵌入式）：** 现阶段 **主攻 C + CSAPP x86-64**；本章 16 位代码 **跑通 + 懂故事线** 就够 → [HFT-AND-EMBEDDED-PRIORITY.md](../../../HFT-AND-EMBEDDED-PRIORITY.md)
+**学习主次（HFT / 嵌入式）：** **跳过 haribote 系统敲码**；C + CSAPP 达标后 **直接 MikanOS** → [HFT-AND-EMBEDDED-PRIORITY.md](../../../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 

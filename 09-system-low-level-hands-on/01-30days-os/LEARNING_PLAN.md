@@ -1,7 +1,8 @@
 # 《30 天自制操作系统》· 完整标准学习方案
 
 > **原著：** 川合秀实（KAWAKAMI Hideaki）· **Osliver**  
-> **本仓库：** 与 [OUTLINE.md](./OUTLINE.md)（🔴/🟡/⚪ 裁剪）和 `day-XX-slug/` 笔记配套使用
+> **本仓库：** 与 [OUTLINE.md](./OUTLINE.md)（🔴/🟡/⚪ 裁剪）和 `day-XX-slug/` 笔记配套使用  
+> **HFT 路线：** 本文档面向 **通用零基础启蒙**；做 HFT/服务器底层请 **跳过本书，直接 [02 MikanOS](../02-mikan-os/)** → [HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 
@@ -84,16 +85,12 @@
 
 ## 四、与本仓库学习链的衔接
 
-> **HFT / 嵌入式主线：** C 优先、16 位浅看、CSAPP x86-64 主攻 — 见 **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**。
+> **HFT / 嵌入式主线：** **跳过本书**，C 达标后 **直接 [02 MikanOS](../02-mikan-os/)** — 见 **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**。  
+> 下文面向 **选择阅读 01 的通用零基础路线**。
 
 ```
-01 自制 OS（作者视角：引导、中断、页表、任务切换）
-    ↓
-05 LKD / 07 Gorman（Linux 真实实现对照）
-    ↓
-08 TLPI（用户态 syscall 边界）
-    ↓
-15 HFT（绑核、热路径、少 syscall）
+【通用】01 自制 OS（引导、中断、页表、任务切换）→ 02 MikanOS → 05 LKD → 15 HFT
+【HFT】  C → 02 MikanOS → 05 LKD / 14 DPDK → 15 HFT  （跳过 01）
 ```
 
 | 原书机制 | 仓库对照 |

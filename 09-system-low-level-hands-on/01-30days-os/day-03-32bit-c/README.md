@@ -2,7 +2,7 @@
 
 
 > **原书第三章** · **承前启后** — 真正的 IPL 读盘、**haribote-os** 跑起来、**16 位 → 32 位**、**C 语言** 写 OS 逻辑。  
-> **HFT 主线：** 本章 **重点练 C（`bootpack.c`）**；16 位 IPL / GDT **浅看即可** → [HFT-AND-EMBEDDED-PRIORITY.md](../../HFT-AND-EMBEDDED-PRIORITY.md)
+> **HFT 主线：** 本章 **不必系统学完** — **C 吃透后直接 [02 MikanOS](../../02-mikan-os/)**；若已跑通黑屏可收工 → [HFT-AND-EMBEDDED-PRIORITY.md](../../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 

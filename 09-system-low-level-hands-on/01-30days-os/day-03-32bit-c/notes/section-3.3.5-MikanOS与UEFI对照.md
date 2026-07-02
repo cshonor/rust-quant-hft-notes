@@ -42,7 +42,14 @@ UEFI x64：固件 → BOOTX64.EFI（64 位）→ MikanLoader → kernel.elf
 
 → [02-mikan-os Ch1 UEFI 启动流程](../../../02-mikan-os/chapter-01-hello-world/notes/section-5-UEFI启动流程.md)
 
-**学习顺序：** 先 **01 Day 3 搞懂 16 Load → 32 Run** → 再 **02 MikanOS**。
+**学习顺序：**
+
+| 路线 | 建议 |
+|------|------|
+| **HFT 主线** | **跳过 01**，C 达标后直接 [02-mikan-os](../../../02-mikan-os/) |
+| **通用零基础** | 可选先 **01 Day 3** 建立「16 Load → 32 Run」图景，再开 MikanOS |
+
+→ [HFT-AND-EMBEDDED-PRIORITY.md](../../../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 

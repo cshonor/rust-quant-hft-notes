@@ -5,6 +5,7 @@
 > **父模块：** [09-system-low-level-hands-on](../README.md)  
 > **原著：** 内田公太（uchan）· **《从零自制操作系统》**（日版 *ゼロからの OS 自作入門*）  
 > **本仓库：** HFT 学习链裁剪笔记 + 实验记录（非全书翻译）  
+> **HFT 路线定位：** 🔴 **09 模块 OS 动手主线** — C 达标后 **直接从这里开**，不必先做完 [01 30 天](../01-30days-os/)  
 > **官方：** [zero.osdev.jp](http://zero.osdev.jp/) · 源码 [uchan-nos/os-from-zero](https://github.com/uchan-nos/os-from-zero)
 
 ---
@@ -27,19 +28,24 @@
 
 ## 在本学习链中的定位
 
-> **定位：** **现代 64 位 UEFI OS** — 与 [01 30 天 OS](../01-30days-os/)（实模式 BIOS 软盘）**互补**，不替代 Linux 主线。
+> **定位：** **现代 64 位 UEFI OS** — **HFT / 服务器底层主线**；与 [01 30 天](../01-30days-os/)（BIOS 软盘启蒙）**互补但不前置依赖**。
 
 ```
-08 TLPI（Linux 上怎么用 syscall / mmap）
+【HFT 主线】
+C 扎实 + CSAPP 机器码/缓存
     ↓
-01 30 天 OS（BIOS 软盘 · 实模式体感）
+02 MikanOS（UEFI · 64 位 · 分页 · syscall）← 本书 · 直接开
     ↓
-02 MikanOS（UEFI · 64 位 · 分页 · syscall）← 本书
+05 LKD / 03 SysPerf / 14 DPDK
     ↓
-05 LKD / 07 Gorman（对照真实 Linux 内核）
+15 HFT
+
+【通用零基础】可选先读 01 30 天启蒙，再开本书
 ```
 
-**标签：** 🟡 选读 · 建议 **01 通读或 Day 1–15 后** 再开。
+**标签：** 🔴 HFT 主线 OS 动手 · 🟡 通用路线可在 01 之后开
+
+**动手前必读：** [HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md) · [LEARNING_PLAN.md](./LEARNING_PLAN.md)
 
 ---
 
@@ -51,9 +57,16 @@
 | 语言 | C + 汇编（nask） | **C++** + EDK II |
 | 内存 | 分段/GDT · 后期分页 | **内存 map** · **页表** · 进程地址空间 |
 | 中断 | PIC · IDT | **APIC** · ACPI |
-| 价值 | 「上电后第一条指令」体感 | **现代 PC 启动链** + 规范分层内核 |
+| 价值 | 「上电后第一条指令」体感（**通用启蒙**） | **现代 PC 启动链** + 规范分层内核（**HFT 主线**） |
 
-**推荐顺序：** 至少完成 **01 Day 1–15**（引导、GDT/IDT、中断、多任务雏形）→ 再开 MikanOS；或 **01 通读后** 整本 MikanOS 作「现代版重制」。
+**推荐顺序：**
+
+| 路线 | 顺序 |
+|------|------|
+| **HFT / 嵌入式 Linux** | **C 达标 → 直接 02**；01 彻底后置或不学 |
+| **通用零基础** | 01 Day 1–15 或通读 → 再开 02 作「现代版重制」 |
+
+详 **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**。
 
 **交叉：** [01-CSAPP](../01-CSAPP-3rd/) Ch 9 虚拟内存 · [02-Hennessy](../02-Computer-Architecture-6th/) · [08-TLPI](../08-The-Linux-Programming-Interface/) 进程/内存 API 对照。
 

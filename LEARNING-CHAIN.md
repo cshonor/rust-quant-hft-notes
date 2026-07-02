@@ -73,10 +73,12 @@
     ↓
 08 TLPI（用户态 epoll/mmap）
     ↓
-09 自制 OS（从零写启动/中断/分页）
+09 自制 OS
+    ├─ HFT 主线：02 MikanOS（UEFI/64 位）→ 05 LKD / 14 DPDK
+    └─ 通用启蒙：01 30 天（可选）→ 02 MikanOS
 ```
 
-→ [08 TLPI OUTLINE](./08-The-Linux-Programming-Interface/OUTLINE.md)
+→ [09 HFT 学习主次](./09-system-low-level-hands-on/HFT-AND-EMBEDDED-PRIORITY.md) · [08 TLPI OUTLINE](./08-The-Linux-Programming-Interface/OUTLINE.md)
 
 ---
 
