@@ -1,7 +1,8 @@
 # Day 3 · 32 位模式与导入 C 语言
 
 
-> **原书第三章** · **承前启后** — 真正的 IPL 读盘、**haribote-os** 跑起来、**16 位 → 32 位**、**C 语言** 写 OS 逻辑。
+> **原书第三章** · **承前启后** — 真正的 IPL 读盘、**haribote-os** 跑起来、**16 位 → 32 位**、**C 语言** 写 OS 逻辑。  
+> **HFT 主线：** 本章 **重点练 C（`bootpack.c`）**；16 位 IPL / GDT **浅看即可** → [HFT-AND-EMBEDDED-PRIORITY.md](../../HFT-AND-EMBEDDED-PRIORITY.md)
 
 ---
 

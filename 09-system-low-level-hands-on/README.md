@@ -29,5 +29,6 @@
 
 ## 交叉阅读
 
-- [08-TLPI](../08-The-Linux-Programming-Interface/) · [05-LKD](../05-Linux-Kernel-Development/)
+- [HFT-AND-EMBEDDED-PRIORITY.md](./HFT-AND-EMBEDDED-PRIORITY.md) — **C 优先 / 16 位浅看 / CSAPP 64 位** 学习顺序
+- [01-CSAPP-3rd](../01-CSAPP-3rd/) · [05-LKD](../05-Linux-Kernel-Development/) · [08-TLPI](../08-The-Linux-Programming-Interface/)
 - 下一步：[10-Practical-Network-Programming](../10-Practical-Network-Programming/)

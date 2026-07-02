@@ -84,6 +84,8 @@
 
 ## 四、与本仓库学习链的衔接
 
+> **HFT / 嵌入式主线：** C 优先、16 位浅看、CSAPP x86-64 主攻 — 见 **[HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md)**。
+
 ```
 01 自制 OS（作者视角：引导、中断、页表、任务切换）
     ↓
@@ -121,3 +123,4 @@
 | [OUTLINE.md](./OUTLINE.md) | 每日要点速览 + 🔴/🟡/⚪ |
 | [SETUP.md](./SETUP.md) | Windows + NASM/GCC/QEMU Day 0 部署 |
 | [TOOLCHAIN.md](./TOOLCHAIN.md) | NASM 工具链 · GCC · Make |
+| [../HFT-AND-EMBEDDED-PRIORITY.md](../HFT-AND-EMBEDDED-PRIORITY.md) | HFT/嵌入式：C 优先、16 位浅看、学习顺序 |
