@@ -19,13 +19,13 @@
 
 ## 小节笔记
 
-| 段 | 笔记 |
-|----|------|
-| 用 C 写入显存与位运算 | [notes/section-4.1-用-C-写入显存与位运算.md](./notes/section-4.1-用-C-写入显存与位运算.md) |
-| 挑战并理解指针 | [notes/section-4.2-挑战并理解指针.md](./notes/section-4.2-挑战并理解指针.md) |
-| 调色板（Palette）与色号 | [notes/section-4.3-调色板Palette与色号.md](./notes/section-4.3-调色板Palette与色号.md) |
-| EFLAGS 寄存器与中断控制 | [notes/section-4.4-EFLAGS-寄存器与中断控制.md](./notes/section-4.4-EFLAGS-寄存器与中断控制.md) |
-| 绘制矩形与 OS 雏形 | [notes/section-4.5-绘制矩形与-OS-雏形.md](./notes/section-4.5-绘制矩形与-OS-雏形.md) |
+| 段 | 笔记 | 代码 |
+|----|------|------|
+| 用 C 写入显存与位运算 | [notes/section-4.1-用-C-写入显存与位运算.md](./notes/section-4.1-用-C-写入显存与位运算.md) | [code/sec-4.1-vram-fill-and-stripes/](./code/sec-4.1-vram-fill-and-stripes/) |
+| 挑战并理解指针 | [notes/section-4.2-挑战并理解指针.md](./notes/section-4.2-挑战并理解指针.md) | — |
+| 调色板（Palette）与色号 | [notes/section-4.3-调色板Palette与色号.md](./notes/section-4.3-调色板Palette与色号.md) | — |
+| EFLAGS 寄存器与中断控制 | [notes/section-4.4-EFLAGS-寄存器与中断控制.md](./notes/section-4.4-EFLAGS-寄存器与中断控制.md) | — |
+| 绘制矩形与 OS 雏形 | [notes/section-4.5-绘制矩形与-OS-雏形.md](./notes/section-4.5-绘制矩形与-OS-雏形.md) | — |
 
 ---
 
