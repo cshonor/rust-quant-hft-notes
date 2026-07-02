@@ -1,10 +1,11 @@
 # HFT 学习链路 · 从知其所以然到动手实现
 
-> **文件夹 `00`–`17` = 物理编号 = 推荐阅读顺序**（2025-06：`08` C++ 纳入主线；`14`/`15` 性能书在 `13` DPDK 之后）。
+> **文件夹 `00`–`18` 主线 + 嵌入式 `19`–`24` = 物理编号 = 推荐阅读顺序**
 
 ```
 知其所以然 → 系统纵深 → 底层+C++ → 网络 → 性能观测 → 工程
-  01–02        03–06      07–08      09–13    14–15      16–17
+  01–03        04–07       08–09      10–14    15–16      17–18
+  （02=C）
 ```
 
 ---
@@ -14,42 +15,42 @@
 ```
 00  Harris
 01  CSAPP
-02  Hennessy
+02  C 语言 · [c-programming](./02-c-programming/)（K&R · Pointers on C · CSAPP Ch2–3 对照）
+03  Hennessy
 
-03  LKD → 04 ULK → 05 Gorman → 06 TLPI
+04  LKD → 05 ULK → 06 Gorman → 07 TLPI
 
-07  自制 OS
-    └─ 01-mikan-os（HFT 主线）· 02-30days-os（可选启蒙）
+08  自制 OS
+    └─ 01-mikan-os（HFT 主线）· 02-30days-os（可选）
 
-08  C++ · [cpp-learning-notes](./08-cpp-learning-notes/)（索引 [GitHub 仓](https://github.com/cshonor/cpp-learning-notes)）
-09  陈硕 PNP / muduo
-10  UNP
-01  CSAPP Ch10–11（网络篇，可与 09–10 交叉）
-11  TCP/IP → 12 Rosen → 13 DPDK
+09  C++ · [cpp-learning-notes](./09-cpp-learning-notes/)
+10  陈硕 PNP / muduo
+11  UNP
+01  CSAPP Ch10–11（网络篇，可与 10–11 交叉）
+12  TCP/IP → 13 Rosen → 14 DPDK
 
-14  SysPerf → 15 BPF
+15  SysPerf → 16 BPF
 
-16  HFT Practice
-17  Rust Guide
+17  HFT Practice
+18  Rust Guide
 
-── 可选 · 嵌入式 Linux 支线（18 起，建议 03–06 后）──
-18  ARM64 → 19  U-Boot/内核 → 20  驱动 → 21  DT → 22  实战 → 23  PID/飞控
+── 嵌入式 Linux 支线（19 起，建议 04–07 后）──
+19  ARM64 → … → 24  PID/飞控
 ```
 
-**HFT 最短路径：** `01` → `02` → `03`–`06` → `07/01` MikanOS → `08` C++ → `13` DPDK → `14`–`15` → `16` HFT
-
-**嵌入式支线：** `18 → … → 23`（与 HFT **并行或后置**）
+**HFT 最短路径：** `01` → **`02` C** → `03` → `04`–`07` → `08/01` MikanOS → `09` C++ → `14` DPDK → `15`–`16` → `17` HFT
 
 ---
 
-## 为何这样排？
+## 为何 02 C 在 CSAPP 与 Hennessy 之间？
 
-| 调整 | 理由 |
+| 步骤 | 作用 |
 |------|------|
-| **`08` C++ 在 PNP 前** | Modern C++ / 并发 — muduo、HFT 引擎前置 |
-| **`14`/`15` 在 `13` DPDK 之后** | 有内核、网络、旁路可观测后再读 Gregg 双书 |
-| **`03`–`06` 内核 + TLPI** | syscall / VM 图景先于 OS 动手与网络 |
-| **`07/01` MikanOS 优先于 `07/02` 30 天** | HFT 走 UEFI/64 位 |
+| **01 CSAPP** | 硬件、机器级程序、内存层次 **整体图景** |
+| **02 C** | **系统级 C** — 指针、内存、链接；能读会写内核风格代码 |
+| **03 Hennessy** | CPU/缓存/ILP **量化** — 读 C/汇编时知道「慢在哪」 |
+| **04–07** | 内核与 syscall — 主体是 **C** |
+| **09 C++** | 在 C 过关后再加 RAII/Modern C++（muduo/HFT） |
 
 ---
 
@@ -57,40 +58,34 @@
 
 | 文件夹 | 模块 |
 |--------|------|
-| **03–06** | LKD · ULK · Gorman · TLPI |
-| **07/01** | [MikanOS](./07-system-low-level-hands-on/01-mikan-os/) |
-| **07/02** | [30 天 OS](./07-system-low-level-hands-on/02-30days-os/) — 可选 |
-| **08** | [C++ 学习索引](./08-cpp-learning-notes/) |
-| **09–13** | PNP · UNP · TCP/IP · Rosen · **DPDK** |
-| **14–15** | SysPerf · BPF |
-| **16–17** | HFT · Rust |
+| **01** | CSAPP |
+| **02** | [C 语言](./02-c-programming/) |
+| **03** | Hennessy |
+| **04–07** | LKD · ULK · Gorman · TLPI |
+| **08/01** | MikanOS |
+| **09** | C++ 索引 |
+| **10–14** | 网络 + DPDK |
+| **15–16** | SysPerf · BPF |
+| **17–18** | HFT · Rust |
 
 ---
 
 ## 内核段衔接
 
 ```
-03 LKD → 04 ULK → 05 Gorman → 06 TLPI
+01 CSAPP → 02 C → 03 Hennessy
     ↓
-07/01 MikanOS
+04 LKD → 05 ULK → 06 Gorman → 07 TLPI
     ↓
-08 C++（Effective Modern C++）
+08/01 MikanOS → 09 C++ → 10–14 网络/DPDK
     ↓
-09–13 网络栈（含 13 DPDK）
-    ↓
-14 SysPerf → 15 BPF
-    ↓
-16 HFT
+15 SysPerf → 16 BPF → 17 HFT
 ```
 
-→ [07 HFT 学习主次](./07-system-low-level-hands-on/HFT-AND-EMBEDDED-PRIORITY.md) · [06 TLPI OUTLINE](./06-The-Linux-Programming-Interface/OUTLINE.md)
+→ [08 HFT 主次](./08-system-low-level-hands-on/HFT-AND-EMBEDDED-PRIORITY.md) · [02 C OUTLINE](./02-c-programming/OUTLINE.md)
 
 ---
 
-## 相关文档
+**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08/01 → 09 → 10 → 01网络 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 18`
 
-- [READING-LIST.md](./READING-LIST.md) · [HFT-READING-ROADMAP.md](./HFT-READING-ROADMAP.md) · [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
-
-**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07/01 → 08 → 09 → 01网络 → 10 → 11 → 12 → 13 → 14 → 15 → 16 → 17`
-
-> **C++：** [08-cpp-learning-notes/](./08-cpp-learning-notes/) — **07 之后、09 PNP 之前** 至少读完 *Effective Modern C++*。
+> **C++：** [09-cpp-learning-notes/](./09-cpp-learning-notes/) — **08/07 之后、10 PNP 之前** · *Effective Modern C++*

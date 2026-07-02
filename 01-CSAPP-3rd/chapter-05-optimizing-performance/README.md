@@ -66,5 +66,5 @@
 - 上一章：[../chapter-04-processor-architecture/](../chapter-04-processor-architecture/)
 - 下一章：[../chapter-06-memory-hierarchy/](../chapter-06-memory-hierarchy/)
 - 机器级：[../chapter-03-machine-level-programs/](../chapter-03-machine-level-programs/)
-- 观测：[14-Systems-Performance Ch 13 perf](../../14-Systems-Performance-2nd/chapter-13-perf/)
+- 观测：[14-Systems-Performance Ch 13 perf](../../15-Systems-Performance-2nd/chapter-13-perf/)
 - 全书目录：[OUTLINE.md](../OUTLINE.md)
