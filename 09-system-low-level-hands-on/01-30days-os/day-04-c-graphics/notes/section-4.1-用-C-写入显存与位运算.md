@@ -19,6 +19,32 @@ Day 4 **第一节** 只做一件事：**用 C 直接写显存（VRAM）**，先 
 
 ---
 
+### 显存模型：CPU → VRAM → 屏幕
+
+![CPU / GPU / VRAM / 屏幕数据流](../assets/cpu-gpu-vram-screen.png)
+
+| 图中块 | 在纸娃娃 OS（模式 0x13）里对应什么 |
+|--------|-----------------------------------|
+| **CPU** | **`HariMain` 里的 `for`** — 你的 C 代码往内存写字节 |
+| **GPU** | 早期 VGA **没有** 现代意义上的 GPU 驱动；可理解为 **显示控制器** 在后台扫描显存（你不用写 GPU 程序） |
+| **VRAM** | 地址 **`0xA0000` 起 64000 字节** — 每字节 1 像素色号 |
+| **YOUR SCREEN** | QEMU / 显示器 — **硬件按 VRAM 内容逐行刷新** 成画面 |
+
+**和 Day 3 / Day 4 代码的对应：**
+
+```text
+HariMain:  p[i] = 0 或 15     ← CPU 写 VRAM（图中 CPU → VRAM）
+           ↓
+VGA 扫描 0xA0000 …           ← VRAM → 屏幕（图中 VRAM → YOUR SCREEN）
+           ↓
+QEMU 窗口：黑屏 / 白屏 / 条纹
+```
+
+所以 **改一个内存地址 = 改一个像素** — 这就是 **memory-mapped framebuffer**。  
+现代 PC 仍类似：只是地址、分辨率、色深不同，且常有独立 GPU 做 3D；**Day 4 先掌握「写 VRAM = 改屏」** 即可。
+
+---
+
 ### VRAM 长什么样
 
 ```text
