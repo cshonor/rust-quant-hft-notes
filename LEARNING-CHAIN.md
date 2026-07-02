@@ -15,7 +15,7 @@
 ```
 00  Harris
 01  CSAPP
-02  C 语言 · [c-programming](./02-c-programming/)（K&R · Pointers on C · CSAPP Ch2–3 对照）
+02  C 语言 · [c-programming](./02-c-programming/)（笔记 → [外部 11-C](https://github.com/cshonor/cpp-learning-notes/tree/main/11-Linux-Kernel-DPDK-Network-C)）
 03  Hennessy
 
 04  LKD → 05 ULK → 06 Gorman → 07 TLPI
@@ -85,7 +85,7 @@
 15 SysPerf → 16 BPF → 17 HFT
 ```
 
-→ [08 HFT 主次](./08-system-low-level-hands-on/HFT-AND-EMBEDDED-PRIORITY.md) · [02 C OUTLINE](./02-c-programming/OUTLINE.md)
+→ [08 HFT 主次](./08-system-low-level-hands-on/HFT-AND-EMBEDDED-PRIORITY.md) · [02 C OUTLINE](./02-c-programming/OUTLINE.md) · [外部 C 笔记](https://github.com/cshonor/cpp-learning-notes/tree/main/11-Linux-Kernel-DPDK-Network-C)
 
 ---
 

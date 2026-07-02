@@ -64,6 +64,6 @@
 
 | 文档 | 用途 |
 |------|------|
-| [02-c-programming/](../../02-c-programming/) | **C 主线模块** |
+| [02-c-programming/](../../02-c-programming/) | **C 主线索引** · 笔记 → [外部 11-C](https://github.com/cshonor/cpp-learning-notes/tree/main/11-Linux-Kernel-DPDK-Network-C) |
 | [08/01-mikan-os/](./01-mikan-os/) | MikanOS |
 | [LEARNING-CHAIN.md](../../LEARNING-CHAIN.md) | 全链 `00`–`18` |

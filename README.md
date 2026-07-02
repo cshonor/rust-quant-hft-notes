@@ -26,7 +26,7 @@
 |:------:|------|
 | **00** | [Trading and Exchanges](./00-Trading-and-Exchanges/) |
 | **01** | [CSAPP-3rd](./01-CSAPP-3rd/) — 程序与硬件图景 |
-| **02** | [c-programming](./02-c-programming/) — **K&R · Pointers on C · 系统级 C** |
+| **02** | [c-programming](./02-c-programming/) — **K&R · Pointers on C · GNU-C**（笔记 → [外部 11-C](https://github.com/cshonor/cpp-learning-notes/tree/main/11-Linux-Kernel-DPDK-Network-C)） |
 | **03** | [Computer-Architecture-6th](./03-Computer-Architecture-6th/) — Hennessy |
 | **04** | [Linux-Kernel-Development](./04-Linux-Kernel-Development/) — LKD |
 | **05** | [Understanding-Linux-Kernel](./05-Understanding-Linux-Kernel/) — ULK |
