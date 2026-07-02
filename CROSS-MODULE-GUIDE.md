@@ -11,10 +11,10 @@
 |------|--------|------|
 | 交易金融理论 | `00` | 业务 / LOB |
 | **程序与硬件** | **`01` CSAPP → `02` Hennessy** | 知其所以然 |
-| **性能** | **`03` SysPerf → `04` BPF** | 方法论 + eBPF 落地 |
+| **性能（后置）** | **`03` SysPerf → `04` BPF** | 14 之后或 15 之前 · 文件夹编号不变 |
 | Linux 内核 | **`05` LKD → `06` ULK → `07` Gorman** | 调度 / 源码 / VM |
 | **Linux 用户态** | `08` TLPI | syscall · epoll · mmap · 线程 |
-| **系统底层动手** | `09` | 30 天 OS / MikanOS / CPU |
+| **系统底层动手** | `09` | **01 MikanOS**（主线）· 02 30天（可选） |
 | **C++ 语言** | **`17`** [cpp-learning-notes](https://github.com/cshonor/cpp-learning-notes) | Modern C++ · 并发 · 对象模型（**09 后、10 前**） |
 | **C++ 网络实战** | `10` PNP / muduo | Reactor 实验骨架 |
 | **网络完整栈** | `11`–`14` | UNP → TCP/IP → Rosen → DPDK |
@@ -36,7 +36,7 @@
 ```
 05 LKD → 06 ULK → 07 Gorman → 08 TLPI（epoll / mmap / 调度）
     ↓
-09 自制 OS/CPU
+09/01 MikanOS（HFT 主线）
     ↓
 17 C++（至少 M1 Modern C++）
     ↓
@@ -45,6 +45,8 @@
 11 UNP + CSAPP Ch10–11
     ↓
 12 TCP/IP → 13 Rosen → 14 DPDK
+    ↓
+03 SysPerf → 04 BPF（后置 · 观测落地）
 ```
 
 | 轨道 | 外部仓库 | 本仓库索引 |

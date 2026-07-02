@@ -46,6 +46,6 @@
 
 - 上一章：[chapter-07-内存.md](../chapter-07-memory/)
 - 下一章：[chapter-09-磁盘IO.md](../chapter-09-disk-io/)
-- VFS 教学 OS：[01-30days-os day-18-dir](../09-system-low-level-hands-on/01-30days-os/day-18-dir/)
+- VFS 教学 OS：[02-30days-os day-18-dir](../09-system-low-level-hands-on/02-30days-os/day-18-dir/)
 - SysPerf 文件系统：[chapter-08-file-systems](../../03-Systems-Performance-2nd/chapter-08-file-systems/)（若存在）
 - 方法论：[chapter-03-性能分析.md](../chapter-03-performance-analysis/)

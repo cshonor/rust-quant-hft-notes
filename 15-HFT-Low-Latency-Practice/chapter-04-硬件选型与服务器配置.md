@@ -61,7 +61,7 @@ Socket 1 ── local RAM ── CPU …
 - **热数据结构** 控制在 **L1/L2 工作集**  
 - **False sharing** — 多线程改 **同一 cache line** → [chapter-07](./chapter-07-无锁数据结构与内存布局.md)
 
-→ [02-Computer-Architecture-6th](../02-Computer-Architecture-6th/) · [09 MikanOS Ch8/19 分页](../09-system-low-level-hands-on/02-mikan-os/chapter-19-paging/)
+→ [02-Computer-Architecture-6th](../02-Computer-Architecture-6th/) · [09 MikanOS Ch8/19 分页](../09-system-low-level-hands-on/01-mikan-os/chapter-19-paging/)
 
 ---
 
@@ -76,7 +76,7 @@ Socket 1 ── local RAM ── CPU …
 
 每次 **`recv()`/`send()`** → **模式切换** + 内核协议栈 — 见 Ch5 **Kernel Bypass** 规避。
 
-→ [08-TLPI](../08-The-Linux-Programming-Interface/) · [MikanOS Ch20 syscall](../09-system-low-level-hands-on/02-mikan-os/chapter-20-syscall/)
+→ [08-TLPI](../08-The-Linux-Programming-Interface/) · [MikanOS Ch20 syscall](../09-system-low-level-hands-on/01-mikan-os/chapter-20-syscall/)
 
 ### 上下文切换（Context Switch）
 

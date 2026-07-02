@@ -7,32 +7,31 @@
 | 文件夹 | 内容 | 阶段 |
 |--------|------|------|
 | **01** → **02** | CSAPP → Hennessy | 知其所以然 |
-| **03** → **04** | SysPerf → BPF | 知其然 + 工具落地 |
-| **05** → **06** | LKD → ULK | 内核地图 → 源码走读 |
-| **07** → **08** | Gorman → TLPI | VM 深度 → 用户态 API |
-| **09** | 自制 OS / CPU | 底层动手 |
+| **05** → **08** | LKD → ULK → Gorman → TLPI | 内核 + 用户态 API |
+| **09/01** | MikanOS | HFT OS 动手主线 |
+| **09/02** | 30 天 OS | 可选启蒙 |
+| **03** → **04** | SysPerf → BPF | **后置** · 14 DPDK 之后或 15 HFT 之前 |
 | **17** | [C++ 外部索引](./17-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
 | **10–14** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
 | **15–16** | HFT Practice / Rust | 动手实现 |
 | **18–23** | ARM64 · 构建 · 驱动 · DT · 实战 · **PID/飞控** | 嵌入式 Linux 退路（可选支线） |
 
-### Gregg 双书 · 03 → 04
+### Gregg 双书 · 03 → 04（后置）
 
 | 03 SysPerf | 04 BPF |
 |------------|--------|
 | USE/RED、延迟分解、perf/Ftrace | bpftrace/BCC 生产落地 |
 | Ch 4 / 13 / 15 预览 | Part I–II + XDP note |
 
-**03 读完立刻 04** — 再进 05 内核；读 05–11 时用 BPF 验证。
+**执行顺序：** 先完成 **05–08 内核/TLPI** 与 **09/01 MikanOS**、**10–14 网络/DPDK**，再开 **03 → 04** — 有真实系统可 profile 后再读方法论。
 
-### 03 为何在 02 之后
-|------------------------------|--------------|
-| 程序如何在 CPU/缓存/内存上跑 | USE / RED / 延迟分解怎么量 |
-| 进程、虚拟内存、锁在代码里长什么样 | perf 火焰图、off-CPU、BPF 跟踪 |
-| 局部性、伪共享、cache line | 为何某个函数在火焰图里占比高 |
-| 互斥与并发成本 | 为何锁/上下文切换拖尾延迟 |
+### 03 为何不在 02 之后立刻读
 
-**结论：** CSAPP 搭好底层逻辑架子；《性能之巅》教方法论和工具 — 有架子才不是背结论，后面学 Linux 内核、做量化调优能少绕弯路。
+| 过早读 SysPerf/BPF | 更合适的时机 |
+|--------------------|--------------|
+| 还没有 Linux 进程/内核/网络概念 | **08 TLPI + 09 MikanOS** 之后 |
+| 火焰图看不懂在烧什么 | **14 DPDK** 或 **15 HFT** 压测有靶子 |
+| 与 CSAPP 理论堆叠 | **02 Hennessy 后直进 05 LKD** 更顺 |
 
 | 标签 | HFT 含义 | 你要怎么做 |
 |------|----------|-----------|
@@ -51,40 +50,37 @@
 00  Harris · 业务锚点
 
 01  CSAPP · 地基篇（Ch1/4–6/8–9/12）
-04  Hennessy · Ch2（+ 选读 Ch5）     ← 紧接 01，占原 02 位
+02  Hennessy · Ch2（+ 选读 Ch5）
 
-02  Systems Performance 2nd
-03  BPF Performance Tools（紧接 02）
+05  Linux Kernel Development
+06  Understanding the Linux Kernel
+07  Linux Virtual Memory Manager
+08  TLPI
 
-05  Linux Kernel Development（课 → 书）
-08  Understanding the Linux Kernel   ← 紧接 05
-06  Linux Virtual Memory Manager
-07  TLPI（The Linux Programming Interface）
+09  自制 OS
+    ├─ 01-mikan-os（HFT 主线）
+    └─ 02-30days-os（可选启蒙）
 
-09  自制 OS / CPU（01 / 02 / 03）
-    ↓
 17  C++ · cpp-learning-notes（外仓 · 09 后 10 前）
-    ↓
-10  陈硕 PNP / muduo 实战（外P）
-11  UNP Vol.1（外B）
+
+10  陈硕 PNP / muduo
+11  UNP Vol.1
 01  CSAPP · 网络篇 Ch10–11
-12  TCP/IP 卷一（外A）
+12  TCP/IP 卷一
 13  Linux Kernel Networking
 14  DPDK
 
-15  HFT Low-Latency Practice（C++）
+03  Systems Performance 2nd      ← 后置
+04  BPF Performance Tools       ← 紧接 03
+
+15  HFT Low-Latency Practice
 16  Rust Quant Trading Guide
 
-── 可选支线 · 嵌入式 Linux（ARM-A，非 MCU）──
-18  ARM64 架构
-19  U-Boot / 内核 / Buildroot
-20  Linux 设备驱动
-21  设备树
-22  无人机 / 网关实战
-23  PID · 电机 · 姿态解算 · 飞控整合（算法逻辑 · 非 MCU）
+── 可选支线 · 嵌入式 Linux ──
+18–23  …
 ```
 
-**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 17 → 10 → 11 → 01网络 → 12 → 13 → 14 → 15 → 16`
+**HFT 主线执行序号：** `00 → 01 → 02 → 05 → 06 → 07 → 08 → 09/01 → 17 → 10 → 11 → 01网络 → 12 → 13 → 14 → 03 → 04 → 15 → 16`
 
 **嵌入式支线（独立顺序 · 建议 05–08 后再开 · 23 用业余时间）：** `18 → 19 → 20 → 21 → 22 → 23`
 

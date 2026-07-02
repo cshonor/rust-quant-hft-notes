@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SUB = "09-system-low-level-hands-on"
 
 GIT_MV = [
-    (f"{SUB}/08-1-30days-os", f"{SUB}/01-30days-os"),
-    (f"{SUB}/08-3-mikan-os", f"{SUB}/02-mikan-os"),
+    (f"{SUB}/08-1-30days-os", f"{SUB}/02-30days-os"),
+    (f"{SUB}/08-3-mikan-os", f"{SUB}/01-mikan-os"),
     (f"{SUB}/08-2-30days-cpu", f"{SUB}/03-30days-cpu"),
 ]
 
@@ -20,8 +20,8 @@ TEXT_REPLACEMENTS = [
     ("08-1-30days-os", "__TMP01__"),
     ("08-3-mikan-os", "__TMP02__"),
     ("08-2-30days-cpu", "__TMP03__"),
-    ("__TMP01__", "01-30days-os"),
-    ("__TMP02__", "02-mikan-os"),
+    ("__TMP01__", "02-30days-os"),
+    ("__TMP02__", "01-mikan-os"),
     ("__TMP03__", "03-30days-cpu"),
     # prose labels
     ("08-1 Day", "01 Day"),

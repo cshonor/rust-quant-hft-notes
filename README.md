@@ -12,10 +12,11 @@
 ## 🗺️ HFT 主线阅读顺序（= 文件夹编号）
 
 ```
-00 业务 → 01 CSAPP → 02 Hennessy → 03 SysPerf → 04 BPF
+00 业务 → 01 CSAPP → 02 Hennessy
 → 05 LKD → 06 ULK → 07 Gorman → 08 TLPI
-→ 09 自制 OS/CPU → **17 C++（外部仓）** → 10 陈硕 PNP/muduo → 11 UNP
+→ 09 MikanOS/30天OS → **17 C++（外部仓）** → 10 陈硕 PNP/muduo → 11 UNP
 → 12 TCP/IP → 13 Rosen → 14 DPDK
+→ 03 SysPerf → 04 BPF（后置 · 有系统可观测后再开）
 → 15 HFT 工程 → 16 Rust 量化
 ```
 
@@ -26,13 +27,13 @@
 | **00** | [Trading and Exchanges](./00-Trading-and-Exchanges/) — Harris · LOB（练手：[00-practice-go-dex](./00-Trading-and-Exchanges/00-practice-go-dex/)） |
 | **01** | [CSAPP-3rd](./01-CSAPP-3rd/) — 知其所以然 · 程序与硬件 |
 | **02** | [Computer-Architecture-6th](./02-Computer-Architecture-6th/) — Hennessy · 体系结构（紧接 01） |
-| **03** | [Systems-Performance-2nd](./03-Systems-Performance-2nd/) — 知其然 · 性能方法论 |
-| **04** | [BPF-Performance-Tools](./04-BPF-Performance-Tools/) — eBPF / bpftrace（紧接 03） |
+| **03** | [Systems-Performance-2nd](./03-Systems-Performance-2nd/) — 性能方法论 · **执行顺序后置**（见 [LEARNING-CHAIN](./LEARNING-CHAIN.md)） |
+| **04** | [BPF-Performance-Tools](./04-BPF-Performance-Tools/) — eBPF · **紧接 03，同样后置** |
 | **05** | [Linux-Kernel-Development](./05-Linux-Kernel-Development/) — LKD |
 | **06** | [Understanding-Linux-Kernel](./06-Understanding-Linux-Kernel/) — ULK（紧接 05） |
 | **07** | [Linux-Virtual-Memory-Manager](./07-Linux-Virtual-Memory-Manager/) — Gorman |
 | **08** | [The-Linux-Programming-Interface](./08-The-Linux-Programming-Interface/) — TLPI |
-| **09** | [system-low-level-hands-on](./09-system-low-level-hands-on/) — 30 天 OS / MikanOS / CPU |
+| **09** | [system-low-level-hands-on](./09-system-low-level-hands-on/) — MikanOS / 30 天 OS / CPU |
 | **17** | [**cpp-learning-notes**（外部）](./17-cpp-learning-notes/) — C++ · [GitHub 笔记仓](https://github.com/cshonor/cpp-learning-notes) |
 | **10** | [Practical-Network-Programming](./10-Practical-Network-Programming/) — PNP / muduo |
 | **11** | [UNP-Vol1](./11-UNP-Vol1/) |

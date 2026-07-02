@@ -1,9 +1,10 @@
 # BPF Performance Tools — Brendan Gregg
 
-**文件夹 03** · 全书 **18 章 + 附录 A–E**（4 Parts）· [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
+**文件夹 04** · 全书 **18 章 + 附录 A–E**（4 Parts）· [返回总清单](../READING-LIST.md#8-bpf-performance-tools--brendan-gregg)
 
-> **文件夹 03** · 紧接 [03-SysPerf](../03-Systems-Performance-2nd/) 阅读。  
-> **后续：** `05`–`08` 系统纵深 · [15-HFT](../15-HFT-Low-Latency-Practice/) / [13-Rust](../16-Rust-Quant-Trading-Guide/)
+> **文件夹 04** · 紧接 [03-SysPerf](../03-Systems-Performance-2nd/) · **同样后置**（见 [LEARNING-CHAIN](../LEARNING-CHAIN.md)）。  
+> **建议时机：** 已有 Linux 内核/网络/DPDK 或 HFT 压测靶子后再开 — 用 BPF 验证真实系统。  
+> **后续：** [15-HFT](../15-HFT-Low-Latency-Practice/) / [16-Rust](../16-Rust-Quant-Trading-Guide/)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)
 

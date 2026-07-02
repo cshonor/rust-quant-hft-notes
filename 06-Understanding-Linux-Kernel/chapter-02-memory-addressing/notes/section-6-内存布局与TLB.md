@@ -58,7 +58,7 @@
 | 回收、swap | [Ch 17 页回收](../../chapter-17-page-reclaim.md) 🟡 |
 | VM 专著 | [07 Gorman](../../../07-Linux-Virtual-Memory-Manager/) |
 | 用户态视角 | [01 CSAPP](../../../01-CSAPP-3rd/) Ch 9 · [08 TLPI](../../../08-The-Linux-Programming-Interface/) |
-| 动手分页 | [09 MikanOS](../../../09-system-low-level-hands-on/02-mikan-os/) |
+| 动手分页 | [09 MikanOS](../../../09-system-low-level-hands-on/01-mikan-os/) |
 
 ---
 

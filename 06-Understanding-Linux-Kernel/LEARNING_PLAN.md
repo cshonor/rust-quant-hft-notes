@@ -31,7 +31,7 @@ ULK 基于 **2.6** — 读时 **概念优先**，结构体名字以你机器上�
 |------|-------------|
 | [05 LFS](../05-Linux-Kernel-Development/01_Course_LFS/) | 附录 A 启动 |
 | [LKD Ch 7–8](../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-07-interrupts/) | Ch 4–5 中断/同步 |
-| [02 MikanOS](../09-system-low-level-hands-on/02-mikan-os/) Ch 19–20 | Ch 2/9/10 分页与 syscall |
+| [02 MikanOS](../09-system-low-level-hands-on/01-mikan-os/) Ch 19–20 | Ch 2/9/10 分页与 syscall |
 | [04 BPF](../04-BPF-Performance-Tools/) | Ch 4/7 内核路径理解 |
 
 ---

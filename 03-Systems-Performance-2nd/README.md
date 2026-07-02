@@ -1,9 +1,11 @@
 # Systems Performance 2nd — Brendan Gregg
 
-**文件夹 02** · 全书 **16 章 + 附录 A–E** · [返回总清单](../READING-LIST.md#1-systems-performance-enterprise-and-the-cloud-2nd--brendan-gregg)
+**文件夹 03** · 全书 **16 章 + 附录 A–E** · [返回总清单](../READING-LIST.md#1-systems-performance-enterprise-and-the-cloud-2nd--brendan-gregg)
 
-> **文件夹 02** · 知其然 — 性能分析方法论。  
-> **前置：** [01-CSAPP](../01-CSAPP-3rd/) · **下一本：** [04-BPF](../04-BPF-Performance-Tools/)（紧接）  
+> **文件夹 03** · 性能分析方法论。  
+> **执行顺序（HFT）：** **后置** — 建议在 **08 TLPI + 09/01 MikanOS + 10–14 网络/DPDK** 之后、**15 HFT** 之前开读（见 [LEARNING-CHAIN](../LEARNING-CHAIN.md)）。  
+> **前置：** [01-CSAPP](../01-CSAPP-3rd/) · [02-Hennessy](../02-Computer-Architecture-6th/) · 最好已有 **05–08** 系统基础  
+> **下一本：** [04-BPF](../04-BPF-Performance-Tools/)（紧接 03）  
 > 全链路 → [LEARNING-CHAIN.md](../LEARNING-CHAIN.md)
 
 📋 **完整目录与 HFT 读/跳标注** → [OUTLINE.md](./OUTLINE.md)

@@ -329,8 +329,8 @@
 
 | 子模块 | 参考 | 标签 | HFT 关联 |
 |--------|------|------|----------|
-| [01-30days-os](./09-system-low-level-hands-on/01-30days-os/) | 《30 天自制操作系统》 | 🟡 选读 | BIOS/实模式启蒙 — 对照 LKD |
-| [02-mikan-os](./09-system-low-level-hands-on/02-mikan-os/) | 《ゼロからの OS 自作入門》MikanOS | 🟡 选读 | UEFI/64位/分页/syscall — 现代 OS 互补 |
+| [02-30days-os](./09-system-low-level-hands-on/02-30days-os/) | 《30 天自制操作系统》 | 🟡 选读 | BIOS/实模式启蒙 — 对照 LKD |
+| [01-mikan-os](./09-system-low-level-hands-on/01-mikan-os/) | 《ゼロからの OS 自作入門》MikanOS | 🟡 选读 | UEFI/64位/分页/syscall — 现代 OS 互补 |
 
 **HFT 产出：** 把「绑核、syscall、cache 类比」从读者变成作者；时间紧可后补，与 `05`/`06` 概念课并行。
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Replace book .nas suffix with .asm in 01-30days-os notes (not NASM/nask)."""
+"""Replace book .nas suffix with .asm in 02-30days-os notes (not NASM/nask)."""
 
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "09-system-low-level-hands-on" / "01-30days-os"
+ROOT = Path(__file__).resolve().parents[1] / "09-system-low-level-hands-on" / "02-30days-os"
 
 # Order matters: specific filenames first
 REPLACEMENTS = [

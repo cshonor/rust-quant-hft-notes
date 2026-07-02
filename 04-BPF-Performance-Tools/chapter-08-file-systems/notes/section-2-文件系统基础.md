@@ -17,7 +17,7 @@
 | **Inode Cache** | inode 元数据、权限 | 中等 |
 | **dcache** | 路径名 → inode 映射 | 加速路径查找 |
 
-→ 内核实现：[05-LKD VFS](../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-13-vfs/) · [06-ULK](../06-Understanding-Linux-Kernel/) · [01-30days-os Day 18–19 FAT](../09-system-low-level-hands-on/01-30days-os/day-18-dir/)
+→ 内核实现：[05-LKD VFS](../05-Linux-Kernel-Development/00_Book_3rd_Notes/chapter-13-vfs/) · [06-ULK](../06-Understanding-Linux-Kernel/) · [02-30days-os Day 18–19 FAT](../09-system-low-level-hands-on/02-30days-os/day-18-dir/)
 
 ### 预读与写回
 

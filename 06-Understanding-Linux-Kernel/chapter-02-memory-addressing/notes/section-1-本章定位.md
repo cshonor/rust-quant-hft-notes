@@ -35,7 +35,7 @@ Ch 17 页回收         — 内存不够怎么办
 07 Gorman            — VM 专著（在 Ch 8–9 之后）
 ```
 
-交叉：[01 CSAPP](../../../01-CSAPP-3rd/) Ch 9 · [09 MikanOS](../../../09-system-low-level-hands-on/02-mikan-os/) 分页实验
+交叉：[01 CSAPP](../../../01-CSAPP-3rd/) Ch 9 · [09 MikanOS](../../../09-system-low-level-hands-on/01-mikan-os/) 分页实验
 
 ---
 
