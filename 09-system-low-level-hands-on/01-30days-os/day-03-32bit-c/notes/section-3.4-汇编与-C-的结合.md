@@ -85,10 +85,108 @@ void HariMain(void) {
 | **汇编** | 执行 **HLT** 这一条 CPU 指令 |
 | **链接器** | 把 `io_hlt` 的地址填进 C 的 `call` |
 
-更大块的例子：**nasmhead** 里整段 **GDT + 切 CR0** — C 更写不了，所以整段留在 **`.asm`**，只有切完后 **跳进 `HariMain`** 才交给 C。
+更大块的例子：**nasmhead** 里整段 **GDT + 切 CR0** — C 更写不了，所以整段留在 **`.asm`**，只有切完后 **`call HariMain`** 才交给 C。
 
 ---
 
+### 完整例子：16 位切 32 位 + 调 C（汇编搭台，C 唱戏）
+
+下面是一个 **能看清配合关系** 的极简模型（教学用；原书 **`HariMain`** 此处写 **`kernel_main`** 方便对照通用教程）。完整文件见 [code/example/](../code/example/)。
+
+#### ① 汇编部分 — `nasmhead-minimal.asm`（≈ 原书 nasmhead）
+
+**汇编负责：C 绝对写不了的「切模式 + 寄存器」**
+
+```nasm
+        BITS 16
+switch_to_32:
+        cli                         ; 关中断
+        lgdt [gdt_desc]             ; 加载 GDT
+        mov     eax, cr0
+        or      eax, 1              ; CR0.PE = 1，开保护模式
+        mov     cr0, eax
+        jmp     CODE_SEL:init_pm    ; 远跳转，进入 32 位代码段
+
+        BITS 32
+init_pm:
+        mov     ax, DATA_SEL        ; 数据段选择子
+        mov     ds, ax
+        mov     es, ax
+        mov     ss, ax
+        mov     esp, 0x90000        ; 栈 — C 函数调用需要
+
+        extern  kernel_main
+        call    kernel_main         ; ★ 舞台搭好，请 C 上场
+
+hang:
+        hlt
+        jmp     hang
+```
+
+GDT 定义（8 字节描述符 × 3 项）省略 — 见 [code/example/nasmhead-minimal.asm](../code/example/nasmhead-minimal.asm)。
+
+#### ② C 部分 — `kernel_main.c`（≈ 原书 bootpack.c / HariMain）
+
+**C 负责：循环、字符串、业务逻辑 — 编译器自动生成 32 位机器码**
+
+```c
+void kernel_main(void) {
+    volatile char *vidmem = (volatile char *)0xB8000;
+    const char *str = "Hello 32-bit C!";
+    int i;
+
+    for (i = 0; str[i] != '\0'; i++) {
+        vidmem[i * 2]     = str[i];
+        vidmem[i * 2 + 1] = 0x07;
+    }
+    for (;;) { }
+}
+```
+
+C **没有**「把 CR0 第 0 位置 1」的语句；**有** `for` 循环往显存写字 — 所以切模式归 asm，打印逻辑归 C。
+
+#### ③ 怎么「拼」在一起？
+
+```text
+nasmhead-minimal.asm  ──nasm──►  nasmhead.o
+kernel_main.c         ──gcc -m32──►  kernel_main.o
+                                        │
+                                        ld（链接器）
+                                        ▼
+                                   bootpack.elf
+```
+
+| 步骤 | 谁干 | 结果 |
+|------|------|------|
+| **汇编** | `nasm -f elf32 …` | `switch_to_32`、`init_pm`、`call kernel_main` 的机器码 |
+| **编译 C** | `gcc -m32 -c …` | `kernel_main` 的机器码 |
+| **链接** | `ld …` | 把 **`call kernel_main`** 里的地址 **填成 C 函数的真实入口** |
+
+**执行顺序（运行时）：**
+
+```text
+switch_to_32（16 位 asm）
+    → init_pm（32 位 asm：段、栈）
+        → call kernel_main（跳进 C）
+            → for 循环写 "Hello 32-bit C!"（C）
+                → 若返回 → hang（asm 里 HLT）
+```
+
+#### ④ 和原书 haribote 的对应
+
+| 教学示例 | 原书 Day 3 | 分工 |
+|----------|------------|------|
+| `switch_to_32` / GDT / CR0 | **nasmhead.asm** 前半 | 汇编搭台 |
+| `call kernel_main` | 跳进 **`HariMain`** | asm → C 交接 |
+| `kernel_main` 里写显存 | **bootpack.c** | C 唱戏 |
+| （另文件）`io_hlt` | **asmfunc.asm** | C 调 asm **小补丁** |
+| （更前）IPL 读盘 | **[ipl.asm](../code/ipl.asm)** | 尚无 C |
+
+**记忆：** **汇编 = 搭台（切模式、栈、段、必要时 call C）** · **C = 唱戏（HariMain 及以后所有 OS 逻辑）** · **asmfunc = C 偶尔需要的几条指令外包**。
+
+链接命令示意见 [code/example/README.md](../code/example/README.md)。
+
+---
 ### 和嵌入式一样吗？
 
 **大思路一样：底层汇编搭台，C 写上层。** 但 **OS 引导比常见嵌入式更「汇编-heavy」**。
@@ -130,7 +228,8 @@ void HariMain(void) {
 - [ ] 说清 **C 为什么不能直接写 `HLT` / 切模式**  
 - [ ] 说清 **`asmfunc.asm` 包装、`bootpack.c` 调用、链接器合并**  
 - [ ] 区分 **`ipl.asm` / `nasmhead.asm` / `asmfunc.asm` / `bootpack.c`** 各在哪一层  
-- [ ] 知道 **嵌入式也是 startup 汇编 + C main**，但 **OS 引导汇编占比更大**
+- [ ] 能口述 **16→32 例子里 asm 做什么、C 做什么、`call` 如何交接**（见上文完整例子）  
+- [ ] 看过 [code/example/](../code/example/) 对照文件
 
 ---
 
