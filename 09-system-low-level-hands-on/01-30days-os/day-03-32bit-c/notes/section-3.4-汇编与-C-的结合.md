@@ -7,7 +7,7 @@
 | 小节 | 内容 |
 |------|------|
 | [§3.4.1 为何 C 需要汇编包装](./section-3.4.1-为何C需要汇编包装.md) | C 搞不定的指令、链接模型 |
-| [§3.4.2 `io_hlt` 与工程分层](./section-3.4.2-io_hlt与工程分层.md) | 四文件分工、Day 3 分层图 |
+| [§3.4.2 `io_hlt` 与四文件分工](./section-3.4.2-io_hlt与工程分层.md) | **ipl / nasmhead / bootpack.c / asmfunc** 分工与链接 |
 | [§3.4.3 16 切 32 与 call C 完整例子](./section-3.4.3-16切32与call-C完整例子.md) | **汇编搭台、C 唱戏**、[code/example/](../code/example/) |
 | [§3.4.4 嵌入式/HFT 与何时用 asm](./section-3.4.4-嵌入式HFT与何时用汇编.md) | 对比、自检 |
 
