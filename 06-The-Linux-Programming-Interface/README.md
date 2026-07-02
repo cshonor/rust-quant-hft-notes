@@ -32,10 +32,10 @@
 | [01-CSAPP Ch8/10](../01-CSAPP-3rd/chapter-08-exceptional-control-flow/) | 进程、信号、I/O 程序员视角 |
 | [03-Linux-Kernel-Development](../03-Linux-Kernel-Development/) | syscall **在内核里** 如何实现 |
 | [05-Linux-Virtual-Memory-Manager](../05-Linux-Virtual-Memory-Manager/) | mmap 背后 VM |
-| [13-Systems-Performance](../13-Systems-Performance-2nd/) | 量 epoll 延迟、off-CPU |
-| [09-PNP](../08-Practical-Network-Programming/) | 实验层网络服务 |
-| [10-UNP](../09-UNP-Vol1/) | 网络 API 纵深 |
-| [14-HFT](../15-HFT-Low-Latency-Practice/) | 工程落地 |
+| [14-Systems-Performance](../14-Systems-Performance-2nd/) | 量 epoll 延迟、off-CPU |
+| [09-PNP](../09-Practical-Network-Programming/) | 实验层网络服务 |
+| [10-UNP](../10-UNP-Vol1/) | 网络 API 纵深 |
+| [14-HFT](../16-HFT-Low-Latency-Practice/) | 工程落地 |
 
 ## 版本说明
 

@@ -38,7 +38,7 @@ Ch 5  内核抢占
 Ch 6  tick / jiffies
 Ch 7  调度（本章）
 Ch 10 nice / sched_* syscall
-Ch 15 HFT 绑核、SCHED_FIFO
+Ch 16 HFT 绑核、SCHED_FIFO
 ```
 
 ---

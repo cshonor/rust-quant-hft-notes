@@ -30,8 +30,8 @@
 **HFT 主线：** 本目录 **后置可选**；同等概念在 [01 MikanOS](../01-mikan-os/) 用 **64 位现代架构** 学更高效。
 
 ```
-【通用】08 TLPI → 02 30天（启蒙）→ 01 MikanOS → 05 LKD → 15 HFT
-【HFT】  C 扎实 → 01 MikanOS → 05 LKD / 14 DPDK → 15 HFT  （本目录可跳过）
+【通用】08 TLPI → 02 30天（启蒙）→ 01 MikanOS → 05 LKD → 16 HFT
+【HFT】  C 扎实 → 01 MikanOS → 05 LKD / 14 DPDK → 16 HFT  （本目录可跳过）
 ```
 
 **标签：** ⚪ HFT 可跳过 · 🟡 通用零基础启蒙 · 与 `05`/`06` **并行** 也行（非 HFT 路线时）
@@ -42,7 +42,7 @@
 
 ## 目录结构
 
-与 [13-Systems-Performance](../../13-Systems-Performance-2nd/) / [03-Linux-Kernel-Development](../../03-Linux-Kernel-Development/00_Book_3rd_Notes/) 一致：每个 Day 独立目录，导读 + 分段笔记。
+与 [14-Systems-Performance](../../14-Systems-Performance-2nd/) / [03-Linux-Kernel-Development](../../03-Linux-Kernel-Development/00_Book_3rd_Notes/) 一致：每个 Day 独立目录，导读 + 分段笔记。
 
 ```
 day-XX-slug/

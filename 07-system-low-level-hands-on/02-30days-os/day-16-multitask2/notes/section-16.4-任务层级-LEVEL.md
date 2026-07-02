@@ -36,6 +36,6 @@
 
 **里程碑：** **抢占式 + 优先级 + sleep/wake** — 「纸娃娃」有了 **现代调度器雏形**。
 
-→ [03-Linux-Kernel-Development 调度/CFS 概念](../../../../03-Linux-Kernel-Development/) · [03 SysPerf 上下文切换](../../../../13-Systems-Performance-2nd/chapter-03-operating-systems/)
+→ [03-Linux-Kernel-Development 调度/CFS 概念](../../../../03-Linux-Kernel-Development/) · [03 SysPerf 上下文切换](../../../../14-Systems-Performance-2nd/chapter-03-operating-systems/)
 
 ---

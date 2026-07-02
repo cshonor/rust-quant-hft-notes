@@ -11,26 +11,26 @@ ROOT = Path(__file__).resolve().parents[1]
 # git mv: high → low, stash ULK first
 GIT_MV = [
     ("16-Understanding-Linux-Kernel", "_tmp-08-ULK"),
-    ("15-Rust-Quant-Trading-Guide", "16-Rust-Quant-Trading-Guide"),
-    ("14-HFT-Low-Latency-Practice", "15-HFT-Low-Latency-Practice"),
-    ("13-DPDK-Low-Latency-Network", "12-DPDK-Low-Latency-Network"),
-    ("12-Linux-Kernel-Networking", "11-Linux-Kernel-Networking"),
-    ("11-TCP-IP-Illustrated-Vol1", "10-TCP-IP-Illustrated-Vol1"),
-    ("10-UNP-Vol1", "09-UNP-Vol1"),
-    ("09-Practical-Network-Programming", "08-Practical-Network-Programming"),
+    ("15-Rust-Quant-Trading-Guide", "17-Rust-Quant-Trading-Guide"),
+    ("14-HFT-Low-Latency-Practice", "16-HFT-Low-Latency-Practice"),
+    ("13-DPDK-Low-Latency-Network", "13-DPDK-Low-Latency-Network"),
+    ("12-Linux-Kernel-Networking", "12-Linux-Kernel-Networking"),
+    ("11-TCP-IP-Illustrated-Vol1", "11-TCP-IP-Illustrated-Vol1"),
+    ("10-UNP-Vol1", "10-UNP-Vol1"),
+    ("09-Practical-Network-Programming", "09-Practical-Network-Programming"),
     ("08-system-low-level-hands-on", "07-system-low-level-hands-on"),
     ("_tmp-08-ULK", "08-Understanding-Linux-Kernel"),
 ]
 
 # Apply high→low to avoid partial overlaps
 TEXT_REPLACEMENTS = [
-    ("15-Rust-Quant-Trading-Guide", "16-Rust-Quant-Trading-Guide"),
-    ("14-HFT-Low-Latency-Practice", "15-HFT-Low-Latency-Practice"),
-    ("13-DPDK-Low-Latency-Network", "12-DPDK-Low-Latency-Network"),
-    ("12-Linux-Kernel-Networking", "11-Linux-Kernel-Networking"),
-    ("11-TCP-IP-Illustrated-Vol1", "10-TCP-IP-Illustrated-Vol1"),
-    ("10-UNP-Vol1", "09-UNP-Vol1"),
-    ("09-Practical-Network-Programming", "08-Practical-Network-Programming"),
+    ("15-Rust-Quant-Trading-Guide", "17-Rust-Quant-Trading-Guide"),
+    ("14-HFT-Low-Latency-Practice", "16-HFT-Low-Latency-Practice"),
+    ("13-DPDK-Low-Latency-Network", "13-DPDK-Low-Latency-Network"),
+    ("12-Linux-Kernel-Networking", "12-Linux-Kernel-Networking"),
+    ("11-TCP-IP-Illustrated-Vol1", "11-TCP-IP-Illustrated-Vol1"),
+    ("10-UNP-Vol1", "10-UNP-Vol1"),
+    ("09-Practical-Network-Programming", "09-Practical-Network-Programming"),
     ("08-system-low-level-hands-on", "07-system-low-level-hands-on"),
     ("16-Understanding-Linux-Kernel", "08-Understanding-Linux-Kernel"),
     # prose / chain (after path swaps)
@@ -47,8 +47,8 @@ TEXT_REPLACEMENTS = [
     ("09  陈硕 PNP", "10  陈硕 PNP"),
     ("10  UNP", "11  UNP"),
     ("11  TCP/IP → 12  Rosen → 13  DPDK", "12  TCP/IP → 13  Rosen → 14  DPDK"),
-    ("14  HFT Practice", "15  HFT Practice"),
-    ("15  Rust Guide", "16  Rust Guide"),
+    ("14  HFT Practice", "16  HFT Practice"),
+    ("15  Rust Guide", "17  Rust Guide"),
     ("**14–15**", "**15–16**"),
     ("| **14–15** |", "| **15–16** |"),
     ("`14`/`15`", "`15`/`16`"),
@@ -59,12 +59,12 @@ TEXT_REPLACEMENTS = [
     ("**文件夹 `08`**", "**文件夹 `09`**"),
     ("| 14 |", "| 15 |"),
     ("| 15 |", "| 16 |"),
-    ("[11 HFT](./14-HFT", "[15 HFT](./15-HFT"),
-    ("[12 Rust](./15-Rust", "[16 Rust](./16-Rust"),
+    ("[11 HFT](./14-HFT", "[16 HFT](./15-HFT"),
+    ("[12 Rust](./15-Rust", "[17 Rust](./16-Rust"),
     ("| 11 / 12 |", "| 15 / 16 |"),
     ("`05`–`11` 系统纵深", "`03`–`06` 系统纵深"),
-    ("[12-HFT](../14-HFT", "[15-HFT](../15-HFT"),
-    ("[13-Rust](../15-Rust", "[16-Rust](../16-Rust"),
+    ("[12-HFT](../14-HFT", "[16-HFT](../16-HFT"),
+    ("[13-Rust](../15-Rust", "[17-Rust](../17-Rust"),
 ]
 
 SKIP_DIRS = {".git", "node_modules", ".cursor", "__pycache__"}

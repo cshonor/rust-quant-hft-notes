@@ -14,11 +14,11 @@
     ↓
 07 自制 OS（本文件夹）
     ↓
-08 PNP → 09 UNP → 10–12 网络栈
+09 PNP → 10 UNP → 11–13 网络栈
     ↓
-13 SysPerf → 14 BPF（后置 · 有系统可观测后再开）
+14 SysPerf → 15 BPF（后置 · 有系统可观测后再开）
     ↓
-15 HFT · 16 Rust
+16 HFT · 17 Rust
 ```
 
 ## 子模块
@@ -34,4 +34,4 @@
 
 - [HFT-AND-EMBEDDED-PRIORITY.md](./HFT-AND-EMBEDDED-PRIORITY.md) — C 优先 · 01 MikanOS 主线 · 03/04 后置
 - [01-CSAPP-3rd](../01-CSAPP-3rd/) · [03-Linux-Kernel-Development](../03-Linux-Kernel-Development/) · [06-The-Linux-Programming-Interface](../06-The-Linux-Programming-Interface/)
-- 下一步：[08-Practical-Network-Programming](../08-Practical-Network-Programming/)
+- 下一步：[09-Practical-Network-Programming](../09-Practical-Network-Programming/)

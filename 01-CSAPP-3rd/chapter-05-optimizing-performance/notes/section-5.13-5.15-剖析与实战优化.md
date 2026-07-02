@@ -8,7 +8,7 @@
 | 源码 | 本章 5.4–5.12 |
 | 编译 | `-O3`、`-march=native`、PGO、LTO |
 | 并行 | 多线程、绑核、无锁（→ [Ch 12](../../chapter-12-concurrent-programming/)） |
-| 系统 | hugepage、NUMA、隔离核（→ [12-HFT](../../../15-HFT-Low-Latency-Practice/)） |
+| 系统 | hugepage、NUMA、隔离核（→ [12-HFT](../../../16-HFT-Low-Latency-Practice/)） |
 
 **顺序：** 先正确 + profile，再小步改；每次改 **测一遍**。
 
@@ -32,7 +32,7 @@ perf annotate -s hot_function
 #### 5.14.2 用剖析指导优化
 
 1. **找占时间 >5–10% 的函数** — 阿姆达尔
-2. **区分** CPU bound vs memory bound vs I/O wait（→ [13-Systems-Performance](../../../13-Systems-Performance-2nd/)）
+2. **区分** CPU bound vs memory bound vs I/O wait（→ [14-Systems-Performance](../../../14-Systems-Performance-2nd/)）
 3. 改完对比 **同一 workload、同一硬件、同一编译 flags**
 4. 避免 **微观基准误导** — 微基准只验证 CPE，端到端用 replay
 

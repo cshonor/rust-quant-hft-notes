@@ -56,7 +56,7 @@ Scroll():
 | 窗口系统 | [chapter-10-window](../chapter-10-window/) ⚪ |
 | APIC/定时器 | [chapter-11-timer-acpi](../chapter-11-timer-acpi/) 🔴 |
 | 内存 | [chapter-08-memory](../chapter-08-memory/) |
-| SysPerf | [13-Systems-Performance-2nd](../../../13-Systems-Performance-2nd/) |
+| SysPerf | [14-Systems-Performance-2nd](../../../14-Systems-Performance-2nd/) |
 
 ---
 

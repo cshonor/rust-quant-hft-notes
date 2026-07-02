@@ -42,7 +42,7 @@ numastat -p <pid>
 cat /proc/<pid>/smaps_rollup | head
 ```
 
-- **`mbind`/`set_mempolicy`** — NUMA 本地分配（→ [13-Systems-Performance Ch7](../../../13-Systems-Performance-2nd/chapter-07-memory/)）
+- **`mbind`/`set_mempolicy`** — NUMA 本地分配（→ [14-Systems-Performance Ch7](../../../14-Systems-Performance-2nd/chapter-07-memory/)）
 
 ---
 

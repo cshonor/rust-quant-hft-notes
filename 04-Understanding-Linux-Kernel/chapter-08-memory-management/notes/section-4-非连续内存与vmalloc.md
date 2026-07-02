@@ -53,7 +53,7 @@
 | 页表、高端内存 | [Ch 2 内存寻址](../chapter-02-memory-addressing/) 🔴 |
 | VM 专著 | [07 Gorman](../../../05-Linux-Virtual-Memory-Manager/) |
 | Slab 深潜 | [07 Gorman Ch 8 Slab](../../../05-Linux-Virtual-Memory-Manager/chapter-08-slab-allocator/) |
-| 大页 / NUMA | [15 HFT 工程](../../../15-HFT-Low-Latency-Practice/) · [03 SysPerf Ch 7](../../../13-Systems-Performance-2nd/chapter-07-memory/) |
+| 大页 / NUMA | [16 HFT 工程](../../../16-HFT-Low-Latency-Practice/) · [03 SysPerf Ch 7](../../../14-Systems-Performance-2nd/chapter-07-memory/) |
 
 ---
 

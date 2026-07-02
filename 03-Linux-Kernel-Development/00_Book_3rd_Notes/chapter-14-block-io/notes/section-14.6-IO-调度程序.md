@@ -40,6 +40,6 @@ HDD 时代思维：
 | **`iostat -x`** | `await`、利用率 |
 | **`biolatency`（BCC）** | 块 I/O 延迟分布 · read/write/sync 分开 |
 
-→ [03 SysPerf Ch9 §9.4](../../../../13-Systems-Performance-2nd/chapter-09-disks/notes/section-9.4-硬件与软件架构.md) · [Ch15 bpf biolatency](../../../../13-Systems-Performance-2nd/chapter-15-bpf/)
+→ [03 SysPerf Ch9 §9.4](../../../../14-Systems-Performance-2nd/chapter-09-disks/notes/section-9.4-硬件与软件架构.md) · [Ch15 bpf biolatency](../../../../14-Systems-Performance-2nd/chapter-15-bpf/)
 
 ---

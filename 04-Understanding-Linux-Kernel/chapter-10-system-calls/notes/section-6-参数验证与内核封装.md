@@ -75,7 +75,7 @@ exit_work（调度/信号）→ 返回用户态
 | fork/brk/mmap 实现 | [Ch 3](../chapter-03-processes/) · [Ch 9](../chapter-09-process-address-space/) 🔴 |
 | 用户态编程 | [08 TLPI](../../../06-The-Linux-Programming-Interface/) |
 | LKD 对照 | Linux Kernel Development Ch 5 |
-| vDSO / 无 syscall 计时 | [15 HFT 工程](../../../15-HFT-Low-Latency-Practice/) · modern kernel `vdso(7)` |
+| vDSO / 无 syscall 计时 | [16 HFT 工程](../../../16-HFT-Low-Latency-Practice/) · modern kernel `vdso(7)` |
 
 ---
 

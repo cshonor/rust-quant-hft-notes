@@ -36,7 +36,7 @@ EndMeasure();              // 读 APIC Current Count 差值
 **价值：**
 
 - 优化 **Shadow Buffer** 后 **同一脚本对比** — 证明 **~67×** 提升
-- 与 [03 SysPerf](../../../13-Systems-Performance-2nd/) **基准测试** 思想一致
+- 与 [03 SysPerf](../../../14-Systems-Performance-2nd/) **基准测试** 思想一致
 
 → **Ch11** 进一步用 APIC/ACPI **系统 tick** — 本章先作 **profiler**
 

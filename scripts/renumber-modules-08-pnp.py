@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shift 08-TCP-IP→10 and 10-14 after inserting 08-Practical-Network-Programming."""
+"""Shift 08-TCP-IP→10 and 10-14 after inserting 09-Practical-Network-Programming."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -7,9 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 REPLACEMENTS = [
     ("13-Rust-Quant-Trading-Guide", "14-Rust-Quant-Trading-Guide"),
     ("12-HFT-Low-Latency-Practice", "13-HFT-Low-Latency-Practice"),
-    ("11-DPDK-Low-Latency-Network", "12-DPDK-Low-Latency-Network"),
-    ("10-Linux-Kernel-Networking", "11-Linux-Kernel-Networking"),
-    ("08-TCP-IP-Illustrated-Vol1", "10-TCP-IP-Illustrated-Vol1"),
+    ("11-DPDK-Low-Latency-Network", "13-DPDK-Low-Latency-Network"),
+    ("10-Linux-Kernel-Networking", "12-Linux-Kernel-Networking"),
+    ("08-TCP-IP-Illustrated-Vol1", "11-TCP-IP-Illustrated-Vol1"),
 ]
 
 TEXT_REPLACEMENTS = [
@@ -35,11 +35,11 @@ TEXT_REPLACEMENTS = [
     ("与 `12` 映射", "与 `13` 映射"),
     ("12-HFT-Low", "13-HFT-Low"),
     ("13-Rust-Quant", "14-Rust-Quant"),
-    ("`11` DPDK", "`12` DPDK"),
+    ("`11` DPDK", "`13` DPDK"),
     ("`10` Rosen", "`11` Rosen"),
     ("`08` TCP/IP", "`10` TCP/IP"),
     ("08  TCP/IP", "10  TCP/IP"),
-    ("09  UNP", "09  UNP"),  # no-op
+    ("10  UNP", "10  UNP"),  # no-op
     ("10  Rosen", "11  Rosen"),
     ("11  DPDK", "12  DPDK"),
     ("12  HFT", "13  HFT"),
@@ -47,7 +47,7 @@ TEXT_REPLACEMENTS = [
     ("| 10 |", "| 10 |"),  # tcpip slot - careful
 ]
 
-SKIP_DIRS = {".git", "node_modules", ".cursor", "08-Practical-Network-Programming"}
+SKIP_DIRS = {".git", "node_modules", ".cursor", "09-Practical-Network-Programming"}
 
 
 def should_process(path: Path) -> bool:

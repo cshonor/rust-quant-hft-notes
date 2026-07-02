@@ -20,6 +20,6 @@ chrt -f 80 ./hot_thread      # SCHED_FIFO 优先级 80
 | **`taskset`** | `sched_setaffinity` |
 | **`chrt`** | `sched_setscheduler` |
 
-→ [03 SysPerf §6.9 CPU 调优](../../../../13-Systems-Performance-2nd/chapter-06-cpus/notes/section-6.9-CPU-调优.md)
+→ [03 SysPerf §6.9 CPU 调优](../../../../14-Systems-Performance-2nd/chapter-06-cpus/notes/section-6.9-CPU-调优.md)
 
 ---

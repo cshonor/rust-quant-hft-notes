@@ -56,7 +56,7 @@ void TimerHandler() {
 
 **规则：** **ISR 写 · 主循环读** 的共享变量 — **几乎总是 volatile**（更后可用 atomic）。
 
-→ 与 [03 SysPerf 编译器优化](../../../13-Systems-Performance-2nd/) 相关
+→ 与 [03 SysPerf 编译器优化](../../../14-Systems-Performance-2nd/) 相关
 
 ---
 

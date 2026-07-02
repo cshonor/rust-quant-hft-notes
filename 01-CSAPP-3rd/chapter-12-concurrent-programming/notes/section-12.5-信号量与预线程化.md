@@ -53,7 +53,7 @@ sem_post(&sem_full);
 
 **HFT：** 网关常用 **固定大小线程池** 或 **每核一个 reactor**；任务队列用 **无锁 ring buffer** 替代 `sem`+全局锁（延迟敏感路径）。
 
-→ [12-HFT](../../../15-HFT-Low-Latency-Practice/) · [13-Systems-Performance Ch6 CPU](../../../13-Systems-Performance-2nd/chapter-06-cpus/)
+→ [12-HFT](../../../16-HFT-Low-Latency-Practice/) · [14-Systems-Performance Ch6 CPU](../../../14-Systems-Performance-2nd/chapter-06-cpus/)
 
 ---
 

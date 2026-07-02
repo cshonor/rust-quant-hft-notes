@@ -19,6 +19,6 @@ CPU1: NET_RX softirq ──┼──► 可能同时处理不同包 — 共享�
 CPU2: NET_RX softirq ──┘
 ```
 
-→ [12 Rosen Ch14 NAPI/softirq](../../11-Linux-Kernel-Networking/chapter-14-advanced-topics/)
+→ [12 Rosen Ch14 NAPI/softirq](../../12-Linux-Kernel-Networking/chapter-14-advanced-topics/)
 
 ---

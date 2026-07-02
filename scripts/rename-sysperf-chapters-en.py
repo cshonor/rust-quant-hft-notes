@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SYSPERF = ROOT / "13-Systems-Performance-2nd"
+SYSPERF = ROOT / "14-Systems-Performance-2nd"
 
 # Historical mapping (Chinese slug -> English slug). Idempotent if already renamed.
 RENAME_MAP: dict[str, str] = {

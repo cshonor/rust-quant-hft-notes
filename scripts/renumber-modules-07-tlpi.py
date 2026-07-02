@@ -7,11 +7,11 @@ ROOT = Path(__file__).resolve().parents[1]
 REPLACEMENTS = [
     ("14-Rust-Quant-Trading-Guide", "15-Rust-Quant-Trading-Guide"),
     ("13-HFT-Low-Latency-Practice", "14-HFT-Low-Latency-Practice"),
-    ("12-DPDK-Low-Latency-Network", "13-DPDK-Low-Latency-Network"),
-    ("11-Linux-Kernel-Networking", "12-Linux-Kernel-Networking"),
-    ("10-TCP-IP-Illustrated-Vol1", "11-TCP-IP-Illustrated-Vol1"),
-    ("09-UNP-Vol1", "10-UNP-Vol1"),
-    ("08-Practical-Network-Programming", "09-Practical-Network-Programming"),
+    ("13-DPDK-Low-Latency-Network", "13-DPDK-Low-Latency-Network"),
+    ("12-Linux-Kernel-Networking", "12-Linux-Kernel-Networking"),
+    ("11-TCP-IP-Illustrated-Vol1", "11-TCP-IP-Illustrated-Vol1"),
+    ("10-UNP-Vol1", "10-UNP-Vol1"),
+    ("09-Practical-Network-Programming", "09-Practical-Network-Programming"),
     ("07-system-low-level-hands-on", "08-system-low-level-hands-on"),
 ]
 

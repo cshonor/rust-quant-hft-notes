@@ -76,7 +76,7 @@ execve「返回」用户态 → CPU 执行新程序第一条指令
 - [附录 A 系统启动](../appendix-A-system-startup.md) — 加电 → init  
 - [附录 B 内核模块](../appendix-B-modules.md) — 动态加载  
 
-**深潜配套：** [07 Gorman VM](../../../05-Linux-Virtual-Memory-Manager/) · [05 LKD](../../../03-Linux-Kernel-Development/) · [08 TLPI](../../../06-The-Linux-Programming-Interface/) · [15 HFT 工程](../../../15-HFT-Low-Latency-Practice/)
+**深潜配套：** [07 Gorman VM](../../../05-Linux-Virtual-Memory-Manager/) · [05 LKD](../../../03-Linux-Kernel-Development/) · [08 TLPI](../../../06-The-Linux-Programming-Interface/) · [16 HFT 工程](../../../16-HFT-Low-Latency-Practice/)
 
 ---
 

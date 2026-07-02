@@ -36,7 +36,7 @@ C 扎实 + CSAPP 机器码/缓存
     ↓
 01 MikanOS（UEFI · 64 位 · 分页 · syscall）← 本书 · 直接开
     ↓
-05 LKD / 14 DPDK → 15 HFT
+05 LKD / 14 DPDK → 16 HFT
 
 【通用零基础】可选先读 02 30 天启蒙，再开本书
 ```
@@ -72,7 +72,7 @@ C 扎实 + CSAPP 机器码/缓存
 
 ## 目录结构
 
-与 [02 30 天 OS](../02-30days-os/) · [13-Systems-Performance](../../13-Systems-Performance-2nd/) 一致：每章独立目录，导读 + 分段笔记。
+与 [02 30 天 OS](../02-30days-os/) · [14-Systems-Performance](../../14-Systems-Performance-2nd/) 一致：每章独立目录，导读 + 分段笔记。
 
 ```
 chapter-XX-slug/

@@ -21,6 +21,6 @@ Linux 对 **可缓存的页数据** 采用 **写回（write-back）** — 非 no
 
 **HFT：** tick 路径 **不应依赖** 写回完成；关键持久化用 **`fsync`** / 独立日志盘 / **`O_DIRECT`** 自管缓存。
 
-→ [03 SysPerf Ch8 FS](../../../../13-Systems-Performance-2nd/chapter-08-file-systems/) · [Ch7 `vm.dirty_*`](../../../../13-Systems-Performance-2nd/chapter-07-memory/notes/section-7.6-调优指南.md)
+→ [03 SysPerf Ch8 FS](../../../../14-Systems-Performance-2nd/chapter-08-file-systems/) · [Ch7 `vm.dirty_*`](../../../../14-Systems-Performance-2nd/chapter-07-memory/notes/section-7.6-调优指南.md)
 
 ---

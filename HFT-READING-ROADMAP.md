@@ -1,6 +1,6 @@
 # HFT 系统开发 · 完整阅读路线图
 
-> **文件夹 `00`–`16` + 外部 C++ 索引 `17` + 嵌入式 Linux 支线 `18`–`23`；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
+> **文件夹 `00`–`16` + C++ `08` + 嵌入式 Linux 支线 `18`–`23`；读序见 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)。** 主叙事 → **[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)**
 
 ### 核心段（文件夹编号 = 读序）
 
@@ -10,9 +10,9 @@
 | **05** → **08** | LKD → ULK → Gorman → TLPI | 内核 + 用户态 API |
 | **07/01** | MikanOS | HFT OS 动手主线 |
 | **07/02** | 30 天 OS | 可选启蒙 |
-| **03** → **04** | SysPerf → BPF | **后置** · 12 DPDK 之后或 15 HFT 之前 |
-| **17** | [C++ 外部索引](./17-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
-| **08–12** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
+| **03** → **04** | SysPerf → BPF | **后置** · 13 DPDK 之后或 16 HFT 之前 |
+| **17** | [C++ 外部索引](./08-cpp-learning-notes/) | Modern C++ → 并发（PNP/HFT 前置） |
+| **09–13** | PNP / UNP / TCP/IP / Rosen / DPDK | 网络纵深 |
 | **15–16** | HFT Practice / Rust | 动手实现 |
 | **18–23** | ARM64 · 构建 · 驱动 · DT · 实战 · **PID/飞控** | 嵌入式 Linux 退路（可选支线） |
 
@@ -23,14 +23,14 @@
 | USE/RED、延迟分解、perf/Ftrace | bpftrace/BCC 生产落地 |
 | Ch 4 / 13 / 15 预览 | Part I–II + XDP note |
 
-**执行顺序：** 先完成 **05–08 内核/TLPI** 与 **07/01 MikanOS**、**08–12 网络/DPDK**，再开 **03 → 04** — 有真实系统可 profile 后再读方法论。
+**执行顺序：** 先完成 **05–08 内核/TLPI** 与 **07/01 MikanOS**、**09–13 网络/DPDK**，再开 **03 → 04** — 有真实系统可 profile 后再读方法论。
 
 ### 03 为何不在 02 之后立刻读
 
 | 过早读 SysPerf/BPF | 更合适的时机 |
 |--------------------|--------------|
 | 还没有 Linux 进程/内核/网络概念 | **08 TLPI + 09 MikanOS** 之后 |
-| 火焰图看不懂在烧什么 | **14 DPDK** 或 **15 HFT** 压测有靶子 |
+| 火焰图看不懂在烧什么 | **14 DPDK** 或 **16 HFT** 压测有靶子 |
 | 与 CSAPP 理论堆叠 | **02 Hennessy 后直进 05 LKD** 更顺 |
 
 | 标签 | HFT 含义 | 你要怎么做 |
@@ -80,13 +80,13 @@
 18–23  …
 ```
 
-**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07/01 → 17 → 08 → 09 → 01网络 → 10 → 11 → 12 → 13 → 14 → 15 → 16`
+**HFT 主线执行序号：** `00 → 01 → 02 → 03 → 04 → 05 → 06 → 07/01 → 08 → 09 → 01网络 → 10 → 11 → 12 → 13 → 14 → 15 → 16 → 17`
 
 **嵌入式支线（独立顺序 · 建议 03–06 后再开 · 23 用业余时间）：** `18 → 19 → 20 → 21 → 22 → 23`
 
-> **C++ 外部仓：** [17-cpp-learning-notes/](./17-cpp-learning-notes/) — **07 之后、08 PNP 之前** 至少读完 *Effective Modern C++*。
+> **C++ 外部仓：** [08-cpp-learning-notes/](./08-cpp-learning-notes/) — **07 之后、09 PNP 之前（`08` C++）** 至少读完 *Effective Modern C++*。
 
-> **板块封顶：** `00`–`16` 在本仓 + **`17`** 外部 C++ 索引 + **`18`–`23`** 嵌入式 Linux + 运动控制支线；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
+> **板块封顶：** `00`–`17` 在本仓（含 **`08` C++ 索引**）+ **`18`–`23`** 嵌入式 Linux + 运动控制支线；跨模块对照 → [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
 ---
 
@@ -98,7 +98,7 @@
 
 | 方案 | 说明 |
 |------|------|
-| ✅ **推荐** | 笔记留在 [Computer-Networking](https://github.com/cshonor/Computer-Networking)；本仓库 [`10-TCP-IP-Illustrated-Vol1/`](./10-TCP-IP-Illustrated-Vol1/)、[`09-UNP-Vol1/`](./09-UNP-Vol1/) 做**索引 + HFT 裁剪清单** |
+| ✅ **推荐** | 笔记留在 [Computer-Networking](https://github.com/cshonor/Computer-Networking)；本仓库 [`11-TCP-IP-Illustrated-Vol1/`](./11-TCP-IP-Illustrated-Vol1/)、[`10-UNP-Vol1/`](./10-UNP-Vol1/) 做**索引 + HFT 裁剪清单** |
 | ⚠️ 可选 | 只把「HFT 必读章节」的笔记摘要链过来，不要 duplicate 全书 |
 | ❌ 不推荐 | 整本迁移 — 与 Rosen / CSAPP Ch11 重叠，且双倍维护 |
 
@@ -285,10 +285,10 @@
 | 目录 | 文件夹 |
 |------|--------|
 | [01 CSAPP](./01-CSAPP-3rd/) + [02 Hennessy](./02-Computer-Architecture-6th/) | 01 / 04 |
-| [03 SysPerf](./13-Systems-Performance-2nd/) | 02 |
-| [04 BPF](./14-BPF-Performance-Tools/) | 03 |
+| [03 SysPerf](./14-Systems-Performance-2nd/) | 02 |
+| [04 BPF](./15-BPF-Performance-Tools/) | 03 |
 | [05 LKD](./03-Linux-Kernel-Development/) · [07 Gorman](./05-Linux-Virtual-Memory-Manager/) · [08–11 网络](./CROSS-MODULE-GUIDE.md) | 05–11 |
-| [11 HFT](./15-HFT-Low-Latency-Practice/) · [12 Rust](./16-Rust-Quant-Trading-Guide/) | 15 / 16 |
+| [11 HFT](./16-HFT-Low-Latency-Practice/) · [12 Rust](./17-Rust-Quant-Trading-Guide/) | 15 / 16 |
 
 → [LEARNING-CHAIN.md](./LEARNING-CHAIN.md) · [CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
 
@@ -366,9 +366,9 @@
 |------|----------|
 | C / GNU-C / 指针 / 结构体 | CSAPP · TLPI · 《嵌入式 C 自我修养》 |
 | 进程 / VM / 中断 / 同步 | 05 LKD · 06 ULK · 07 Gorman |
-| 性能 / 绑核 / BPF / **周期 jitter** | 03 SysPerf · 04 BPF · **15 HFT 测量** |
+| 性能 / 绑核 / BPF / **周期 jitter** | 03 SysPerf · 04 BPF · **16 HFT 测量** |
 | 网络 / 零拷贝思想 | 11 UNP · 13 内核网 · 14 DPDK → 传感器链路 |
-| 低延迟工程思维 | 15 HFT — 绑核、无锁、异步日志、T2T |
+| 低延迟工程思维 | 16 HFT — 绑核、无锁、异步日志、T2T |
 
 ### 岗位定位（支线完成后）
 

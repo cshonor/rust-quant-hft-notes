@@ -89,8 +89,8 @@
 > 下文面向 **选择阅读 01 的通用零基础路线**。
 
 ```
-【通用】02 30天 OS（引导、中断、页表、任务切换）→ 01 MikanOS → 05 LKD → 15 HFT
-【HFT】  C → 01 MikanOS → 05 LKD / 14 DPDK → 15 HFT  （跳过 02-30days-os）
+【通用】02 30天 OS（引导、中断、页表、任务切换）→ 01 MikanOS → 05 LKD → 16 HFT
+【HFT】  C → 01 MikanOS → 05 LKD / 14 DPDK → 16 HFT  （跳过 02-30days-os）
 ```
 
 | 原书机制 | 仓库对照 |

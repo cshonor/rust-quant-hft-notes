@@ -69,7 +69,7 @@
 
 07 自制 OS / 05 LKD …（系统与内核 · 不同大模块，互不混放）
     ↓ 后期
-15 HFT 工程 · 16 Rust 量化（网关/撮合热路径 → Rust；Go 留外围；业务模型仍来自 00）
+16 HFT 工程 · 17 Rust 量化（网关/撮合热路径 → Rust；Go 留外围；业务模型仍来自 00）
 ```
 
 返回 → [00 导读](../README.md) · [总路线 ../../HFT-READING-ROADMAP.md](../../HFT-READING-ROADMAP.md)

@@ -12,7 +12,7 @@
 | 2 | 姿态 · Kalman · IMU | 《卡尔曼滤波与组合导航原理》秦永元 | 待笔记 |
 | 3 | PWM · ESC · 无刷常识 | 章节笔记 + ESC 协议 datasheet | 待笔记 |
 | 4 | Linux 驱动对接 | LDD3 + [20](../20-Linux-Device-Driver/) + [22](../22-Embedded-Linux-Practice/) | 待笔记 |
-| 5 | 飞控调度 · PREEMPT_RT | [05 LKD](../03-Linux-Kernel-Development/) Ch4 + [03 SysPerf](../13-Systems-Performance-2nd/) | 待笔记 |
+| 5 | 飞控调度 · PREEMPT_RT | [05 LKD](../03-Linux-Kernel-Development/) Ch4 + [03 SysPerf](../14-Systems-Performance-2nd/) | 待笔记 |
 
 ---
 
@@ -28,6 +28,6 @@
 
 | 优先级 | 内容 |
 |--------|------|
-| **P0** | HFT：`17` C++ → `10–14` 网络 → `15` 引擎 |
+| **P0** | HFT：`08` C++ → `10–14` 网络 → `15` 引擎 |
 | **P1** | 嵌入式 Linux：`18–22`（系统能力） |
 | **P2** | 本模块 `23`（算法 + 飞控整合）— **仅 HFT 每日任务完成后** |

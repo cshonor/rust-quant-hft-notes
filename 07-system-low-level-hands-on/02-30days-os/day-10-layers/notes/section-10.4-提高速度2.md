@@ -20,6 +20,6 @@ for (y = by0; y < by1; y++)
 ① **只 refresh 脏矩形**  
 ② **脏矩形内只 loop 必要坐标**
 
-→ [03 SysPerf 少做无用功](../../../../13-Systems-Performance-2nd/chapter-02-methodologies/) · 量化 **减少遍历域** = 降延迟
+→ [03 SysPerf 少做无用功](../../../../14-Systems-Performance-2nd/chapter-02-methodologies/) · 量化 **减少遍历域** = 降延迟
 
 ---

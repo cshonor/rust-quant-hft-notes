@@ -52,4 +52,4 @@ LFS + 书本重叠的 **虚拟内存、内核网络、调度、中断**，正是
 | NUMA / 大页 | LKD Ch 12 + [03 Gorman](../05-Linux-Virtual-Memory-Manager/) |
 | 无锁 / RCU | LKD Ch 9–10 |
 
-→ 工程师落地：[15-HFT-Low-Latency-Practice](../15-HFT-Low-Latency-Practice/)
+→ 工程师落地：[16-HFT-Low-Latency-Practice](../16-HFT-Low-Latency-Practice/)

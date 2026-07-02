@@ -37,7 +37,7 @@
 
 2. 直接学 01 MikanOS（07/01-mikan-os/）
 
-3. Linux 内核 · 性能调优 · DPDK → 15 HFT
+3. Linux 内核 · 性能调优 · DPDK → 16 HFT
    ↔ 05-LKD · 08-TLPI · 14-DPDK
 
 4. 02 30 天 OS：彻底后置，休闲拓展即可

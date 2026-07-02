@@ -10,7 +10,7 @@ REPLACEMENTS = [
     ("11-HFT-Low-Latency-Practice", "12-HFT-Low-Latency-Practice"),
     ("10-DPDK-Low-Latency-Network", "11-DPDK-Low-Latency-Network"),
     ("09-Linux-Kernel-Networking", "10-Linux-Kernel-Networking"),
-    ("08-UNP-Vol1", "09-UNP-Vol1"),
+    ("08-UNP-Vol1", "10-UNP-Vol1"),
     ("07-TCP-IP-Illustrated-Vol1", "08-TCP-IP-Illustrated-Vol1"),
 ]
 

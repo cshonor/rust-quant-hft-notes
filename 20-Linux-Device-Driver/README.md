@@ -25,8 +25,8 @@
 |----------|------------|
 | 用户态 `epoll`/`mmap` | 内核 **poll/wait_queue** · **remap_pfn_range** |
 | 无锁 / spinlock 概念 | 内核 **spinlock_t** · **中断上下文** 规则 |
-| [13 内核网络](../11-Linux-Kernel-Networking/) | 网卡驱动是 **字符/网络设备** 的特例 |
-| [14 DPDK](../12-DPDK-Low-Latency-Network/) | UIO/VFIO **旁路** vs 内核驱动 **标准路径** |
+| [13 内核网络](../12-Linux-Kernel-Networking/) | 网卡驱动是 **字符/网络设备** 的特例 |
+| [14 DPDK](../13-DPDK-Low-Latency-Network/) | UIO/VFIO **旁路** vs 内核驱动 **标准路径** |
 
 **HFT 退路：** 工业网关 / 飞控 **传感器 SPI/I2C/UART** 驱动 — 同一套 LDD 技能。
 

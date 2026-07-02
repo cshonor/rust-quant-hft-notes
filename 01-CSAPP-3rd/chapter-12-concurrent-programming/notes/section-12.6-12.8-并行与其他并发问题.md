@@ -53,7 +53,7 @@
 绝不：持锁跨 I/O、嵌套锁顺序不一致
 ```
 
-→ C++ `std::atomic` / `memory_order` · [12-HFT](../../../15-HFT-Low-Latency-Practice/)
+→ C++ `std::atomic` / `memory_order` · [12-HFT](../../../16-HFT-Low-Latency-Practice/)
 
 ### 12.8 小结（原书）
 
@@ -62,7 +62,7 @@
 - 线程安全、race、死锁是工程日常
 - 与 **Ch 8 信号**、**Ch 11 网络服务器** 合成完整 C/S 栈
 
-→ [附录 A 错误处理](../../appendix-A-错误处理.md) · [09-UNP](../../../09-UNP-Vol1/)
+→ [附录 A 错误处理](../../appendix-A-错误处理.md) · [10-UNP](../../../10-UNP-Vol1/)
 
 ---
 

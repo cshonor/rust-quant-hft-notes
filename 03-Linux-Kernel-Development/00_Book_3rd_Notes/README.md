@@ -18,7 +18,7 @@ chapter-XX-english-slug/
 
 每章 `README.md` 含 **小节笔记索引表**；正文在 `notes/section-*.md`。
 
-**全书 20 章笔记 ✓**（2025 迁移为与 [13-Systems-Performance](../../13-Systems-Performance-2nd/) 同构目录）
+**全书 20 章笔记 ✓**（2025 迁移为与 [14-Systems-Performance](../../14-Systems-Performance-2nd/) 同构目录）
 
 ---
 
@@ -57,4 +57,4 @@ Ch 4 → Ch 7–8 → Ch 9–10 → Ch 11
 
 选读补上下文：**Ch 3、12、15** · 内存深读 → [05-Linux-Virtual-Memory-Manager](../../05-Linux-Virtual-Memory-Manager/)
 
-对照性能观测 → [13-Systems-Performance-2nd](../../13-Systems-Performance-2nd/) Ch 3 / 6–10
+对照性能观测 → [14-Systems-Performance-2nd](../../14-Systems-Performance-2nd/) Ch 3 / 6–10

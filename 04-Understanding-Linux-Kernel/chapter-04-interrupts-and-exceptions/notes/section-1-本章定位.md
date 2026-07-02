@@ -42,7 +42,7 @@ Ch 10 系统调用    — 编程异常 / int 0x80 路径
 Ch 13 I/O 架构    — 设备驱动与 IRQ
 ```
 
-交叉：[05 LKD Ch 7–8](../../../03-Linux-Kernel-Development/) · [04 BPF 内核路径](../../../14-BPF-Performance-Tools/) · [14 DPDK 绕过内核](../../../12-DPDK-Low-Latency-Network/)
+交叉：[05 LKD Ch 7–8](../../../03-Linux-Kernel-Development/) · [04 BPF 内核路径](../../../15-BPF-Performance-Tools/) · [14 DPDK 绕过内核](../../../13-DPDK-Low-Latency-Network/)
 
 ---
 

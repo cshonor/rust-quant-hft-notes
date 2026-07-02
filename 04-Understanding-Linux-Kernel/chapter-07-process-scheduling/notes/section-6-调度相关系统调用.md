@@ -23,7 +23,7 @@
 
 HFT 标配：**交易线程绑 isolated CPU**，与 housekeeping 核分离。
 
-→ [15 HFT 内核调优](../../../15-HFT-Low-Latency-Practice/)
+→ [16 HFT 内核调优](../../../16-HFT-Low-Latency-Practice/)
 
 ---
 
@@ -48,7 +48,7 @@ HFT 标配：**交易线程绑 isolated CPU**，与 housekeeping 核分离。
 | syscall 路径 | [Ch 10 系统调用](../chapter-10-system-calls.md) 🔴 |
 | 内存、COW | [Ch 8 内存管理](../chapter-08-memory-management.md) 🔴 |
 | Modern CFS | [05 LKD Ch 4](../../../03-Linux-Kernel-Development/) |
-| HFT 绑核/FIFO | [15 HFT 工程](../../../15-HFT-Low-Latency-Practice/) |
+| HFT 绑核/FIFO | [16 HFT 工程](../../../16-HFT-Low-Latency-Practice/) |
 
 ---
 

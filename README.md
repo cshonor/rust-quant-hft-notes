@@ -2,7 +2,7 @@
 
 本仓库收录 **Rust 全栈量化** + **HFT 微秒级低延迟** 学习笔记，配套原理拆解、可运行源码与工程实践。
 
-**技术板块 `00`–`16` + 外部 C++ 索引 `17` + 嵌入式 Linux 支线 `18`–`23`** — **文件夹编号 = HFT 主线推荐阅读顺序**（见下与 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)）。
+**技术板块 `00`–`17` + 嵌入式 Linux 支线 `18`–`23`** — **文件夹编号 = HFT 主线推荐阅读顺序**（见下与 [LEARNING-CHAIN.md](./LEARNING-CHAIN.md)）。
 
 → 一眼进阶路径：[LEARNING-CHAIN.md](./LEARNING-CHAIN.md)  
 → 板块对照：[CROSS-MODULE-GUIDE.md](./CROSS-MODULE-GUIDE.md)
@@ -14,10 +14,10 @@
 ```
 00 业务 → 01 CSAPP → 02 Hennessy
 → 03 LKD → 04 ULK → 05 Gorman → 06 TLPI
-→ 07 MikanOS/30天OS → **17 C++（外部仓）** → 08 陈硕 PNP/muduo → 09 UNP
-→ 10 TCP/IP → 11 Rosen → 12 DPDK
-→ 13 SysPerf → 14 BPF
-→ 15 HFT 工程 → 16 Rust 量化
+→ 07 MikanOS/30天OS → **08 C++** → 09 陈硕 PNP/muduo → 10 UNP
+→ 11 TCP/IP → 12 Rosen → 13 DPDK
+→ 14 SysPerf → 15 BPF
+→ 16 HFT 工程 → 17 Rust 量化
 ```
 
 **可选支线 · 嵌入式 Linux + 飞控算法（ARM-A，非 MCU）：** `18 → … → 23`（建议 03–06 后再开 · **23 用业余时间**）→ [路线图 §六](./HFT-READING-ROADMAP.md#六嵌入式-linux-支线18–23)
@@ -32,16 +32,16 @@
 | **05** | [Linux-Virtual-Memory-Manager](./05-Linux-Virtual-Memory-Manager/) — Gorman |
 | **06** | [The-Linux-Programming-Interface](./06-The-Linux-Programming-Interface/) — TLPI |
 | **07** | [system-low-level-hands-on](./07-system-low-level-hands-on/) — **01 MikanOS** / 02 30天 OS |
-| **08** | [Practical-Network-Programming](./08-Practical-Network-Programming/) — PNP / muduo |
-| **09** | [UNP-Vol1](./09-UNP-Vol1/) |
-| **10** | [TCP-IP-Illustrated-Vol1](./10-TCP-IP-Illustrated-Vol1/) |
-| **11** | [Linux-Kernel-Networking](./11-Linux-Kernel-Networking/) — Rosen |
-| **12** | [DPDK-Low-Latency-Network](./12-DPDK-Low-Latency-Network/) |
-| **13** | [Systems-Performance-2nd](./13-Systems-Performance-2nd/) — Gregg · 性能方法论 |
-| **14** | [BPF-Performance-Tools](./14-BPF-Performance-Tools/) — eBPF（紧接 13） |
-| **15** | [HFT-Low-Latency-Practice](./15-HFT-Low-Latency-Practice/) — 原书 Ch1–11 已映射 · Ch13 策略 / Ch14 Python 扩展 |
-| **16** | [Rust-Quant-Trading-Guide](./16-Rust-Quant-Trading-Guide/) |
-| **17** | [**cpp-learning-notes**（外部）](./17-cpp-learning-notes/) — C++ · [GitHub 笔记仓](https://github.com/cshonor/cpp-learning-notes) |
+| **08** | [cpp-learning-notes](./08-cpp-learning-notes/) — C++ · [GitHub 笔记仓](https://github.com/cshonor/cpp-learning-notes) |
+| **09** | [Practical-Network-Programming](./09-Practical-Network-Programming/) — PNP / muduo |
+| **10** | [UNP-Vol1](./10-UNP-Vol1/) |
+| **11** | [TCP-IP-Illustrated-Vol1](./11-TCP-IP-Illustrated-Vol1/) |
+| **12** | [Linux-Kernel-Networking](./12-Linux-Kernel-Networking/) — Rosen |
+| **13** | [DPDK-Low-Latency-Network](./13-DPDK-Low-Latency-Network/) |
+| **14** | [Systems-Performance-2nd](./14-Systems-Performance-2nd/) — Gregg · 性能方法论 |
+| **15** | [BPF-Performance-Tools](./15-BPF-Performance-Tools/) — eBPF（紧接 14） |
+| **16** | [HFT-Low-Latency-Practice](./16-HFT-Low-Latency-Practice/) — 原书 Ch1–11 已映射 · Ch13 策略 / Ch14 Python 扩展 |
+| **17** | [Rust-Quant-Trading-Guide](./17-Rust-Quant-Trading-Guide/) |
 | **18** | [ARM64-Architecture](./18-ARM64-Architecture/) — ARMv8-A · 对照 x86 |
 | **19** | [UBoot-Kernel-Build](./19-UBoot-Kernel-Build/) — U-Boot · 内核裁剪 · Buildroot |
 | **20** | [Linux-Device-Driver](./20-Linux-Device-Driver/) — LDD · 内核态驱动 |
@@ -49,7 +49,7 @@
 | **22** | [Embedded-Linux-Practice](./22-Embedded-Linux-Practice/) — 无人机 / 网关实战 |
 | **23** | [Motion-Control-Motor](./23-Motion-Control-Motor/) — PID · IMU · 电机 · 飞控（非 MCU） |
 
-> **内核段：** `05`–`09` → **`17` C++（开 PNP 前）** → 网络 `10`–`14` → 工程 `15`–`16`。  
+> **内核段：** `03`–`07` → **`08` C++** → 网络 `09`–`13` → 性能 `14`–`15` → 工程 `16`–`17`。  
 > **嵌入式退路：** `18`–`23` 与 HFT **并行或后置** — 飞行器 / 网关 / **飞控算法**。
 
 ---

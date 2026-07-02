@@ -41,7 +41,7 @@ Linux 进程 **可抢占（Preemptable）**。以下情况触发重新调度：
 | **SCHED_FIFO** | 先进先出，无时间片轮转 |
 | **SCHED_RR** | Round Robin，带时间片 |
 
-→ HFT 热路径常用 **`SCHED_FIFO`** + 绑核 → [15 HFT](../../../15-HFT-Low-Latency-Practice/) · [Ch 6 syscall](./section-6-调度相关系统调用.md)
+→ HFT 热路径常用 **`SCHED_FIFO`** + 绑核 → [16 HFT](../../../16-HFT-Low-Latency-Practice/) · [Ch 6 syscall](./section-6-调度相关系统调用.md)
 
 ---
 

@@ -21,9 +21,9 @@
 |----------|------------|
 | **绑核 / isolcpus** | 飞控关键线程 **CPU 隔离** |
 | **无锁环 / 低延迟 IPC** | 传感器 → 融合 → 控制 **低 jitter 数据路径** |
-| [03 SysPerf](../13-Systems-Performance-2nd/) | **量延迟** — 控制环周期 p99 |
-| [14 DPDK](../12-DPDK-Low-Latency-Network/) 零拷贝思想 | **DMA / 共享内存** 传 IMU/图传 |
-| [15 HFT](../15-HFT-Low-Latency-Practice/) 日志异步 | 黑匣子 / 遥测 **移出热路径** |
+| [03 SysPerf](../14-Systems-Performance-2nd/) | **量延迟** — 控制环周期 p99 |
+| [14 DPDK](../13-DPDK-Low-Latency-Network/) 零拷贝思想 | **DMA / 共享内存** 传 IMU/图传 |
+| [16 HFT](../16-HFT-Low-Latency-Practice/) 日志异步 | 黑匣子 / 遥测 **移出热路径** |
 
 ---
 
@@ -43,7 +43,7 @@
 
 嵌入式 Linux · 车载 Linux · 工业网关 · **无人机底层**
 
-> **主线不变：** [15 HFT](../15-HFT-Low-Latency-Practice/) 量化开发；本模块为 **第二职业退路**。
+> **主线不变：** [16 HFT](../16-HFT-Low-Latency-Practice/) 量化开发；本模块为 **第二职业退路**。
 
 ---
 

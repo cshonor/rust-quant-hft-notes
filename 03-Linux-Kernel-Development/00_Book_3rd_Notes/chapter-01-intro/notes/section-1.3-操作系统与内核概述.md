@@ -28,6 +28,6 @@
 | **硬件 → 内核** | **Interrupts** → **中断处理程序** |
 
 → 自制 OS 对照：[01 Day 5 GDT/IDT](../../../../07-system-low-level-hands-on/02-30days-os/day-05-gdt-idt/) · [Day 20 INT 0x40 API](../../../../07-system-low-level-hands-on/02-30days-os/day-20-api/)  
-→ [03 SysPerf Ch3 术语](../../../../13-Systems-Performance-2nd/chapter-03-operating-systems/notes/section-3.1-核心术语.md)
+→ [03 SysPerf Ch3 术语](../../../../14-Systems-Performance-2nd/chapter-03-operating-systems/notes/section-3.1-核心术语.md)
 
 ---
