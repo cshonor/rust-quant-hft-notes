@@ -35,4 +35,4 @@ bootpack → 内存 0x8200 起（约 180 KB）
 
 ---
 
-← [Day 2 §2.3](../../day-02-asm-makefile/notes/section-2.3-先制作启动区.md) · [§3.1.1 →](./section-3.1.1-IPL-bootpack-与软盘镜像.md) · 下一节 [§3.2 纸娃娃操作系统](./section-3.2-纸娃娃操作系统.md)
+← [Day 2 §2.3](../../day-02-asm-makefile/notes/section-2.3-先制作启动区.md) · [§3.1.1 →](./section-3.1.1-IPL-bootpack与镜像布局.md) · 下一节 [§3.2 纸娃娃操作系统](./section-3.2-纸娃娃操作系统.md)
